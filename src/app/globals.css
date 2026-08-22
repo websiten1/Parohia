@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-serif: var(--font-pt-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), -apple-system, system-ui, sans-serif;
+
+  /* Color tokens — ROEA Exact Rebuild, docs/01_visual_system.md */
+  --color-background: #fafaf8;
+  --color-surface: #ffffff;
+  --color-navy: #071a33;
+  --color-navy-2: #0a2444;
+  --color-burgundy: #8f1735;
+  --color-burgundy-pressed: #73122b;
+  --color-romanian-blue: #255c99;
+  --color-text: #111827;
+  --color-muted: #68707c;
+  --color-divider: #e6e8eb;
+  --color-soft-surface: #f1f4f7;
+
+  --color-navy-08: rgba(7, 26, 51, 0.08);
+  --color-navy-14: rgba(7, 26, 51, 0.14);
+  --color-burgundy-10: rgba(143, 23, 53, 0.1);
+
+  /*
+   * Secondary editorial palette — small accent moments only (category
+   * labels, thin edge strokes, metadata markers). Never a primary surface
+   * color; navy/white/burgundy remain the institutional foundation.
+   */
+  --color-forest: #60796a;
+  --color-violet: #756681;
+  --color-rose: #b87982;
+  --color-slate: #617a98;
+  --color-clay: #a66d5a;
+  --color-teal: #557e80;
+  --color-plum: #765568;
+  --color-pale-sage: #dde5db;
+  --color-pale-rose: #f0dfe1;
+  --color-pale-lavender: #e6e0ea;
+  --color-pale-blue: #dde6ef;
+
+  /* Radii */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 18px;
+  --radius-xl: 20px;
+  --radius-sheet: 24px;
+  --radius-pill: 999px;
+
+  /* Spacing — 4pt base grid */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-outer: 20px;
+  --spacing-tap-min: 44px;
+  --spacing-section: 32px;
+  --spacing-gap: 16px;
+  --spacing-gap-sm: 8px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+/*
+ * Reference phone artboard is 390 × 844 pt. The frame is hard-capped so the
+ * app can never stretch wider than a phone, on desktop or on any device
+ * wider than the reference width.
+ */
+.app-frame {
+  width: 100%;
+  max-width: 402px;
+  margin: 0 auto;
+  background: var(--color-background);
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/*
+ * BottomTabBar is `position: fixed`, so it no longer reserves space in
+ * normal flow. Any scrollable page that renders it must pad its content by
+ * this amount so the last row of content clears the floating bar instead of
+ * being hidden behind it.
+ */
+.pb-tabbar {
+  padding-bottom: calc(73px + env(safe-area-inset-bottom, 0px) + var(--spacing-16));
+}
+
+/* Standard press feedback: near-imperceptible compression, instant onset. */
+.press {
+  transition: transform 110ms ease-out, opacity 110ms ease-out;
+  touch-action: manipulation;
+}
+.press:active {
+  transform: scale(0.985);
+  opacity: 0.97;
+}
+/* Compact circular controls (date circles, icon buttons) compress a touch more. */
+.press-compact:active {
+  transform: scale(0.97);
+}
+@media (prefers-reduced-motion: reduce) {
+  .press {
+    transition: opacity 110ms ease-out;
+  }
+  .press:active {
+    transform: none;
+    opacity: 0.9;
+  }
+}
+
+/*
+ * Page-change transition: the incoming route resolves from a slightly
+ * smaller/fainter state rather than snapping in. Applied once per route by
+ * PageTransition, keyed on pathname; the fixed bottom nav lives outside it
+ * so it never moves.
+ */
+@keyframes page-enter {
+  from {
+    opacity: 0.94;
+    transform: scale(0.988);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .page-transition {
+    animation: page-enter 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: fade-in 160ms ease-out both;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-x-strip {
+  scroll-snap-type: x proximity;
+}
+.snap-x-strip > * {
+  scroll-snap-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rise-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scale-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes draw-line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .anim-fade-in {
+    animation: fade-in 500ms ease-out both;
+  }
+  .anim-fade-through {
+    animation: fade-in 180ms ease-out both;
+  }
+  .anim-scale-fade-in {
+    animation: scale-fade-in 450ms ease-out both;
+  }
+  .anim-rise-fade-in {
+    animation: rise-fade-in 400ms ease-out both;
+  }
+  .anim-draw-line {
+    animation: draw-line 350ms ease-out both;
+    transform-origin: center;
+  }
+  .anim-pulse-subtle {
+    animation: pulse-subtle 1.6s ease-in-out infinite;
+  }
+  .anim-spin-slow {
+    animation: spin-slow 1.1s linear infinite;
+  }
+}
+
+.skeleton {
+  background: var(--color-soft-surface);
+  border-radius: var(--radius-sm);
+}
+
+/*
+ * Global navy-texture surface: the single reusable background for every
+ * dark/navy panel, hero, card and header in the app. Layers the uploaded
+ * texture with a fixed, subtle navy tint (~10% opacity) directly in the
+ * background-image stack, so no extra overlay element is ever needed —
+ * callers just swap `bg-navy` for `bg-navy-texture` and keep every other
+ * class (rounded corners, overflow-hidden, padding, shadows) unchanged.
+ */
+.bg-navy-texture {
+  background-color: var(--color-navy);
+  background-image: linear-gradient(rgba(7, 26, 51, 0.1), rgba(7, 26, 51, 0.1)), url("/textures/navy-texture.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

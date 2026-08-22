@@ -1,0 +1,3894 @@
+[
+  {
+    "date": "2026-01-01",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": true,
+    "commemorations": "Circumcision of Our Lord; St. Basil the Great, archbishop of Caesarea in Cappadocia and his mother, St. Emilia",
+    "notes": [
+      "New Year. Thanksgiving Service"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-02",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Sylvester, bishop of Rome; Ven. Seraphim of Sarov",
+    "notes": [
+      "Forefeast of Theophany. Fast Free"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-03",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Prophet Malachi; Martyr Gordius",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-04",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Synaxis of the Seventy Apostles; Ven. Teoctist; Ven. Apolinaria; St. Nikephoros the Leper",
+    "notes": [],
+    "sunday": {
+      "title": "Sunday before Theophany",
+      "tone": 5,
+      "matinsGospel": 8,
+      "epistle": "2 Timothy 4:5-8",
+      "gospel": "Mark 1:1-8 (The Preaching of St",
+      "raw": "Sunday before Theophany. Epis. 2 Timothy 4:5-8; Gos. Mark 1:1-8 (The Preaching of St. John the Baptist). Tone 5. Mat. Gos. 8."
+    }
+  },
+  {
+    "date": "2026-01-05",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Martyrs Theopemptus and Theonas; Ven. Syncletica",
+    "notes": [
+      "Eve of Theophany. Strict Fast"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-06",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": true,
+    "commemorations": "Holy Theophany of Our Lord Jesus Christ",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-07",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Synaxis of the Holy Prophet, Forerunner and Baptizer John",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-08",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. George the Chozebite and Domnica",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-09",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Polyeuctus; Ven. Eustratius; Holy Hierarch Peter, bishop of Sebastea",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-10",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "St. Gregory of Nyssa; Ven. Antypas of Calapode ti; Holy Hierarch Dometian, bishop of Melitene",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-11",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Theodosius, founder of cenobitic life in Palestine; Ven. Vitaly",
+    "notes": [],
+    "sunday": {
+      "title": "Sunday after Theophany",
+      "tone": 6,
+      "matinsGospel": 9,
+      "epistle": "Ephesians 4:7-13",
+      "gospel": "Matthew 4:12-17 (Beginning of the Lord's ministry)",
+      "raw": "Sunday after Theophany. Epis. Ephesians 4:7-13; Gos. Matthew 4:12-17 (Beginning of the Lord's ministry). Tone 6. Mat. Gos. 9."
+    }
+  },
+  {
+    "date": "2026-01-12",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Tatiana the deaconess and Eustasia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-13",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Hermylus and Stratonicus; Holy Hierarch James (Jacob), bishop of Nisibis",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-14",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Martyrs slain at Sinai and Raithu; St. Sava of Serbia; St. Nina, Enlightener of Georgia",
+    "notes": [
+      "Leave- taking of Theophany"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-15",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Paul of Thebes and John \"Calabytes\"",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-16",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Veneration of the Precious Chains of the Holy Apostle Peter; Martyr Danax the reader",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-17",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Anthony the Great; Ven. Anthony the New of Berea",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-18",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sts. Athanasius and Cyril, archbishops of Alexandria",
+    "notes": [],
+    "sunday": {
+      "title": null,
+      "tone": 7,
+      "matinsGospel": 10,
+      "epistle": null,
+      "gospel": "Luke 17:12-19 (Ten lepers)",
+      "raw": "Sunday: Colossians 1:12-18; Gos. Luke 17:12-19 (Ten lepers). Tone 7. Mat. Gos. 10."
+    }
+  },
+  {
+    "date": "2026-01-19",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Macarius the Great and Macarius of Alexandria; Holy Hierarch Mark, metropolitan of Ephesus; Virgin Martyr Euphrasia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-20",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Euthymius the Great; Martyr Eusebius, Martyrs Innas, Pinnas and Rimmas",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-21",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Maximus the Confessor; Martyrs Neophytus and Valerian; Martyr Agnes of Rome",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-22",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Apostle Timothy; Monk-martyr Anastasius the Persian",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-23",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Clement, bishop of Ancyra; Martyr Agathangelus; Holy Fathers of the 6th Ecumenical Council",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-24",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Xenia; Holy Hierarch Philon, bishop of Kolpasteia in Crete; St. Xenia of St. Petersburg",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-25",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Gregory the Theologian, archbishop of Constantinople; Holy Hierarch Bretanion, bishop of Tomis",
+    "notes": [],
+    "sunday": {
+      "title": "32nd Sunday after Pentecost (Zacchaeus)",
+      "tone": 8,
+      "matinsGospel": 11,
+      "epistle": "1 Timothy 4:9-15",
+      "gospel": "Luke 19:1-10",
+      "raw": "32nd Sunday after Pentecost (Zacchaeus). Epis. 1 Timothy 4:9-15; Gos. Luke 19:1-10. Tone 8. Mat. Gos. 11."
+    }
+  },
+  {
+    "date": "2026-01-26",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Joseph the Merciful, Metropolitan of Moldova; Ven. Xenophon, his wife Maria and their children Arcadius and John",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-27",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of the Relics of the Holy Hierarch John Chrysostom; St. Marciana the Empress",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-28",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Ephraim and Isaac of Syria; Ven. Paladius of Antioch; Ven. James the hermit",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-29",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of the Relics of Hieromartyr Ignatius the Godbearer; Martyr Philotheus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-30",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Synaxis of the Three Hierarchs: Basil the Great, Gregory the Theologian, & John Chrysostom; Hieromartyr Hippolytus, bishop of Rome",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-31",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Wonderworkers and Unmercenaries Cyrus and John",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-01",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Tryphon, Perpetua & Felicitas",
+    "notes": [
+      "Forefeast of Presentation of our Lord"
+    ],
+    "sunday": {
+      "title": "33rd Sunday after Pentecost (Publican and the Pharisee)",
+      "tone": 1,
+      "matinsGospel": 1,
+      "epistle": "2 Timothy 3:10-15",
+      "gospel": "Luke 18:10-14",
+      "raw": "33rd Sunday after Pentecost (Publican and the Pharisee). Epis. 2 Timothy 3:10-15; Gos. Luke 18:10-14. Tone 1. Mat. Gos. 1. (Triodion begins)"
+    }
+  },
+  {
+    "date": "2026-02-02",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": true,
+    "commemorations": "Presentation of Our Lord Jesus Christ in the Temple",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-03",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Righteous Simeon the God-receiver; Anna the Prophetess",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-04",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Isidor of Pelusium; Hieromartyr Abramius",
+    "notes": [
+      "Fast free"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-05",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Agatha & Theodula",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-06",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarchs Bucolus, bishop of Smyrna and Photius, Patr. of Constantinople; Ven. Barsanuphius the Great and John of Gaza",
+    "notes": [
+      "Fast free"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-07",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Parthenius, bishop of Lampsacus; Ven. Luke of Hellas",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-08",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Great Martyr Theodore Stratelates; Prophet Zechariah",
+    "notes": [],
+    "sunday": {
+      "title": "34th Sunday after Pentecost (Prodigal Son)",
+      "tone": 2,
+      "matinsGospel": 2,
+      "epistle": "1 Corinthians 6:12-20",
+      "gospel": "Luke 15:11-32",
+      "raw": "34th Sunday after Pentecost (Prodigal Son). Epis. 1 Corinthians 6:12-20; Gos. Luke 15:11-32. Tone 2. Mat. Gos. 2."
+    }
+  },
+  {
+    "date": "2026-02-09",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Nichephorus",
+    "notes": [
+      "Leave-taking of Presentation of the Lord"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-10",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Haralambos; Virgin Martyr Valentina",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-11",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Blaise, bp of Sebaste; St. Theodora the Empress",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-12",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Meletius, archbishop of Antioch; St. Kristo the gardener",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-13",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Martinian; Holy Apostle Aquila and his wife Priscilla; Holy Hierarch Eulogius, patr. of Alexandria",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-14",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Auxentius, Maron & Abraham",
+    "notes": [
+      "Saturday of Souls"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-15",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle of the Seventy Onesimus; Martyr Major",
+    "notes": [],
+    "sunday": {
+      "title": "Sunday of Last Judgment (Farewell to Meat)",
+      "tone": 3,
+      "matinsGospel": 3,
+      "epistle": "1 Corinthians 8:8-13",
+      "gospel": "Matthew 25:31- 46",
+      "raw": "Sunday of Last Judgment (Farewell to Meat). Epis. 1 Corinthians 8:8-13; 9:1-2; Gos. Matthew 25:31- 46. Tone 3. Mat. Gos. 3."
+    }
+  },
+  {
+    "date": "2026-02-16",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Pamphilius & Valens; Holy Hierarch Flavian, archbishop of Constantinople; St. Nicholas of Japan",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-17",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Great Martyr Theodore the Soldier (\"Tyro\"); St. Mariamne; Holy Emperor Marcian & Empress Pulcheria",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-18",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Leo, bishop of Rome",
+    "notes": [
+      "Non-liturgical day. E,M,C"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-19",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Apostles Archippos, Philemon & his wife Apphias of the 70",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-20",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Leo, bishop of Catania; Ven. Vissarion",
+    "notes": [
+      "Non-liturgical day. E,M,C"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-21",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Timothy; Holy Hierarch Eustathios, archbishop of Antioch",
+    "notes": [
+      "Saturday of the Venerable Monastics"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-22",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Uncovering of the relics of the Martyrs at the gate of Eugenios in Constantinople",
+    "notes": [],
+    "sunday": {
+      "title": "Sunday of Expulsion of Adam from Paradise (Farewell to Dairy)",
+      "tone": 4,
+      "matinsGospel": 4,
+      "epistle": "Romans 13:11-14",
+      "gospel": "Matthew 6:14-21 (Teaching on Forgiveness, Fasting, and Non-Attachment to Possessions)",
+      "raw": "Sunday of Expulsion of Adam from Paradise (Farewell to Dairy). Epis. Romans 13:11-14; 14:1-4; Gos. Matthew 6:14-21 (Teaching on Forgiveness, Fasting, and Non-Attachment to Possessions). Tone 4. Mat. Gos. 4."
+    }
+  },
+  {
+    "date": "2026-02-23",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Polycarp, bishop of Smyrna; Ven. Gorgonia",
+    "notes": [
+      "Beginning of Great Lent. Non-liturgical day. Great Canon of St. Andrew of Crete – Part 1"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-24",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "The first & second findings of the honorable head of St. John the Forerunner; Venerable Petronius of Prodromos, Romanian Skete of Mount Athos",
+    "notes": [
+      "Non-liturgical day. Great Canon of St. Andrew of Crete – Part 2"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-25",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Tarasios, patr. of Constantinople",
+    "notes": [
+      "Great Canon of St. Andrew of Crete – Part 3"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-26",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Porphyrios, bishop of Gaza; Martyr Photini, the Samaritan woman",
+    "notes": [
+      "Great Canon of St. Andrew of Crete – Part 4"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-27",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "St. Raphael, bishop of Brooklyn; Ven. Prokopios the Confessor and Thalelaeus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-28",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Venerable John Cassian and Germanus, of Dobrogea; Ven. Basil the Confessor; Hieromartyr Proterius, patriarch of Alexandria",
+    "notes": [
+      "St. Theodore Saturday – Memorial Saturday. W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-01",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Martyr Eudoxia; Ven. Domnina",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": {
+      "title": "1st Sunday of Great Lent (Orthodoxy)",
+      "tone": 5,
+      "matinsGospel": 5,
+      "epistle": "Hebrews 11:24-26, 32-40",
+      "gospel": "John 1:43-51 (The Calling of Philip and Nathanael)",
+      "raw": "1st Sunday of Great Lent (Orthodoxy). Epis. Hebrews 11:24-26, 32-40; Gos. John 1:43-51 (The Calling of Philip and Nathanael). Tone 5. Mat. Gos. 5."
+    }
+  },
+  {
+    "date": "2026-03-02",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Theodotos, bp of Cyrenia; Martyr Hesychius",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-03",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Eutropios, Kleonikos & Basilikos",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-04",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Gerasimos of the Jordan; Martyrs Paul & his sister Juliana",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-05",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Conon of Isauria & Conon the Gardener; Ven. Mark",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-06",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy 42 Martyrs of Ammoria; Uncovering of the Precious Cross",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-07",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyrs Ephraim, bishop of Tomis, and bishops of Cherson: Basil, Capito, Eugene, Aetherius, Elpidius and Agathodoros",
+    "notes": [
+      "Memorial Saturday. W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-08",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Hierarch Theophylactus the Confessor, bp. of Nico- media; Hieromartyr Liviu-Galaction of Cluj",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 6,
+      "matinsGospel": 6,
+      "epistle": "Hebrews 1:10-14",
+      "gospel": "Mark 2:1-12 (Healing of paralytic in Capernaum)",
+      "raw": "2nd Sunday of Great Lent (St. Gregory Palamas). Epis. Hebrews 1:10-14; 2:1-3; Gos. Mark 2:1-12 (Healing of paralytic in Capernaum); of the Hierarch: Epis. Hebrews 7:26-28; 8:1-2; Gos. John 10:9-16 (Jesus - the Good Shepherd). Tone 6. Mat. Gos. 6."
+    }
+  },
+  {
+    "date": "2026-03-09",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Holy 40 Martyrs of Sebaste",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-10",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Quadratus, Cyprian & Dionysius and those with them",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-11",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Sophronius, patriarch of Jerusalem",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-12",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Theophanes the Confessor; Holy Hierarch Gregory Dialogus, bp. of Rome; Ven. Simeon the New Theologian",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-13",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of the relics of the Holy Hierarch Nicephorus, pat. of Constantinople; Martyr Christina of Persia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-14",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Benedict of Nursia; Hieromartyr Alexander the priest",
+    "notes": [
+      "Memorial Saturday. W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-15",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Agapius, Publius & Timolaus",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": {
+      "title": "3rd Sunday of Great Lent (The Cross)",
+      "tone": 7,
+      "matinsGospel": 7,
+      "epistle": "Hebrews 4:14-16",
+      "gospel": "Mark 8:34-38",
+      "raw": "3rd Sunday of Great Lent (The Cross). Epis. Hebrews 4:14-16; 5:1-6; Gos. Mark 8:34-38; 9:1 (Taking Up the Cross and Following Christ). Tone 7. Mat. Gos. 7."
+    }
+  },
+  {
+    "date": "2026-03-16",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Sabinas of Egypt; Ven. Christodoulos of Patmos",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-17",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Alexius, the man of God",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-18",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Nikolai of Zhicha; Holy Hierarch Cyril, archbishop of Jerusalem",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-19",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Chrysanthus & Daria, Claudius & Hilaria; Martyr Marian",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-20",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Martyrs slain at the monastery of St. Sabbas",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-21",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch James the Confessor; Ven. Serapion",
+    "notes": [
+      "Memorial Saturday. W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-22",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Basil, priest of Ancyra; Martyr Drosida, daughter of Emperor Trajan",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 8,
+      "matinsGospel": 8,
+      "epistle": "Hebrews 6:13-20",
+      "gospel": "Mark 9:17-32 (Healing of the epileptic son)",
+      "raw": "4th Sunday of Great Lent (St. John of the Ladder). Epis. Hebrews 6:13-20; Gos. Mark 9:17-32 (Healing of the epileptic son); of the Saint: Epis. Ephesians 5:8-19; Gos. Matthew 4:25; 5:1-12 (Sermon on the Mount – Beatitudes). Tone 8. Mat. Gos. 8."
+    }
+  },
+  {
+    "date": "2026-03-23",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Martyr Nikon of Sicily & 199 disciples with him",
+    "notes": [
+      "Great Canon of St. Andrew of Crete"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-24",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Artemon, bishop of Seleucia; Ven. Zachariah",
+    "notes": [
+      "Forefeast of Annunciation"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-25",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": true,
+    "commemorations": "Annunciation",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-26",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Synaxis of the Archangel Gabriel; Martyr Montanus the priest and his wife, Maxima; Holy 26 Martyrs in the Crimea",
+    "notes": [
+      "Leave-taking of Annunciation"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-27",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Matrona of Thessalonika; Martyrs Philetus and Lidia, his wife, with their 4 children",
+    "notes": [
+      "Akathist to Birthgiver of God"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-28",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Hilarion the New; Ven. Stephen the Wonderworker",
+    "notes": [
+      "Memorial Saturday. W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-29",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyrs Mark, bishop of Arethusa and Cyril the deacon; Martyrs Ionas and Varahisios",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 1,
+      "matinsGospel": 9,
+      "epistle": "Hebrews 9:11-14",
+      "gospel": "Mark 10:32-45 (The Request of the Sons of Zebedee)",
+      "raw": "5th Sunday of Great Lent (St. Mary of Egypt). Epis. Hebrews 9:11-14; Gos. Mark 10:32-45 (The Request of the Sons of Zebedee); of the Saint: Epis. Galatians 3:23-29; Gos. Luke 7:36-50. Tone 1. Mat. Gos. 9."
+    }
+  },
+  {
+    "date": "2026-03-30",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. John of Sinai, author of The Ladder; St. Eubula, mother of St. Panteleimon",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-31",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "St. Innocent of Alaska; Hieromartyr Hypatios, bishop of Gangra; Martyr Benjamin the deacon",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-01",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Mary of Egypt; Ven. Macarius the Confessor; Martyr Gherontios; Ven. Barsanuphius of Optina",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-02",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Titus the Wonderworker; Martyrs Amphianus and Edesius",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-03",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Nicetus the Confessor and Illyricus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-04",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Joseph the Hymnographer, George of Mt. Maleon and Zosima Parium",
+    "notes": [
+      "Lazarus Saturday. Memorial Saturday. W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-05",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": true,
+    "commemorations": "Entrance of the Lord into Jerusalem; Martyrs Agathopodes & Theodulus; Martyr Victorin and those with him",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": null,
+      "matinsGospel": null,
+      "epistle": "Philippians 4:4-9",
+      "gospel": "John 12:1- 18",
+      "raw": "6th Sunday of Great Lent (Palm Sunday). Follow the Triodion. Epis. Philippians 4:4-9; Gos. John 12:1- 18. (Bridegroom Matins)"
+    }
+  },
+  {
+    "date": "2026-04-06",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Holy and Great Monday. (Bridegroom Matins); Hieromartyr Irenaeus, bishop of Sirmium; Holy Hierarch Eutychios, patriarch of Constantinople; Ven. Gregory of Sinai; Ven. Platonida",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-07",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy and Great Tuesday. (Bridegroom Matins); St. Tikhon, Enlightener of North America; Martyr Calliopius; Holy Hierarch George the Confessor, bishop of Mitylene",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-08",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy and Great Wednesday. (Holy Unction, Bridegroom Matins); Apostles of the Seventy: Herodion, Agabus, Asyncritus, Rufus, Phlegon, Hermes; Holy Hierarch Celestine, bishop of Rome",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-09",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Holy and Great Thursday. (Twelve Gospels, Bridegroom Matins); Holy Martyr Eupsichios and Ven. Vadim",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-10",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy and Great Friday. (Non-liturgical day. Lamentations of the Lord); Martyrs Terence, Pompeios, Africanus, Maximus and Zeno",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-11",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Holy and Great Saturday. Holy Hierarch Callinicus of Cernica, bishop of Râmnic (His service will be celebrated on Monday, the second day of Pascha); Hieromartyr Antipas, bishop of Pergamum",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-12",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": true,
+    "commemorations": "Resurrection of Our Lord Jesus Christ",
+    "notes": [
+      "Holy Pascha"
+    ],
+    "sunday": {
+      "title": "Sunday of the Holy Resurrection of Our Lord Jesus Christ",
+      "tone": null,
+      "matinsGospel": null,
+      "epistle": "Acts 1:1-8",
+      "gospel": "John 1:1-17",
+      "raw": "Sunday of the Holy Resurrection of Our Lord Jesus Christ. Epis. Acts 1:1-8; Gos. John 1:1-17."
+    }
+  },
+  {
+    "date": "2026-04-13",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Bright Monday.",
+    "notes": [
+      "On this day, the services of the Romanian St.s commemorated on April 11 and 12 are also celebrated: Holy Hierarch Callinicus of Cernica and his mother, Ven. Philothea of Pas rea, and Martyr Sava of Buz u"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-14",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Bright Tuesday. Holy Hierarch Pachomius of Gledin, bishop of Roman",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-15",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Apostles of the Seventy: Aristarchus, Pudens & Trophimus; Martyr Crescens",
+    "notes": [
+      "Fast free"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-16",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Virgins: Agapy, Irene and Hiona",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-17",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Life-giving Fount of Mother of God; Hieromartyr Simeon, bishop in Persia",
+    "notes": [
+      "Fast free"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-18",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. John, disciple of St. Gregory of Decapolis",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-19",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. John of Old Lavra in Palestine; Hieromartyr Paphnutius",
+    "notes": [],
+    "sunday": {
+      "title": null,
+      "tone": 1,
+      "matinsGospel": 1,
+      "epistle": "Acts 5:12-20",
+      "gospel": "John 20:19-31",
+      "raw": "2nd Sunday after Pascha (St. Thomas). Epis. Acts 5:12-20; Gos. John 20:19-31. Tone 1. Mat. Gos. 1."
+    }
+  },
+  {
+    "date": "2026-04-20",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Theotimus, Bishop of Tomis; Ven. Theodore Trichinas",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-21",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Januarius, bp of Benevent; Holy Empress Alexandra",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-22",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Apostle Nathaniel; St. Theodore Sykeote, bishop of Anastasiopolis",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-23",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Great Martyr George the Trophy-bearer; Martyr Valerius",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-24",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Confessors: Elias (Iorest), Simion Stephan and Sava (Brancovich); Holy Hierarch Joseph the Confessor of Maramures; Martyrs Pasikrates and Valentine; Ven. Elizabeth",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-25",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Apostle & Evangelist Mark; Ven. Vasile of Poiana M rului",
+    "notes": [
+      "Romania"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-26",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Synaxis of the Holy Romanian Women; Hieromartyr Vasilefs, bishop of Amasea; St. Glaphira; Martyrs Cyril, Kindeas and Dasius of Axiopolis",
+    "notes": [
+      "Cernavod"
+    ],
+    "sunday": {
+      "title": "3rd Sunday after Pascha (Myrrhbearing Women)",
+      "tone": 2,
+      "matinsGospel": 4,
+      "epistle": "Acts 6:1-7",
+      "gospel": "Mark 15:43-47, 16:1-8",
+      "raw": "3rd Sunday after Pascha (Myrrhbearing Women). Epis. Acts 6:1-7; Gos. Mark 15:43-47, 16:1-8. Tone 2. Mat. Gos. 4."
+    }
+  },
+  {
+    "date": "2026-04-27",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Simeon, bishop of Jerusalem; Apostles of the Seventy: Mark and Zenas",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-28",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Apostles of the Seventy: Jason & Sosipater; Martyrs Maximus, Quinctilian and Dada at Dorostorum",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-29",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy 9 Martyrs at Cyzicus; Ven. Memnon",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-30",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle James, son of Zebedee; Holy Hierarch Donatus, bishop of Euroea - Persia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-01",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Jeremiah; Ven. Martyrs Euthymius, Ignatius and Acacius; St. Tamara; Ven. Isidora",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-02",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of the relics of St. Athanasius the Great; Holy Hierarch Athanasius III (Patelarios), patriarch of Constantinople; St. Matrona the Wonderworker of Moscow",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-03",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Irodion of Lainici; Martyrs Timothy & his wife, Mavra",
+    "notes": [],
+    "sunday": {
+      "title": "4th Sunday after Pascha (Healing of paralytic at Bethesda)",
+      "tone": 3,
+      "matinsGospel": 5,
+      "epistle": "Acts 9:32-42",
+      "gospel": "John 5:1-15",
+      "raw": "4th Sunday after Pascha (Healing of paralytic at Bethesda). Epis. Acts 9:32-42; Gos. John 5:1-15. Tone 3. Mat. Gos. 5."
+    }
+  },
+  {
+    "date": "2026-05-04",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Mavra of Ceahl u; Hieromartyr Vasily Martysz, missionary in America; Martyr Pelagia; St. Monica, mother of Blessed Augustine; Ven. Valerian",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-05",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Matrona of Hurezi; Great-Martyr Irene; New Martyr Ephraim of Nea Makri",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-06",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Righteous Job the long-suffering; Martyr Barbarus",
+    "notes": [
+      "Mid-feast of Pentecost. F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-07",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Apparition of Sign of Holy Cross over Jerusalem; St. Alexis Toth of Wilkes-Barre",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-08",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle & Evangelist John the Theologian; Ven. Arsenios the Great",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-09",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Isaiah; Martyr Christopher; Translation of the Relics of St. Nicholas to Bari",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-10",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle Simeon Zealotes; Ven. Calistrat of Timi eni and Vasiova",
+    "notes": [],
+    "sunday": {
+      "title": "5th Sunday after Pascha (Samaritan Woman)",
+      "tone": 4,
+      "matinsGospel": 7,
+      "epistle": "Acts 11:19-30",
+      "gospel": "John 4:5-42",
+      "raw": "5th Sunday after Pascha (Samaritan Woman). Epis. Acts 11:19-30; Gos. John 4:5-42. Tone 4. Mat. Gos. 7."
+    }
+  },
+  {
+    "date": "2026-05-11",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Dionysius the Vatopedian of Kolciu; Hieromartyr Mocius the priest; Holy Hierarch Methodius & Ven. Cyril, apostles to the Slavs",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-12",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr John of Wallachia; Holy Hierarch Epiphanios, abp. of Cyprus, and Germanos, patr. of Constantinople",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-13",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Glyceria; St. Sergius the Confessor",
+    "notes": [
+      "Leave- taking of Mid-Feast of Pentecost. F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-14",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Isidore of Chios; Hieromartyr Therapont, bp of Cyprus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-15",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Jacob of Putna, metropolitan of Moldova; Ven. Pachomios the Great",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-16",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Silas, Paisius and Nathan of Sih stria of Putna Monastery; Ven. Theodore the Sanctified",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-17",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle Andronicus and his wife Junia; Venerable Nectarios and Theophan",
+    "notes": [],
+    "sunday": {
+      "title": "6th Sunday after Pascha (Healing of the man born blind)",
+      "tone": 5,
+      "matinsGospel": 8,
+      "epistle": "Acts 16:16-34",
+      "gospel": "John 9:1-38",
+      "raw": "6th Sunday after Pascha (Healing of the man born blind). Epis. Acts 16:16-34; Gos. John 9:1-38. Tone 5. Mat. Gos. 8."
+    }
+  },
+  {
+    "date": "2026-05-18",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Peter, Dionysius & Paulinus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-19",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Patrick, bishop of Prussia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-20",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Thallelaeus; Ven. Talasius; St. Lydia of Philippisia",
+    "notes": [
+      "Leave-taking of Pascha. F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-21",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": true,
+    "commemorations": "Ascension of our Lord Jesus Christ (Day of Heroes); Equals-to-the-Apostles Emperor Constantine & his mother Helen",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-22",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Basiliscus & Marcellus; Holy Fathers of the 2nd Ecumenical Council",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-23",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Michael the Confessor, bishop of Synnada; Myrrhbearer Mary, wife of Cleophas",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-24",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Confessor Blandina of Ia i; Ven. Simeon the younger of the Wonderful Mountain",
+    "notes": [],
+    "sunday": {
+      "title": "7th Sunday after Pascha (Holy Fathers of the First Ecumenical Council)",
+      "tone": 6,
+      "matinsGospel": 10,
+      "epistle": "Acts 20:16-18, 28-36",
+      "gospel": "John 17:1-13 (Prayer of Jesus)",
+      "raw": "7th Sunday after Pascha (Holy Fathers of the First Ecumenical Council). Epis. Acts 20:16-18, 28-36; Gos. John 17:1-13 (Prayer of Jesus). Tone 6. Mat. Gos. 10."
+    }
+  },
+  {
+    "date": "2026-05-25",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Third finding of the Head of St. John the Baptizer",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-26",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Apostles of the Seventy: Karpos & Alphaios; Martyrs Abercius and Helen",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-27",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Julius the Veteran; Holy Confessor John the Russian; Hieromartyrs Eladius and Therapont, bishop of Sardis",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-28",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "St. Nicetas, bp of Chalcedon; Hieromartyr Eutyvhius",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-29",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Theodosia the Virgin; Hieromartyr Olivian",
+    "notes": [
+      "Leave-taking of Ascension of our Lord. F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-30",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Isaac the Confessor and Barlaam",
+    "notes": [
+      "Saturday of Souls"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-31",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": true,
+    "commemorations": "Descent of the Holy Spirit",
+    "notes": [],
+    "sunday": {
+      "title": null,
+      "tone": null,
+      "matinsGospel": null,
+      "epistle": "Acts 2:1-11",
+      "gospel": "John 7:37-53",
+      "raw": "8th Sunday after Pascha (Pentecost). Follow Pentecostarion. Epis. Acts 2:1-11; Gos. John 7:37-53; 8:12."
+    }
+  },
+  {
+    "date": "2026-06-01",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": true,
+    "commemorations": "Holy Trinity",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-02",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr John the New of Suceava; Holy Hierarch Nicephorus the Confessor, patr. of Constantinople",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-03",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Lucillian, Hypatius and Paula the virgin; St. Kevin, Abbot of Glendalough",
+    "notes": [
+      "Fast free"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-04",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs of Niculitsel: Zoticus, Atallus, Camisius and Philip; Holy Hierarch Mitrophan, Patriarch of Constantinople; Myrrhbearers Mary and Martha, sisters of Lazarus the Righteous",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-05",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Elisabeth of Pas rea Monastery; Hieromartyr Dorotheos of Tyrus",
+    "notes": [
+      "Fast free"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-06",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Hilarion the New; Ven. Bessarion",
+    "notes": [
+      "Leave-taking of Descent of Holy Spirit"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-07",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Theodotus; Martyrs Zenaida and Sebastian",
+    "notes": [],
+    "sunday": {
+      "title": null,
+      "tone": 8,
+      "matinsGospel": 1,
+      "epistle": "Hebrews 11:33- 40",
+      "gospel": "Matthew 10:32-33",
+      "raw": "1st Sunday after Pentecost (All St.s). Epis. Hebrews 11:33- 40; 12:1-2. Gos. Matthew 10:32-33; 37-38; 19:27-30 (Following Christ). Tone 8. Mat. Gos. 1."
+    }
+  },
+  {
+    "date": "2026-06-08",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Nicander and Marcian; Translation of the Relics of martyr Theodore the Stratelates",
+    "notes": [
+      "Beginning of Fast of Holy Apostles Peter and Paul. F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-09",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Cyril of Alexandria",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-10",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Alexander & Antonina; Hieromartyr Timothy, bp of Prussa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-11",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Apostles Bartholomew & Barnabas; Holy Hierarch Luke, archbishop of Crimea; Hieromartyr Mitrophan & The Chinese Orthodox Martyrs",
+    "notes": [
+      "1900",
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-12",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Onuphrius the Great and Peter the Athonite",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-13",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Aquilina; Holy Hierarch Triphyllius, bishop of Leucosia (Nicosia), Cyprus",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-14",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Elisha; Holy Hierarch Methodios, patriarch of Constantinople",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 1,
+      "matinsGospel": 2,
+      "epistle": "Rom. 2:10-16",
+      "gospel": "Matt",
+      "raw": "2nd Sunday after Pentecost (American & Romanian St.s). Epis. Rom. 2:10-16; Gos. Matt. 4:18-23 (Calling of the First Apostles); of the American & Romanian St.s: Epis. 2 Cor. 5: 17, 20; 6: 1, 3-7; 10; 13:11; Gos. Matt. 5: 14-16; 10: 32- 33, 17-18, 22 (The Light of Good Deeds and the Confession of Christ). Tone 1. Mat. Gos. 2."
+    }
+  },
+  {
+    "date": "2026-06-15",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Amos; Martyr Hesychius; Blessed Augustine and Jerome",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-16",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Neophytus the Cretan, Metropolitan of Wallachia; Holy Hierarch Tikhon, bishop of Amathos; Hieromartyr Mark, bishop of Apollonias",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-17",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Manuel, Sabel & Ismael, Innocent and Felix",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-18",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Leontios, Hypatios & Theodoulos; Ven. Erasmus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-19",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Apostle Jude, brother of the Lord; Ven. Paisius the Great",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-20",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Methodius the bp of Patara; Holy Hierarch Kallistos, patr. of Constantinople; Ven. Nicholas Cabasilas",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-21",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Julian of Tarsus and Afrodisios",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 2,
+      "matinsGospel": 3,
+      "epistle": "Rom. 5:1-10",
+      "gospel": "Matt",
+      "raw": "3rd Sunday after Pentecost (Sunday of All Athonite St.s). Epis. Rom. 5:1-10; Gos. Matt. 6:22-33 (Worries of life); of the Saints: Epis. 2 Cor. 11:21-12:9; Gos. Matt. 16:13-19. Tone 2. Mat. Gos. 3."
+    }
+  },
+  {
+    "date": "2026-06-22",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Gregory the Teacher, Metro- politan of Wallachia; Hieromartyr Eusebios",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-23",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Agrippina; Hieromartyr Aristocleus the priest",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-24",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": true,
+    "commemorations": "Nativity of St. John the Baptizer; Translation of the relics of Great Martyr John the New of Suceava; St. Nicetas of Remesiana",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-25",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Virgin-martyr Febronia; Martyr Orentius and his brothers; Martyr Livia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-26",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. David of Thessaloniki; Holy Hierarch John, bp. of the Goths",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-27",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Sampson, the host of Strangers; St. Joanna the Myrrhbearer",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-28",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of the relics of the Holy Unmercenaries Cyrus & John; Martyr Papias",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": {
+      "title": "4th Sunday after Pentecost",
+      "tone": 3,
+      "matinsGospel": 4,
+      "epistle": "Romans 6:18-23",
+      "gospel": "Matthew 8:5-13 (Healing of centurion's servant)",
+      "raw": "4th Sunday after Pentecost. Epis. Romans 6:18-23; Gos. Matthew 8:5-13 (Healing of centurion's servant). Tone 3. Mat. Gos. 4."
+    }
+  },
+  {
+    "date": "2026-06-29",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": true,
+    "commemorations": "Holy Apostles Peter and Paul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-30",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Synaxis of the 12 Apostles; Holy Hierarch Ghelasius of Râme",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-01",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Leontius of R dau i; Unmercenary Physicians Cosmas & Damian of Rome",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-02",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Placing of the robe of Mother of God in Blachernae; St. Stefan the Great of Moldavia; Holy Hierarch Juvenaly, patr. of Jerusalem; Holy Hierarch and Wonderworker John of Shanghai and San Francisco",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-03",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Hyacinth; Holy Hierarch Anatolius, pat. of Constpl.",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-04",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Andrew, abp. of Crete; Ven. Martha",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-05",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Athanasius the Athonite; Ven. Lampadus",
+    "notes": [],
+    "sunday": {
+      "title": "5th Sunday after Pentecost",
+      "tone": 4,
+      "matinsGospel": 5,
+      "epistle": "Romans 10:1-10",
+      "gospel": "Matthew 8:28-34",
+      "raw": "5th Sunday after Pentecost. Epis. Romans 10:1-10; Gos. Matthew 8:28-34; 9:1 (Cure of two demoniacs of Gadara). Tone 4. Mat. Gos. 5."
+    }
+  },
+  {
+    "date": "2026-07-06",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Dometios the Merciful of Râme and his mother Ven. Philotimia; Ven. Sisoes the Great; Martyr Lucy of Rome; Martyr Marius, his wife Martha, and heir sons Audifax and Abacus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-07",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr Kyriake; Ven. Thomas of Mt. Maleon; Martyr Evangelicus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-08",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Epictetus the priest and Astion the monk; Great-Martyr Procopius & his mother, Martyr Theodosia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-09",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyrs and Bishops Pancratius of Taormina & Cyril of Gortyna",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-10",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "45 Holy Martyrs at Nicopolis in Armenia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-11",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr Eufemia; St. Olga, equal to the Apostles and enlightener of Russia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-12",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Veneration of the Holy Icon of the Mother of God Prodromi a of Mount Athos; Martyrs Proclus & Hilary; Ven. Michael of Maleinus; St. Veronica; Ven. Paisius the Hagiorite",
+    "notes": [],
+    "sunday": {
+      "title": "6th Sunday after Pentecost",
+      "tone": 5,
+      "matinsGospel": 6,
+      "epistle": "Romans 12:6-14",
+      "gospel": "Matthew 9:1-8 (Cure of the paralytic from Capernaum)",
+      "raw": "6th Sunday after Pentecost. Epis. Romans 12:6-14; Gos. Matthew 9:1-8 (Cure of the paralytic from Capernaum). Tone 5. Mat. Gos. 6."
+    }
+  },
+  {
+    "date": "2026-07-13",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of the Relics of Ven. Demetrios the New to Bucharest; Synaxis of the Archangel Gabriel; Ven. Stephen of St. Sava Monastery; Martyr Maria of Persia; Ven. Sarah",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-14",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle Aquila of the Seventy; Martyrs Justus & Heraclius; Ven. Nicodemus the Hagiorite",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-15",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Cyricus & Julita; St. Vladimir, enlightener of Russia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-16",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Athenogenes & his 10 disciples; Martyr Julia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-17",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr Marina; Holy Hierarch Euphrasius, bp of Ionopolis",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-18",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Emilian of Dorostorum; Ven. Pambo",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-19",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Macrina, sister of St. Basil the Great; Ven. Dios; Uncovering of the relics of Ven. Seraphim of Sarov",
+    "notes": [],
+    "sunday": {
+      "title": null,
+      "tone": 6,
+      "matinsGospel": 7,
+      "epistle": "Romans 15:1-7. Gos. Matt. 9:27-35 (Healing of two blind men and a mute man from Capernaum)",
+      "gospel": "Matt",
+      "raw": "7th Sunday after Pentecost (Holy Fathers of 4th Ec. Council). Epis. Romans 15:1-7. Gos. Matt. 9:27-35 (Healing of two blind men and a mute man from Capernaum); of the Fathers: Epis. Titus 3:8-15; Gos. John 17:1-13 (Jesus' prayer). Tone 6. Mat. Gos. 7."
+    }
+  },
+  {
+    "date": "2026-07-20",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Glorious Prophet Elijah (Elias) the Tishbite; Ven. Maria (Skobtsova) of Paris",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-21",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Raphael and Parthenius of old Agapia; Ven. Simeon & John the ascetics",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-22",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Confessor Elias L c tu u; Myrrhbearer & Equal to the Apostles Mary Magdalene",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-23",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of relics of Hieromartyr Phocas; Martyrs Apollinaris, Vitalis and Valeria",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-24",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr Christina; Martyr Hermogenes; Martyrs Boris & Gleb",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-25",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Dormition of Righteous Ana, mother of the Birthgiver of God; Holy Fathers of the 5th Ecumenical Council; Ven. Olympiada and Eupraxia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-26",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Ioannichius the New of Muscel; St. Jacob of Alaska; Martyr Parascheva of Rome",
+    "notes": [],
+    "sunday": {
+      "title": "8th Sunday after Pentecost",
+      "tone": 7,
+      "matinsGospel": 8,
+      "epistle": "1 Corinthians 1:10-17",
+      "gospel": "Matthew 14:14-22 (Multiplication of loaves in the desert)",
+      "raw": "8th Sunday after Pentecost. Epis. 1 Corinthians 1:10-17; Gos. Matthew 14:14-22 (Multiplication of loaves in the desert). Tone 7. Mat. Gos. 8."
+    }
+  },
+  {
+    "date": "2026-07-27",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr and healer Panteleimon; St. Clement of Ochrid",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-28",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Apostles of the Seventy and Deacons: Prochoros, Nicanor, Timon & Parmenas; Ven. Paul of Xeropotamou",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-29",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Callinicus, Benjamin and Mamant; Martyr Theodota",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-30",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Apostles of the Seventy: Silas, Silvanus, Crescens, Epenetus & Andronicus; Hieromartyr Valentinus, bishop of Umbria",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-31",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Righteous Eudocimus; Righteous Joseph of Arimathea",
+    "notes": [
+      "Forefeast of the Procession of the Holy Cross"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-01",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Procession of the Holy Cross; Seven Maccabean Martyrs",
+    "notes": [
+      "Beginning of Fast of Dormition of Mother of God"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-02",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of the relics of the Protomartyr Stephen the Archdeacon; Righteous Gamaliel; Emperor Justinian the Great",
+    "notes": [],
+    "sunday": {
+      "title": "9th Sunday after Pentecost",
+      "tone": 8,
+      "matinsGospel": 9,
+      "epistle": "1 Corinthians 3:9-17",
+      "gospel": "Matthew 14:22-34 (Walking on the Sea)",
+      "raw": "9th Sunday after Pentecost. Epis. 1 Corinthians 3:9-17; Gos. Matthew 14:22-34 (Walking on the Sea). Tone 8. Mat. Gos. 9."
+    }
+  },
+  {
+    "date": "2026-08-03",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Confessor Heraclius of Bessarabia; Ven. Isaac, Dalmatos and Faustus; Holy Myrrhbearer Salome; Ven. Theodora of Thessalonica",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-04",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Seven Holy Youths (Sleepers) of Ephesus; Martyr Tathuil",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-05",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. John Jacob the Hozevite; Martyr Eusignius; St. Nonna, mother of St. Gregory the Theologian; Holy Hierarch Fabian, bp. of Rome",
+    "notes": [
+      "Forefeast of Transfiguration"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-06",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": true,
+    "commemorations": "Transfiguration of Our Lord Jesus Christ",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-07",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Teodora of Sihla; Ven. Pafnutie–Pârvu the Painter; Ven. Martyr Dometius the Persian; Holy Hierarch Narcissus, archbishop of Jerusalem; St. Irene the Empress",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-08",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Alexander of Bessarabia; Holy Hierarch Emilian the Confessor, bp of Cyzicus and Myron, bp of Crete",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-09",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Glorification of St. Herman of Alaska; Apostle Matthias; Ten Holy Martyrs who suffered for the icon of Christ.",
+    "notes": [],
+    "sunday": {
+      "title": "10th Sunday after Pentecost",
+      "tone": 1,
+      "matinsGospel": 10,
+      "epistle": "1 Corinthians 4:9-16",
+      "gospel": "Matthew 17:14-23 (Cure of the lunatic)",
+      "raw": "10th Sunday after Pentecost. Epis. 1 Corinthians 4:9-16; Gos. Matthew 17:14-23 (Cure of the lunatic). Tone 1. Mat. Gos. 10."
+    }
+  },
+  {
+    "date": "2026-08-10",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr and Archdeacon Laurence; Hieromartyr Sixtus, bishop of Rome; Martyr Hippolytus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-11",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Niphon, patr. of Constantinople; Martyr & Archdeacon Euplus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-12",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Photios & Anicletus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-13",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of the relics of Ven. Maximus the Confessor; Ven. Dorotheus and Dositheus",
+    "notes": [
+      "Leave-taking of the Transfiguration"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-14",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Micah",
+    "notes": [
+      "Forefeast of the Dormition of the Birthgiver of God"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-15",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": true,
+    "commemorations": "Dormition of the Birthgiver of God",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-16",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of the Icon Not-Made-by-Hands of our Lord from Edessa to Constantinople; Martyrs Constantin Brâncoveanu & his sons: Constantin, Stephen, Radu, Matthew and the Counselor Ianache; Ven. Joseph of V ratec; Martyr Diomedes",
+    "notes": [],
+    "sunday": {
+      "title": "11th Sunday after Pentecost",
+      "tone": 2,
+      "matinsGospel": 11,
+      "epistle": "1 Corinthians 9:2-12",
+      "gospel": "Matthew 18:23-35 (Parable of the unforgiving debtor)",
+      "raw": "11th Sunday after Pentecost. Epis. 1 Corinthians 9:2-12; Gos. Matthew 18:23-35 (Parable of the unforgiving debtor). Tone 2. Mat. Gos. 11."
+    }
+  },
+  {
+    "date": "2026-08-17",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "St. George the Pilgrim; Ven. Nazaria, Olympiada, and Elisabeta (Safta) Brâncoveanu, of Varatec; Martyrs Myron the priest, Straton and Cyprian",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-18",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Florus and Laurus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-19",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Andrew the General; Timothy, Agapius and Thecla",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-20",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Samuel; Martyrs Severus, Heliodorus and Theocharis",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-21",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle Thaddeus; Martyr Bassa and her children; Martyrs Donatus the deacon, Romulus the priest, Silvanus the deacon and Venustus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-22",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Agathonikos and those with him",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-23",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Lupus; Hieromartyr Irenaeus, bishop of Lyons",
+    "notes": [
+      "Leave-taking of feast of the Dormition"
+    ],
+    "sunday": {
+      "title": "12th Sunday after Pentecost",
+      "tone": 3,
+      "matinsGospel": 1,
+      "epistle": "1 Corinthians 15:1-11",
+      "gospel": "Matthew 19:16-26 (The rich young man)",
+      "raw": "12th Sunday after Pentecost. Epis. 1 Corinthians 15:1-11; Gos. Matthew 19:16-26 (The rich young man). Tone 3. Mat. Gos. 1."
+    }
+  },
+  {
+    "date": "2026-08-24",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyrs Eutychos and Cosmas of Aetolia; Martyr Tation",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-25",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Translation of relics of the Apostle Bartholomew; Apostle Titus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-26",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Adrian & his wife, Natalia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-27",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Pimen the Great; Martyr Phenurios; Holy Hierarch Hosius, bishop of Cordova",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-28",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Moses the Ethiopian; Righteous Hezekiah; Ven. Joseph the Hesychastic",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-29",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": true,
+    "commemorations": "Beheading of Prophet, Forerunner and Baptizer John",
+    "notes": [
+      "Strict Fast"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-30",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Varlaam, metropolitan of Moldavia, and John of Râ ca and Secu, bishop of Roman; Holy Hierarchs Alexander, John and Paul the New, patriarchs of Constantinople",
+    "notes": [],
+    "sunday": {
+      "title": "13th Sunday after Pentecost",
+      "tone": 4,
+      "matinsGospel": 2,
+      "epistle": "1 Corinthians 16:13-24",
+      "gospel": "Matthew 21:33-44 (The Parable of the Wicked Workers)",
+      "raw": "13th Sunday after Pentecost. Epis. 1 Corinthians 16:13-24; Gos. Matthew 21:33-44 (The Parable of the Wicked Workers). Tone 4. Mat. Gos. 2."
+    }
+  },
+  {
+    "date": "2026-08-31",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Makarios the Protopsaltis; The Placing of the Belt (Sash) of the Birthgiver of God",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-01",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Dionysius Exiguus (the Humble); Ven. Simeon the Stylite; 40 Martyrs of Adrianopolis",
+    "notes": [
+      "Beginning of Church Year. Service of Thanksgiving"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-02",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Mamas; Holy Hierarch John the Faster, patriarch of Constantinople",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-03",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Neophytos and Meletios of Stâni oara Monastery; Hieromartyr Anthimos, bishop of Nicomedia; Ven. Theoctistos of Palestine",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-04",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Babylas, bishop of Antioch; Prophet Moses; Martyr Petronius",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-05",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Zachariah and Righteous Elizabeth, parents of St. John the Baptizer",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-06",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Commemoration of the miracle of Archangel Michael at Colossae; Martyr Eudoxius",
+    "notes": [],
+    "sunday": {
+      "title": "14th Sunday after Pentecost",
+      "tone": 5,
+      "matinsGospel": 3,
+      "epistle": "2 Corinthians 1:21-24",
+      "gospel": "Matthew 22:1-14 (The Parable of the Wedding Feast of the King's Son)",
+      "raw": "14th Sunday after Pentecost. Epis. 2 Corinthians 1:21-24; 2: 1-4; Gos. Matthew 22:1-14 (The Parable of the Wedding Feast of the King's Son). Tone 5. Mat. Gos. 3."
+    }
+  },
+  {
+    "date": "2026-09-07",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Simeon and Amphilochius of Pângara i; Martyr Sozon; Ven. Cassiani the Hymnographer",
+    "notes": [
+      "Forefeast of Nativity of Mother of God"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-08",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": true,
+    "commemorations": "Nativity of the Birthgiver of God",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-09",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy & Righteous Ancestors of God, Joachim and Anna; Ven. Chiriac of Tazl u; Ven. Onuphrius of Vorona; Martyr Severian; Holy Fathers of the 3rd Ecumenical Council",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-10",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Menodora, Metrodora and Nymphodora",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-11",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Theodora of Alexandria; Ven. Euphrosynus the Cook",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-12",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Autonomus, Macedonius & Theodulus",
+    "notes": [
+      "Leave-taking of Nativity of Birthgiver of God"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-13",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Consecration of the Church of the Resurrection in Jerusalem; Ven. John of Prislop; Martyrs of Dobrogea: Macrobius, Gordian, Elias, Zoticus, Lucian and Valerian; Hieromartyr Cornelius the Centurion and Cyprian, bishop of Carthage;",
+    "notes": [
+      "Forefeast of Exaltation of the Holy Cross"
+    ],
+    "sunday": {
+      "title": "Sunday before the Exaltation of the Cross",
+      "tone": 6,
+      "matinsGospel": 4,
+      "epistle": "Galatians 6:11-18",
+      "gospel": "John 3:13-17 (Jesus' conversation with Nicodemus)",
+      "raw": "Sunday before the Exaltation of the Cross. Epis. Galatians 6:11-18; Gos. John 3:13-17 (Jesus' conversation with Nicodemus). Tone 6. Mat. Gos. 4."
+    }
+  },
+  {
+    "date": "2026-09-14",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": true,
+    "commemorations": "Exaltation of the Holy Cross",
+    "notes": [
+      "Strict Fast"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-15",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Joseph the New of Parto , metropolitan of Banat; Great-Martyr Nicetas; Holy Hierarch Bessarion, archbishop of Larisa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-16",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Confessor Sophian of Antim Monastery; Great- Martyr Euphemia; Martyrs Melitina and Ludmilla",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-17",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Dionysius, bishop of Cetatea Alba - Ismail; Martyr Sophia & her daughters: Faith, Hope and Charity",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-18",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Hilarion Felea; Holy Hierarch Eumenios, bishop of Gortyna; Martyr Ariadne",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-19",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Trophimos, Sabbatius & Dorymedon",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-20",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr Eustathius, his wife Theopiste & their children Agapius & Theopistus",
+    "notes": [],
+    "sunday": {
+      "title": "Sunday after the Exaltation of the Holy Cross",
+      "tone": 7,
+      "matinsGospel": 5,
+      "epistle": "Galatians 2:16-20. Gos. Mark 8:34-38",
+      "gospel": "Mark 8:34-38",
+      "raw": "Sunday after the Exaltation of the Holy Cross. Epis. Galatians 2:16-20. Gos. Mark 8:34-38; 9:1 (Take up the cross and follow Christ). Tone 7. Mat. Gos. 5."
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle Quadratus; Prophet Jonah",
+    "notes": [
+      "Leave-taking of Exaltation of the Holy Cross"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-22",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Theodosius of Brazi Monastery, metropolitan of Moldova; Hieromartyr Phocas, bp of Synope",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-23",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Conception of the Prophet, Forerunner & Baptizer John; Ven. Xanthippe and Polyxene",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-24",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Peter the Aleut & Hieromonk Juvenaly of Alaska; Protomartyr & Equal-to-the-Apostles Thekla; Ven. Silouan the Athonite",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-25",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Euphrosyne; Ven. Paphnutius of Egypt; Ven. Sergius of Radonezh",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-26",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Repose of the Holy Apostle and Evangelist John; Ruler Neagoe Basarab; Ven. Platonida of Arge (formerly Despina Mili a, wife of the Ruler Neagoe); Righteous Gideon",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-27",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Anthimus, metropolitan of Wallachia; Martyrs Callistratus & Epicharis",
+    "notes": [],
+    "sunday": {
+      "title": "18th Sunday after Pentecost",
+      "tone": 8,
+      "matinsGospel": 6,
+      "epistle": null,
+      "gospel": "Luke 5:1-11 (Miraculous catch of fish)",
+      "raw": "18th Sunday after Pentecost. Epis. 2 Corinthians 9:6-11. Gos. Luke 5:1-11 (Miraculous catch of fish). Tone 8. Mat. Gos. 6."
+    }
+  },
+  {
+    "date": "2026-09-28",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Chariton the Confessor; Prophet Baruch; Martyr Neophytos of Cyprus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-29",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Cyriacus the hermit; Martyr Petronia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-30",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Maryr Gregory the Illuminator, archbishop of Armenia; Martyrs Rhipsime and Gaiani",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-01",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": true,
+    "commemorations": "Protection of the Mother of God; Apostle Ananias; Ven. Joseph and Chiriac of Bisericani; Ven. Romanos the Melodist",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-02",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Cyprian; Virgin-martyr Justina",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-03",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Dionysius the Areopagite; Martyr Theoctistus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-04",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Priest Confessor Dumitru Staniloae; Hieromartyr Hierotheos, bishop of Athens",
+    "notes": [],
+    "sunday": {
+      "title": "19th Sunday after Pentecost",
+      "tone": 1,
+      "matinsGospel": 7,
+      "epistle": "2 Corinthians 11:31-33",
+      "gospel": "Luke 6:31-36 (Sermon on the Plain – Love your enemies)",
+      "raw": "19th Sunday after Pentecost. Epis. 2 Corinthians 11:31-33; 12:1-9; Gos. Luke 6:31-36 (Sermon on the Plain – Love your enemies). Tone 1. Mat. Gos. 7."
+    }
+  },
+  {
+    "date": "2026-10-05",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Daniel and Misail of Turnu Monastery; Martyr Charitina",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-06",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Glorification of St. Innocent, Apostle to America; Apostle Thomas; Martyr Erotiida",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-07",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyrs Sergius & Bacchus; Hieromartyrs Julian the priest, Caesarius the deacon and Polychronius",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-08",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Pelagia and Thais",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-09",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle James, son of Alphaeus; Ven. Andronicus and Athanasia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-10",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Eulampius & his sister Eulampia; Ven. Bassian and Theophilus the Confessor",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-11",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle Philip, one of the 7 deacons; Holy Hierarch Theophanes the Confessor, bishop of Nicea; Holy Fathers of Optina",
+    "notes": [],
+    "sunday": {
+      "title": "21st Sunday after Pentecost (Holy Fathers of the 7th Ecumenical Council)",
+      "tone": 2,
+      "matinsGospel": 8,
+      "epistle": "Galatians 2:16-20",
+      "gospel": "Luke 8:5-15 (Parable of the Sower)",
+      "raw": "21st Sunday after Pentecost (Holy Fathers of the 7th Ecumenical Council). Epis. Galatians 2:16-20; Gos. Luke 8:5-15 (Parable of the Sower); of the Fathers: Epis. Titus 3:8-15; Gos. John 17:1-13 (Jesus Prayer). Tone 2. Mat. Gos. 8."
+    }
+  },
+  {
+    "date": "2026-10-12",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Probus, Tarachus & Andronicus; Holy Hierarch Cosmas, bishop of Maiuma",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-13",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Bringing of the relics of Apostle Andrew to Ia i; Martyrs Carpus, Papylus, Agathodorus, Agathonike and Florentius",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-14",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Parascheva of Iasi; Martyrs Nazarius, Gervasius, Protasius & Celsius",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-15",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "St. Magdalena of M laini a; Hieromartyr Lucian, priest in Antioch",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-16",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Longinus the Centurion",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-17",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Hosea; Ven. Martyr Andrew of Crete",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-18",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle & Evangelist Luke; Martyr Marinus the Elder",
+    "notes": [],
+    "sunday": {
+      "title": "20th Sunday after Pentecost",
+      "tone": 3,
+      "matinsGospel": 9,
+      "epistle": "Galatians 1:11- 19",
+      "gospel": "Luke 7:11-16 (Resurrection of the son of the widow of Nain)",
+      "raw": "20th Sunday after Pentecost. Epis. Galatians 1:11- 19; Gos. Luke 7:11-16 (Resurrection of the son of the widow of Nain). Tone 3. Mat. Gos. 9."
+    }
+  },
+  {
+    "date": "2026-10-19",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Joel; Martyr Varus; St. Cleopatra; Ven. John of Rila",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-20",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Great-martyr Artemius; Ven. Gerasimos of Kefalonia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-21",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Confessors: Bessarion, Sophronius; Martyr Oprea; Priest-Confessors: John of Gales and Moses Macinic of Sibiel; Ven. Hilarion the Great",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-22",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Abercius, bishop of Hieropolis, Equal- to-the-Apostles; Holy 7 Youths of Ephesus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-23",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle James, brother of the Lord, first bishop of Jerusalem; Holy Hierarch Ignatius, patriarch of Constantinople; Holy Martyr Constatin Sârbu; Ven. Macarius the Roman",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-24",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Great-martyr Aretha; Martyrs Mark, Sotirichos and Valentine",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-25",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Marcian & Martyrius; St. Tabitha",
+    "notes": [],
+    "sunday": {
+      "title": "23rd Sunday after Pentecost",
+      "tone": 4,
+      "matinsGospel": 10,
+      "epistle": "Ephesians 2:4-10",
+      "gospel": "Luke 8:26-39 (Cure of the demoniac of Gadara)",
+      "raw": "23rd Sunday after Pentecost. Epis. Ephesians 2:4-10; Gos. Luke 8:26-39 (Cure of the demoniac of Gadara). Tone 4. Mat. Gos. 10."
+    }
+  },
+  {
+    "date": "2026-10-26",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Great-martyr Demetrios, the Myrrh-Streaming",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-27",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Demetrios the New (Basarabov), Patron-St. of Bucharest; St. Olga of Alaska; Martyr Nestor",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-28",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Hyacinth, metropolitan of Caesarea in Cappadocia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-29",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Virgin-Martyr Anastasia the Roman; Ven. Abramius and Maria, his niece",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-30",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Iachint, metropolitan of Wallachia; Martyrs Terence, his wife Neonila and their 7 children; Holy Hierarch Firmilian, bishop of Caesarea in Cappadocia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-31",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Apostles Stachys, Amplias, Urban, Aristobulus, Narcissus and Apelles; Hieromartyr John (Kochurov) of Chicago (1917); Martyr Epimachus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-01",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Unmercenaries Cosmas & Damian of Mesopotamia",
+    "notes": [],
+    "sunday": {
+      "title": "22nd Sunday after Pentecost",
+      "tone": 5,
+      "matinsGospel": 11,
+      "epistle": "Galatians 6:11- 18",
+      "gospel": "Luke 16:19-31 (Rich man and Lazarus)",
+      "raw": "22nd Sunday after Pentecost. Epis. Galatians 6:11- 18; Gos. Luke 16:19-31 (Rich man and Lazarus). Tone 5. Mat. Gos. 11."
+    }
+  },
+  {
+    "date": "2026-11-02",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Acindynus, Pegasius, Aphthonius, Elpidophorus and Anempodistus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-03",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyrs Akepsimas, Joseph and Aethalas; Translation of relics of Great-Martyr George in Lydia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-04",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Joannicius the Great; Hieromartyrs Nicander and Hermas; Ven. George the Confessor of Drama; St. Sylvia, mother of Gregory Dialogus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-05",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Galaction and Episteme",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-06",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Paul the Confessor, archbishop of Constantinople; Ven. Luke of Sicily",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-07",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "33 Martyrs of Melitene; Ven. Lazarus of Mount Galesius",
+    "notes": [
+      "Saturday of Souls"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-08",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Synaxis of the Archangels Michael and Gabriel and all the heavenly powers",
+    "notes": [],
+    "sunday": {
+      "title": "24th Sunday after Pentecost",
+      "tone": 6,
+      "matinsGospel": 1,
+      "epistle": "Ephesians 2:14- 22",
+      "gospel": "Luke 8:41-56 (Resurrection of Jairus' daughter)",
+      "raw": "24th Sunday after Pentecost. Epis. Ephesians 2:14- 22; Gos. Luke 8:41-56 (Resurrection of Jairus' daughter); of the Archangels: Epis. Hebrews 2: 2- 10; Gos. Luke 10: 16-21. Tone 6. Mat. Gos. 1."
+    }
+  },
+  {
+    "date": "2026-11-09",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Nectarios of Aegina; Martyrs Claudius, Castor, Sempronian and Nicostratus; Martyrs Onesiphoros and Porphyrios; Ven. Matrona",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-10",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Apostles Rodion, Sosipater, Olympas, Erastos, Tertius and Quartus; Ven. Martyr Vissarion of Lainici Monastery",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-11",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr Menas; Martyrs Victor, Vincent & Stephanida; Ven. Theodore the Studite",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-12",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs and Confessors of N s ud: Athanasius, Basil, Gregory and Basil; Holy Hierarch John the Merciful, patriarch of Alexandria; Ven. Nilus the hermit",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-13",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch John Chrysostom, archbishop of Constantinople and his mother, St. Anthusa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-14",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle Philip of the 12 Apostles; Holy Hierarch Gregory Palamas, archbishop of Thessalonica",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-15",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Paisius (Velichkovsky) of Neam ; Martyrs and Confessors Gurias, Samonas and Habibus the deacon",
+    "notes": [
+      "Beginning of Nativity Fast"
+    ],
+    "sunday": {
+      "title": "25th Sunday after Pentecost",
+      "tone": 7,
+      "matinsGospel": 2,
+      "epistle": "Ephesians 4:1-7",
+      "gospel": "Luke 10:25-37 (Good Samaritan)",
+      "raw": "25th Sunday after Pentecost. Epis. Ephesians 4:1-7; Gos. Luke 10:25-37 (Good Samaritan). Tone 7. Mat. Gos. 2."
+    }
+  },
+  {
+    "date": "2026-11-16",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle & Evangelist Matthew",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-17",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarchs Gregory the Wonderworker, bp of Neocaesarea and Gennadius, pat of Constantinople; Ven. Lazarus the Iconographer",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-18",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Platon, Romanus & Zacchaeus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-19",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Obadiah; Martyr Barlaam",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-20",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Gregory of Decapolis; Martyr Dasius; Holy Hierarch Proclus, archbishop of Constantinople",
+    "notes": [
+      "Forefeast of Entrance of Birthgiver of God in Temple"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-21",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": true,
+    "commemorations": "Entrance of the Birthgiver of God in the Temple",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-22",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Apostles Philemon, Archippus, Onesimos and Apphia; Martyr Cecilia and Valerian",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": {
+      "title": "26th Sunday after Pentecost",
+      "tone": 8,
+      "matinsGospel": 3,
+      "epistle": "Ephesians 5:8-19",
+      "gospel": "Luke 12:16-21 (Parable of the rich man who hoarded possessions)",
+      "raw": "26th Sunday after Pentecost. Epis. Ephesians 5:8-19; Gos. Luke 12:16-21 (Parable of the rich man who hoarded possessions). Tone 8. Mat. Gos. 3."
+    }
+  },
+  {
+    "date": "2026-11-23",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Anthony of Iezeru, Vâlcea; Holy Hierarchs Amphilochius, bp of Iconium and Gregory, bp of Agrigentum",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-24",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyrs Clement, bp of Rome and Peter, bp of Alexandria",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-25",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr Catherine; Great-Martyr Mercurius",
+    "notes": [
+      "Leave-taking of Entrance of Birthgiver of God in Temple",
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-26",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Alypius the Stylite, Nikon and Stylianus of Paphlagonia",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-27",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Great-Martyr James the Persian; Ven. Nathaniel and Pinoufrius",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-28",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Confessor Arsenie of Prislop; Venerable- martyr Stephen the New; Martyr Irenarchus",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-29",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Paramon & Philoumenus; Ven. Pitirim",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": {
+      "title": "30th Sunday after Pentecost",
+      "tone": 1,
+      "matinsGospel": 4,
+      "epistle": "Colossians 3:12-16",
+      "gospel": "Luke 18:18-27 (The rich aristocrat)",
+      "raw": "30th Sunday after Pentecost. Epis. Colossians 3:12-16; Gos. Luke 18:18-27 (The rich aristocrat). Tone 1. Mat. Gos. 4."
+    }
+  },
+  {
+    "date": "2026-11-30",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Apostle Andrew the first-called, Protector of Romania; Holy Hierarch Andrei aguna, metropolitan of Transylvania; Ven. Sebastian (Dabovich); Holy Hierarch Frumentius, bishop of Ethiopia",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-01",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "St. Anastasia, mother of Holy Hierarch Andrei aguna; Prophet Nahum; Ven. Philaret the Merciful",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-02",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Paisios and Cleopas of Sih stria Monastery; Prophet Habakkuk; Martyr Myrope; Holy Hierarch Solomon, abp. of Ephesus; Ven. Porphyrius of Kavsokalyvia",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-03",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Elder George of Cernica and C ld ru ani Monastery; Prophet Zephaniah",
+    "notes": [
+      "Sophonios",
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-04",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Alexander (Hotovitzky), missionary in America; Great-Martyr Barbara; Ven. John of Damascus",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-05",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Sabbas the Sanctified; Martyr Athanasius",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-06",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Nicholas the Wonderworker, archbishop of Myra in Lycia",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": {
+      "title": "27th Sunday after Pentecost",
+      "tone": 2,
+      "matinsGospel": 5,
+      "epistle": "Ephesians 6:10-17. Gos. Luke 13:10-17 (Healing of the crippled woman on the Sabbath)",
+      "gospel": "Luke 13:10-17 (Healing of the crippled woman on the Sabbath)",
+      "raw": "27th Sunday after Pentecost. Epis. Ephesians 6:10-17. Gos. Luke 13:10-17 (Healing of the crippled woman on the Sabbath); of the Hierarch: Epis. Hebrews 13: 17-21; Gos. Luke 6:17-23. Tone 2. Mat. Gos. 5."
+    }
+  },
+  {
+    "date": "2026-12-07",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Philothea of Arge ; Holy Hierarch Ambrose, bishop of Milan",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-08",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Patapius; Apostles Caesar, Tychicus and Onesiphorus",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-09",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Conception of the Birthgiver of God by St. Anna; Prophetess Anna, mother of the Prophet Samuel",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-10",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs Menas, Hermogenes & Eugraphus",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-11",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Daniel the Stylite & Luke the New",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-12",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Mardarije, first Serbian bishop in America and Canada; Holy Hierarch Spyridon the Wonderworker, bishop of Tremithus",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-13",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "St. Herman of Alaska; Holy Hierarch Dosoftei, metropolitan of Moldova; Great- Martyrs Eustratius, Auxentius, Eugene, Mardarius and Orestes; Virgin-martyr Lucy",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": {
+      "title": "28th Sunday after Pentecost (Forefathers of the Lord)",
+      "tone": 3,
+      "matinsGospel": 6,
+      "epistle": "Colossians 3:4-11",
+      "gospel": "Luke 14:16-24 (Parable of the great banquet)",
+      "raw": "28th Sunday after Pentecost (Forefathers of the Lord). Epis. Colossians 3:4-11; Gos. Luke 14:16-24 (Parable of the great banquet). Tone 3. Mat. Gos. 6."
+    }
+  },
+  {
+    "date": "2026-12-14",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyrs of Alexandria: Thyrsus, Callinicus, Philemon, Appolonius & Arianus",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-15",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Eleutherius, bishop of Illyria; Martyrs Anthia and Susanna",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-16",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Haggai (Aggaeus); Empress Theophania",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-17",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Prophet Daniel and the 3 Holy Youths: Ananias, Azarias & Misael",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-18",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Daniel the Hermit of Vorone e; Martyrs Sebastian and Zoe; Holy Hierarch Modestus, abp. of Jerusalem",
+    "notes": [
+      "W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-19",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Evlogia of S murc e ti Monastery; Martyr Boniface; St. Aglae; Holy Hierarch Gregentios, bishop of Ethiopia",
+    "notes": [
+      "F,W,O"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-20",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Hieromartyr Ignatius the God-bearer, bishop of Antioch; Ven. Seraphim of Sambata Monastery",
+    "notes": [
+      "Forefeast of Birth of Christ"
+    ],
+    "sunday": {
+      "title": "Sunday before the Birth of Christ (Ancestors of the Lord)",
+      "tone": 4,
+      "matinsGospel": 7,
+      "epistle": "Hebrews 11:9-10, 32-40",
+      "gospel": "Matthew 1:1-25 (Genealogy of the Savior)",
+      "raw": "Sunday before the Birth of Christ (Ancestors of the Lord). Epis. Hebrews 11:9-10, 32-40; Gos. Matthew 1:1-25 (Genealogy of the Savior). Tone 4. Mat. Gos. 7."
+    }
+  },
+  {
+    "date": "2026-12-21",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Juliana of Nicomedia; Martyr Themistocles",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-22",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Holy Hierarch Peter Mogila, metropolitan of Kiev; Great-Martyr Anastasia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-23",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Antonina of Tismana Monastery; 10 Martyrs of Crete; Holy Hierarch Paul, archbishop of Neocaesarea",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-24",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ven. Nun-Martyr Eugenia",
+    "notes": [
+      "Christmas Eve"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-25",
+    "weekdayLetterSource": "F",
+    "weekdayActual": "Friday",
+    "isMajorFeast": true,
+    "commemorations": "Birth of our Lord, God & Savior Jesus Christ",
+    "notes": [
+      "Fast free"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-26",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Synaxis of the Most Holy Birthgiver of God; Ven. Nicodemus of Tismana Monastery; Ven. Martyr Gerasimus of Tismana Monastery; Hieromartyr Euthymius the Confessor, bp of Sardis",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-27",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Apostle and Protomartyr Stephen the Archdeacon; Ven. Theodore the Confessor",
+    "notes": [],
+    "sunday": {
+      "title": "Sunday after the Birth of our Lord (Joseph the Betrothed, David the Prophet and James, brother of the Lord)",
+      "tone": 5,
+      "matinsGospel": 8,
+      "epistle": "Galatians 1:11-19. Gos. Matthew 2:13-23 (Escape into Egypt)",
+      "gospel": "Matthew 2:13-23 (Escape into Egypt)",
+      "raw": "Sunday after the Birth of our Lord (Joseph the Betrothed, David the Prophet and James, brother of the Lord). Epis. Galatians 1:11-19. Gos. Matthew 2:13-23 (Escape into Egypt); of the St.: Epis. Acts 6:8-15, 7:1-5, 47-60; Gos. Matthew 21: 33-44. Tone 5. Mat. Gos. 8."
+    }
+  },
+  {
+    "date": "2026-12-28",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "20,000 Martyrs of Nicomedia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-29",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "14,000 Infants (Holy Innocents) slain by Herod; Ven. Marcellus and Thaddeus",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-30",
+    "weekdayLetterSource": "W",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Virgin-martyr Anysia; Ven. Theodora; Ven. Leo",
+    "notes": [
+      "Fast free"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-31",
+    "weekdayLetterSource": "T",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Martyr Hermes; Ven. Melania of Rome; St. Theophylactus of Ochrid",
+    "notes": [
+      "Leave-taking of Birth of Christ. Service of Thanksgiving for the new year"
+    ],
+    "sunday": null
+  }
+]

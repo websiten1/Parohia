@@ -1,0 +1,3901 @@
+[
+  {
+    "date": "2026-01-01",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": true,
+    "commemorations": "Tăierea-împrejur cea după trup a Domnului; Sf. Ierarh Vasile cel Mare, arhiepiscopul Cezareei Capadociei și mama sa, Sf. Emilia",
+    "notes": [
+      "Anul Nou. Tedeum"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-02",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Silvestru, episcopul Romei; Sf. Cuvios Serafim de Sarov",
+    "notes": [
+      "Înainte-prăznuirea Botezului Domnului. Har i"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-03",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Maleahi; Sf. Mucenic Gordie",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-04",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Soborul Sf. 70 de Apostoli; Sf. Cuvios Teoctist; Sf. Cuvios Apolinaria; Sf. Cuvios Nichifor cel Lepros",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica dinaintea Botezului Domnului",
+      "tone": 5,
+      "matinsGospel": 8,
+      "epistle": "2 Timotei 4, 5-8",
+      "gospel": "Marcu 1, 1-8",
+      "raw": "Duminica dinaintea Botezului Domnului. Ap. 2 Timotei 4, 5-8; Ev. Marcu 1, 1-8; (Predica Sfântului Ioan Botezătorul). Glas 5, voscr. 8."
+    }
+  },
+  {
+    "date": "2026-01-05",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Teopempt și Teonas; Sf. Cuvios Sinclitichia",
+    "notes": [
+      "Ajunul Botezului Domnului. Post"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-06",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": true,
+    "commemorations": "Botezul Domnului",
+    "notes": [
+      "Boboteaza – Dumnezeiasca Ar tare"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-07",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Soborul Sf. Proroc Ioan Botezătorul",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-08",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Gheorghe Hozevitul; Sf. Cuvios Domnica",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-09",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Polieuct; Sf. Cuvios Eustratie; Sf. Ierarh Petru, episcopul Sevastiei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-10",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Grigorie, episcopul Nyssei; Sf. Cuvios Antipa de la Calapode ti; Sf. Ierarh Dometian, ep. Melitinei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-11",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Teodosie, încep torul vie ii c lug re ti de ob te din Palestina; Sf. Cuvios Vitalie",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica după Botezul Domnului",
+      "tone": 6,
+      "matinsGospel": 9,
+      "epistle": "Efeseni 4, 7- 13",
+      "gospel": "Matei 4, 12-17 (Începutul propov duirii Domnului)",
+      "raw": "Duminica după Botezul Domnului. Ap. Efeseni 4, 7- 13; Ev. Matei 4, 12-17 (Începutul propov duirii Domnului). Glas 6, voscr. 9."
+    }
+  },
+  {
+    "date": "2026-01-12",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Tatiana diaconi a și Eutasia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-13",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Ermil și Stratonic; Sf. Ierarh Iacob, episcop de Nisibe",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-14",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Mucenici din Sinai și Rait; Sf. Nina, luminătoarea Georgiei; Sf. Sava din Serbia",
+    "notes": [
+      "Odovania praznicului Botezului Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-15",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Pavel Tebeul și Ioan Coliba ul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-16",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Cinstirea lan ului Sf. Ap. Petru; Sf. Mucenic Danact citetul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-17",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Antonie cel Mare; Sf. Cuvios Antonie cel Nou din Veria",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-18",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Atanasie și Chiril, arhiepiscopii Alexandriei",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 29-a după Rusalii",
+      "tone": 7,
+      "matinsGospel": 10,
+      "epistle": "Duminicii a 28- a: Coloseni 1, 12-18",
+      "gospel": "Luca 17, 12-19 (Vindecarea celor 10 lepro i)",
+      "raw": "Duminica a 29-a după Rusalii. Ap. Duminicii a 28- a: Coloseni 1, 12-18; Ev. Luca 17, 12-19 (Vindecarea celor 10 lepro i). Glas 7, voscr. 10."
+    }
+  },
+  {
+    "date": "2026-01-19",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Macarie cel Mare și Macarie Alexandrinul; Sf. Ierarh Marcu, mitropolitul Efesului; Sf. Mucenic Eufrasia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-20",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Eftimie cel Mare; Sf. Mucenic Eusebiu; Sf. Mucenic In, Pin și Rim",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-21",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Maxim Mărturisitorul; Sf. Mucenic Neofit și Valerian; Sf. Mucenic Agnia din Roma",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-22",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Timotei; Sf. Cuvioasa Muceniță Anastasie Persul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-23",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Clement, episcopul Ancirei; Sf. Mucenic Agatanghel; Sf. Părinți de la Sinodul al VI--lea Ecumenic",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-24",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Xenia; Sf. Ierarh Filon, episcopul Carpasiei; Sf. Xenia din Petersburg",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-25",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Grigorie Teologul, arhiep. Constantinopolului; Sf. Ierarh Bretanion, episcopul Tomisului",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 32-a după Rusalii (a lui Zaheu)",
+      "tone": 8,
+      "matinsGospel": 11,
+      "epistle": "1 Timotei 4, 9-15",
+      "gospel": "Luca 19, 1-10",
+      "raw": "Duminica a 32-a după Rusalii (a lui Zaheu). Ap. 1 Timotei 4, 9-15; Ev. Luca 19, 1-10. Glas 8, voscr. 11."
+    }
+  },
+  {
+    "date": "2026-01-26",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Iosif cel Milostiv, mitropolitul Moldovei; Sf. Cuvios Xenofont, Maria, Arcadie și Ioan",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-27",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sf. Ierarh Ioan Gură de Aur; Sf. Marciana împărăteasa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-28",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Efrem Sirul, Isaac Sirul, Paladie și Iacob Sihastrul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-29",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sf. Sfințit Mucenic Ignatie Teoforul; Sf. Mucenic Filotei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-30",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sfinții Trei Ierarhi: Vasile cel Mare, Grigorie Teologul și Ioan Gură de Aur; Sf. Sfințit Mucenic Ipolit, episcopul Romei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-01-31",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic doctori fără de arginți Chir și Ioan",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-01",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Trifon; Sf. Mucenic Perpetua și Felicitas",
+    "notes": [
+      "Înainte-prăznuirea Întâmpinării Domnului"
+    ],
+    "sunday": {
+      "title": "Duminica a 33-a după Rusalii (a Vame ului și a Fariseului)",
+      "tone": 1,
+      "matinsGospel": 1,
+      "epistle": "2 Timotei 3, 10-15",
+      "gospel": "Luca 18, 10- 14",
+      "raw": "Duminica a 33-a după Rusalii (a Vame ului și a Fariseului). Ap. 2 Timotei 3, 10-15; Ev. Luca 18, 10- 14. Glas 1, voscr. 1. (Începutul Triodului)"
+    }
+  },
+  {
+    "date": "2026-02-02",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": true,
+    "commemorations": "Întâmpinarea Domnului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-03",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. și Dreptul Simeon, primitorul de Dumnezeu; Sf. Proroci Ana",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-04",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Isidor Pelusiotul; Sf. Sfințit Mucenic Avrami",
+    "notes": [
+      "Har i"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-05",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Agata și Teodula",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-06",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Vucol, episcopul Smirnei, și Fotie, patriarhul Constantinopolului; Sf. Cuvios Varsanufie cel Mare și Ioan din Gaza",
+    "notes": [
+      "Har i"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-07",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Partenie, episcopul Lampsacului; Sf. Cuvios Luca din Elada",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-08",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Teodor Stratilat; Sf. Proroc Zaharia",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 34-a după Rusalii (a Întoarcerii Fiului risipitor)",
+      "tone": 2,
+      "matinsGospel": 2,
+      "epistle": "1 Corinteni 6, 12-20",
+      "gospel": "Luca 15, 11-32",
+      "raw": "Duminica a 34-a după Rusalii (a Întoarcerii Fiului risipitor). Ap. 1 Corinteni 6, 12-20; Ev. Luca 15, 11-32. Glas 2, voscr. 2."
+    }
+  },
+  {
+    "date": "2026-02-09",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Nichifor",
+    "notes": [
+      "Odovania praznicului Întâmpinării Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-10",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Haralambie; Sf. Mucenic Valentina",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-11",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Vlasie, ep. Sevastiei; Sf. Teodora împărăteasa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-12",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Meletie, arhiepiscopul Antiohiei; Sf. Mucenic Hristea, gr dinarul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-13",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Martinian; Sf. Ap. Acvila și soția sa, Priscila; Sf. Ierarh Evloghie, patriarhul Alexandriei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-14",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Auxentie, Maron și Avraam",
+    "notes": [
+      "Sâmbăta morților - Moșii de iarnă"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-15",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Onisim; Sf. Mucenic Maior",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica Înfricoșătoarei Judecăți (a Lăsatului sec de carne)",
+      "tone": 3,
+      "matinsGospel": 3,
+      "epistle": "1 Corinteni 8, 8-13",
+      "gospel": "Matei 25, 31-46",
+      "raw": "Duminica Înfricoșătoarei Judecăți (a Lăsatului sec de carne). Ap. 1 Corinteni 8, 8-13; 9, 1-2; Ev. Matei 25, 31-46. Glas 3, voscr. 3."
+    }
+  },
+  {
+    "date": "2026-02-16",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințiți Mucenici Pamfil preotul și Valent diaconul; Sf. Ierarh Flavian, arhiep. Constantinopolului. Sf. Ierarh Nicolae din Japonia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-17",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Teodor Tiron; Sf. Mariamna; Sf. împ ra și Marcian și Pulheria",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-18",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Leon cel Mare, episcopul Romei",
+    "notes": [
+      "Zi aliturgică . O,L,B"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-19",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Arhip, Filimon și soția sa, Apfia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-20",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Leon, episcopul Cataniei; Sf. Cuvios Visarion",
+    "notes": [
+      "Zi aliturgică . O,L,B"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-21",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Timotei; Sf. Ierarh Eusta ie, arhiepiscopul Antiohiei",
+    "notes": [
+      "Sâmbăta Sfinților Cuvioși"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-22",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Aflarea moa telor Sfinților Mc. din Constantinopol",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica Izgonirii lui Adam din Rai (a Lăsatului sec de brânză )",
+      "tone": 4,
+      "matinsGospel": 4,
+      "epistle": "Romani 13, 11-14",
+      "gospel": "Matei 6, 14-21 (Învățătură despre iertare, post și neagonisire)",
+      "raw": "Duminica Izgonirii lui Adam din Rai (a Lăsatului sec de brânză ). Ap. Romani 13, 11-14; 14, 1-4; Ev. Matei 6, 14-21 (Învățătură despre iertare, post și neagonisire). Glas 4, voscr. 4."
+    }
+  },
+  {
+    "date": "2026-02-23",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Policarp, episcopul Smirnei; Sf. Cuvios Gorgonia",
+    "notes": [
+      "Începutul Postului Sfintelor Pa ti. Zi aliturgică . Canonul cel Mare – partea întâi"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-24",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Întâia și a doua aflare a capului Sf. Proroc Ioan Botezătorul; Sf. Cuvios Petroniu de la Prodromu",
+    "notes": [
+      "Zi aliturgică . Canonul cel Mare – partea a doua"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-25",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Tarasie, patriarhul Constantinopolului",
+    "notes": [
+      "Canonul cel Mare – partea a treia"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-26",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Porfirie, episcopul Gazei; Sf. Mucenic Fotini Samarineanca",
+    "notes": [
+      "Canonul cel Mare – partea a patra"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-27",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Rafael, episcopul din Brooklyn; Sf. Cuvios Mărturisitori Procopie și Talaleu",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-02-28",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Ioan Casian și Gherman, din Dobrogea; Sf. Cuvios Vasile Mărturisitorul; Sf. Sfințit Mucenic Proterie, patriarhul Alexandriei",
+    "notes": [
+      "Sâmbăta Sf. Mare Mucenic Teodor – Pomenirea celor adormiți. U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-01",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvioasa Muceniță Evdochia; Sf. Cuvios Domnina",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": {
+      "title": "Duminica întâi din Post (a Ortodoxiei)",
+      "tone": 5,
+      "matinsGospel": 5,
+      "epistle": "Evrei 11, 24-26",
+      "gospel": "rei 11, 24-26",
+      "raw": "Duminica întâi din Post (a Ortodoxiei). Ap. Evrei 11, 24-26; 32-40; Ev. Ioan 1, 43-51; (Chemarea lui Filip și a lui Natanael). Glas 5, voscr. 5."
+    }
+  },
+  {
+    "date": "2026-03-02",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Teodot, episcopul Chiriniei; Sf. Mucenic Isihie",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-03",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Eutropie, Cleonic și Vasilisc",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-04",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Gherasim dela Iordan; Sf. Mucenic Pavel și sora sa, Iuliana",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-05",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Conon din Isauria și Conon Gr dinarul; Sf. Cuvios Marcu",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-06",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. 42 de Mucenici din Amoreea; Aflarea Sfintei Cruci",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-07",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Efrem, episcopul Tomisului; Sf. Sfințiți Mucenici Vasilevs, Evghenie, Capiton, Eterie, Agatodor și Elpidie, episcopi de Herson",
+    "notes": [
+      "Pomenirea celor adormiți. U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-08",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Teofilact Mărturisitorul, episcopul Nicomidiei; Sf. Preot Mucenic Liviu-Galaction de la Cluj",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 6,
+      "matinsGospel": 6,
+      "epistle": "Evrei 1, 10-14",
+      "gospel": "rei 1, 10-14",
+      "raw": "Duminica a 2-a din Post (a Sf. Ierarh Grigorie Palama). Ap. Evrei 1, 10-14; 2, 1-3; Ev. Marcu 2, 1-12 (Vindecarea paraliticului din Capernaum); ale Ierarhului: Ap. Evrei 7, 26-28; 8, 1-2; Ev. Ioan 10, 9-16; (Iisus – P storul cel bun). Glas 6, voscr. 6."
+    }
+  },
+  {
+    "date": "2026-03-09",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. 40 de Mucenici din Sevastia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-10",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Codrat, Ciprian, Dionisie și cei împreună cu ei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-11",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Sofronie, patriarhul Ierusalimului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-12",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Teofan Mărturisitorul; Sf. Ierarh Grigorie Dialogul, ep. Romei; Sf. Cuvios Simeon Noul Teolog",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-13",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sf. Ierarh Nichifor, patriarhul Constantinopolului; Sf. Mucenic Hristina din Persia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-14",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Benedict de Nursia; Sf. Sfințit Mucenic Alexandru preotul",
+    "notes": [
+      "Pomenirea celor adormiți. U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-15",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Agapie, Plisie și Timolau",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": {
+      "title": "Duminica a 3-a din Post (a Sfintei Cruci)",
+      "tone": 7,
+      "matinsGospel": 7,
+      "epistle": "Evrei 4, 14- 16",
+      "gospel": "rei 4, 14- 16",
+      "raw": "Duminica a 3-a din Post (a Sfintei Cruci). Ap. Evrei 4, 14- 16; 5, 1-6; Ev. Marcu 8, 34-38; 9, 1 (Luarea crucii și urmarea lui Hristos). Glas 7, voscr. 7."
+    }
+  },
+  {
+    "date": "2026-03-16",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Sabin Egipteanul; Sf. Cuvios Hristodul din Patmos",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-17",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Alexie, omul lui Dumnezeu",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-18",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Nicolae din Zica (Velimirovich); Sf. Ierarh Chiril, arhiepiscopul Ierusalimului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-19",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Hrisant și Daria, Claudiu și Ilaria; Sf. Mucenic Marian diaconul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-20",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Mucenici din M n stirea Sf. Sava cel sfințit",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-21",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Iacob Mărturisitorul; Sf. Cuvios Serapion",
+    "notes": [
+      "Pomenirea celor adormiți. U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-22",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Vasile, preotul din Ancira; Sf. Mucenic Drosida, fiica împăratului Traian",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 8,
+      "matinsGospel": 8,
+      "epistle": "Evrei 6, 13-20",
+      "gospel": "rei 6, 13-20",
+      "raw": "Duminica a 4-a din Post (a Sf. Cuvios Ioan Sc rarul). Ap. Evrei 6, 13-20; Ev. Marcu 9, 17-32 (Vindecarea fiului lunatic); ale Cuviosului: Ap. Efeseni 5, 8-19; Ev. Matei 4, 25; 5, 1-12 (Predica de pe munte – Fericirile). Glas 8, voscr. 8."
+    }
+  },
+  {
+    "date": "2026-03-23",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvioasa Muceniță Nicon și cei 199 de ucenici ai lui",
+    "notes": [
+      "Denia Canonului cel Mare"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-24",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Artemon, episcopul Seleuciei; Sf. Cuvios Zaharia",
+    "notes": [
+      "Înainte-prăznuirea Bunei Vestiri"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-25",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": true,
+    "commemorations": "Buna Vestire",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-26",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Soborul Sf. Arhanghel Gavriil; Sf. Mucenic Montanus preotul și soția sa, Maxima; Sfinții 26 de Mucenici din Go ia",
+    "notes": [
+      "Odovania praznicului Bunei Vestiri"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-27",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Matrona din Tesalonic; Sf. Mucenic Filit și Lidia, soția sa, cu cei 4 fii ai lor",
+    "notes": [
+      "Denia Acatistului Bunei Vestiri"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-28",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Ilarion cel Nou, egum. Pelechitului;",
+    "notes": [
+      "Pomenirea celor adormiți. U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-29",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințiți Mucenici Marcu, episcopul Aretuselor, și Chiril diaconul; Sf. Mucenic Iona și Varahisie",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 1,
+      "matinsGospel": 9,
+      "epistle": "Evrei 9, 11-14",
+      "gospel": "rei 9, 11-14",
+      "raw": "Duminica a 5-a din Post (a Sf. Maria Egipteanca). Ap. Evrei 9, 11-14; Ev. Marcu 10, 32-45 (Cererea fiilor lui Zevedeu); ale Sfintei: Ap. Galateni 3, 23-29; Ev. Luca 7, 36-50. Glas 1, voscr. 9."
+    }
+  },
+  {
+    "date": "2026-03-30",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Ioan Sc rarul; Sf. Euvula, mama Sf. Pantelimon",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-03-31",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Inochentie din Alaska; Sf. Sfințit Mucenic Ipatie, ep. Gangrei; Sf. Mucenic Veniamin diaconul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-01",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Maria Egipteanca; Sf. Cuvios Macarie Mărturisitorul; Sf. Mucenic Gherontie; Sf. Cuvios Varsanufie de la Optina",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-02",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Tit, făcătorul de minuni; Sf. Mucenic Amfian și Edesie",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-03",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Nichita Mărturisitorul și Ilirie",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-04",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Iosif Imnograful, Gheorghe din Maleon și Zosima",
+    "notes": [
+      "Sâmbăta lui Lazăr. Pomenirea celor adormiți. U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-05",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": true,
+    "commemorations": "Intrarea Domnului în Ierusalim; Sf. Mucenic Teodul și Agatopod; Sf. Mucenic Victorin și cei împreună cu el",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": null,
+      "matinsGospel": null,
+      "epistle": "Filipeni 4, 4-9",
+      "gospel": "Ioan 12, 1-18",
+      "raw": "Duminica a 6-a din Post (a Floriilor). Toate ale praznicului. Ap. Filipeni 4, 4-9; Ev. Ioan 12, 1-18. (Denie)"
+    }
+  },
+  {
+    "date": "2026-04-06",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sfânta și Marea Luni (Denie); Sf. Sfințit Mucenic Irineu de Sirmium; Sf. Ierarh Eutihie, patriarhul Constantinopolului; Sf. Cuvios Grigorie Sinaitul; Sf. Cuvios Platonida",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-07",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sfânta și Marea Mar și (Denie); Sf. Ierarh Tikhon, Luminătorul Americii de Nord; Sf. Mucenic Caliopie; Sf. Ierarh Gheorghe Mărturisitorul, episcopul Mitilenei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-08",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sfânta și Marea Miercuri (Sf. Maslu și Denie); Sf. Ap. Irodion, Agav, Ruf, Flegon, Asincrit și Ermis; Sf. Ierarh Celestin, episcopul Romei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-09",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sfânta și Marea Joi (Denia celor 12 Evanghelii) Sf. Mucenic Eupsihie; Sf. Cuvios Vadim",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-10",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sfânta și Marea Vineri (Zi aliturgică . Denia Prohodului Domnului); Sf. Mucenic Terentie, Pompei, African, Maxim și Dima",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-11",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sfânta și Marea Sâmb t ; Sf. Ierarh Calinic de la Cernica, episcopul Râmnicului (Slujba lui se va s vâr și luni, în a doua zi de Pa ti); Sf. Sfințit Mucenic Antipa, ep. Pergamului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-12",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": true,
+    "commemorations": "Învierea Domnului",
+    "notes": [
+      "Sfintele Paști"
+    ],
+    "sunday": {
+      "title": "Duminica Sfintei Învieri a Domnului nostru Iisus Hristos",
+      "tone": null,
+      "matinsGospel": null,
+      "epistle": "Fapte 1, 1-8",
+      "gospel": "Ioan 1, 1-17",
+      "raw": "Duminica Sfintei Învieri a Domnului nostru Iisus Hristos Ap. Fapte 1, 1-8; Ev. Ioan 1, 1-17."
+    }
+  },
+  {
+    "date": "2026-04-13",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": true,
+    "commemorations": "Sfintele Paști",
+    "notes": [
+      "În aceast zi se s vâr esc și Slujbele Sfinților români din 11 și 12 aprilie: Sf. Ierarh Calinic de la Cernica și mama sa, Sf. Cuvios Filofteia de la Pas rea, și Sf. Mucenic Sava de la Buz u"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-14",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": true,
+    "commemorations": "Sfintele Paști; Sf. Ierarh Pahomie de la Gledin, episcopul Romanului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-15",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Aristarh, Pud și Trofim; Sf. Mucenic Crescent",
+    "notes": [
+      "Har i"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-16",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic fecioare: Agapia, Irina și Hionia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-17",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Izvorul T m duirii; Sfin it Mc. Simeon, ep. Persiei",
+    "notes": [
+      "Har i"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-18",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Ioan, ucenicul Sf. Grigorie Decapolitul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-19",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Ioan de la Lavra Veche; Sf. Sfințit Mucenic Pafnutie",
+    "notes": [],
+    "sunday": {
+      "title": null,
+      "tone": 1,
+      "matinsGospel": 1,
+      "epistle": "ostol Toma). Ap. Fapte 5, 12-20",
+      "gospel": "Ioan 20, 19-31",
+      "raw": "Duminica a 2-a după Paști (a Sf. Apostol Toma). Ap. Fapte 5, 12-20; Ev. Ioan 20, 19-31. Glas 1, voscr. 1."
+    }
+  },
+  {
+    "date": "2026-04-20",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Teotim, episcopul Tomisului; Sf. Cuvios Teodor Trihina",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-21",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Ianuarie, episcop de Benevent; Sf. Mucenic Teodor din Perga; Sf. Mucenic Alexandra împărăteasa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-22",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Natanael; Sf. Ierarh Teodor Sicheotul, episcopul Anastasiopolei",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-23",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Gheorghe, purt torul de biruin ; Sf. Mucenic Valerie",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-24",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarhi Ilie Iorest, Simion Ștefan și Sava Brancovici, mitropoli ii Transilvaniei; Sf. Ierarh Iosif Mărturisitorul din Maramure ; Sf. Mucenic Pasicrat și Valentin; Sf. Cuvios Elisabeta",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-25",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. și Ev. Marcu; Sf. Cuvios Vasile de la Poiana M rului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-26",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Soborul Sfintelor Femei Românce; Sf. Sfințit MucenicVasilevs, ep. Amasiei; Sf. Glafira; Sf. Mucenic Chiril, Chindeu și Tasie din Axiopolis",
+    "notes": [
+      "Cernavod"
+    ],
+    "sunday": {
+      "title": "Duminica a 3-a după Paști (a Mironosi elor)",
+      "tone": 2,
+      "matinsGospel": 4,
+      "epistle": "Fapte 6, 1-7",
+      "gospel": "Marcu 15, 43-47",
+      "raw": "Duminica a 3-a după Paști (a Mironosi elor). Ap. Fapte 6, 1-7; Ev. Marcu 15, 43-47; 16, 1-8. Glas 2, voscr. 4."
+    }
+  },
+  {
+    "date": "2026-04-27",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Simeon, rudenia Domnului, episcopul Ierusalimului; Sf. Ap. Marcu și Zinon din cei 70",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-28",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Iason și Sosipatru; Sf. Mucenic Maxim, Cvintilian și Dadas din Ozovia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-29",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. 9 Mucenici din Cizic; Sf. Cuvios Memnon, făcătorul de minuni",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-04-30",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Iacov al lui Zevedeu; Sf. Ierarh Donat, ep. Evriei Persiei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-01",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Ieremia; Sf. Cuvioasa Muceniță Eftimie, Ignatie și Acachie; Sf. Tamara; Sf. Cuvios Isidora",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-02",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sf. Ierarh Atanasie cel Mare; Sf. Ierarh Atanasie al III-lea (Patelarie), patriarhul Constantinopolului; Sf. Matrona din Moscova",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-03",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Irodion de la Lainici; Sf. Mucenic Timotei și soția sa, Mavra",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 4-a după Paști (Vindecarea slăbănogului de la Vitezda)",
+      "tone": 3,
+      "matinsGospel": 5,
+      "epistle": "Fapte 9, 32-42",
+      "gospel": "Ioan 5, 1-15",
+      "raw": "Duminica a 4-a după Paști (Vindecarea slăbănogului de la Vitezda). Ap. Fapte 9, 32-42; Ev. Ioan 5, 1-15. Glas 3, voscr. 5."
+    }
+  },
+  {
+    "date": "2026-05-04",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Mavra de pe Ceahl u; Sf. Sfințit Mucenic Vasily Martysz, misionar în America; Sf. Mucenic Pelaghia; Sf. Monica, mama Fericitului Augustin, Sf. Cuvios Valerian",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-05",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Matrona de pe Hurezi; Sf. Mare Mucenic Irina; Sf. Cuvioasa Muceniță Efrem cel Nou din Nea Macri",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-06",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. și Dreptul Iov, mult r bd torul; Sf. Mucenic Varvar",
+    "notes": [
+      "Înjumătățirea Cincizecimii. P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-07",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Ar tarea pe cer a semnului Sfintei Cruci în Ierusalim; Sf. Mucenic Acachie și Codrat; Sf. Alexie Toth",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-08",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Apostol și Evanghelist Ioan Teologul; Sf. Cuvios Arsenie cel Mare",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-09",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Isaia; Sf. Mucenic Hristofor; Aducerea la Bari a moa telor Sf. Ierarh Nicolae",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-10",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Simon Zilotul; Sf. Cuvios Calistrat de la Timi eni și Vasiova",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 5-a după Paști (a Samarinencei)",
+      "tone": 4,
+      "matinsGospel": 7,
+      "epistle": "Fapte 11, 19-30",
+      "gospel": "Ioan 4, 5-42",
+      "raw": "Duminica a 5-a după Paști (a Samarinencei). Ap. Fapte 11, 19-30; Ev. Ioan 4, 5-42. Glas 4, voscr. 7."
+    }
+  },
+  {
+    "date": "2026-05-11",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Dionisie Vatopedinul de la Colciu; Sf. Sfințit Mucenic Mochie preotul; Sf. Ierarh Metodie și Sf. Cuvios Chiril, lumin torii slavilor",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-12",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Ioan Valahul; Sf. Ierarh Epifanie, arhiepiscopul Ciprului, și Gherman, patriarhul Constantinopolului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-13",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Glicheria; Sf. Serghie Mărturisitorul",
+    "notes": [
+      "Odovania Înjumătățirii Cincizecimii. P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-14",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Isidor din Hios; Sf. Sfințit Mucenic Terapont, ep. Ciprului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-15",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Iacob Putneanul, mitropolitul Moldovei; Sf. Cuvios Pahomie cel Mare",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-16",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Sila, Paisie și Natan de la Sih stria Putnei; Sf. Cuvios Teodor cel sfințit",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-17",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Andronic și soția sa, Iunia; Sf. Cuvios Nectarie și Teofan",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 6-a după Paști (Vindecarea orbului din naștere)",
+      "tone": 5,
+      "matinsGospel": 8,
+      "epistle": "Fapte 16,16-34",
+      "gospel": "Ioan 9, 1-38",
+      "raw": "Duminica a 6-a după Paști (Vindecarea orbului din naștere). Ap. Fapte 16,16-34; Ev. Ioan 9, 1-38. Glas 5, voscr. 8."
+    }
+  },
+  {
+    "date": "2026-05-18",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Petru, Dionisie și Paulin",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-19",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Patrichie, episcopul Prusei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-20",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Talaleu; Sf. Cuvios Talasie; Sf. Lidia din Filipi",
+    "notes": [
+      "Odovania praznicului Învierii Domnului. P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-21",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": true,
+    "commemorations": "Înălțarea Domnului (Ziua Eroilor); Sfinții Mari Împărați și întocmai cu Apostolii, Constantin și mama sa, Elena",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-22",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Vasilisc și Marcel; Sf. Părinți de la Sinodul al II--lea Ecumenic",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-23",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Mihail Mărturisitorul, episcopul Sinadei; Sf. Mironosi Maria lui Cleopa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-24",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mărturisitoare Blandina de la Ia și; Sf. Cuvios Simeon cel din Muntele Minunat",
+    "notes": [],
+    "sunday": {
+      "title": null,
+      "tone": 6,
+      "matinsGospel": 10,
+      "epistle": "Fapte 20, 16-18",
+      "gospel": "Ioan 17, 1-13 (Rugăciunea lui Iisus)",
+      "raw": "Duminica a 7-a după Paști (a Sf. Părinți de la Sinodul I Ecumenic). Ap. Fapte 20, 16-18; 28-36; Ev. Ioan 17, 1-13 (Rugăciunea lui Iisus). Glas 6, voscr. 10."
+    }
+  },
+  {
+    "date": "2026-05-25",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "A treia aflare a capului Sf. Proroc Ioan Botezătorul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-26",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Carp și Alfeu; Sf. Mucenic Averchie și Elena",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-27",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Iuliu Veteranul; Sf. Sfințiți Mucenici Eladie și Terapont, episcopul Sardiei; Sf. Mărturisitor Ioan Rusul",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-28",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sfinții Ier. Eutihie, ep. Melitinei, și Nichita, ep. Calcedonului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-29",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Teodosia fecioara; Sf. Sfințit Mucenic Olivian",
+    "notes": [
+      "Odovania praznicului Înălțării Domnului. P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-30",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Isaachie Mărturisitorul și Varlaam",
+    "notes": [
+      "Sâmb ta celor adormi și – Moșii de vară"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-05-31",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": true,
+    "commemorations": "Pogorârea Sfântului Duh",
+    "notes": [
+      "Cincizecimea sau Rusaliile"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": null,
+      "matinsGospel": null,
+      "epistle": "Fapte 2, 1-11",
+      "gospel": "Ioan 7, 37-53",
+      "raw": "Duminica a 8-a după Paști. (Rusaliile) Toate ale praznicului; Ap. Fapte 2, 1-11; Ev. Ioan 7, 37-53; 8, 12."
+    }
+  },
+  {
+    "date": "2026-06-01",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": true,
+    "commemorations": "Sfânta Treime",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-02",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Ioan cel Nou de la Suceava; Sf. Ierarh Nichifor Mărturisitorul, patriarhul Constantinopolului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-03",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Luchilian, Ipatie și Paula fecioara; Sf. Cuvios Kevin din Glendalough",
+    "notes": [
+      "Har i"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-04",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Zotic, Atal, Camasie și Filip de la Niculi el; Sf. Ierarh Mitrofan, arhiepiscopul Constantinopolului; Sf. Mironosi e Maria și Marta, surorile Dreptului Laz r",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-05",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Elisabeta de la Pas rea; Sf. Sfințit Mucenic Dorotei, episcopul Tirului",
+    "notes": [
+      "Har i"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-06",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Ilarion cel Nou; Sf. Cuvios Visarion",
+    "notes": [
+      "Odovania praznicului Pogorârii Sfântului Duh"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-07",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Teodot, episcopul Ancirei; Sf. Mucenic Zenaida și Sebastian",
+    "notes": [
+      "Lăsatul secului pentru Postul Sf. Ap. Petru și Pavel"
+    ],
+    "sunday": {
+      "title": "Duminica întâi după Rusalii (a Tuturor Sfinților)",
+      "tone": 8,
+      "matinsGospel": 1,
+      "epistle": "Evrei 11, 33-40",
+      "gospel": "rei 11, 33-40",
+      "raw": "Duminica întâi după Rusalii (a Tuturor Sfinților). Ap. Evrei 11, 33-40; 12, 1-2; Ev. Matei 10, 32-33; 37-38 și 19, 27-30 (Urmarea lui Hristos). Glas 8, voscr. 1."
+    }
+  },
+  {
+    "date": "2026-06-08",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Nicandru și Marcian; Aducerea moaștelor Sf. Mare Mucenic Teodor Stratilat",
+    "notes": [
+      "Începutul Postului Sf. Ap. Petru și Pavel. P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-09",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Chiril, arhiepiscopul Alexandriei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-10",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Alexandru și Antonina; Sf. Sfințit Mucenic Timotei, ep. Prusiei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-11",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Bartolomeu și Barnaba; Sf. Ierarh Luca, arhiepiscopul Crimeei; Sf. Sfințit Mucenic Mitrofan și Mucenicii ortodoc și uci și în China",
+    "notes": [
+      "1900",
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-12",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Onufrie cel Mare și Petru Atonitul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-13",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Achilina; Sf. Ierarh Trifilie, episcopul Lefcosiei din Cipru",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-14",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Elisei; Sf. Ierarh Metodie Mărturisitorul, patriarhul Constantinopolului",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": {
+      "title": "Duminica a 2-a după Rusalii (a Sfinților Români și Americani)",
+      "tone": 1,
+      "matinsGospel": 2,
+      "epistle": "Romani 2, 10-16",
+      "gospel": "Matei 4, 18-23 (Chemarea primilor Apostoli)",
+      "raw": "Duminica a 2-a după Rusalii (a Sfinților Români și Americani). Ap. Romani 2, 10-16; Ev. Matei 4, 18-23 (Chemarea primilor Apostoli); a Sf. Români și Americani: Ap. 2 Corinteni 5, 17, 20; 6, 1, 3-7, 10; 13, 11; Ev. Matei 5, 14-16; 10, 32-33, 17-18, 22 (Lumina faptelor bune și m rturisirea lui Hristos). Glas 1, voscr. 2."
+    }
+  },
+  {
+    "date": "2026-06-15",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Amos; Sf. Mucenic Isihie; Ferici ii Augustin și Ieronim",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-16",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Martir Neofit Cretanul, mitropolitul rii Române ti; Sf. Ierarh Tihon, episcopul Amatundei; Sf. Sfințit Mucenic Marcu, episcopul Apoloniadei",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-17",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Manuil, Savel, Ismail, Inochentie și Felix",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-18",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Leontie, Ipatie și Teodul; Sf. Cuvios Erasm",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-19",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Iuda, rudenia Domnului; Sf. Cuvios Paisie cel Mare",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-20",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Metodie, ep. Patarelor; Sf. Ierarh Calist, patr. Constantinopolului; Sf. Nicolae Cabasila",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-21",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Iulian din Tars și Afrodisie",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": {
+      "title": "Duminica a 3-a după Rusalii (a Sfinților Athoni i)",
+      "tone": 2,
+      "matinsGospel": 3,
+      "epistle": "Romani 5, 1-10",
+      "gospel": "Matei 6, 22-33 (Despre grijile vieții)",
+      "raw": "Duminica a 3-a după Rusalii (a Sfinților Athoni i). Ap. Romani 5, 1-10; Ev. Matei 6, 22-33 (Despre grijile vieții); ale Sfinților: Ap. 2 Corinteni 11,21- 12,9; Ev. Matei 16, 13-19. Glas 2, voscr. 3."
+    }
+  },
+  {
+    "date": "2026-06-22",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Grigorie Dasc lul, mitropolitul rii Române ti; Sf. Sfințit Mucenic Eusebiu al Samosatei",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-23",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Agripina; Sf. Sfințit Mucenic Aristocle preotul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-24",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": true,
+    "commemorations": "Nașterea Sf. Proroc Ioan Botezătorul; Aducerea moaștelor Sf. Mare Mucenic Ioan cel Nou de la Suceava; Sf. Ierarh Niceta de Remesiana",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-25",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvioasa Muceniță Fevronia; Sf. Mucenic Orentie și frații s și; Sf. Mucenic Livia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-26",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios David din Tesalonic; Sf. Ierarh Ioan, ep. Go iei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-27",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Samson, primitorul de străini; Sf. Mironosi Ioana",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-28",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sf. Mucenic doctori fără de arginți Chir și Ioan; Sf. Mucenic Papias",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": {
+      "title": "Duminica a 4-a după Rusalii",
+      "tone": 3,
+      "matinsGospel": 4,
+      "epistle": "Romani 6, 18-23",
+      "gospel": "Matei 8, 5-13 (Vindecarea slugii sutașului)",
+      "raw": "Duminica a 4-a după Rusalii. Ap. Romani 6, 18-23; Ev. Matei 8, 5-13 (Vindecarea slugii sutașului). Glas 3, voscr. 4."
+    }
+  },
+  {
+    "date": "2026-06-29",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": true,
+    "commemorations": "Sf. Ap. Petru și Pavel",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-06-30",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Soborul Sfinților 12 Apostoli; Sf. Ierarh Ghelasie de la Râme",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-01",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Leontie de la R d u și; Sf. Mucenic doctori fără de arginți Cosma și Damian, cei din Roma",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-02",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Așezarea ve mântului Născătoarei de Dumnezeu în biserica Vlaherne; Sf. Voievod Ștefan cel Mare; Sf. Ierarh Iuvenalie, patr. Ierusal.; Sf. Ierarh Ioan (Maximovici), din San Francisco și Shanghai",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-03",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Iachint; Sf. Ierarh Anatolie, patr. Constantinopolului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-04",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Andrei, arhiepiscopul Cretei; Sf. Cuvios Marta",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-05",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Atanasie Atonitul; Sf. Cuvios Lampadie",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 5-a după Rusalii",
+      "tone": 4,
+      "matinsGospel": 5,
+      "epistle": "Romani 10, 1-10",
+      "gospel": "Matei 8, 28-34",
+      "raw": "Duminica a 5-a după Rusalii. Ap. Romani 10, 1-10; Ev. Matei 8, 28-34; 9, 1 (Vindecarea celor doi demoniza și din țținutul Gadarei). Glas 4, voscr. 5."
+    }
+  },
+  {
+    "date": "2026-07-06",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Dometie cel Milostiv de la Râme și mama sa, Sf. Cuvios Filotimia; Sf. Cuvios Sisoe cel Mare; Sf. Mucenic Lucia din Roma; Sf. Mucenic Marius, soția sa, Marta, și fiii lor, Audifaciu și Avacum",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-07",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Chiriachi; Sf. Cuvios Toma din Maleon; Sf. Mucenic Evanghel",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-08",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Epictet preotul și Astion monahul; Sf. Mare Mucenic Procopie și mama sa, Sf. Mucenic Teodosia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-09",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințiți Mucenici Pangratie, episcopul Tavromeniei, și Chiril, ep. Gortinei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-10",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. 45 de Mucenici din Nicopolea Armeniei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-11",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Eufimia; Sf. Olga, cea întocmai cu Apostolii și luminătoarea Rusiei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-12",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Cinstirea Sfintei Icoane a Maicii Domnului Prodromi a de la Muntele Athos; Sf. Mucenic Proclu și Ilarie; Sf. Cuvios Mihail Maleinul; Sf. Veronica; Sf. Cuvios Paisie Aghioritul",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 6-a după Rusalii",
+      "tone": 5,
+      "matinsGospel": 6,
+      "epistle": "Romani 12, 6-14",
+      "gospel": "Matei 9, 1-8 (Vindecarea slăbănogului din Capernaum)",
+      "raw": "Duminica a 6-a după Rusalii. Ap. Romani 12, 6-14; Ev. Matei 9, 1-8 (Vindecarea slăbănogului din Capernaum). Glas 5, voscr. 6."
+    }
+  },
+  {
+    "date": "2026-07-13",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sfântului Cuvios Dimitrie cel Nou la Bucure ti; Soborul Sf. Arhanghel Gavriil; Sf. Cuvios Ștefan Savaitul; Sf. Cuvios Sara; Sf. Cuvios Maria din Persia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-14",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Achila; Sf. Mucenic Iust și Iraclie; Sf. Cuvios Nicodim Aghioritul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-15",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Chiric și Iulita; Sf. Vladimir, luminătorul Rusiei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-16",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Atinoghen cu cei 10 ucenici ai lui; Sf. Mucenic Iulia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-17",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Marina; Sf. Ierarh Eufrasie, episcopul Ionopolei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-18",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Emilian de la Durostorum; Sf. Cuvios Pamvo",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-19",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Macrina, sora Sf. Vasile cel Mare; Sf. Cuvios Die; Aflarea moa telor Sf. Cuvios Serafim de Sarov",
+    "notes": [],
+    "sunday": {
+      "title": null,
+      "tone": 6,
+      "matinsGospel": 7,
+      "epistle": "Romani 15, 1-7",
+      "gospel": "Matei 9, 27-35 (Vindecarea a doi orbi și a unui mut din Capernaum)",
+      "raw": "Duminica a 7-a după Rusalii (a Sf. Părinți de la Sinodul al IV --lea Ecumenic). Ap. Romani 15, 1-7; Ev. Matei 9, 27-35 (Vindecarea a doi orbi și a unui mut din Capernaum); ale Sf. Părinți: Tit 3, 8-15; Ev. Ioan 17, 1-13 (Rugăciunea lui Iisus). Glas 6, voscr. 7."
+    }
+  },
+  {
+    "date": "2026-07-20",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sfântul și sl vitul Proroc Ilie Tesviteanul; Sf. Cuvios Maria (Skobtsova) din Paris",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-21",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Rafael și Partenie, de la Agapia Veche; Sf. Cuvios Simeon și Ioan Pustnicul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-22",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Preot Mărturisitor Ilie L c tu u; Sf. Mironosi și întocmai cu Apostolii Maria Magdalena",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-23",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sf. Sfințit Mucenic Foca; Sf. Mucenic Apolinarie, Vitalie și Valeria",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-24",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Hristina; Sf. Mucenic Ermoghen, Sf. Mucenic Boris și Gleb",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-25",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Adormirea Sfintei Ana, mama Preasfintei Născătoare de Dumnezeu; Sf. Părinți de la Sinodul al V--lea Ecumenic; Sf. Cuvios Olimpiada și Eupraxia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-26",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Ioanichie cel Nou de la Mu cel; Sf. Iacob din Alaska; Sf. Mucenic Paraschevi din Roma",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 8-a după Rusalii",
+      "tone": 7,
+      "matinsGospel": 8,
+      "epistle": null,
+      "gospel": "Matei 14, 14-22 (Înmulțirea pâinilor)",
+      "raw": "Duminica a 8-a după Rusalii. Ap. 1 Corinteni 1, 10-17. Ev. Matei 14, 14-22 (Înmulțirea pâinilor). Glas 7, voscr. 8."
+    }
+  },
+  {
+    "date": "2026-07-27",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic și T m duitor Pantelimon; Sf. Clement din Ohrid",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-28",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. și Diaconi: Prohor, Nicanor, Timon și Parmena; Sf. Cuvios Pavel de la Xiropotamu",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-29",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Calinic, Veniamin și Mamant; Sf. Mucenic Teodota cu fiii s i",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-30",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Sila, Silvan, Crescent, Epenet și Andronic; Sf. Sfințit Mucenic Valentin, episcopul Umbriei",
+    "notes": [
+      "Lăsatul secului pentru Postul Adormirii Maicii Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-07-31",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. și Dreptul Evdochim; Sf. și Dreptul Iosif din Arimateea",
+    "notes": [
+      "Înainte-prăznuirea scoaterii Sfintei Cruci"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-01",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Scoaterea Sfintei Cruci; Sf. 7 frați Mucenici Macabei",
+    "notes": [
+      "Începutul Postului Adormirii Maicii Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-02",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sf. întâi Mc. și Arhid. Ștefan; Dreptul Gamaliel; Binecredinciosul împărat Iustinian cel Mare",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 9-a după Rusalii",
+      "tone": 8,
+      "matinsGospel": 9,
+      "epistle": "1 Corinteni 3, 9- 17",
+      "gospel": "Matei 14, 22-34 (Potolirea furtunii)",
+      "raw": "Duminica a 9-a după Rusalii. Ap. 1 Corinteni 3, 9- 17; Ev. Matei 14, 22-34 (Potolirea furtunii). Glas 8, voscr. 9."
+    }
+  },
+  {
+    "date": "2026-08-03",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Mărturisitor Iraclie din Basarabia; Sf. Cuvios Isaachie, Dalmat și Faust; Sf. Mironosi Salomeea; Sf. Cuvios Teodora din Tesalonic",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-04",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. 7 tineri din Efes; Sf. Mucenic Tatuil",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-05",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Ioan Iacob (Hozevitul) de la Neamț; Sf. Mucenic Evsignie; Sf. Nona, mama Sf. Ierarh Grigorie Teologul; Sf. Ierarh Fabian, episcopul Romei",
+    "notes": [
+      "Înainte-prăznuirea Schimbării la Față a Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-06",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": true,
+    "commemorations": "Schimbarea la Față a Domnului",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-07",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Teodora de la Sihla; Sf. Cuvios Pafnutie– Pârvu Zugravul; Sf. Cuvioasa Muceniță Dometie Persul; Sf. Ierarh Narcis, arhiep. Ierusalimului; Sf. Irina, împărăteasa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-08",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Preot Mucenic Alexandru din Basarabia; Sf. Ierarh Emilian Mărt. ep. Cizicului, și Miron, ep. Cretei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-09",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Canonizarea Sf. Cuvios Gherman din Alaska; Sf. Ap. Matia; Sf. 10 Mc. care au pătimit pentru icoana lui Hristos",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 10-a după Rusalii",
+      "tone": 1,
+      "matinsGospel": 10,
+      "epistle": "1 Corinteni 4, 9-16",
+      "gospel": "Matei 17, 14-23 (Vindecarea lunaticului)",
+      "raw": "Duminica a 10-a după Rusalii. Ap. 1 Corinteni 4, 9-16; Ev. Matei 17, 14-23 (Vindecarea lunaticului). Glas 1, voscr. 10."
+    }
+  },
+  {
+    "date": "2026-08-10",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Laurențiu arhid; Sf. Sfințit Mucenic Xist, ep. Romei; Sf. Mucenic Ipolit",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-11",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Nifon, patr. Constantinopolului; Sf. Mucenic Evplu arhid.",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-12",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Fotie și Anichit",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-13",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Mutarea moaștelor Sf. Cuvios Maxim Mărturisitorul; Sf. Cuvios Dorotei și Dositei",
+    "notes": [
+      "Odovania praznicului Schimbării la Față a Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-14",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Miheia",
+    "notes": [
+      "Înainte-prăznuirea Adormirii Maicii Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-15",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": true,
+    "commemorations": "Adormirea Maicii Domnului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-16",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea Sf. Mahrame a Domnului din Edesa la Constantinopol; Sf. Martiri Brâncoveni: Constantin Voievod cu cei patru fii ai săi, Constantin, Ștefan, Radu și Matei, și sfetnicul Ianache; Sf. Cuvios Iosif de la Văratec; Sf. Mucenic Diomid",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 11-a după Rusalii",
+      "tone": 2,
+      "matinsGospel": 11,
+      "epistle": "1 Corinteni 9, 2- 12",
+      "gospel": "Matei 18, 23-35 (Pilda datornicului nemilostiv)",
+      "raw": "Duminica a 11-a după Rusalii. Ap. 1 Corinteni 9, 2- 12; Ev. Matei 18, 23-35 (Pilda datornicului nemilostiv). Glas 2, voscr. 11."
+    }
+  },
+  {
+    "date": "2026-08-17",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Gheorghe Pelerinul; Sf. Cuvios Nazaria, Olimpiada și Elisabeta (Safta) Brâncoveanu, de la Văratec; Sf. Mucenic Miron preotul, Straton și Ciprian",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-18",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Flor și Lavru",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-19",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Andrei Stratilat, Timotei, Agapie și Tecla",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-20",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Samuel; Sf. Mucenic Sever, Eliodor și Teoharie",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-21",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Tadeu; Sf. Mucenic Vasa, cu fiii ei; Sf. Mucenic Donat diaconul, Romul preotul, Silvan diaconul și Venust",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-22",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Agatonic și cei împreună cu el",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-23",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Lup; Sf. Sfințit Mucenic Irineu, episcop de Lyon",
+    "notes": [
+      "Odovania praznicului Adormirii Maicii Domnului"
+    ],
+    "sunday": {
+      "title": "Duminica a 12-a după Rusalii",
+      "tone": 3,
+      "matinsGospel": 1,
+      "epistle": "1 Corinteni 15, 1-11",
+      "gospel": "Matei 19, 16-26 (Tân rul bogat)",
+      "raw": "Duminica a 12-a după Rusalii. Ap. 1 Corinteni 15, 1-11; Ev. Matei 19, 16-26 (Tân rul bogat). Glas 3, voscr. 1."
+    }
+  },
+  {
+    "date": "2026-08-24",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințiți Mucenici Eutihie; Sf. Mucenic Tation; Sf. Cosma din Aitola",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-25",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sf. Ap. Bartolomeu; Sf. Ap. Tit",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-26",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Adrian și Natalia, soția",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-27",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Pimen cel Mare; Sf. Mucenic Fanurie; Sf. Ierarh Osie, episcopul Cordobei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-28",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Moise Etiopianul; Dreptul Iezechia; Sf. Cuvios Iosif Isihastul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-29",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": true,
+    "commemorations": "Tăierea capului Sf. Proroc Ioan Botezătorul",
+    "notes": [
+      "Post"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-08-30",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarhi Varlaam, mitropolitul Moldovei, și Ioan de la Râșca și Secu, episcopul Romanului; Sf. Ierarhi Alexandru, Ioan și Pavel cel Nou, patriarhii Constantinopolului",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 13-a după Rusalii",
+      "tone": 4,
+      "matinsGospel": 2,
+      "epistle": "1 Corinteni 16, 13-24",
+      "gospel": "Matei 21, 33-44 (Pilda lucr torilor r i)",
+      "raw": "Duminica a 13-a după Rusalii. Ap. 1 Corinteni 16, 13-24; Ev. Matei 21, 33-44 (Pilda lucr torilor r i). Glas 4, voscr. 2."
+    }
+  },
+  {
+    "date": "2026-08-31",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Macarie Protopsaltul; Așezarea cinstitului brâu al Maicii Domnului în raclă",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-01",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Dionisie Exiguul (cel Smerit); Sf. Cuvios Simeon Stâlpnicul; Sf. 40 de Mucenici din Adrianopol",
+    "notes": [
+      "Începutul anului bisericesc. Tedeum"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-02",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Mamant; Sf. Ierarh Ioan Postitorul, patriarhul Constantinopolului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-03",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Neofit și Meletie de la M n stirea Stâni oara; Sf. Sfințit Mucenic Antim, ep. Nicomidiei; Sf. Cuvios Teoctist din Palestina",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-04",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Vavila, episcopul Antiohiei; Sf. Proroc Moise; Sf. Mucenic Petroniu",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-05",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Zaharia și Dreapta Elisabeta, părinții Sf. Ioan Botezătorul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-06",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Pomenirea minunii Sf. Arhanghel Mihail în Colose; Sf. Mucenic Eudoxie",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 14-a după Rusalii",
+      "tone": 5,
+      "matinsGospel": 3,
+      "epistle": "2 Corinteni 1, 21 -24",
+      "gospel": "Matei 22, 1-14 (Pilda nun ii fiului de împărat)",
+      "raw": "Duminica a 14-a după Rusalii. Ap. 2 Corinteni 1, 21 -24; 2, 1-4; Ev. Matei 22, 1-14 (Pilda nun ii fiului de împărat). Glas 5, voscr. 3."
+    }
+  },
+  {
+    "date": "2026-09-07",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Simeon și Amfilohie de la Pâng ra și; Sf. Mucenic Sozont; Sf. Cuvios Casiana Imnografa",
+    "notes": [
+      "Înainte-prăznuirea Na terii Maicii Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-08",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": true,
+    "commemorations": "Nașterea Maicii Domnului",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-09",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. și Drepții dumnezeiești Părinți Ioachim și Ana; Sf. Cuvios Chiriac de la Tazl u; Sf. Cuvios Onufrie de la Vorona; Sf. Mucenic Severian; Sf. Părinți de la Sinodul al III--lea Ecumenic",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-10",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Minodora, Mitrodora și Nimfodora",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-11",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Teodora din Alexandria; Sf. Cuvios Eufrosin buc tarul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-12",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Avtonom, Macedonie și Teodul",
+    "notes": [
+      "Odovania praznicului Na terii Maicii Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-13",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Târnosirea Bisericii Învierii din Ierusalim; Sf. Cuvios Ioan de la Prislop; Sf. Mucenic din Dobrogea: Macrobie, Gordian, Ilie, Zotic, Lucian și Valerian; Sf. Sfințiți Mucenici Corneliu Suta ul și Ciprian, episcopul Cartaginei",
+    "notes": [
+      "Înainte-prăznuirea Înălțării Sfintei Cruci"
+    ],
+    "sunday": {
+      "title": "Duminica dinaintea Înălțării Sfintei Cruci",
+      "tone": 6,
+      "matinsGospel": 4,
+      "epistle": "Galateni 6, 11-18",
+      "gospel": "Ioan 3, 13-17 (Convorbirea lui Iisus cu Nicodim)",
+      "raw": "Duminica dinaintea Înălțării Sfintei Cruci. Ap. Galateni 6, 11-18; Ev. Ioan 3, 13-17 (Convorbirea lui Iisus cu Nicodim). Glas 6, voscr. 4."
+    }
+  },
+  {
+    "date": "2026-09-14",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": true,
+    "commemorations": "Înălțarea Sfintei Cruci",
+    "notes": [
+      "Post"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-15",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Iosif cel Nou de la Parto , mitropolitul Banatului; Sf. Mare Mucenic Nichita; Sf. Ierarh Visarion, arhiep. Larisei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-16",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Mărturisitor Sofian de la Antim; Sf. Mare Mucenic Eufimia; Sf. Mucenic Meletina și Ludmila",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-17",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Dionisie, episcopul Cet ii Albe – Ismail; Sf. Mucenic Sofia (În elepciunea) și fiicele sale: Pistis (Credin a), Elpis (N dejdea) și Agapi",
+    "notes": [
+      "Dragostea"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-18",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Preot Mucenic Ilarion Felea; Sf. Ierarh Eumenie, episcopul Gortinei; Sf. Mucenic Ariadna",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-19",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Trofim, Savatie și Dorimedont",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-20",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Marii Mucenici Eusta ie și soția sa, Teopista, cu cei doi fii ai lor: Agapie și Teopist",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica după Înălțarea Sfintei Cruci",
+      "tone": 7,
+      "matinsGospel": 5,
+      "epistle": "Galateni 2, 16-20",
+      "gospel": "Marcu 8, 34-38",
+      "raw": "Duminica după Înălțarea Sfintei Cruci. Ap. Galateni 2, 16-20; Ev. Marcu 8, 34-38; 9, 1 (Luarea Crucii și urmarea lui Hristos). Glas 7, voscr. 5."
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Codrat; Sf. Proroc Iona",
+    "notes": [
+      "Odovania praznicului Înălțării Sfintei Cruci"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-22",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Mc. Teodosie de la M n stirea Brazi, mitropolitul Moldovei; Sf. Sfințit Mucenic Foca, ep. de Sinope",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-23",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Zămislirea Sf. Proroc Ioan Botezătorul; Sf. Cuvios Xantipa și Polixenia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-24",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Petru Aleutul și Sf. Sfințit Mucenic Iuvenalie din Alaska; Sf. întâia Muceni și întocmai cu Apostolii Tecla; Sf. Cuvios Siluan Athonitul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-25",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Eufrosina; Sf. Cuvios Pafnutie Egipteanul; Sf. Cuvios Serghie de la Radonej",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-26",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Adormirea Sf. Apostol și Evanghelist Ioan; Sf. Voievod Neagoe Basarab; Sf. Cuvios Platonida de la Arge (fosta Despina Mili a, soția Voievodului); Dreptul Ghedeon",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-27",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Martir Antim Ivireanul, mitropolitul rii Române ti; Sf. Mucenic Calistrat și Epiharia",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 18-a după Rusalii",
+      "tone": 8,
+      "matinsGospel": 6,
+      "epistle": "2 Corinteni 9, 6-11",
+      "gospel": "Luca 5, 1-11 (Pescuirea minunată )",
+      "raw": "Duminica a 18-a după Rusalii. Ap. 2 Corinteni 9, 6-11; Ev. Luca 5, 1-11 (Pescuirea minunată ). Glas 8, voscr. 6."
+    }
+  },
+  {
+    "date": "2026-09-28",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Hariton Mărturisitorul; Sf. Proroc Baruh; Sf. Cuvios Neofit Z vorâtul din Cipru",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-29",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Chiriac Sihastrul; Sf. Mucenic Petronia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-09-30",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Grigorie Luminătorul, arhiepiscopul Armeniei; Sf. Mucenic Ripsimia și Gaiani",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-01",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": true,
+    "commemorations": "Acoper mântul Maicii Domnului; Sf. Ap. Anania; Sf. Cuvios Iosif și Chiriac de la Bisericani; Sf. Cuvios Roman Melodul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-02",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Ciprian; Sf. Mucenic Iustina fecioara",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-03",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Dionisie Areopagitul; Sf. Mucenic Teoctist",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-04",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Preot Mărturisitor Dumitru St niloae; Sf. Sfințit Mucenic Ierotei, episcopul Atenei",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 19-a după Rusalii",
+      "tone": 1,
+      "matinsGospel": 7,
+      "epistle": "2 Corinteni 11, 31-33",
+      "gospel": "Luca 6, 31-36 (Predica de pe munte – Iubirea vrăjmașilor)",
+      "raw": "Duminica a 19-a după Rusalii. Ap. 2 Corinteni 11, 31-33; 12, 1-9; Ev. Luca 6, 31-36 (Predica de pe munte – Iubirea vrăjmașilor). Glas 1, voscr. 7."
+    }
+  },
+  {
+    "date": "2026-10-05",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Daniil și Misail de la M n stirea Turnu; Sf. Mucenic Haritina",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-06",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Canonizarea Sf. Ierarh Inochentie, apostol în America; Sf. Ap. Toma; Sf. Mucenic Erotiida",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-07",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Marii Mucenici Serghie și Vah; Sf. Mucenic Iulian preotul, Chesarie diaconul și Polihronie",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-08",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Pelaghia și Taisia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-09",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Iacob al lui Alfeu; Sf. Cuvios Andronic și Atanasia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-10",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Evlampie și sora sa, Evlampia; Sf. Cuvios Vasian și Teofil Mărturisitorul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-11",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Filip, unul dintre cei 7 diaconi; Sf. Ierarh Teofan Mărturisitorul, ep. Niceei; Sf. Părinți din Optina",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 21-a după Rusalii (a Sfinților Părinți de la Sinodul al VII--lea Ecumenic)",
+      "tone": 2,
+      "matinsGospel": 8,
+      "epistle": "Galateni 2, 16- 20",
+      "gospel": "Luca 8, 5-15 (Pilda sem n torului)",
+      "raw": "Duminica a 21-a după Rusalii (a Sfinților Părinți de la Sinodul al VII--lea Ecumenic). Ap. Galateni 2, 16- 20; Ev. Luca 8, 5-15 (Pilda sem n torului); ale Sf. Părinți: Ap. Tit 3, 8-15; Ev. Ioan 17, 1-13 (Rugăciunea lui Iisus). Glas 2, voscr. 8."
+    }
+  },
+  {
+    "date": "2026-10-12",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Prov, Tarah și Andronic; Sf. Ierarh Cosma, ep. Maiumei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-13",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Aducerea moaștelor Sf. Apostol Andrei la Ia și; Sf. Mucenic Carp, Papil, Agatodor, Agatonica și Florentie",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-14",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Parascheva de la Ia și; Sf. Mucenic Nazarie, Ghervasie, Protasie și Chelsie",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-15",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Magdalena de la M laini a; Sf. Sfințit Mucenic Lucian, preotul din Antiohia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-16",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Longhin Suta ul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-17",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Oseea; Sf. Cuvioasa Muceniță Andrei Criteanul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-18",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Apostol și Evanghelist Luca; Sf. Mucenic Marin cel Bătrân",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 20-a după Rusalii;",
+      "tone": 3,
+      "matinsGospel": 9,
+      "epistle": "Galateni 1, 11- 19",
+      "gospel": "Luca 7, 11-16 (Învierea fiului v duvei din Nain)",
+      "raw": "Duminica a 20-a după Rusalii; Ap. Galateni 1, 11- 19; Ev. Luca 7, 11-16 (Învierea fiului v duvei din Nain). Glas 3, voscr. 9."
+    }
+  },
+  {
+    "date": "2026-10-19",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Ioil; Sf. Mucenic Uar; Sf. Cleopatra; Sf. Cuvios Ioan de la Rila",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-20",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Artemie; Sf. Cuvios Gherasim din Chefalonia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-21",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Mărturisitori: Visarion și Sofronie; Sf. Mucenic Oprea; Sf. Preo și Mărturisitori: Ioan din Gale și Moise M cinic din Sibiel; Sf. Cuvios Ilarion cel Mare",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-22",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Averchie, episcopul Ierapolei, cel întocmai cu Apostolii; Sf. 7 tineri din Efes",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-23",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Iacov, rudenia Domnului, întâiul episcop al Ierusalimului; Sf. Ierarh Ignatie, Patriarhul Constantinopolului; Sf. Preot Mc. Constantin Sârbu; Sf. Cuvios Macarie Romanul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-24",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Areta; Sf. Mucenic Marcu, Sotirih și Valentin",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-25",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Marcian și Martirie; Sf. Tavita",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 23-a după Rusalii",
+      "tone": 4,
+      "matinsGospel": 10,
+      "epistle": "Efeseni 2, 4-10",
+      "gospel": "Luca 8, 26-39 (Vindecarea demonizatului din țținutul Gherghesenilor)",
+      "raw": "Duminica a 23-a după Rusalii. Ap. Efeseni 2, 4-10; Ev. Luca 8, 26-39 (Vindecarea demonizatului din țținutul Gherghesenilor). Glas 4, voscr. 10."
+    }
+  },
+  {
+    "date": "2026-10-26",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Dimitrie, Izvorâtorul de Mir",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-27",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Dimitrie cel Nou, Basarabov, Ocrotitorul Bucure tilor; Sf. Olga din Alaska; Sf. Mucenic Nestor",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-28",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Iachint, mitropolitul rii Române ti; Sf. Cuvios Teofana Basarab; Sf. Mucenic Terentie, soția sa, Neonila și cei 7 fii; Sf. Ierarh Firmilian, episcopul Cezareei Capadociei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-29",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvioasa Muceniță Anastasia Romana; Sf. Cuvios Avramie și Maria, nepoata sa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-30",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Zenovie, episcopul Ciliciei, și sora sa, Zenovia; Sf. Ap. Cleopa",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-10-31",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Apelie, Stahie, Amplie, Urban, Aristobul și Narcis; Sf. Sfințit Mucenic Ioan (Kochurov) din Chicago (1917); Sf. Mucenic Epimah",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-01",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. doctori fără de arginți Cosma și Damian, cei din Asia",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 22-a după Rusalii",
+      "tone": 5,
+      "matinsGospel": 11,
+      "epistle": "Galateni 6, 11- 18",
+      "gospel": "Luca 16, 19-31 (Bogatul nemilostiv și s racul Laz r)",
+      "raw": "Duminica a 22-a după Rusalii. Ap. Galateni 6, 11- 18; Ev. Luca 16, 19-31 (Bogatul nemilostiv și s racul Laz r). Glas 5, voscr. 11."
+    }
+  },
+  {
+    "date": "2026-11-02",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Achindin, Pigasie, Aftonie, Elpidofor și Anempodist",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-03",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințiți Mucenici Achepsima, Iosif și Aitala; Așezarea moa telor Sf. Mare Mucenic Gheorghe în Lida",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-04",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Ioanichie cel Mare; Sf. Cuvios Gheorghe Mărturisitorul din Drama; Sf. Sfințiți Mucenici Nicandru și Emeu; Sf. Silvia, mama Sf. Grigorie Dialogul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-05",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Galaction și Epistimia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-06",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Pavel Mărturisitorul, arhiep. Constantinopolului; Sf. Cuvios Luca",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-07",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sfinții 33 de Mucenici din Melitina; Sf. Cuvios Laz r din Muntele Galisiei",
+    "notes": [
+      "Sâmbăta morților - Moșii de toamnă"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-08",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Soborul Sf. Arhangheli Mihail și Gavriil și al tuturor cere tilor puteri",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica a 24-a după Rusalii",
+      "tone": 6,
+      "matinsGospel": 1,
+      "epistle": "Efeseni 2, 14- 22",
+      "gospel": "Luca 8, 41-56 (Învierea fiicei lui Iair)",
+      "raw": "Duminica a 24-a după Rusalii. Ap. Efeseni 2, 14- 22; Ev. Luca 8, 41-56 (Învierea fiicei lui Iair); ale Arhanghelilor: Ap. Evrei 2, 2-10; Ev. Luca 10, 16- 21. Glas 6, voscr. 1."
+    }
+  },
+  {
+    "date": "2026-11-09",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Nectarie de la Eghina; Sf. Mucenic Claudiu, Castor, Sempronian și Nicostrat; Sf. Mucenic Onisifor și Porfirie; Sf. Cuvios Matrona",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-10",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Olimp, Rodion, Sosipatru, Erast, Ter iu și Cvart; Sf. Cuvioasa Muceniță Visarion de la Lainici",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-11",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Mina; Sf. Mucenic Victor, Vichentie și Ștefanida; Sf. Cuvios Teodor Studitul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-12",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Martiri și Mărturisitori N s udeni: Atanasie Todoran din Bichigiu, Vasile din Mocod, Grigorie din Zagra și Vasile din Telciu; Sf. Ierarh Ioan cel Milostiv, patriarhul Alexandriei; Sf. Cuvios Nil Pustnicul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-13",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Ioan Gură de Aur, arhiepiscopul Constantinopolului, și mama sa, Sf. Antuza",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-14",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Filip, unul dintre cei 12 Apostoli; Sf. Ierarh Grigorie Palama, arhiepiscopul Tesalonicului",
+    "notes": [
+      "Lăsatul secului pentru Postul Na terii Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-15",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Paisie de la Neamț; Sf. Mucenic și Mărturisitori: Gurie, Samona și Aviv diaconul",
+    "notes": [
+      "Începutul Postului Na terii Domnului"
+    ],
+    "sunday": {
+      "title": "Duminica a 25-a după Rusalii",
+      "tone": 7,
+      "matinsGospel": 2,
+      "epistle": "Efeseni 4, 1-7",
+      "gospel": "Luca 10, 25-37 (Pilda samarineanului milostiv)",
+      "raw": "Duminica a 25-a după Rusalii. Ap. Efeseni 4, 1-7; Ev. Luca 10, 25-37 (Pilda samarineanului milostiv). Glas 7, voscr. 2."
+    }
+  },
+  {
+    "date": "2026-11-16",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Apostol și Evanghelist Matei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-17",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Grigorie Taumaturgul, ep. Neocezareei, și Ghenadie, patriarhul Constantinopolului; Sf. Cuvios Laz r Zugravul",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-18",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Platon, Roman și Zaheu",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-19",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Avdie; Sf. Mucenic Varlaam",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-20",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Grigorie Decapolitul; Sf. Mucenic Dasie; Sf. Ierarh Proclu, arhiepiscopul Constantinopolului",
+    "notes": [
+      "Înainte-prăznuirea Intr rii în biseric a Maicii Domnului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-21",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": true,
+    "commemorations": "Intrarea în biserică a Maicii Domnului",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-22",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Filimon, Arhip, Onisim și Apfia; Sf. Mucenic Cecilia și Valerian",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": {
+      "title": "Duminica a 26-a după Rusalii",
+      "tone": 8,
+      "matinsGospel": 3,
+      "epistle": "Efeseni 5, 8-19",
+      "gospel": "Luca 12, 16-21 (Pilda bogatului c ruia și-a rodit arina)",
+      "raw": "Duminica a 26-a după Rusalii. Ap. Efeseni 5, 8-19; Ev. Luca 12, 16-21 (Pilda bogatului c ruia și-a rodit arina). Glas 8, voscr. 3."
+    }
+  },
+  {
+    "date": "2026-11-23",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Antonie de la Iezerul Vâlcii; Sf. Ierarh Amfilohie, ep. Iconiei, și Grigorie, ep. Acragandelor",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-24",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințiți Mucenici Clement, ep. Romei, și Petru, ep. Alexandriei",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-25",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Ecaterina; Sf. Mare Mucenic Mercurie",
+    "notes": [
+      "Odovania praznicului Intr rii în biseric a Maicii Domnului",
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-26",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Alipie Stâlpnicul, Nicon și Stelian Paflagonul",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-27",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mare Mucenic Iacob Persul; Sf. Cuvios Natanael și Pinufrie",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-28",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Mărturisitor Arsenie de la Prislop; Sf. Cuvioasa Muceniță Ștefan cel Nou; Sf. Mucenic Irinarh",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-11-29",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Paramon și Filumen; Sf. Cuvios Pitirun",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": {
+      "title": "Duminica a 30-a după Rusalii",
+      "tone": 1,
+      "matinsGospel": 4,
+      "epistle": "Coloseni 3, 12- 16",
+      "gospel": "Luca 18, 18-27 (Dreg torul bogat – P zirea Poruncilor)",
+      "raw": "Duminica a 30-a după Rusalii. Ap. Coloseni 3, 12- 16; Ev. Luca 18, 18-27 (Dreg torul bogat – P zirea Poruncilor). Glas 1, voscr. 4."
+    }
+  },
+  {
+    "date": "2026-11-30",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ap. Andrei, cel întâi chemat, Ocrotitorul României; Sf. Ierarh Andrei aguna, mitropolitul Transilvaniei; Sf. Cuvios Sebastian (Dabovich); Sf. Ierarh Frumentie, episcopul Etiopiei",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-01",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Anastasia, mama Sf. Ierarh Andrei aguna; Sf. Proroc Naum; Sf. Cuvios Filaret cel Milostiv",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-02",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Paisie și Cleopa de la Sih stria; Sf. Proroc Avacum; Sf. Mucenic Miropi; Sf. Cuvios Porfirie Cavsocalivitul; Sf. Ierarh Solomon, arhiep. Efesului",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-03",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Gheorghe de la Cernica și C ld ru ani; Sf. Proroc Sofonie",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-04",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Alexandru (Hotovitzky), misionar în America; Sf. Mare Mucenic Varvara; Sf. Cuvios Ioan Damaschin",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-05",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Sava cel sfințit; Sf. Mucenic Anastasie",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-06",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Nicolae, arhiepiscopul Mirelor Lichiei, făcătorul de minuni",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": {
+      "title": "Duminica a 27-a după Rusalii;",
+      "tone": 2,
+      "matinsGospel": 5,
+      "epistle": "Efeseni 6, 10-17",
+      "gospel": "Luca 13, 10-17 (T m duirea femeii gârbove)",
+      "raw": "Duminica a 27-a după Rusalii; Ap. Efeseni 6, 10-17; Ev. Luca 13, 10-17 (T m duirea femeii gârbove); ale Ierarhului: Ap. Evrei 13, 17-21; Ev. Luca 6, 17-23. Glas 2, voscr. 5."
+    }
+  },
+  {
+    "date": "2026-12-07",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Filofteia de la Curtea de Arge ; Sf. Ierarh Ambrozie, episcopul Milanului",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-08",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Patapie; Sf. Ap. Cezar, Tihic și Onisifor",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-09",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Zămislirea Sfintei Fecioare Maria de c tre Sf. Ana; Sf. Proroci Ana, mama Prorocului Samuel",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-10",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Mina, Ermoghen și Evgraf",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-11",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Daniil Stâlpnicul și Luca cel Nou",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-12",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Mardarie, primul episcop sârb din America și Canada; Sf. Ierarh Spiridon, episcopul Trimitundei, făcătorul de minuni",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-13",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Gherman din Alaska; Sf. Ierarh Dosoftei, mitropolitul Moldovei; Sf. Marii Mucenici Eustratie, Auxentie, Evghenie, Mardarie și Orest; Sf. Mucenic Lucia din Siracuza",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 3,
+      "matinsGospel": 6,
+      "epistle": "Coloseni 3, 4-11",
+      "gospel": "Luca 14, 16-24 (Pilda celor pofti și la cin )",
+      "raw": "Duminica a 28-a după Rusalii (a Sf. Str mo și după trup ai Domnului). Ap. Coloseni 3, 4-11; Ev. Luca 14, 16-24 (Pilda celor pofti și la cin ). Glas 3, voscr. 6."
+    }
+  },
+  {
+    "date": "2026-12-14",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Tirs, Calinic, Filimon și Apolonie",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-15",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Elefterie, episcopul Iliriei; Sf. Mucenic Antia și Suzana; Sf. Cuvios Pavel din Latro",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-16",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Agheu; Sf. Teofana împărăteasa",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-17",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Proroc Daniel și Sfinții trei tineri: Anania, Azaria și Misail",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-18",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Daniil Sihastrul; Sf. Mucenic Sebastian și Zoe; Sf. Ierarh Modest, arhiep. Ierusalimului",
+    "notes": [
+      "U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-19",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Muceni Evloghia de la S murc e ti; Sf. Mucenic Bonifatie; Sf. Aglaia; Sf. Ierarh Grichentie, episcopul Etiopiei",
+    "notes": [
+      "P,U,V"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-20",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Sfințit Mucenic Ignatie Teoforul, episcopul Antiohiei; Sf. Cuvios Serafim cel R bd tor de la Sâmb ta de Sus",
+    "notes": [
+      "Înainte-prăznuirea Na terii Domnului"
+    ],
+    "sunday": {
+      "title": null,
+      "tone": 4,
+      "matinsGospel": 7,
+      "epistle": "Evrei 11, 9-10",
+      "gospel": "rei 11, 9-10",
+      "raw": "Duminica dinaintea Na terii Domnului (a Sf. Părinți după trup ai Domnului). Ap. Evrei 11, 9-10; 32-40; Ev. Matei 1, 1-25 (Genealogia Mântuitorului). Glas 4, voscr. 7."
+    }
+  },
+  {
+    "date": "2026-12-21",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Iuliana din Nicomidia; Sf. Mucenic Temistocle",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-22",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Ierarh Petru Movil , mitropolitul Kievului; Sf. Mare Mucenic Anastasia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-23",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvios Antonina de la Tismana; Sfinții 10 Mucenici din Creta; Sf. Ierarh Pavel, arhiep. Neocezareei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-24",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Cuvioasa Muceniță Eugenia",
+    "notes": [
+      "Ajunul Crăciunului"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-25",
+    "weekdayLetterSource": "V",
+    "weekdayActual": "Friday",
+    "isMajorFeast": true,
+    "commemorations": "Nașterea Domnului și Dumnezeului și Mântuitorului nostru Iisus Hristos",
+    "notes": [
+      "Crăciunul. Har i"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-26",
+    "weekdayLetterSource": "S",
+    "weekdayActual": "Saturday",
+    "isMajorFeast": false,
+    "commemorations": "Soborul Maicii Domnului; Sf. Cuvios Nicodim cel sfințit de la Tismana; Sf. Cuvioasa Muceniță Gherasim de la Tismana; Sf. Sfințit Mucenic Eftimie, ep. Sardei",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-27",
+    "weekdayLetterSource": "D",
+    "weekdayActual": "Sunday",
+    "isMajorFeast": false,
+    "commemorations": "Sfântul Ap., întâiul Mc. și Arhidiacon Ștefan; Sf. Cuvios Teodor",
+    "notes": [],
+    "sunday": {
+      "title": "Duminica după Nașterea Domnului (a Sfinților Iosif Logodnicul, David Prorocul și Iacob, rudenia Domnului)",
+      "tone": 5,
+      "matinsGospel": 8,
+      "epistle": "Galateni 1, 11-19",
+      "gospel": "Matei 2, 13-23 (Fuga în Egipt)",
+      "raw": "Duminica după Nașterea Domnului (a Sfinților Iosif Logodnicul, David Prorocul și Iacob, rudenia Domnului). Ap. Galateni 1, 11-19; Ev. Matei 2, 13-23 (Fuga în Egipt); ale Sfântului: Ap. Fapte 6, 8-15; 7, 1-5, 47- 60; Ev. Matei 21, 33-44. Glas 5, voscr. 8."
+    }
+  },
+  {
+    "date": "2026-12-28",
+    "weekdayLetterSource": "L",
+    "weekdayActual": "Monday",
+    "isMajorFeast": false,
+    "commemorations": "Sfinții 20.000 de Mucenici din Nicomidia",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-29",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Tuesday",
+    "isMajorFeast": false,
+    "commemorations": "Sfinții 14.000 de prunci uci și din porunca lui Irod; Sf. Cuvios Marcel și Tadeu",
+    "notes": [],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-30",
+    "weekdayLetterSource": "M",
+    "weekdayActual": "Wednesday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Anisia fecioara; Sf. Cuvios Teodora; Sf. Cuvios Leon",
+    "notes": [
+      "Har i"
+    ],
+    "sunday": null
+  },
+  {
+    "date": "2026-12-31",
+    "weekdayLetterSource": "J",
+    "weekdayActual": "Thursday",
+    "isMajorFeast": false,
+    "commemorations": "Sf. Mucenic Hermes; Sf. Cuvios Melania Romana; Sf. Teofilact din Ohrid",
+    "notes": [
+      "Odovania praznicului Nașterii Domnului. Slujba din noaptea trecerii dintre ani"
+    ],
+    "sunday": null
+  }
+]
