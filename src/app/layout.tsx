@@ -17,7 +17,7 @@ const ptSerif = PT_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Romanian Orthodox Episcopate of America",
+  title: "Parohia",
   description: "Daily readings, calendar, prayers, fasting rules, resources and parish directory.",
   manifest: "/manifest.webmanifest",
 };

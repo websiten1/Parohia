@@ -1,13 +1,13 @@
-export type ArticleCategory = "roea" | "parishes" | "youth" | "culture" | "history" | "spiritual" | "america";
+export type ArticleCategory = "diocesan" | "parishes" | "youth" | "culture" | "history" | "spiritual" | "world";
 
 export const ARTICLE_CATEGORY_ACCENT: Record<ArticleCategory, string> = {
-  roea: "burgundy",
+  diocesan: "burgundy",
   parishes: "slate",
   youth: "forest",
   culture: "violet",
   history: "clay",
   spiritual: "teal",
-  america: "plum",
+  world: "plum",
 };
 
 export interface ArticleSection {
@@ -99,17 +99,17 @@ export const ARTICLES: Article[] = [
   },
   {
     id: "preach-the-gospel",
-    category: "america",
+    category: "world",
     title: "How Should Orthodox Christians Preach the Gospel?",
     subtitle: "\"Go therefore and make disciples of all the nations...\" (Matthew 28:19-20)",
-    publication: "Diocesan resource",
+    publication: "Parish resource",
     excerpt:
-      "Orthodox Christianity is perhaps the best-kept secret in America. Why — and how can we help share the Good News?",
+      "Orthodox Christianity is perhaps the best-kept secret in the modern world. Why — and how can we help share the Good News?",
     body: [
       {
         paragraphs: [
           "\"Go therefore and make disciples of all the nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all things that I have commanded you; and lo, I am with you always, even to the end of the age.\" (Matthew 28:19-20)",
-          "Orthodox Christianity is perhaps the best-kept secret in America. Why? And how can we help share the Good News?",
+          "Orthodox Christianity is perhaps the best-kept secret in the modern world. Why? And how can we help share the Good News?",
           "We'll change the way we think about evangelism and learn two principles that should shape the way we introduce other people to Jesus Christ.",
           "Because there's a close connection between being the Lord's witnesses and being close to the Lord.",
         ],

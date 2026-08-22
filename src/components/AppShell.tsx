@@ -20,8 +20,8 @@ const BAR_ROUTES = new Set([
   "/events",
   "/parish-finder",
   "/menu",
-  "/news",
-  "/history",
+  "/anunturi",
+  "/program-liturgic",
 ]);
 
 /**

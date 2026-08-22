@@ -11,9 +11,7 @@ export default function MenuPage() {
       <div className="flex items-center gap-[14px] bg-navy-texture px-outer pb-[26px] pt-[max(env(safe-area-inset-top),24px)]">
         <SealMark size={44} tone="light" />
         <p className="font-sans text-[13px] font-semibold uppercase leading-[1.35] tracking-[0.02em] text-white">
-          {t("brand.wordmarkLine1")}
-          <br />
-          {t("brand.wordmarkLine2")}
+          {t("brand.name")}
         </p>
       </div>
 
@@ -32,12 +30,12 @@ export default function MenuPage() {
           <ChevronRow href="/events" title={t("menu.events")} divider={false} />
         </Section>
 
-        <Section label={t("menu.sectionEpiscopate")}>
+        <Section label={t("menu.sectionParish")}>
           <ChevronRow href="/menu/about" title={t("menu.about")} />
           <ChevronRow href="/menu/bishop" title={t("menu.ourBishop")} />
           <ChevronRow href="/parish-finder" title={t("menu.parishes")} />
           <ChevronRow href="/menu/institutions" title={t("menu.institutions")} />
-          <ChevronRow href="/history" title={t("menu.fullHistory")} divider={false} />
+          <ChevronRow href="/program-liturgic" title={t("menu.liturgicalSchedule")} divider={false} />
         </Section>
 
         <Section label={t("menu.sectionApplication")}>

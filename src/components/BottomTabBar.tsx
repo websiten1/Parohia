@@ -22,16 +22,16 @@ const TABS: {
 }[] = [
   { id: "today", href: "/today", labelKey: "nav.today", Icon: NavHomeIcon },
   { id: "calendar", href: "/calendar", labelKey: "nav.calendar", Icon: NavCalendarIcon },
-  { id: "news", href: "/news", labelKey: "nav.news", Icon: NavNewsIcon },
-  { id: "history", href: "/history", labelKey: "nav.history", Icon: NavHistoryIcon },
+  { id: "news", href: "/anunturi", labelKey: "nav.announcements", Icon: NavNewsIcon },
+  { id: "history", href: "/program-liturgic", labelKey: "nav.schedule", Icon: NavHistoryIcon },
   { id: "menu", href: "/menu", labelKey: "nav.menu", Icon: NavPersonIcon },
 ];
 
 function tabForPath(pathname: string): NavTab | null {
   if (pathname.startsWith("/today") || pathname.startsWith("/saint") || pathname.startsWith("/notifications")) return "today";
   if (pathname.startsWith("/calendar")) return "calendar";
-  if (pathname.startsWith("/news") || pathname.startsWith("/events") || pathname.startsWith("/event")) return "news";
-  if (pathname.startsWith("/history")) return "history";
+  if (pathname.startsWith("/anunturi") || pathname.startsWith("/events") || pathname.startsWith("/event")) return "news";
+  if (pathname.startsWith("/program-liturgic")) return "history";
   if (
     pathname.startsWith("/menu") ||
     pathname.startsWith("/parish") ||

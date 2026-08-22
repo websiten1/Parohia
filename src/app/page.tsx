@@ -4,9 +4,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SealMark } from "@/components/SealMark";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
-import type { TranslationKey } from "@/lib/i18n/translations";
-
-const BRAND_LINE_KEYS: TranslationKey[] = ["brand.splashLine1", "brand.splashLine2", "brand.splashLine3", "brand.splashLine4"];
 
 export default function SplashPage() {
   const router = useRouter();
@@ -34,11 +31,9 @@ export default function SplashPage() {
         </div>
 
         <div className="mt-[22px] font-serif text-[26px] font-bold uppercase leading-[1.15]">
-          {BRAND_LINE_KEYS.map((key, i) => (
-            <p key={key} className="anim-rise-fade-in" style={{ animationDelay: `${140 + i * 60}ms` }}>
-              {t(key)}
-            </p>
-          ))}
+          <p className="anim-rise-fade-in" style={{ animationDelay: "140ms" }}>
+            {t("brand.splashName")}
+          </p>
         </div>
 
         <div className="anim-draw-line mt-[24px] h-px w-[120px] bg-white/30" style={{ animationDelay: "440ms" }} />

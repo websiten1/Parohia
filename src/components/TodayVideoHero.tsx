@@ -54,9 +54,7 @@ export function TodayVideoHero({ selectedDate, onSelectDate, weekdayCaps, dateCa
           <div className="flex items-center gap-[10px]">
             <SealMark size={30} tone="light" />
             <p className="font-sans text-[10.5px] font-semibold uppercase leading-[1.3] tracking-[0.03em] text-white">
-              {t("brand.wordmarkLine1")}
-              <br />
-              {t("brand.wordmarkLine2")}
+              {t("brand.name")}
             </p>
           </div>
           <Link

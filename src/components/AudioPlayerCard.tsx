@@ -98,7 +98,7 @@ export function AudioPlayerCard({ readingId, title, reference, durationLabel, au
     navigator.mediaSession.metadata = new MediaMetadata({
       title,
       artist: reference,
-      album: "Romanian Orthodox Episcopate of America",
+      album: "Parohia",
     });
     navigator.mediaSession.setActionHandler("play", () => setPlaying(true));
     navigator.mediaSession.setActionHandler("pause", () => setPlaying(false));

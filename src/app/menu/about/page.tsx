@@ -12,9 +12,7 @@ export default function AboutPage() {
       <main className="flex-1 px-outer py-[22px]">
         <div className="flex flex-col items-center text-center">
           <SealMark size={56} />
-          <p className="mt-[14px] font-serif text-[19px] font-bold text-text">
-            {t("brand.wordmarkLine1")} {t("brand.wordmarkLine2")}
-          </p>
+          <p className="mt-[14px] font-serif text-[19px] font-bold text-text">{t("brand.name")}</p>
         </div>
 
         <p className="mt-[28px] font-sans text-[15px] leading-[1.55] text-text">{t("about.body")}</p>

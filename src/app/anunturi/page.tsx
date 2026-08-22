@@ -7,13 +7,13 @@ import type { TranslationKey } from "@/lib/i18n/translations";
 import { ARTICLE_CATEGORY_ACCENT, ARTICLES, type ArticleCategory } from "@/lib/articleData";
 
 const CATEGORY_LABEL_KEY: Record<ArticleCategory, TranslationKey> = {
-  roea: "news.categoryRoea",
-  parishes: "news.categoryParishes",
-  youth: "news.categoryYouth",
-  culture: "news.categoryCulture",
-  history: "news.categoryHistory",
-  spiritual: "news.categorySpiritual",
-  america: "news.categoryAmerica",
+  diocesan: "announcements.categoryDiocesan",
+  parishes: "announcements.categoryParishes",
+  youth: "announcements.categoryYouth",
+  culture: "announcements.categoryCulture",
+  history: "announcements.categoryHistory",
+  spiritual: "announcements.categorySpiritual",
+  world: "announcements.categoryWorld",
 };
 
 const ACCENT_TEXT: Record<string, string> = {
@@ -46,7 +46,7 @@ const ACCENT_BG: Record<string, string> = {
   plum: "bg-plum",
 };
 
-export default function NewsPage() {
+export default function AnnouncementsPage() {
   const { t } = useTranslation();
   const [filter, setFilter] = useState<ArticleCategory | "all">("all");
 
@@ -57,7 +57,7 @@ export default function NewsPage() {
   return (
     <div className="flex min-h-dvh flex-col bg-background">
       <header className="px-outer pt-[max(env(safe-area-inset-top),18px)] pb-[14px]">
-        <h1 className="font-serif text-[30px] font-bold text-text">{t("news.title")}</h1>
+        <h1 className="font-serif text-[30px] font-bold text-text">{t("announcements.title")}</h1>
       </header>
 
       <div className="no-scrollbar flex gap-[8px] overflow-x-auto px-outer pb-[16px]">
@@ -68,7 +68,7 @@ export default function NewsPage() {
             filter === "all" ? "bg-navy text-white" : "bg-soft-surface text-text"
           }`}
         >
-          {t("news.filterAll")}
+          {t("announcements.filterAll")}
         </button>
         {categories.map((cat) => (
           <button
@@ -86,7 +86,7 @@ export default function NewsPage() {
 
       <main className="flex-1 px-outer pb-tabbar">
         {featured && (
-          <Link key={featured.id} href={`/news/${featured.id}`} className="press block">
+          <Link key={featured.id} href={`/anunturi/${featured.id}`} className="press block">
             <p
               className={`font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] ${ACCENT_TEXT[ARTICLE_CATEGORY_ACCENT[featured.category]]}`}
             >
@@ -100,7 +100,7 @@ export default function NewsPage() {
 
         {rest.length > 0 && (
           <div className="mt-[36px]">
-            <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("news.latest")}</p>
+            <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("announcements.latest")}</p>
             <div className="mt-[14px] flex flex-col gap-[24px]">
               {rest.map((item, i) => {
                 const accent = ARTICLE_CATEGORY_ACCENT[item.category];
@@ -108,7 +108,7 @@ export default function NewsPage() {
                 return (
                   <Link
                     key={item.id}
-                    href={`/news/${item.id}`}
+                    href={`/anunturi/${item.id}`}
                     className={`press block ${isTextLed ? "" : `border-l-2 pl-[14px] ${ACCENT_BORDER[accent]}`}`}
                   >
                     <p className={`font-sans text-[10px] font-semibold uppercase tracking-[0.08em] ${ACCENT_TEXT[accent]}`}>

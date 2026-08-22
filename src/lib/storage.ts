@@ -104,7 +104,7 @@ const DEFAULT_SETTINGS: SettingsState = {
 };
 
 export function useSettings() {
-  const [settings, setSettings, hydrated] = useLocalStorageState<SettingsState>("roea:settings", DEFAULT_SETTINGS);
+  const [settings, setSettings, hydrated] = useLocalStorageState<SettingsState>("parohia:settings", DEFAULT_SETTINGS);
   const update = useCallback(
     <K extends keyof SettingsState>(key: K, value: SettingsState[K]) => {
       setSettings((prev) => ({ ...prev, [key]: value }));
@@ -115,7 +115,7 @@ export function useSettings() {
 }
 
 export function useBookmarks() {
-  const [bookmarks, setBookmarks, hydrated] = useLocalStorageState<Bookmark[]>("roea:bookmarks", []);
+  const [bookmarks, setBookmarks, hydrated] = useLocalStorageState<Bookmark[]>("parohia:bookmarks", []);
 
   const isBookmarked = useCallback(
     (entityType: Bookmark["entityType"], entityId: string) =>
@@ -146,7 +146,7 @@ export function useBookmarks() {
 }
 
 export function useNotes() {
-  const [notes, setNotes, hydrated] = useLocalStorageState<NoteEntry[]>("roea:notes", []);
+  const [notes, setNotes, hydrated] = useLocalStorageState<NoteEntry[]>("parohia:notes", []);
 
   const addNote = useCallback(
     (note: Omit<NoteEntry, "id" | "createdAt" | "updatedAt">) => {
@@ -176,7 +176,7 @@ export interface DownloadedItem {
 }
 
 export function useDownloads() {
-  const [downloads, setDownloads, hydrated] = useLocalStorageState<DownloadedItem[]>("roea:downloads", []);
+  const [downloads, setDownloads, hydrated] = useLocalStorageState<DownloadedItem[]>("parohia:downloads", []);
 
   const isDownloaded = useCallback(
     (entityType: DownloadedItem["entityType"], entityId: string) =>
@@ -205,7 +205,7 @@ export function useDownloads() {
 }
 
 export function usePlaybackPosition(readingId: string) {
-  const key = `roea:playback:${readingId}`;
+  const key = `parohia:playback:${readingId}`;
   const [position, setPosition] = useLocalStorageState<number>(key, 0);
   return [position, setPosition] as const;
 }

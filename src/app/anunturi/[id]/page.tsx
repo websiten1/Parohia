@@ -10,13 +10,13 @@ import type { TranslationKey } from "@/lib/i18n/translations";
 import { ARTICLE_CATEGORY_ACCENT, getArticle, getRelatedArticles, type ArticleCategory } from "@/lib/articleData";
 
 const CATEGORY_LABEL_KEY: Record<ArticleCategory, TranslationKey> = {
-  roea: "news.categoryRoea",
-  parishes: "news.categoryParishes",
-  youth: "news.categoryYouth",
-  culture: "news.categoryCulture",
-  history: "news.categoryHistory",
-  spiritual: "news.categorySpiritual",
-  america: "news.categoryAmerica",
+  diocesan: "announcements.categoryDiocesan",
+  parishes: "announcements.categoryParishes",
+  youth: "announcements.categoryYouth",
+  culture: "announcements.categoryCulture",
+  history: "announcements.categoryHistory",
+  spiritual: "announcements.categorySpiritual",
+  world: "announcements.categoryWorld",
 };
 
 const ACCENT_TEXT: Record<string, string> = {
@@ -29,7 +29,7 @@ const ACCENT_TEXT: Record<string, string> = {
   plum: "text-plum",
 };
 
-export default function ArticlePage() {
+export default function AnnouncementPage() {
   const { id } = useParams<{ id: string }>();
   const { t, language } = useTranslation();
   const article = getArticle(id);
@@ -41,7 +41,7 @@ export default function ArticlePage() {
   return (
     <div className="flex min-h-dvh flex-col bg-background">
       <AppHeader
-        title={t("nav.news")}
+        title={t("nav.announcements")}
         right={
           <div className="flex items-center gap-[2px]">
             <BookmarkButton entityType="resource" entityId={article.id} title={article.title} subtitle={article.excerpt} />
@@ -63,7 +63,7 @@ export default function ArticlePage() {
         </p>
 
         {language === "ro" && (
-          <p className="mt-[14px] font-sans text-[12.5px] italic leading-[1.5] text-muted">{t("news.englishOnlyNote")}</p>
+          <p className="mt-[14px] font-sans text-[12.5px] italic leading-[1.5] text-muted">{t("announcements.englishOnlyNote")}</p>
         )}
 
         <div className="mt-[20px] flex flex-col gap-[20px]">
@@ -82,17 +82,17 @@ export default function ArticlePage() {
         </div>
 
         <p className="mt-[24px] border-t border-divider pt-[14px] font-sans text-[11.5px] text-muted">
-          {t("news.source")}: {article.publication}
+          {t("announcements.source")}: {article.publication}
         </p>
 
         {related.length > 0 && (
           <div className="mt-[36px] border-t border-divider pt-[20px]">
             <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
-              {t("news.continueReading")}
+              {t("announcements.continueReading")}
             </p>
             <div className="mt-[14px] flex flex-col gap-[16px]">
               {related.map((r) => (
-                <Link key={r.id} href={`/news/${r.id}`} className="press block">
+                <Link key={r.id} href={`/anunturi/${r.id}`} className="press block">
                   <p className={`font-sans text-[10px] font-semibold uppercase tracking-[0.08em] ${ACCENT_TEXT[ARTICLE_CATEGORY_ACCENT[r.category]]}`}>
                     {t(CATEGORY_LABEL_KEY[r.category])}
                   </p>

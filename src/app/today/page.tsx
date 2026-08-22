@@ -11,8 +11,8 @@ import {
   getNextMajorFeast2026,
   REFERENCE_DATE_2026,
 } from "@/lib/calendar-data/liturgicalYear2026";
-import { getOnThisDay } from "@/lib/historyData";
 import { oldCalendarDate } from "@/lib/seedData";
+import { WEEKLY_SCHEDULE } from "@/lib/scheduleData";
 import { PullToRefreshToday } from "./PullToRefreshToday";
 
 const ACCENT_BORDER: Record<string, string> = {
@@ -48,8 +48,7 @@ export default function TodayPage() {
       })
     : null;
 
-  const [, refMonth, refDay] = REFERENCE_DATE_2026.split("-").map(Number);
-  const historyEvent = getOnThisDay(refMonth, refDay)[0];
+  const nextService = WEEKLY_SCHEDULE[0];
   const featuredArticle = ARTICLES[0];
 
   const locale = language === "ro" ? "ro-RO" : "en-US";
@@ -119,18 +118,19 @@ export default function TodayPage() {
             </Link>
           )}
 
-          {historyEvent && (
-            <Link href="/history" className="press mt-[24px] block border-t border-divider pt-[18px]">
-              <p className="font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] text-clay">{t("today.onThisDay")}</p>
+          {nextService && (
+            <Link href="/program-liturgic" className="press mt-[24px] block border-t border-divider pt-[18px]">
+              <p className="font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] text-clay">{t("today.nextService")}</p>
               <p className="mt-[6px] font-serif text-[17px] font-bold leading-[1.3] text-text">
-                {historyEvent.year} — {language === "ro" ? historyEvent.headlineRo : historyEvent.headline}
+                {language === "ro" ? nextService.dayRo : nextService.day} ·{" "}
+                {language === "ro" ? nextService.serviceRo : nextService.service} — {nextService.time}
               </p>
             </Link>
           )}
 
           {featuredArticle && (
             <Link
-              href={`/news/${featuredArticle.id}`}
+              href={`/anunturi/${featuredArticle.id}`}
               className={`press mt-[18px] block border-l-2 pl-[14px] ${ACCENT_BORDER[ARTICLE_CATEGORY_ACCENT[featuredArticle.category]]}`}
             >
               <p className="font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] text-muted">

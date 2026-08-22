@@ -31,7 +31,7 @@ export default function SupportPage() {
             <span className="font-sans text-[12px] font-medium">{t("support.call")}</span>
           </a>
           <a
-            href="mailto:support@romanianorthodoxepiscopate.org"
+            href="mailto:support@parohia.example"
             className="press flex flex-1 flex-col items-center gap-[6px] rounded-sm bg-soft-surface py-[14px] text-navy"
           >
             <MailIcon className="h-[19px] w-[19px]" />
@@ -91,7 +91,7 @@ export default function SupportPage() {
         )}
 
         <a
-          href="mailto:calendar@romanianorthodoxepiscopate.org?subject=Calendar%20Issue%20Report"
+          href="mailto:calendar@parohia.example?subject=Calendar%20Issue%20Report"
           className="press mt-[28px] block text-center font-sans text-[13px] font-semibold text-burgundy"
         >
           {t("support.reportIssue")}
