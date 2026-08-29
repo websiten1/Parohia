@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SealMark } from "@/components/SealMark";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
+import { readSelectedParishId } from "@/lib/storage";
 
 export default function SplashPage() {
   const router = useRouter();
@@ -11,8 +12,9 @@ export default function SplashPage() {
   const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
+    const destination = readSelectedParishId() ? "/today" : "/onboarding";
     const leaveTimer = setTimeout(() => setLeaving(true), 1500);
-    const navTimer = setTimeout(() => router.replace("/today"), 1750);
+    const navTimer = setTimeout(() => router.replace(destination), 1750);
     return () => {
       clearTimeout(leaveTimer);
       clearTimeout(navTimer);

@@ -54,6 +54,7 @@ export default function ParishProfilePage() {
         <p className="mt-[28px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
           {t("parishProfile.sundaySchedule")}
         </p>
+        {parish.schedule.length === 0 && <p className="mt-[8px] font-sans text-[13.5px] text-muted">{t("schedule.emptyState")}</p>}
         {parish.schedule.map((s, i) => (
           <div
             key={s.label}

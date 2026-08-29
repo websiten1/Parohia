@@ -105,8 +105,14 @@ export interface ServiceTime {
 export interface Parish {
   id: string;
   name: string;
+  /** The parish's patron feast — e.g. "Adormirea Maicii Domnului" for a Dormition parish. */
+  patronSaint: string;
   city: string;
   state: string;
+  /** ISO country name shown in the parish selector's country grouping — e.g. "SUA", "Germania". */
+  country: string;
+  /** Diocese/jurisdiction the parish belongs to — e.g. "ROEA", "Mitropolia Ortodoxă Română a Europei Occidentale". */
+  jurisdiction: string;
   address: string;
   latitude: number;
   longitude: number;
@@ -120,11 +126,20 @@ export interface Parish {
   verifiedAt: string;
 }
 
+/** A parish's weekly liturgical schedule, grouped by day, plus any feast-specific services. */
+export interface ProgramLiturgic {
+  parishId: string;
+  saptamanal: { zi: string; slujbe: { nume: string; ora: string }[] }[];
+  praznice: { titlu: string; descriere: string }[];
+}
+
 export type EventCategory = "youth" | "clergy" | "diocesan" | "parish";
 export type EventStatus = "upcoming" | "past";
 
 export interface EventItem {
   id: string;
+  /** Owning parish, or omitted for a diocese-wide/global event. */
+  parishId?: string;
   title: string;
   titleRo?: string;
   category: EventCategory;

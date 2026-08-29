@@ -1,11 +1,31 @@
 "use client";
 
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { ChevronRightIcon } from "@/components/icons";
 import { ChevronRow } from "@/components/ChevronRow";
 import { SealMark } from "@/components/SealMark";
+import { getParishById } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
+import { useSelectedParishId } from "@/lib/storage";
+import type { Parish } from "@/lib/types";
 
 export default function MenuPage() {
   const { t } = useTranslation();
+  const [selectedParishId] = useSelectedParishId();
+  const [parish, setParish] = useState<Parish | undefined>(undefined);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const found = selectedParishId ? await getParishById(selectedParishId) : undefined;
+      if (!cancelled) setParish(found);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedParishId]);
+
   return (
     <div className="flex min-h-dvh flex-col bg-background">
       <div className="flex items-center gap-[14px] bg-navy-texture px-outer pb-[26px] pt-[max(env(safe-area-inset-top),24px)]">
@@ -16,6 +36,26 @@ export default function MenuPage() {
       </div>
 
       <main className="-mt-[14px] flex-1 rounded-t-sheet bg-surface px-outer pt-[20px] pb-tabbar">
+        <Link
+          href="/menu/parish"
+          className="press mb-[24px] flex items-center justify-between gap-[10px] rounded-sm border-l-2 border-amber bg-soft-surface px-[16px] py-[14px]"
+        >
+          <span className="min-w-0">
+            <span className="block font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] text-muted">
+              {t("menu.yourParish")}
+            </span>
+            {parish ? (
+              <>
+                <span className="mt-[3px] block truncate font-serif text-[16px] text-text">{parish.name}</span>
+                <span className="mt-[1px] block truncate font-serif text-[13px] italic text-burgundy">{parish.patronSaint}</span>
+              </>
+            ) : (
+              <span className="mt-[3px] block font-sans text-[13.5px] text-muted">{t("menu.changeParish")}</span>
+            )}
+          </span>
+          <ChevronRightIcon className="h-[16px] w-[16px] shrink-0 text-muted" />
+        </Link>
+
         <Section label={t("menu.sectionLibrary")}>
           <ChevronRow href="/menu/bookmarks" title={t("menu.bookmarks")} />
           <ChevronRow href="/menu/notes" title={t("menu.notes")} />

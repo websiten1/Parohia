@@ -17,6 +17,8 @@ export interface ArticleSection {
 
 export interface Article {
   id: string;
+  /** Owning parish, or omitted for diocese-wide/global content (the norm for this seed set). */
+  parishId?: string;
   category: ArticleCategory;
   title: string;
   subtitle?: string;
@@ -25,6 +27,7 @@ export interface Article {
   publication: string;
   date?: string;
   excerpt: string;
+  photo?: string;
   body: ArticleSection[];
 }
 

@@ -28,7 +28,7 @@ function Marker({ label, value, accent }: { label: string; value: string; accent
   );
 }
 
-/** Rich day-detail panel shared by the Today date strip and the Calendar month page. */
+/** Rich day-detail panel used on the Calendar month page. */
 export function LiturgicalDayDetail({ day }: Props) {
   const { t, language } = useTranslation();
   const commemorations = language === "ro" ? day.commemorationsRo : day.commemorationsEn;

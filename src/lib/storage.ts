@@ -209,3 +209,21 @@ export function usePlaybackPosition(readingId: string) {
   const [position, setPosition] = useLocalStorageState<number>(key, 0);
   return [position, setPosition] as const;
 }
+
+const SELECTED_PARISH_KEY = "parohia:selectedParishId";
+
+/** Null while unhydrated or genuinely unset — callers should treat both as "no parish chosen yet". */
+export function useSelectedParishId() {
+  const [id, setId, hydrated] = useLocalStorageState<string | null>(SELECTED_PARISH_KEY, null);
+  return [id, setId, hydrated] as const;
+}
+
+/** Synchronous read for the one-time redirect check on the splash screen, before React state hydrates. */
+export function readSelectedParishId(): string | null {
+  if (typeof window === "undefined") return null;
+  try {
+    return JSON.parse(window.localStorage.getItem(SELECTED_PARISH_KEY) ?? "null");
+  } catch {
+    return null;
+  }
+}

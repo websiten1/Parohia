@@ -6,10 +6,10 @@ import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
 import {
   NavCalendarIcon,
-  NavHistoryIcon,
   NavHomeIcon,
   NavNewsIcon,
   NavPersonIcon,
+  NavProgramIcon,
 } from "./icons";
 
 type NavTab = "today" | "calendar" | "news" | "history" | "menu";
@@ -23,7 +23,7 @@ const TABS: {
   { id: "today", href: "/today", labelKey: "nav.today", Icon: NavHomeIcon },
   { id: "calendar", href: "/calendar", labelKey: "nav.calendar", Icon: NavCalendarIcon },
   { id: "news", href: "/anunturi", labelKey: "nav.announcements", Icon: NavNewsIcon },
-  { id: "history", href: "/program-liturgic", labelKey: "nav.schedule", Icon: NavHistoryIcon },
+  { id: "history", href: "/program-liturgic", labelKey: "nav.schedule", Icon: NavProgramIcon },
   { id: "menu", href: "/menu", labelKey: "nav.menu", Icon: NavPersonIcon },
 ];
 

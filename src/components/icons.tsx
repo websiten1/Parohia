@@ -95,6 +95,17 @@ export function NavHistoryIcon({ className, active }: NavIconProps) {
   );
 }
 
+/** Open scroll with a service line: used for the Program (liturgical schedule) tab. */
+export function NavProgramIcon({ className, active }: NavIconProps) {
+  return (
+    <svg {...base} fill={active ? "currentColor" : "none"} className={className}>
+      <path d="M6 4.5h9.5a2 2 0 0 1 2 2V19a1 1 0 0 1-1.4.9L14 18.7l-2.1 1.2a1 1 0 0 1-1 0L8.8 18.7l-2.1 1.2A1 1 0 0 1 5.3 19V6.5a2 2 0 0 1 .7-1.5Z" />
+      <line x1="8.5" y1="9" x2="15" y2="9" stroke={active ? "var(--color-surface)" : "currentColor"} />
+      <line x1="8.5" y1="12.5" x2="13" y2="12.5" stroke={active ? "var(--color-surface)" : "currentColor"} />
+    </svg>
+  );
+}
+
 export function NavPersonIcon({ className, active }: NavIconProps) {
   return (
     <svg {...base} fill={active ? "currentColor" : "none"} className={className}>
@@ -309,6 +320,17 @@ export function ClockIcon({ className }: IconProps) {
     <svg {...base} className={className}>
       <circle cx="12" cy="12" r="8.5" />
       <path d="M12 7.5V12l3 2" />
+    </svg>
+  );
+}
+
+/** Line-art candle for warm empty states (e.g. a parish with no schedule yet). */
+export function CandleIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M12 3c1.2 1.3 1.8 2.3 1.8 3.1a1.8 1.8 0 0 1-3.6 0c0-.8.6-1.8 1.8-3.1Z" />
+      <rect x="9.5" y="8.5" width="5" height="11" rx="1" />
+      <line x1="9.5" y1="13" x2="14.5" y2="13" />
     </svg>
   );
 }
