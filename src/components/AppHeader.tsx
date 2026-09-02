@@ -10,16 +10,25 @@ interface AppHeaderProps {
   backHref?: string;
   right?: React.ReactNode;
   transparent?: boolean;
+  /**
+   * Sticks the header to the top of the viewport as a `glass-thick` surface,
+   * so page content scrolls underneath and shows through the blur. This is
+   * the default for every screen using AppHeader — pass `glass={false}` for
+   * the rare screen that wants the old flat, non-sticky bar instead.
+   * Ignored when `transparent` is set (a header floating over its own hero
+   * image, which has no material of its own).
+   */
+  glass?: boolean;
 }
 
 /** Standard back + centered title + optional right action bar used across secondary screens. */
-export function AppHeader({ title, backHref, right, transparent }: AppHeaderProps) {
+export function AppHeader({ title, backHref, right, transparent, glass = true }: AppHeaderProps) {
   const router = useRouter();
   const { t } = useTranslation();
   return (
     <header
       className={`flex h-[52px] shrink-0 items-center justify-between px-outer ${
-        transparent ? "" : "border-b border-divider bg-surface"
+        transparent ? "" : glass ? "glass-thick sticky top-0 z-30" : "border-b border-divider bg-surface"
       }`}
     >
       <div className="flex w-[36px]">

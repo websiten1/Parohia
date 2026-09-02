@@ -1,3 +1,8 @@
+"use client";
+
+import { useId } from "react";
+import { motion } from "motion/react";
+
 export function Switch({ checked, onChange, label }: { checked: boolean; onChange: (v: boolean) => void; label: string }) {
   return (
     <button
@@ -37,18 +42,29 @@ export function SegmentedChoice<T extends string>({
   value: T;
   onChange: (v: T) => void;
 }) {
+  // Scopes the sliding pill's layoutId to this instance, so two SegmentedChoice
+  // controls on the same screen (e.g. Appearance's theme + text size) don't
+  // animate as if they were one shared element.
+  const scope = useId();
   return (
-    <div className="flex rounded-pill bg-soft-surface p-[3px]">
+    <div className="glass-thin flex rounded-pill p-[3px]">
       {options.map((o) => (
         <button
           key={o.id}
           type="button"
           onClick={() => onChange(o.id)}
-          className={`press rounded-pill px-[10px] py-[5px] font-sans text-[12px] font-semibold transition-colors duration-150 ${
-            value === o.id ? "bg-navy text-white" : "text-muted"
-          }`}
+          className="press relative rounded-pill px-[10px] py-[5px] font-sans text-[12px] font-semibold"
         >
-          {o.label}
+          {value === o.id && (
+            <motion.span
+              layoutId={`segmented-pill-${scope}`}
+              className="absolute inset-0 rounded-pill bg-burgundy"
+              transition={{ type: "spring", stiffness: 420, damping: 34 }}
+            />
+          )}
+          <span className={`relative z-10 transition-colors duration-150 ${value === o.id ? "text-white" : "text-muted"}`}>
+            {o.label}
+          </span>
         </button>
       ))}
     </div>

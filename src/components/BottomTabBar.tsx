@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "motion/react";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
 import {
@@ -48,6 +49,12 @@ function tabForPath(pathname: string): NavTab | null {
   return null;
 }
 
+/**
+ * A floating Liquid Glass capsule, inset from the edges rather than docked
+ * flush to them. The active tab isn't a color swap — a soft burgundy-tinted
+ * pill slides beneath it (one shared layout animation, `layoutId`), so
+ * switching tabs reads as the material itself moving into place.
+ */
 export function BottomTabBar() {
   const pathname = usePathname();
   const active = tabForPath(pathname);
@@ -55,23 +62,34 @@ export function BottomTabBar() {
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-20 mx-auto flex w-full max-w-[402px] shrink-0 items-stretch border-t border-divider bg-surface pb-[max(env(safe-area-inset-bottom),0px)]"
+      className="glass-thick fixed inset-x-0 bottom-[max(env(safe-area-inset-bottom),14px)] z-30 mx-auto flex w-[calc(100%-32px)] max-w-[370px] items-stretch justify-between rounded-pill p-[6px]"
       aria-label="Primary"
     >
       {TABS.map(({ id, href, labelKey, Icon }) => {
         const isActive = id === active;
-        const isMenu = id === "menu";
         return (
           <Link
             key={id}
             href={href}
             aria-current={isActive ? "page" : undefined}
-            className={`press flex min-h-[44px] flex-1 flex-col items-center justify-center gap-[4px] py-[10px] transition-colors duration-150 ${
-              isActive && isMenu ? "bg-burgundy text-surface" : isActive ? "text-burgundy" : "text-navy/55"
-            }`}
+            className="relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-[2px] rounded-pill py-[8px]"
           >
-            <Icon className="h-[22px] w-[22px]" active={isActive} />
-            <span className="font-sans text-[10px] font-medium">{t(labelKey)}</span>
+            {isActive && (
+              <motion.span
+                layoutId="tab-active-pill"
+                className="absolute inset-0 rounded-pill bg-burgundy/11"
+                style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.55)" }}
+                transition={{ type: "spring", stiffness: 420, damping: 34 }}
+              />
+            )}
+            <motion.span
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+              className={`relative z-10 flex flex-col items-center gap-[2px] ${isActive ? "text-burgundy" : "text-navy/55"}`}
+            >
+              <Icon className="h-[21px] w-[21px]" active={isActive} />
+              <span className="font-sans text-[10px] font-medium">{t(labelKey)}</span>
+            </motion.span>
           </Link>
         );
       })}

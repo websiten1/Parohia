@@ -335,6 +335,16 @@ export function CandleIcon({ className }: IconProps) {
   );
 }
 
+/** Simple Latin cross — used for the Divine Liturgy feast notice. */
+export function CrossIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <line x1="12" y1="3.5" x2="12" y2="20.5" />
+      <line x1="7" y1="8.5" x2="17" y2="8.5" />
+    </svg>
+  );
+}
+
 export function DownloadIcon({ className }: IconProps) {
   return (
     <svg {...base} className={className}>

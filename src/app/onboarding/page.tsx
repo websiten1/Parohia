@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { GlassButton } from "@/components/glass/GlassButton";
 import { SealMark } from "@/components/SealMark";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 
@@ -16,7 +17,7 @@ export default function OnboardingWelcomePage() {
         <SealMark size={64} tone="light" />
       </div>
 
-      <h1 className="mt-[26px] max-w-[300px] font-serif text-[30px] font-bold leading-[1.2]">
+      <h1 className="mt-[30px] max-w-[300px] font-serif text-[30px] font-bold leading-[1.2] tracking-[-0.01em]">
         {words.map((word, i) => (
           <span key={i} className="anim-rise-fade-in mr-[8px] inline-block" style={{ animationDelay: `${180 + i * 90}ms` }}>
             {word}
@@ -25,24 +26,24 @@ export default function OnboardingWelcomePage() {
       </h1>
 
       <p
-        className="anim-rise-fade-in mt-[16px] max-w-[280px] font-serif text-[15px] italic leading-[1.5] text-white/70"
+        className="anim-rise-fade-in mt-[18px] max-w-[280px] font-serif text-[15px] italic leading-[1.5] text-white/70"
         style={{ animationDelay: `${180 + words.length * 90 + 120}ms` }}
       >
         {t("onboarding.welcomeMission")}
       </p>
 
-      <button
-        type="button"
-        onClick={() => router.push("/onboarding/features")}
-        className="anim-rise-fade-in press mt-[36px] w-full max-w-[320px] rounded-pill bg-burgundy py-[15px] font-sans text-[15px] font-semibold text-white"
-        style={{ animationDelay: `${180 + words.length * 90 + 240}ms`, boxShadow: "0 0 28px rgba(143,23,53,0.45)" }}
+      <div
+        className="anim-rise-fade-in mt-[40px] w-full max-w-[320px]"
+        style={{ animationDelay: `${180 + words.length * 90 + 240}ms` }}
       >
-        {t("onboarding.start")}
-      </button>
+        <GlassButton onClick={() => router.push("/onboarding/features")} className="w-full">
+          {t("onboarding.start")}
+        </GlassButton>
+      </div>
 
       <Link
         href="/menu/sign-in"
-        className="anim-rise-fade-in press mt-[18px] font-sans text-[12.5px] text-white/50 underline decoration-white/25 underline-offset-4"
+        className="anim-rise-fade-in press mt-[20px] font-sans text-[12.5px] text-white/50"
         style={{ animationDelay: `${180 + words.length * 90 + 300}ms` }}
       >
         {t("onboarding.signInLink")}

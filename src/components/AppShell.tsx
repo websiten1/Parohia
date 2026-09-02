@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 import { BottomTabBar } from "./BottomTabBar";
 
@@ -32,11 +33,19 @@ const BAR_ROUTES = new Set([
  */
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const reduceMotion = useReducedMotion();
+
   return (
     <>
-      <div key={pathname} className="page-transition flex flex-1 flex-col">
+      <motion.div
+        key={pathname}
+        className="flex flex-1 flex-col"
+        initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 10, scale: 0.99 }}
+        animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
+        transition={{ type: "spring", stiffness: 300, damping: 32 }}
+      >
         {children}
-      </div>
+      </motion.div>
       {BAR_ROUTES.has(pathname) && <BottomTabBar />}
     </>
   );

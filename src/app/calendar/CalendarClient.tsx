@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { GlassSurface } from "@/components/glass/GlassSurface";
 import { LiturgicalDateStrip } from "@/components/LiturgicalDateStrip";
 import { LiturgicalDayDetail } from "@/components/LiturgicalDayDetail";
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
@@ -12,6 +14,7 @@ import type { TranslationKey } from "@/lib/i18n/translations";
 
 const [REF_YEAR, REF_MONTH] = REFERENCE_DATE_2026.split("-").map(Number);
 const SWIPE_THRESHOLD = 50;
+const SPRING = { type: "spring" as const, stiffness: 420, damping: 34 };
 
 const TIP_ZI_LABEL_KEY: Record<TipZi, TranslationKey> = {
   duminica: "calendar.legend.duminica",
@@ -63,6 +66,21 @@ function DayMark({ tipZi, dayNum, isToday }: { tipZi: TipZi; dayNum?: number; is
     <span className={`flex h-[34px] w-[34px] items-center justify-center rounded-full font-sans text-[14px] text-text ${ring}`}>
       {dayNum}
     </span>
+  );
+}
+
+function GlassIconButton({ onClick, label, children }: { onClick: () => void; label: string; children: React.ReactNode }) {
+  return (
+    <motion.button
+      type="button"
+      onClick={onClick}
+      aria-label={label}
+      whileTap={{ scale: 0.88 }}
+      transition={{ type: "spring", stiffness: 500, damping: 28 }}
+      className="glass-thin flex h-[36px] w-[36px] items-center justify-center rounded-pill text-navy"
+    >
+      {children}
+    </motion.button>
   );
 }
 
@@ -122,33 +140,23 @@ export function CalendarClient() {
     <>
       <div className="flex items-center justify-between">
         <h1 className="font-serif text-[30px] font-bold capitalize text-text">{monthYearLabel}</h1>
-        <div className="flex gap-[4px]">
-          <button
-            type="button"
-            onClick={() => goToMonth(-1)}
-            aria-label="Previous month"
-            className="press flex h-[36px] w-[36px] items-center justify-center rounded-full text-navy"
-          >
-            <ChevronLeftIcon className="h-[18px] w-[18px]" />
-          </button>
-          <button
-            type="button"
-            onClick={() => goToMonth(1)}
-            aria-label="Next month"
-            className="press flex h-[36px] w-[36px] items-center justify-center rounded-full text-navy"
-          >
-            <ChevronRightIcon className="h-[18px] w-[18px]" />
-          </button>
+        <div className="flex gap-[8px]">
+          <GlassIconButton onClick={() => goToMonth(-1)} label="Previous month">
+            <ChevronLeftIcon className="h-[16px] w-[16px]" />
+          </GlassIconButton>
+          <GlassIconButton onClick={() => goToMonth(1)} label="Next month">
+            <ChevronRightIcon className="h-[16px] w-[16px]" />
+          </GlassIconButton>
         </div>
       </div>
 
-      <div className="-mx-outer mt-[14px]">
+      <div className="-mx-outer mt-[16px]">
         <LiturgicalDateStrip selectedDate={selected} onSelect={selectDate} />
       </div>
 
       <div
         key={`${year}-${month}`}
-        className="anim-fade-through mt-[18px] grid grid-cols-7 gap-y-[10px]"
+        className="anim-fade-through mt-[20px] grid grid-cols-7 gap-y-[10px]"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
@@ -177,9 +185,13 @@ export function CalendarClient() {
               style={{ animationDelay: `${Math.min(i, 20) * 12}ms` }}
             >
               {isSelected ? (
-                <span className="flex h-[34px] w-[34px] scale-105 items-center justify-center rounded-full bg-burgundy font-sans text-[14px] font-semibold text-white transition-transform duration-[160ms]">
+                <motion.span
+                  layoutId="calendar-selected-day"
+                  transition={SPRING}
+                  className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-burgundy font-sans text-[14px] font-semibold text-white"
+                >
                   {dayNum}
-                </span>
+                </motion.span>
               ) : (
                 <DayMark tipZi={tipZi} dayNum={dayNum} isToday={isToday} />
               )}
@@ -191,27 +203,37 @@ export function CalendarClient() {
       <button
         type="button"
         onClick={() => setLegendOpen((v) => !v)}
-        className="press mt-[20px] flex w-full items-center justify-between border-t border-divider pt-[14px] text-left"
+        className="press mt-[24px] flex w-full items-center justify-between border-t border-divider pt-[16px] text-left"
         aria-expanded={legendOpen}
       >
         <span className="font-sans text-[12.5px] font-medium text-muted">{t("calendar.legendToggle")}</span>
-        <ChevronDownIcon
-          className={`h-[15px] w-[15px] text-muted transition-transform duration-[200ms] ${legendOpen ? "rotate-180" : ""}`}
-        />
+        <motion.span animate={{ rotate: legendOpen ? 180 : 0 }} transition={SPRING}>
+          <ChevronDownIcon className="h-[15px] w-[15px] text-muted" />
+        </motion.span>
       </button>
-      {legendOpen && (
-        <div className="anim-rise-fade-in mt-[10px] grid grid-cols-1 gap-[10px]">
-          {LEGEND_ORDER.map((tipZi) => (
-            <div key={tipZi} className="flex items-center gap-[12px]">
-              <DayMark tipZi={tipZi} />
-              <span className="font-sans text-[13px] text-muted">{t(TIP_ZI_LABEL_KEY[tipZi])}</span>
-            </div>
-          ))}
-        </div>
-      )}
+      <AnimatePresence initial={false}>
+        {legendOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={SPRING}
+            className="overflow-hidden"
+          >
+            <GlassSurface tier="thin" radius="lg" className="mt-[12px] flex flex-col gap-[12px] px-[16px] py-[16px]">
+              {LEGEND_ORDER.map((tipZi) => (
+                <div key={tipZi} className="flex items-center gap-[12px]">
+                  <DayMark tipZi={tipZi} />
+                  <span className="font-sans text-[13px] text-muted">{t(TIP_ZI_LABEL_KEY[tipZi])}</span>
+                </div>
+              ))}
+            </GlassSurface>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {selectedDay && (
-        <div key={selectedDay.date} className="anim-fade-through mt-[32px] border-t border-divider pt-[24px]">
+        <div key={selectedDay.date} className="anim-fade-through mt-[32px]">
           <LiturgicalDayDetail day={selectedDay} />
         </div>
       )}

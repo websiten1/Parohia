@@ -2,7 +2,11 @@
 
 @theme inline {
   --font-serif: var(--font-pt-serif), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-inter), -apple-system, system-ui, sans-serif;
+  /* -apple-system/BlinkMacSystemFont resolve to real SF Pro on Apple devices —
+     the honest way to get SF Pro without redistributing a licensed font.
+     Inter (metrics-compatible, same provenance as SF's grotesque lineage)
+     carries every other platform. */
+  --font-sans: -apple-system, BlinkMacSystemFont, var(--font-inter), "Segoe UI", system-ui, sans-serif;
 
   /* Color tokens — Parohia visual system, docs/01_visual_system.md */
   --color-background: #fafaf8;
@@ -23,29 +27,35 @@
 
   /*
    * Secondary editorial palette — small accent moments only (category
-   * labels, thin edge strokes, metadata markers). Never a primary surface
-   * color; navy/white/burgundy remain the institutional foundation.
+   * labels, thin edge strokes, metadata markers, calendar day-type dots).
+   * Never a primary surface color; navy/white/burgundy remain the
+   * institutional foundation. Richer and more saturated than the original
+   * "icon-tempera" set on purpose — warm and inviting rather than muted.
    */
-  --color-forest: #60796a;
-  --color-violet: #756681;
-  --color-rose: #b87982;
-  --color-slate: #617a98;
-  --color-clay: #a66d5a;
-  --color-teal: #557e80;
-  --color-plum: #765568;
-  --color-amber: #e0a458;
-  --color-pale-sage: #dde5db;
-  --color-pale-rose: #f0dfe1;
-  --color-pale-lavender: #e6e0ea;
-  --color-pale-blue: #dde6ef;
-  --color-pale-amber: #f6e6cd;
+  --color-forest: #3f9668;
+  --color-violet: #8a5aa8;
+  --color-rose: #d9707f;
+  --color-slate: #3f8fc9;
+  --color-clay: #c97848;
+  --color-teal: #229e93;
+  --color-plum: #9c4a72;
+  --color-amber: #e6a233;
+  --color-pale-sage: #cfead9;
+  --color-pale-rose: #f8d9de;
+  --color-pale-lavender: #ecdcf3;
+  --color-pale-blue: #d3e6f7;
+  --color-pale-amber: #fae3ba;
 
-  /* Radii */
+  /* Radii — continuous-corner scale. Larger surfaces get generous, elegant
+     curvature; small controls round all the way to a pill or circle. Nested
+     elements should sit roughly one step below their container's radius. */
   --radius-xs: 8px;
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 18px;
   --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-3xl: 36px;
   --radius-sheet: 24px;
   --radius-pill: 999px;
 
@@ -99,7 +109,7 @@ body {
  * being hidden behind it.
  */
 .pb-tabbar {
-  padding-bottom: calc(73px + env(safe-area-inset-bottom, 0px) + var(--spacing-16));
+  padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Standard press feedback: near-imperceptible compression, instant onset. */
@@ -288,4 +298,125 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* =========================================================================
+   LIQUID GLASS MATERIAL SYSTEM
+   ---------------------------------------------------------------------
+   A material is a real optical layer, not a flat translucent rectangle:
+   it blurs and saturates whatever sits behind it, carries a soft ambient
+   shadow (depth), and a delicate top-edge highlight (a surface catching
+   light). Three thicknesses read as three depth tiers:
+     thin    — content-adjacent chrome sitting almost on the page (inline
+               pills, quiet section wells)
+     regular — floating cards and sheets, the default glass surface
+     thick   — the topmost layer: navigation, modals, anything that must
+               stay legible over any content scrolling beneath it
+   Every tier has a "-navy" variant for glass sitting over the dark hero
+   instead of the light background. Reserve glass for surfaces that
+   genuinely float over other content — flooding every box with it turns
+   material into decoration, which is the one thing this system refuses.
+   ========================================================================= */
+:root {
+  --glass-blur-thin: 16px;
+  --glass-blur-regular: 24px;
+  --glass-blur-thick: 34px;
+
+  --glass-fill-thin: rgba(255, 255, 255, 0.46);
+  --glass-fill-regular: rgba(255, 255, 255, 0.66);
+  --glass-fill-thick: rgba(255, 255, 255, 0.82);
+
+  --glass-fill-navy-thin: rgba(15, 30, 53, 0.4);
+  --glass-fill-navy-regular: rgba(15, 30, 53, 0.58);
+  --glass-fill-navy-thick: rgba(11, 24, 44, 0.76);
+
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  --glass-highlight-navy: inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 0 0 1px rgba(255, 255, 255, 0.09);
+
+  --shadow-glass-sm: 0 1px 2px rgba(15, 23, 42, 0.05), 0 8px 20px -10px rgba(15, 23, 42, 0.16);
+  --shadow-glass-md: 0 2px 6px rgba(15, 23, 42, 0.06), 0 18px 38px -14px rgba(15, 23, 42, 0.2);
+  --shadow-glass-lg: 0 4px 12px rgba(15, 23, 42, 0.08), 0 32px 64px -18px rgba(15, 23, 42, 0.28);
+
+  /* iOS-flavored deceleration; use for anything CSS-driven that Motion
+     doesn't own (hover/active states, marker transitions). Smooth
+     exponential decay, no overshoot — never bounce or elastic. */
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.glass-thin,
+.glass-regular,
+.glass-thick,
+.glass-navy-thin,
+.glass-navy-regular,
+.glass-navy-thick {
+  -webkit-backdrop-filter: blur(var(--glass-blur-regular)) saturate(1.5);
+  backdrop-filter: blur(var(--glass-blur-regular)) saturate(1.5);
+  background-color: var(--glass-fill-regular);
+  box-shadow: var(--shadow-glass-md), var(--glass-highlight);
+}
+.glass-thin {
+  -webkit-backdrop-filter: blur(var(--glass-blur-thin)) saturate(1.35);
+  backdrop-filter: blur(var(--glass-blur-thin)) saturate(1.35);
+  background-color: var(--glass-fill-thin);
+  box-shadow: var(--shadow-glass-sm), var(--glass-highlight);
+}
+.glass-thick {
+  -webkit-backdrop-filter: blur(var(--glass-blur-thick)) saturate(1.65);
+  backdrop-filter: blur(var(--glass-blur-thick)) saturate(1.65);
+  background-color: var(--glass-fill-thick);
+  box-shadow: var(--shadow-glass-lg), var(--glass-highlight);
+}
+.glass-navy-thin,
+.glass-navy-regular,
+.glass-navy-thick {
+  color: #fdfaf3;
+}
+.glass-navy-thin {
+  -webkit-backdrop-filter: blur(var(--glass-blur-thin)) saturate(1.3);
+  backdrop-filter: blur(var(--glass-blur-thin)) saturate(1.3);
+  background-color: var(--glass-fill-navy-thin);
+  box-shadow: var(--shadow-glass-sm), var(--glass-highlight-navy);
+}
+.glass-navy-regular {
+  -webkit-backdrop-filter: blur(var(--glass-blur-regular)) saturate(1.45);
+  backdrop-filter: blur(var(--glass-blur-regular)) saturate(1.45);
+  background-color: var(--glass-fill-navy-regular);
+  box-shadow: var(--shadow-glass-md), var(--glass-highlight-navy);
+}
+.glass-navy-thick {
+  -webkit-backdrop-filter: blur(var(--glass-blur-thick)) saturate(1.6);
+  backdrop-filter: blur(var(--glass-blur-thick)) saturate(1.6);
+  background-color: var(--glass-fill-navy-thick);
+  box-shadow: var(--shadow-glass-lg), var(--glass-highlight-navy);
+}
+
+/* A hairline-thin wash of brand color under the glass, for selected/active
+   glass surfaces — the material stays glass, the tint just rides inside it. */
+.glass-tint-burgundy {
+  background-image: linear-gradient(rgba(143, 23, 53, 0.16), rgba(143, 23, 53, 0.16));
+}
+.glass-tint-amber {
+  background-image: linear-gradient(rgba(224, 164, 88, 0.22), rgba(224, 164, 88, 0.22));
+}
+/* Prominent glass — for primary actions: still a real blurred material
+   underneath (backdrop-filter comes from the paired .glass-* class), just
+   saturated enough with brand color to read as a confident filled button. */
+.glass-tint-burgundy-strong {
+  background-image: linear-gradient(rgba(143, 23, 53, 0.86), rgba(143, 23, 53, 0.86));
+  color: #fdfaf3;
+}
+
+/* Fallback for browsers without backdrop-filter support (rare, but the
+   material must never become illegible — an opaque-enough solid stands in). */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-thin,
+  .glass-regular,
+  .glass-thick {
+    background-color: rgba(255, 255, 255, 0.94);
+  }
+  .glass-navy-thin,
+  .glass-navy-regular,
+  .glass-navy-thick {
+    background-color: rgba(11, 24, 44, 0.94);
+  }
 }

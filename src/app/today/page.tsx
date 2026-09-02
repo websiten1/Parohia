@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
+import { GlassSurface } from "@/components/glass/GlassSurface";
 import { Reveal } from "@/components/Reveal";
 import { TodayVideoHero } from "@/components/TodayVideoHero";
 import { getAnnouncementsForParish, getGlobalAnnouncements, getTodaysServices } from "@/lib/data/parishes";
@@ -93,52 +95,56 @@ export default function TodayPage() {
           </p>
 
           {upcoming && (
-            <Reveal delay={0} className="mt-[24px]">
-              <Link href="/calendar" className="press block border-l-2 border-amber py-[2px] pl-[16px]">
-                <p className="font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] text-muted">{t("today.upcoming")}</p>
-                <p className="mt-[6px] font-serif text-[19px] font-bold leading-[1.3] text-text">{upcomingTitle}</p>
-                <p className="mt-[2px] font-sans text-[13px] text-muted">{upcomingDateLabel}</p>
+            <Reveal delay={0} className="mt-[28px]">
+              <Link href="/calendar">
+                <motion.div whileTap={{ scale: 0.98 }} transition={{ type: "spring", stiffness: 500, damping: 32 }}>
+                  <p className="font-serif text-[19px] font-bold leading-[1.3] text-text">{upcomingTitle}</p>
+                  <p className="mt-[4px] flex items-center gap-[7px] font-sans text-[13px] text-muted">
+                    <span className="h-[5px] w-[5px] rounded-full bg-amber" aria-hidden="true" />
+                    {upcomingDateLabel}
+                  </p>
+                </motion.div>
               </Link>
             </Reveal>
           )}
 
           {latestAnnouncement && (
-            <Reveal delay={80} className="mt-[22px]">
-              <Link href={`/anunturi/${latestAnnouncement.id}`} className="press flex items-start gap-[14px]">
-                <span className="h-[56px] w-[56px] shrink-0 overflow-hidden rounded-xs bg-navy-texture">
-                  {latestAnnouncement.photo && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={latestAnnouncement.photo} alt="" className="h-full w-full object-cover" />
-                  )}
-                </span>
-                <span className="min-w-0">
-                  <span className="block font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] text-muted">
-                    {t("announcements.latest")}
+            <Reveal delay={80} className="mt-[26px]">
+              <Link href={`/anunturi/${latestAnnouncement.id}`}>
+                <motion.div
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 32 }}
+                  className="flex items-start gap-[14px]"
+                >
+                  <span className="h-[56px] w-[56px] shrink-0 overflow-hidden rounded-lg bg-navy-texture">
+                    {latestAnnouncement.photo && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={latestAnnouncement.photo} alt="" className="h-full w-full object-cover" />
+                    )}
                   </span>
-                  <span className="mt-[4px] block font-serif text-[16px] font-bold leading-[1.3] text-text">
-                    {latestAnnouncement.title}
+                  <span className="min-w-0">
+                    <span className="block font-serif text-[16px] font-bold leading-[1.3] text-text">
+                      {latestAnnouncement.title}
+                    </span>
+                    <span className="mt-[3px] block font-sans text-[12.5px] leading-[1.4] text-muted">
+                      {latestAnnouncement.excerpt}
+                    </span>
                   </span>
-                  <span className="mt-[2px] block font-sans text-[12.5px] leading-[1.4] text-muted">
-                    {latestAnnouncement.excerpt}
-                  </span>
-                </span>
+                </motion.div>
               </Link>
             </Reveal>
           )}
 
           {servicesToday.length > 0 && (
-            <Reveal delay={160} className="mt-[22px]">
-              <div className="border-l-2 border-amber py-[2px] pl-[16px]">
-                <p className="font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] text-muted">
-                  {t("today.servicesToday")}
-                </p>
+            <Reveal delay={160} className="mt-[26px]">
+              <GlassSurface tier="thin" radius="xl" className="flex flex-col gap-[10px] px-[18px] py-[16px]">
                 {servicesToday.map((s) => (
-                  <p key={s.nume} className="mt-[8px] flex items-baseline justify-between gap-[10px]">
+                  <p key={s.nume} className="flex items-baseline justify-between gap-[10px]">
                     <span className="font-sans text-[14px] text-text">{s.nume}</span>
                     <span className="font-serif text-[22px] font-bold tabular-nums text-navy">{s.ora}</span>
                   </p>
                 ))}
-              </div>
+              </GlassSurface>
             </Reveal>
           )}
         </main>

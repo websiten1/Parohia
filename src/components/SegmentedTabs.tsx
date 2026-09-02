@@ -15,7 +15,7 @@ interface SegmentedTabsProps {
 export function SegmentedTabs({ tabs, active, onChange }: SegmentedTabsProps) {
   const idx = Math.max(0, tabs.findIndex((t) => t.id === active));
   return (
-    <div>
+    <div className="glass-thin rounded-xl px-[6px] pt-[4px]">
       <div className="flex">
         {tabs.map((t) => (
           <button
@@ -31,7 +31,7 @@ export function SegmentedTabs({ tabs, active, onChange }: SegmentedTabsProps) {
           </button>
         ))}
       </div>
-      <div className="relative h-[2px] bg-divider">
+      <div className="relative h-[2px] bg-divider/60">
         <div
           className="absolute top-0 h-[2px] bg-burgundy transition-[left] duration-[180ms] ease-out"
           style={{ width: `${100 / tabs.length}%`, left: `${(100 / tabs.length) * idx}%` }}

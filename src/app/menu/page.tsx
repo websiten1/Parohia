@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import { ChevronRightIcon } from "@/components/icons";
 import { ChevronRow } from "@/components/ChevronRow";
+import { GlassSurface } from "@/components/glass/GlassSurface";
 import { SealMark } from "@/components/SealMark";
 import { getParishById } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
@@ -28,32 +30,30 @@ export default function MenuPage() {
 
   return (
     <div className="flex min-h-dvh flex-col bg-background">
-      <div className="flex items-center gap-[14px] bg-navy-texture px-outer pb-[26px] pt-[max(env(safe-area-inset-top),24px)]">
+      <div className="flex items-center gap-[14px] bg-navy-texture px-outer pb-[30px] pt-[max(env(safe-area-inset-top),24px)]">
         <SealMark size={44} tone="light" />
         <p className="font-sans text-[13px] font-semibold uppercase leading-[1.35] tracking-[0.02em] text-white">
           {t("brand.name")}
         </p>
       </div>
 
-      <main className="-mt-[14px] flex-1 rounded-t-sheet bg-surface px-outer pt-[20px] pb-tabbar">
-        <Link
-          href="/menu/parish"
-          className="press mb-[24px] flex items-center justify-between gap-[10px] rounded-sm border-l-2 border-amber bg-soft-surface px-[16px] py-[14px]"
-        >
-          <span className="min-w-0">
-            <span className="block font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] text-muted">
-              {t("menu.yourParish")}
-            </span>
-            {parish ? (
-              <>
-                <span className="mt-[3px] block truncate font-serif text-[16px] text-text">{parish.name}</span>
-                <span className="mt-[1px] block truncate font-serif text-[13px] italic text-burgundy">{parish.patronSaint}</span>
-              </>
-            ) : (
-              <span className="mt-[3px] block font-sans text-[13.5px] text-muted">{t("menu.changeParish")}</span>
-            )}
-          </span>
-          <ChevronRightIcon className="h-[16px] w-[16px] shrink-0 text-muted" />
+      <main className="-mt-[18px] flex-1 rounded-t-3xl bg-surface px-outer pt-[24px] pb-tabbar">
+        <Link href="/menu/parish">
+          <motion.div whileTap={{ scale: 0.98 }} transition={{ type: "spring", stiffness: 500, damping: 32 }}>
+            <GlassSurface tier="regular" tint="amber" radius="xl" className="mb-[28px] flex items-center justify-between gap-[10px] px-[18px] py-[16px]">
+              <span className="min-w-0">
+                {parish ? (
+                  <>
+                    <span className="block truncate font-serif text-[16px] text-text">{parish.name}</span>
+                    <span className="mt-[1px] block truncate font-serif text-[13px] italic text-burgundy">{parish.patronSaint}</span>
+                  </>
+                ) : (
+                  <span className="block font-sans text-[14px] font-medium text-text">{t("menu.changeParish")}</span>
+                )}
+              </span>
+              <ChevronRightIcon className="h-[16px] w-[16px] shrink-0 text-muted" />
+            </GlassSurface>
+          </motion.div>
         </Link>
 
         <Section label={t("menu.sectionLibrary")}>
@@ -91,9 +91,11 @@ export default function MenuPage() {
 
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="mb-[28px] last:mb-0">
-      <p className="pb-[6px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{label}</p>
-      {children}
+    <div className="mb-[32px] last:mb-0">
+      <p className="pb-[10px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{label}</p>
+      <GlassSurface tier="thin" radius="xl" className="px-[14px]">
+        {children}
+      </GlassSurface>
     </div>
   );
 }

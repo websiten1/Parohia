@@ -16,7 +16,7 @@ export const en = {
   "nav.calendar": "Calendar",
   "nav.readings": "Readings",
   "nav.resources": "Resources",
-  "nav.announcements": "Announcements",
+  "nav.announcements": "News",
   "nav.schedule": "Schedule",
   "nav.menu": "Menu",
 
@@ -190,7 +190,7 @@ export const en = {
   "resource.video": "Video",
 
   // Announcements
-  "announcements.title": "Announcements",
+  "announcements.title": "News",
   "announcements.empty": "No stories yet — check back soon.",
   "announcements.latest": "From our community",
   "announcements.featured": "Featured",
