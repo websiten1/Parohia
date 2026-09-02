@@ -6,10 +6,6 @@ import { getLiturgicalDayRange2026 } from "@/lib/calendar-data/liturgicalYear202
 interface Props {
   selectedDate: string;
   onSelect: (date: string) => void;
-  /** "light" (default) is for use on a plain background — navy text, no fill.
-   * "dark" is for layering directly over photography/video — translucent
-   * navy-glass circles with ivory text, for legibility over moving footage. */
-  variant?: "light" | "dark";
 }
 
 const WINDOW_BEFORE = 10;
@@ -22,7 +18,7 @@ const CIRCLE_SIZE = 36;
  * classes) so the circle geometry can never be lost to a CSS build issue —
  * every button always has an explicit, non-collapsible width/height.
  */
-export function LiturgicalDateStrip({ selectedDate, onSelect, variant = "light" }: Props) {
+export function LiturgicalDateStrip({ selectedDate, onSelect }: Props) {
   const days = getLiturgicalDayRange2026(selectedDate, WINDOW_BEFORE, WINDOW_AFTER);
   const selectedRef = useRef<HTMLButtonElement | null>(null);
   const scrollerRef = useRef<HTMLDivElement | null>(null);
@@ -90,11 +86,7 @@ export function LiturgicalDateStrip({ selectedDate, onSelect, variant = "light" 
             <span
               data-date-circle
               className={`flex items-center justify-center rounded-full font-sans text-[14px] transition-[transform,background-color,color] duration-[220ms] ease-out ${
-                isSelected
-                  ? "bg-burgundy font-semibold text-white"
-                  : variant === "dark"
-                    ? "bg-white/12 text-white/90 backdrop-blur-[2px]"
-                    : "text-navy"
+                isSelected ? "bg-burgundy font-semibold text-white" : "text-navy"
               }`}
               style={{
                 width: CIRCLE_SIZE,
@@ -106,13 +98,7 @@ export function LiturgicalDateStrip({ selectedDate, onSelect, variant = "light" 
             </span>
             <span
               className={`h-[4px] w-[4px] rounded-full ${
-                day.isMajorFeast
-                  ? isSelected
-                    ? "bg-burgundy"
-                    : variant === "dark"
-                      ? "bg-white/70"
-                      : "bg-burgundy/60"
-                  : "bg-transparent"
+                day.isMajorFeast ? (isSelected ? "bg-burgundy" : "bg-burgundy/60") : "bg-transparent"
               }`}
               aria-hidden="true"
             />

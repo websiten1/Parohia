@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import type { Article } from "@/lib/articleData";
+import { listPriestAnnouncementsForParish } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
 import { ARTICLE_CATEGORY_ACCENT, ARTICLES, type ArticleCategory } from "@/lib/articleData";
+import { useSelectedParishId } from "@/lib/storage";
 
 const CATEGORY_LABEL_KEY: Record<ArticleCategory, TranslationKey> = {
   diocesan: "announcements.categoryDiocesan",
@@ -26,16 +29,6 @@ const ACCENT_TEXT: Record<string, string> = {
   plum: "text-plum",
 };
 
-const ACCENT_BORDER: Record<string, string> = {
-  forest: "border-forest",
-  slate: "border-slate",
-  burgundy: "border-burgundy",
-  violet: "border-violet",
-  clay: "border-clay",
-  teal: "border-teal",
-  plum: "border-plum",
-};
-
 const ACCENT_BG: Record<string, string> = {
   forest: "bg-forest",
   slate: "bg-slate",
@@ -48,10 +41,18 @@ const ACCENT_BG: Record<string, string> = {
 
 export default function AnnouncementsPage() {
   const { t } = useTranslation();
+  const [selectedParishId] = useSelectedParishId();
   const [filter, setFilter] = useState<ArticleCategory | "all">("all");
+  const [parishAnnouncements, setParishAnnouncements] = useState<Article[]>([]);
 
-  const categories = Array.from(new Set(ARTICLES.map((a) => a.category)));
-  const filtered = filter === "all" ? ARTICLES : ARTICLES.filter((a) => a.category === filter);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setParishAnnouncements(selectedParishId ? listPriestAnnouncementsForParish(selectedParishId) : []);
+  }, [selectedParishId]);
+
+  const all = [...parishAnnouncements, ...ARTICLES];
+  const categories = Array.from(new Set(all.map((a) => a.category)));
+  const filtered = filter === "all" ? all : all.filter((a) => a.category === filter);
   const [featured, ...rest] = filtered;
 
   return (
@@ -101,27 +102,21 @@ export default function AnnouncementsPage() {
         {rest.length > 0 && (
           <div className="mt-[36px]">
             <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("announcements.latest")}</p>
-            <div className="mt-[14px] flex flex-col gap-[24px]">
-              {rest.map((item, i) => {
+            <div className="mt-[10px]">
+              {rest.map((item) => {
                 const accent = ARTICLE_CATEGORY_ACCENT[item.category];
-                const isTextLed = i % 3 === 2;
                 return (
                   <Link
                     key={item.id}
                     href={`/anunturi/${item.id}`}
-                    className={`press block ${isTextLed ? "" : `border-l-2 pl-[14px] ${ACCENT_BORDER[accent]}`}`}
+                    className="press block border-b border-divider py-[16px] last:border-b-0"
                   >
                     <p className={`font-sans text-[10px] font-semibold uppercase tracking-[0.08em] ${ACCENT_TEXT[accent]}`}>
                       {t(CATEGORY_LABEL_KEY[item.category])}
                     </p>
-                    <p
-                      className={`mt-[5px] font-serif font-bold leading-[1.25] text-text ${isTextLed ? "text-[18px] italic" : "text-[17px]"}`}
-                    >
-                      {item.title}
-                    </p>
-                    {!isTextLed && (
-                      <p className="mt-[4px] font-sans text-[13px] leading-[1.5] text-text/70">{item.excerpt}</p>
-                    )}
+                    <p className="mt-[5px] font-serif text-[17px] font-bold leading-[1.25] text-text">{item.title}</p>
+                    <p className="mt-[4px] font-sans text-[13px] leading-[1.5] text-text/70">{item.excerpt}</p>
+                    {item.author && <p className="mt-[6px] font-sans text-[11.5px] text-muted">{item.author}</p>}
                   </Link>
                 );
               })}

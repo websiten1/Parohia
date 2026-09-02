@@ -94,6 +94,12 @@ export function getNextMajorFeast2026(afterDate: string): LiturgicalDay2026 | un
   return sorted.find((d) => d.date > afterDate && d.isMajorFeast);
 }
 
+/** The next `count` major feasts after a date — used to suggest feast-day notices to a priest, not to display to parishioners. */
+export function getUpcomingMajorFeasts2026(afterDate: string, count: number): LiturgicalDay2026[] {
+  const sorted = [...YEAR_2026.values()].sort((a, b) => a.date.localeCompare(b.date));
+  return sorted.filter((d) => d.date > afterDate && d.isMajorFeast).slice(0, count);
+}
+
 export function getMonthDays2026(year: number, month: number): LiturgicalDay2026[] {
   const result: LiturgicalDay2026[] = [];
   const prefix = `${year}-${String(month).padStart(2, "0")}-`;

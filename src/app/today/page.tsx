@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { GlassSurface } from "@/components/glass/GlassSurface";
 import { Reveal } from "@/components/Reveal";
 import { TodayVideoHero } from "@/components/TodayVideoHero";
 import { getAnnouncementsForParish, getGlobalAnnouncements, getTodaysServices } from "@/lib/data/parishes";
@@ -60,10 +59,11 @@ export default function TodayPage() {
     : null;
 
   const locale = language === "ro" ? "ro-RO" : "en-US";
-  const weekdayCaps = new Date(REFERENCE_DATE_2026 + "T00:00:00").toLocaleDateString(locale, { weekday: "long" }).toUpperCase();
-  const dateCaps = new Date(REFERENCE_DATE_2026 + "T00:00:00")
-    .toLocaleDateString(locale, { month: "long", day: "numeric", year: "numeric" })
-    .toUpperCase();
+  const dateLine = new Date(REFERENCE_DATE_2026 + "T00:00:00").toLocaleDateString(locale, {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  });
   const oldCalLabel = new Date(oldCalendarDate(REFERENCE_DATE_2026) + "T00:00:00").toLocaleDateString(locale, {
     month: "long",
     day: "numeric",
@@ -80,43 +80,38 @@ export default function TodayPage() {
 
   return (
     <div className="flex min-h-dvh flex-col bg-background">
-      <TodayVideoHero
-        greeting={t(greetingKey)}
-        weekdayCaps={weekdayCaps}
-        dateCaps={dateCaps}
-        commemorations={commemorations}
-        metaLine={metaLine}
-      />
+      <TodayVideoHero greeting={t(greetingKey)} dateLine={dateLine} />
 
       <PullToRefreshToday>
-        <main className="flex-1 px-outer pb-tabbar pt-[24px]">
-          <p className="font-sans text-[12px] text-muted">
-            {t("today.oldCalendarLabel")}: {oldCalLabel}
-          </p>
+        <main className="flex-1 px-outer pb-tabbar pt-[30px]">
+          <Reveal delay={0}>
+            <p className="font-serif text-[22px] font-bold leading-[1.35] text-text">{commemorations}</p>
+            {metaLine && <p className="mt-[6px] font-sans text-[13.5px] text-muted">{metaLine}</p>}
+            <p className="mt-[4px] font-sans text-[12px] text-muted">
+              {t("today.oldCalendarLabel")}: {oldCalLabel}
+            </p>
+          </Reveal>
 
           {upcoming && (
-            <Reveal delay={0} className="mt-[28px]">
+            <Reveal delay={80} className="mt-[34px]">
               <Link href="/calendar">
                 <motion.div whileTap={{ scale: 0.98 }} transition={{ type: "spring", stiffness: 500, damping: 32 }}>
                   <p className="font-serif text-[19px] font-bold leading-[1.3] text-text">{upcomingTitle}</p>
-                  <p className="mt-[4px] flex items-center gap-[7px] font-sans text-[13px] text-muted">
-                    <span className="h-[5px] w-[5px] rounded-full bg-amber" aria-hidden="true" />
-                    {upcomingDateLabel}
-                  </p>
+                  <p className="mt-[4px] font-sans text-[13px] text-muted">{upcomingDateLabel}</p>
                 </motion.div>
               </Link>
             </Reveal>
           )}
 
           {latestAnnouncement && (
-            <Reveal delay={80} className="mt-[26px]">
+            <Reveal delay={160} className="mt-[30px]">
               <Link href={`/anunturi/${latestAnnouncement.id}`}>
                 <motion.div
                   whileTap={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 500, damping: 32 }}
                   className="flex items-start gap-[14px]"
                 >
-                  <span className="h-[56px] w-[56px] shrink-0 overflow-hidden rounded-lg bg-navy-texture">
+                  <span className="h-[56px] w-[56px] shrink-0 overflow-hidden rounded-md bg-navy-texture">
                     {latestAnnouncement.photo && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={latestAnnouncement.photo} alt="" className="h-full w-full object-cover" />
@@ -136,15 +131,16 @@ export default function TodayPage() {
           )}
 
           {servicesToday.length > 0 && (
-            <Reveal delay={160} className="mt-[26px]">
-              <GlassSurface tier="thin" radius="xl" className="flex flex-col gap-[10px] px-[18px] py-[16px]">
+            <Reveal delay={240} className="mt-[30px]">
+              <p className="font-serif text-[16px] font-bold text-text">{t("today.servicesToday")}</p>
+              <div className="mt-[10px] flex flex-col gap-[8px]">
                 {servicesToday.map((s) => (
                   <p key={s.nume} className="flex items-baseline justify-between gap-[10px]">
-                    <span className="font-sans text-[14px] text-text">{s.nume}</span>
-                    <span className="font-serif text-[22px] font-bold tabular-nums text-navy">{s.ora}</span>
+                    <span className="font-sans text-[14px] text-muted">{s.nume}</span>
+                    <span className="font-serif text-[18px] font-bold tabular-nums text-navy">{s.ora}</span>
                   </p>
                 ))}
-              </GlassSurface>
+              </div>
             </Reveal>
           )}
         </main>

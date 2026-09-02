@@ -47,7 +47,7 @@ export function SegmentedChoice<T extends string>({
   // animate as if they were one shared element.
   const scope = useId();
   return (
-    <div className="glass-thin flex rounded-pill p-[3px]">
+    <div className="flex rounded-pill bg-soft-surface p-[3px]">
       {options.map((o) => (
         <button
           key={o.id}

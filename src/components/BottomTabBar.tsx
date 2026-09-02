@@ -8,24 +8,25 @@ import type { TranslationKey } from "@/lib/i18n/translations";
 import {
   NavCalendarIcon,
   NavHomeIcon,
+  NavMenuLinesIcon,
   NavNewsIcon,
-  NavPersonIcon,
   NavProgramIcon,
 } from "./icons";
 
 type NavTab = "today" | "calendar" | "news" | "history" | "menu";
 
+/** Today sits center — the app's home base, not a corner destination. */
 const TABS: {
   id: NavTab;
   href: string;
   labelKey: TranslationKey;
   Icon: (p: { className?: string; active?: boolean }) => React.JSX.Element;
 }[] = [
-  { id: "today", href: "/today", labelKey: "nav.today", Icon: NavHomeIcon },
   { id: "calendar", href: "/calendar", labelKey: "nav.calendar", Icon: NavCalendarIcon },
   { id: "news", href: "/anunturi", labelKey: "nav.announcements", Icon: NavNewsIcon },
+  { id: "today", href: "/today", labelKey: "nav.today", Icon: NavHomeIcon },
   { id: "history", href: "/program-liturgic", labelKey: "nav.schedule", Icon: NavProgramIcon },
-  { id: "menu", href: "/menu", labelKey: "nav.menu", Icon: NavPersonIcon },
+  { id: "menu", href: "/menu", labelKey: "nav.menu", Icon: NavMenuLinesIcon },
 ];
 
 function tabForPath(pathname: string): NavTab | null {
@@ -50,10 +51,11 @@ function tabForPath(pathname: string): NavTab | null {
 }
 
 /**
- * A floating Liquid Glass capsule, inset from the edges rather than docked
- * flush to them. The active tab isn't a color swap — a soft burgundy-tinted
- * pill slides beneath it (one shared layout animation, `layoutId`), so
- * switching tabs reads as the material itself moving into place.
+ * A plain, solid bar — no blur, no floating pill. The one piece of real
+ * motion is the focus bubble: it doesn't just fade in on the new tab, it
+ * carries over from wherever it was (one shared `layoutId`) and settles with
+ * a touch of overshoot, so arriving somewhere reads as a small physical
+ * event rather than a color swap.
  */
 export function BottomTabBar() {
   const pathname = usePathname();
@@ -62,7 +64,7 @@ export function BottomTabBar() {
 
   return (
     <nav
-      className="glass-thick fixed inset-x-0 bottom-[max(env(safe-area-inset-bottom),14px)] z-30 mx-auto flex w-[calc(100%-32px)] max-w-[370px] items-stretch justify-between rounded-pill p-[6px]"
+      className="fixed inset-x-0 bottom-0 z-30 mx-auto flex w-full max-w-[402px] items-stretch border-t border-divider bg-surface pb-[env(safe-area-inset-bottom,0px)]"
       aria-label="Primary"
     >
       {TABS.map(({ id, href, labelKey, Icon }) => {
@@ -72,20 +74,19 @@ export function BottomTabBar() {
             key={id}
             href={href}
             aria-current={isActive ? "page" : undefined}
-            className="relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-[2px] rounded-pill py-[8px]"
+            className="relative flex min-h-[56px] flex-1 flex-col items-center justify-center gap-[3px] py-[8px]"
           >
             {isActive && (
               <motion.span
-                layoutId="tab-active-pill"
-                className="absolute inset-0 rounded-pill bg-burgundy/11"
-                style={{ boxShadow: "inset 0 1px 0 rgba(255,255,255,0.55)" }}
-                transition={{ type: "spring", stiffness: 420, damping: 34 }}
+                layoutId="tab-focus-bubble"
+                className="absolute h-[46px] w-[46px] rounded-2xl bg-burgundy/8"
+                transition={{ type: "spring", stiffness: 380, damping: 26 }}
               />
             )}
             <motion.span
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
-              className={`relative z-10 flex flex-col items-center gap-[2px] ${isActive ? "text-burgundy" : "text-navy/55"}`}
+              className={`relative z-10 flex flex-col items-center gap-[3px] ${isActive ? "text-burgundy" : "text-navy/50"}`}
             >
               <Icon className="h-[21px] w-[21px]" active={isActive} />
               <span className="font-sans text-[10px] font-medium">{t(labelKey)}</span>

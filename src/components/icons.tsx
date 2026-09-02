@@ -115,6 +115,17 @@ export function NavPersonIcon({ className, active }: NavIconProps) {
   );
 }
 
+/** Classic three-line menu glyph — used for the Menu/More tab instead of a person icon. */
+export function NavMenuLinesIcon({ className, active }: NavIconProps) {
+  return (
+    <svg {...base} className={className}>
+      <line x1="4.5" y1="7" x2="19.5" y2="7" strokeWidth={active ? 2.3 : 1.8} />
+      <line x1="4.5" y1="12" x2="19.5" y2="12" strokeWidth={active ? 2.3 : 1.8} />
+      <line x1="4.5" y1="17" x2="19.5" y2="17" strokeWidth={active ? 2.3 : 1.8} />
+    </svg>
+  );
+}
+
 /* ---------- Chrome / structural ---------- */
 
 export function BackIcon({ className }: IconProps) {
@@ -350,6 +361,46 @@ export function DownloadIcon({ className }: IconProps) {
     <svg {...base} className={className}>
       <path d="M12 3.5v11.5M8 11l4 4 4-4" />
       <path d="M4.5 17v2A1.5 1.5 0 0 0 6 20.5h12a1.5 1.5 0 0 0 1.5-1.5v-2" />
+    </svg>
+  );
+}
+
+export function PlusIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <line x1="12" y1="4.5" x2="12" y2="19.5" />
+      <line x1="4.5" y1="12" x2="19.5" y2="12" />
+    </svg>
+  );
+}
+
+export function PencilIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M4.5 19.5 5 16l10.5-10.5a1.8 1.8 0 0 1 2.5 0l1 1a1.8 1.8 0 0 1 0 2.5L8.5 19l-4 .5Z" />
+      <path d="M13 6.5 17.5 11" />
+    </svg>
+  );
+}
+
+export function TrashIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M5 7h14" />
+      <path d="M9.5 7V5.2A1.2 1.2 0 0 1 10.7 4h2.6a1.2 1.2 0 0 1 1.2 1.2V7" />
+      <path d="M6.5 7 7.2 19a1.6 1.6 0 0 0 1.6 1.5h6.4a1.6 1.6 0 0 0 1.6-1.5L17.5 7" />
+      <line x1="10.3" y1="10.5" x2="10.3" y2="16.5" />
+      <line x1="13.7" y1="10.5" x2="13.7" y2="16.5" />
+    </svg>
+  );
+}
+
+export function MegaphoneIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M4.5 10.5v3a1 1 0 0 0 1 1H7l1.2 4.3a1 1 0 0 0 1 .7h1a1 1 0 0 0 1-1.2L10.4 14.5" />
+      <path d="M7 10.5 15.5 6a1 1 0 0 1 1.5.9v10.2a1 1 0 0 1-1.5.9L7 13.5v-3Z" />
+      <path d="M19.5 10.5c.8.5 1.3 1.3 1.3 2.2s-.5 1.7-1.3 2.2" />
     </svg>
   );
 }

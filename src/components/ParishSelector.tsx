@@ -3,8 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { EmptyState } from "@/components/Feedback";
-import { GlassButton } from "@/components/glass/GlassButton";
-import { GlassSurface } from "@/components/glass/GlassSurface";
 import { BackIcon, MapPinIcon, SearchIcon } from "@/components/icons";
 import { listParishes } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
@@ -49,10 +47,10 @@ function FilterPill({ active, onClick, children }: { active: boolean; onClick: (
 }
 
 /**
- * Search + country-filtered parish list, with an inline confirmation step —
- * shared by first-run onboarding ("/onboarding/parish") and the "Change
- * parish" flow reachable from Menu ("/menu/parish"). The two callers differ
- * only in what onChoose does afterward (go to Today vs. go back to Menu).
+ * Search + country-filtered global parish directory, with an inline
+ * confirmation step — used by the "Change parish" flow reachable from Menu
+ * ("/menu/parish"). Distinct from the US-only state/city onboarding path new
+ * accounts go through first; this is for finding a different parish later.
  */
 export function ParishSelector({ onChoose }: ParishSelectorProps) {
   const { t } = useTranslation();
@@ -94,9 +92,9 @@ export function ParishSelector({ onChoose }: ParishSelectorProps) {
           aria-label={t("common.back")}
           whileTap={{ scale: 0.88 }}
           transition={{ type: "spring", stiffness: 500, damping: 28 }}
-          className="glass-thin flex h-[36px] w-[36px] items-center justify-center rounded-pill text-navy"
+          className="flex h-[36px] w-[36px] items-center justify-center text-navy"
         >
-          <BackIcon className="h-[18px] w-[18px]" />
+          <BackIcon className="h-[20px] w-[20px]" />
         </motion.button>
 
         <div className="mt-[40px] flex flex-1 flex-col items-center text-center">
@@ -118,9 +116,15 @@ export function ParishSelector({ onChoose }: ParishSelectorProps) {
           )}
         </div>
 
-        <GlassButton onClick={() => onChoose(pending.id)} className="w-full">
+        <motion.button
+          type="button"
+          onClick={() => onChoose(pending.id)}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 500, damping: 30 }}
+          className="w-full rounded-pill bg-burgundy py-[16px] text-center font-sans text-[15px] font-semibold text-white"
+        >
           {t("parishSelector.confirmCta")}
-        </GlassButton>
+        </motion.button>
       </div>
     );
   }
@@ -131,7 +135,7 @@ export function ParishSelector({ onChoose }: ParishSelectorProps) {
         <h1 className="font-serif text-[30px] font-bold leading-[1.1] text-text">{t("parishSelector.title")}</h1>
         <p className="mt-[7px] font-serif text-[15px] italic text-muted">{t("parishSelector.subtitle")}</p>
 
-        <GlassSurface tier="thin" radius="pill" className="mt-[22px] flex items-center gap-[10px] px-[16px] py-[12px]">
+        <div className="mt-[22px] flex items-center gap-[10px] border-b border-divider pb-[12px]">
           <SearchIcon className="h-[16px] w-[16px] shrink-0 text-muted" />
           <input
             value={query}
@@ -139,7 +143,7 @@ export function ParishSelector({ onChoose }: ParishSelectorProps) {
             placeholder={t("parishSelector.searchPlaceholder")}
             className="w-full bg-transparent font-sans text-[14px] text-text outline-none placeholder:text-muted"
           />
-        </GlassSurface>
+        </div>
 
         <div className="no-scrollbar -mx-outer mt-[16px] flex gap-[6px] overflow-x-auto px-outer pb-[4px]">
           <FilterPill active={country === "all"} onClick={() => setCountry("all")}>
@@ -162,7 +166,7 @@ export function ParishSelector({ onChoose }: ParishSelectorProps) {
               <p className="mb-[8px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
                 {countryName} · {t(group.length === 1 ? "parishSelector.countSingular" : "parishSelector.countPlural", { count: group.length })}
               </p>
-              <GlassSurface tier="thin" radius="xl" className="px-[14px]">
+              <div>
                 {group.map((p, i) => (
                   <motion.button
                     key={p.id}
@@ -185,7 +189,7 @@ export function ParishSelector({ onChoose }: ParishSelectorProps) {
                     </span>
                   </motion.button>
                 ))}
-              </GlassSurface>
+              </div>
             </div>
           ))
         )}

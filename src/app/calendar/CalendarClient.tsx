@@ -2,7 +2,6 @@
 
 import { useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { GlassSurface } from "@/components/glass/GlassSurface";
 import { LiturgicalDateStrip } from "@/components/LiturgicalDateStrip";
 import { LiturgicalDayDetail } from "@/components/LiturgicalDayDetail";
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
@@ -69,7 +68,7 @@ function DayMark({ tipZi, dayNum, isToday }: { tipZi: TipZi; dayNum?: number; is
   );
 }
 
-function GlassIconButton({ onClick, label, children }: { onClick: () => void; label: string; children: React.ReactNode }) {
+function MonthNavButton({ onClick, label, children }: { onClick: () => void; label: string; children: React.ReactNode }) {
   return (
     <motion.button
       type="button"
@@ -77,7 +76,7 @@ function GlassIconButton({ onClick, label, children }: { onClick: () => void; la
       aria-label={label}
       whileTap={{ scale: 0.88 }}
       transition={{ type: "spring", stiffness: 500, damping: 28 }}
-      className="glass-thin flex h-[36px] w-[36px] items-center justify-center rounded-pill text-navy"
+      className="flex h-[36px] w-[36px] items-center justify-center text-navy"
     >
       {children}
     </motion.button>
@@ -141,12 +140,12 @@ export function CalendarClient() {
       <div className="flex items-center justify-between">
         <h1 className="font-serif text-[30px] font-bold capitalize text-text">{monthYearLabel}</h1>
         <div className="flex gap-[8px]">
-          <GlassIconButton onClick={() => goToMonth(-1)} label="Previous month">
+          <MonthNavButton onClick={() => goToMonth(-1)} label="Previous month">
             <ChevronLeftIcon className="h-[16px] w-[16px]" />
-          </GlassIconButton>
-          <GlassIconButton onClick={() => goToMonth(1)} label="Next month">
+          </MonthNavButton>
+          <MonthNavButton onClick={() => goToMonth(1)} label="Next month">
             <ChevronRightIcon className="h-[16px] w-[16px]" />
-          </GlassIconButton>
+          </MonthNavButton>
         </div>
       </div>
 
@@ -220,14 +219,14 @@ export function CalendarClient() {
             transition={SPRING}
             className="overflow-hidden"
           >
-            <GlassSurface tier="thin" radius="lg" className="mt-[12px] flex flex-col gap-[12px] px-[16px] py-[16px]">
+            <div className="mt-[16px] flex flex-col gap-[14px]">
               {LEGEND_ORDER.map((tipZi) => (
                 <div key={tipZi} className="flex items-center gap-[12px]">
                   <DayMark tipZi={tipZi} />
                   <span className="font-sans text-[13px] text-muted">{t(TIP_ZI_LABEL_KEY[tipZi])}</span>
                 </div>
               ))}
-            </GlassSurface>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -227,3 +227,58 @@ export function readSelectedParishId(): string | null {
     return null;
   }
 }
+
+export type AccountRole = "parishioner" | "priest";
+
+/**
+ * Prototype-only account record — there is no real backend or authentication
+ * behind this. It exists so the login/onboarding flow has somewhere to keep
+ * what the visitor entered, and so returning to the app resumes at the right
+ * step instead of restarting onboarding. Never treat this as secure storage.
+ */
+export interface Account {
+  role: AccountRole;
+  name: string;
+  email: string;
+  age?: string;
+  state?: string;
+  city?: string;
+  /**
+   * Priest-only: the single parish this account administers. A priest
+   * account is bound to exactly one parish for its lifetime in this
+   * prototype — there is no cross-parish switcher — which is what makes the
+   * "a priest can only edit their own parish" permissions model true by
+   * construction rather than a check that could be bypassed.
+   */
+  parishId?: string;
+}
+
+const ACCOUNT_KEY = "parohia:account";
+
+export function useAccount() {
+  const [account, setAccount, hydrated] = useLocalStorageState<Account | null>(ACCOUNT_KEY, null);
+  return [account, setAccount, hydrated] as const;
+}
+
+export function readAccount(): Account | null {
+  if (typeof window === "undefined") return null;
+  try {
+    return JSON.parse(window.localStorage.getItem(ACCOUNT_KEY) ?? "null");
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Where the splash screen should send a visitor: straight into the app if
+ * they already picked a parish, back into onboarding at the right step if
+ * they have an account but stopped partway, or to the very start otherwise.
+ */
+export function readEntryRoute(): string {
+  const account = readAccount();
+  if (account?.role === "priest") return account.parishId ? "/priest" : "/login/priest";
+  if (readSelectedParishId()) return "/today";
+  if (account?.state && account.city) return "/login/parish";
+  if (account) return "/login/location";
+  return "/login";
+}

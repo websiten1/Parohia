@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { ShareButton } from "@/components/ShareButton";
+import { findPriestAnnouncementById } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
-import { ARTICLE_CATEGORY_ACCENT, getArticle, getRelatedArticles, type ArticleCategory } from "@/lib/articleData";
+import { ARTICLE_CATEGORY_ACCENT, getArticle, getRelatedArticles, type Article, type ArticleCategory } from "@/lib/articleData";
 
 const CATEGORY_LABEL_KEY: Record<ArticleCategory, TranslationKey> = {
   diocesan: "announcements.categoryDiocesan",
@@ -32,8 +34,19 @@ const ACCENT_TEXT: Record<string, string> = {
 export default function AnnouncementPage() {
   const { id } = useParams<{ id: string }>();
   const { t, language } = useTranslation();
-  const article = getArticle(id);
-  if (!article) return notFound();
+  // Priest-authored announcements live in localStorage, unlike the static
+  // ARTICLES seed — resolving both in an effect (rather than during render)
+  // keeps the server-rendered HTML and the first client render identical,
+  // so a hard reload never flashes a false "not found" before hydration.
+  const [article, setArticle] = useState<Article | null | undefined>(undefined);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setArticle(getArticle(id) ?? findPriestAnnouncementById(id) ?? null);
+  }, [id]);
+
+  if (article === undefined) return null;
+  if (article === null) return notFound();
 
   const related = getRelatedArticles(article.id);
   const accent = ACCENT_TEXT[ARTICLE_CATEGORY_ACCENT[article.category]];

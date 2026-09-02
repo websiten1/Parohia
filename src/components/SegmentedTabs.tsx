@@ -15,7 +15,7 @@ interface SegmentedTabsProps {
 export function SegmentedTabs({ tabs, active, onChange }: SegmentedTabsProps) {
   const idx = Math.max(0, tabs.findIndex((t) => t.id === active));
   return (
-    <div className="glass-thin rounded-xl px-[6px] pt-[4px]">
+    <div>
       <div className="flex">
         {tabs.map((t) => (
           <button
