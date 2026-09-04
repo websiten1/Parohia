@@ -88,21 +88,24 @@ export default function AnnouncementsPage() {
       <main className="flex-1 px-outer pb-tabbar">
         {featured && (
           <Link key={featured.id} href={`/anunturi/${featured.id}`} className="press block">
-            <p
-              className={`font-sans text-[10.5px] font-semibold uppercase tracking-[0.08em] ${ACCENT_TEXT[ARTICLE_CATEGORY_ACCENT[featured.category]]}`}
-            >
-              {t(CATEGORY_LABEL_KEY[featured.category])}
-            </p>
-            <p className="mt-[8px] font-serif text-[27px] font-bold leading-[1.15] text-text">{featured.title}</p>
+            <p className="font-serif text-[27px] font-bold leading-[1.15] text-text">{featured.title}</p>
             <p className="mt-[10px] font-sans text-[14px] leading-[1.55] text-text/75">{featured.excerpt}</p>
-            {featured.author && <p className="mt-[8px] font-sans text-[12px] text-muted">{featured.author}</p>}
+            {/* Category rides in the caption after the heading, never as a kicker above it. */}
+            <p className="mt-[10px] font-sans text-[12px] text-muted">
+              <span className={`font-semibold ${ACCENT_TEXT[ARTICLE_CATEGORY_ACCENT[featured.category]]}`}>
+                {t(CATEGORY_LABEL_KEY[featured.category])}
+              </span>
+              {featured.author ? ` · ${featured.author}` : ""}
+            </p>
           </Link>
         )}
 
         {rest.length > 0 && (
           <div className="mt-[36px]">
-            <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("announcements.latest")}</p>
-            <div className="mt-[10px]">
+            <h2 className="border-t border-divider pt-[22px] font-serif text-[16px] font-bold text-text">
+              {t("announcements.latest")}
+            </h2>
+            <div className="mt-[6px]">
               {rest.map((item) => {
                 const accent = ARTICLE_CATEGORY_ACCENT[item.category];
                 return (
@@ -111,12 +114,12 @@ export default function AnnouncementsPage() {
                     href={`/anunturi/${item.id}`}
                     className="press block border-b border-divider py-[16px] last:border-b-0"
                   >
-                    <p className={`font-sans text-[10px] font-semibold uppercase tracking-[0.08em] ${ACCENT_TEXT[accent]}`}>
-                      {t(CATEGORY_LABEL_KEY[item.category])}
+                    <p className="font-serif text-[17px] font-bold leading-[1.25] text-text">{item.title}</p>
+                    <p className="mt-[5px] font-sans text-[13px] leading-[1.5] text-text/70">{item.excerpt}</p>
+                    <p className="mt-[8px] font-sans text-[11.5px] text-muted">
+                      <span className={`font-semibold ${ACCENT_TEXT[accent]}`}>{t(CATEGORY_LABEL_KEY[item.category])}</span>
+                      {item.author ? ` · ${item.author}` : ""}
                     </p>
-                    <p className="mt-[5px] font-serif text-[17px] font-bold leading-[1.25] text-text">{item.title}</p>
-                    <p className="mt-[4px] font-sans text-[13px] leading-[1.5] text-text/70">{item.excerpt}</p>
-                    {item.author && <p className="mt-[6px] font-sans text-[11.5px] text-muted">{item.author}</p>}
                   </Link>
                 );
               })}

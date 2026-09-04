@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ChevronRightIcon } from "@/components/icons";
 import { PhotoHero } from "@/components/PhotoHero";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
@@ -26,7 +27,10 @@ export default function ResourcesPage() {
             <PhotoHero alt={t(m.titleKey)} scrim="bottom" className="h-[138px] w-full rounded-md">
               <div className="absolute inset-x-0 bottom-0 px-[18px] pb-[14px]">
                 <p className="font-serif text-[20px] font-bold text-white">{t(m.titleKey)}</p>
-                <p className="mt-[2px] font-sans text-[13px] text-white/75">{t(m.actionKey)} →</p>
+                <p className="mt-[2px] flex items-center gap-[6px] font-sans text-[13px] text-white/75">
+                  {t(m.actionKey)}
+                  <ChevronRightIcon className="h-[13px] w-[13px]" />
+                </p>
               </div>
             </PhotoHero>
           </Link>

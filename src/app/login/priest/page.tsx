@@ -91,16 +91,15 @@ export default function PriestLoginPage() {
   }
 
   function chooseNameContinue() {
-    if (!name.trim()) {
-      setError(t("priestLogin.errorName"));
-      return;
-    }
     setError("");
     setStep("email");
   }
 
   function chooseEmailContinue() {
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+    const value = email.trim();
+    // Same rule as the parishioner flow: an empty answer is a choice, only a
+    // malformed one is worth stopping for.
+    if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
       setError(t("priestLogin.errorEmail"));
       return;
     }
@@ -308,7 +307,7 @@ export default function PriestLoginPage() {
               />
               <button
                 type="button"
-                disabled={!parishName.trim() || !patronSaint.trim()}
+                disabled={!parishName.trim()}
                 onClick={() => setStep("new-state")}
                 className="press mt-[32px] w-full rounded-pill bg-burgundy py-[15px] text-center font-sans text-[15px] font-semibold text-white disabled:opacity-40"
               >

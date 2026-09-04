@@ -15,8 +15,11 @@ export function Switch({ checked, onChange, label }: { checked: boolean; onChang
         checked ? "bg-burgundy" : "bg-navy-14"
       }`}
     >
+      {/* left-0 is load-bearing: without it the knob falls back to its static
+          position, which the button's centered text-align puts at the middle
+          of the track — pushing the knob off the right edge in both states. */}
       <span
-        className={`absolute top-[3px] h-[20px] w-[20px] rounded-full bg-white transition-transform duration-150 ${
+        className={`absolute left-0 top-[3px] h-[20px] w-[20px] rounded-full bg-white transition-transform duration-150 ${
           checked ? "translate-x-[23px]" : "translate-x-[3px]"
         }`}
       />

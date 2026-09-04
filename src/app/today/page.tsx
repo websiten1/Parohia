@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { ChevronRightIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { TodayVideoHero } from "@/components/TodayVideoHero";
 import { getAnnouncementsForParish, getGlobalAnnouncements, getTodaysServices } from "@/lib/data/parishes";
@@ -24,11 +25,21 @@ function useGreeting() {
   return "today.greetingEvening" as const;
 }
 
+/** One consistent voice for the page's section headings — a real heading, never a tracked-out kicker. */
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return <h2 className="font-serif text-[16px] font-bold text-text">{children}</h2>;
+}
+
+/** Hairline separator that does the work section labels would otherwise have to. */
+function Divider() {
+  return <div className="mt-[28px] border-t border-divider pt-[28px]" />;
+}
+
 export default function TodayPage() {
   const { t, language } = useTranslation();
   const day = getLiturgicalDay2026(REFERENCE_DATE_2026);
   const greetingKey = useGreeting();
-  const [selectedParishId] = useSelectedParishId();
+  const [selectedParishId, , parishHydrated] = useSelectedParishId();
   const [servicesToday, setServicesToday] = useState<{ nume: string; ora: string }[]>([]);
   const [latestAnnouncement, setLatestAnnouncement] = useState<Article | undefined>(undefined);
 
@@ -84,18 +95,59 @@ export default function TodayPage() {
 
       <PullToRefreshToday>
         <main className="flex-1 px-outer pb-tabbar pt-[30px]">
+          {/* What today is in the Church's life — the largest thing below the fold. */}
           <Reveal delay={0}>
-            <p className="font-serif text-[22px] font-bold leading-[1.35] text-text">{commemorations}</p>
-            {metaLine && <p className="mt-[6px] font-sans text-[13.5px] text-muted">{metaLine}</p>}
-            <p className="mt-[4px] font-sans text-[12px] text-muted">
+            <p className="font-serif text-[23px] font-bold leading-[1.3] text-text">{commemorations}</p>
+            {metaLine && <p className="mt-[8px] font-sans text-[13.5px] leading-[1.5] text-muted">{metaLine}</p>}
+            <p className="mt-[3px] font-sans text-[12.5px] text-muted">
               {t("today.oldCalendarLabel")}: {oldCalLabel}
             </p>
           </Reveal>
 
+          {/* The parish's own day — the reason someone opens this app before a service. */}
+          <Reveal delay={80}>
+            <Divider />
+            <SectionHeading>{t("today.servicesToday")}</SectionHeading>
+            {servicesToday.length > 0 ? (
+              <div className="mt-[12px]">
+                {servicesToday.map((s, i) => (
+                  <div
+                    key={`${s.nume}-${s.ora}`}
+                    className={`flex items-baseline justify-between gap-[12px] py-[11px] ${
+                      i !== servicesToday.length - 1 ? "border-b border-divider/70" : ""
+                    }`}
+                  >
+                    <span className="font-sans text-[14.5px] text-text">{s.nume}</span>
+                    <span className="shrink-0 font-serif text-[17px] font-bold tabular-nums text-navy">{s.ora}</span>
+                  </div>
+                ))}
+              </div>
+            ) : selectedParishId ? (
+              // A parish is chosen; today simply has nothing scheduled.
+              <p className="mt-[10px] font-sans text-[13.5px] text-muted">{t("today.noServicesToday")}</p>
+            ) : (
+              // Nobody has picked a parish — offer the way in without gating the page on it.
+              parishHydrated && (
+                <div className="mt-[10px]">
+                  <p className="font-sans text-[13.5px] leading-[1.55] text-muted">{t("today.noParishPrompt")}</p>
+                  <Link
+                    href="/menu/parish"
+                    className="press mt-[12px] inline-flex items-center gap-[6px] font-sans text-[14px] font-semibold text-burgundy"
+                  >
+                    {t("today.noParishCta")}
+                    <ChevronRightIcon className="h-[13px] w-[13px]" />
+                  </Link>
+                </div>
+              )
+            )}
+          </Reveal>
+
           {upcoming && (
-            <Reveal delay={80} className="mt-[34px]">
-              <Link href="/calendar">
-                <motion.div whileTap={{ scale: 0.98 }} transition={{ type: "spring", stiffness: 500, damping: 32 }}>
+            <Reveal delay={160}>
+              <Divider />
+              <SectionHeading>{t("today.upcoming")}</SectionHeading>
+              <Link href="/calendar" className="press mt-[10px] block">
+                <motion.div whileTap={{ scale: 0.99 }} transition={{ type: "spring", stiffness: 500, damping: 32 }}>
                   <p className="font-serif text-[19px] font-bold leading-[1.3] text-text">{upcomingTitle}</p>
                   <p className="mt-[4px] font-sans text-[13px] text-muted">{upcomingDateLabel}</p>
                 </motion.div>
@@ -104,43 +156,34 @@ export default function TodayPage() {
           )}
 
           {latestAnnouncement && (
-            <Reveal delay={160} className="mt-[30px]">
-              <Link href={`/anunturi/${latestAnnouncement.id}`}>
+            <Reveal delay={240}>
+              <Divider />
+              <Link href={`/anunturi/${latestAnnouncement.id}`} className="press block">
                 <motion.div
-                  whileTap={{ scale: 0.98 }}
+                  whileTap={{ scale: 0.99 }}
                   transition={{ type: "spring", stiffness: 500, damping: 32 }}
                   className="flex items-start gap-[14px]"
                 >
-                  <span className="h-[56px] w-[56px] shrink-0 overflow-hidden rounded-md bg-navy-texture">
-                    {latestAnnouncement.photo && (
-                      // eslint-disable-next-line @next/next/no-img-element
+                  {/* Only reserve the thumbnail when there is genuinely an image to put in it. */}
+                  {latestAnnouncement.photo && (
+                    <span className="h-[58px] w-[58px] shrink-0 overflow-hidden rounded-md">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={latestAnnouncement.photo} alt="" className="h-full w-full object-cover" />
-                    )}
-                  </span>
+                    </span>
+                  )}
                   <span className="min-w-0">
-                    <span className="block font-serif text-[16px] font-bold leading-[1.3] text-text">
+                    <span className="block font-serif text-[17px] font-bold leading-[1.3] text-text">
                       {latestAnnouncement.title}
                     </span>
-                    <span className="mt-[3px] block font-sans text-[12.5px] leading-[1.4] text-muted">
+                    <span className="mt-[5px] block font-sans text-[13px] leading-[1.5] text-muted">
                       {latestAnnouncement.excerpt}
                     </span>
+                    {latestAnnouncement.author && (
+                      <span className="mt-[7px] block font-sans text-[12px] text-muted">{latestAnnouncement.author}</span>
+                    )}
                   </span>
                 </motion.div>
               </Link>
-            </Reveal>
-          )}
-
-          {servicesToday.length > 0 && (
-            <Reveal delay={240} className="mt-[30px]">
-              <p className="font-serif text-[16px] font-bold text-text">{t("today.servicesToday")}</p>
-              <div className="mt-[10px] flex flex-col gap-[8px]">
-                {servicesToday.map((s) => (
-                  <p key={s.nume} className="flex items-baseline justify-between gap-[10px]">
-                    <span className="font-sans text-[14px] text-muted">{s.nume}</span>
-                    <span className="font-serif text-[18px] font-bold tabular-nums text-navy">{s.ora}</span>
-                  </p>
-                ))}
-              </div>
             </Reveal>
           )}
         </main>

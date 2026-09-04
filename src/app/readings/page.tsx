@@ -43,7 +43,6 @@ function ReadingRow({ eyebrow, reference, readingId }: { eyebrow: string; refere
         <Link href={`/reading/${readingId}?mode=listen`} className="press underline decoration-navy/25 underline-offset-4">
           {t("readings.listen")}
         </Link>
-        {" →"}
       </p>
     </div>
   );

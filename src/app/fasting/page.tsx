@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ChevronRightIcon } from "@/components/icons";
 import { PhotoHero } from "@/components/PhotoHero";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import {
@@ -38,8 +39,9 @@ export default function FastingPage() {
             <span className="block font-serif text-[22px] font-bold text-text">
               {language === "ro" ? (nextFast.titleRo ?? nextFast.title) : nextFast.title}
             </span>
-            <span className="mt-[3px] block font-sans text-[14px] text-navy">
-              {formatMediumDate(nextFast.startDate, language)} – {formatMediumDate(nextFast.endDate, language)} →
+            <span className="mt-[3px] flex items-center gap-[6px] font-sans text-[14px] text-navy">
+              {formatMediumDate(nextFast.startDate, language)} – {formatMediumDate(nextFast.endDate, language)}
+              <ChevronRightIcon className="h-[13px] w-[13px]" />
             </span>
           </Link>
 

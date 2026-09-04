@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { saveDemoParish } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { DEMO_PARISH_TEMPLATES } from "@/lib/usLocationData";
-import { useAccount, useSelectedParishId } from "@/lib/storage";
+import { markOnboardingSkipped, useAccount, useSelectedParishId } from "@/lib/storage";
 import type { Parish } from "@/lib/types";
 
 /**
@@ -84,6 +84,17 @@ export default function ParishOnboardingPage() {
       </div>
 
       <p className="mt-[28px] text-center font-sans text-[11.5px] italic text-muted">{t("parishOnboarding.disclaimer")}</p>
+
+      <button
+        type="button"
+        onClick={() => {
+          markOnboardingSkipped();
+          router.replace("/today");
+        }}
+        className="press mt-[22px] w-full text-center font-sans text-[13.5px] text-muted"
+      >
+        {t("common.skipForNow")}
+      </button>
     </div>
   );
 }

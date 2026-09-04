@@ -7,6 +7,7 @@ export const en = {
   "common.cancel": "Cancel",
   "common.saveNote": "Save Note",
   "common.continue": "Continue",
+  "common.skipForNow": "Skip for now",
   "common.sendMessage": "Send Message",
   "common.min": "min",
   "common.somethingWrong": "Something went wrong",
@@ -14,6 +15,7 @@ export const en = {
   // Login / account onboarding
   "login.parishionerCta": "I'm a parishioner",
   "login.priestCta": "I'm a priest",
+  "login.skipCta": "Look around first",
 
   "account.stepNameTitle": "What's your name?",
   "account.namePlaceholder": "Your name",
@@ -137,7 +139,10 @@ export const en = {
   "today.servicesToday": "Today's Services",
   "today.readWatchListen": "Read, watch, listen",
   "today.oldCalendarLabel": "Old Calendar",
-  "today.saintsCta": "Today's Saints →",
+  "today.saintsCta": "Today's Saints",
+  "today.noParishPrompt": "Choose your parish to see its services and announcements here.",
+  "today.noParishCta": "Choose a parish",
+  "today.noServicesToday": "No services listed for today.",
   "announcements.englishOnlyNote": "This piece is presented in English only.",
 
   // 2026 liturgical day metadata (Today page, date strip, Calendar day detail)
@@ -166,7 +171,7 @@ export const en = {
 
   // Calendar
   "calendar.eyebrow": "Calendar",
-  "calendar.saintOfTheDay": "Saint of the Day →",
+  "calendar.saintOfTheDay": "Saint of the Day",
   "calendar.toneAndGospel": "Tone {tone} · Matins Gospel 2",
   "calendar.dateDetailTitle": "Date Detail",
   "calendar.oldCalendar": "Old Calendar",
@@ -202,7 +207,7 @@ export const en = {
   // Prayers hub
   "prayers.title": "Prayers",
   "prayers.quote": "“Lord, teach us to pray.”",
-  "prayers.viewAll": "View all prayers →",
+  "prayers.viewAll": "View all prayers",
 
   // Fasting
   "fasting.title": "Fasting",
@@ -450,12 +455,14 @@ export const ro: Record<TranslationKey, string> = {
   "common.cancel": "Anulează",
   "common.saveNote": "Salvează notița",
   "common.continue": "Continuă",
+  "common.skipForNow": "Mai târziu",
   "common.sendMessage": "Trimite mesajul",
   "common.min": "min",
   "common.somethingWrong": "Ceva nu a mers bine",
 
   "login.parishionerCta": "Sunt enoriaș",
   "login.priestCta": "Sunt preot",
+  "login.skipCta": "Vreau doar să explorez",
 
   "account.stepNameTitle": "Cum te numești?",
   "account.namePlaceholder": "Numele tău",
@@ -576,7 +583,10 @@ export const ro: Record<TranslationKey, string> = {
   "today.servicesToday": "Slujbele de azi",
   "today.readWatchListen": "Citește, privește, ascultă",
   "today.oldCalendarLabel": "Calendar vechi",
-  "today.saintsCta": "Sfinții zilei →",
+  "today.saintsCta": "Sfinții zilei",
+  "today.noParishPrompt": "Alege-ți parohia pentru a vedea aici slujbele și anunțurile ei.",
+  "today.noParishCta": "Alege o parohie",
+  "today.noServicesToday": "Nicio slujbă programată azi.",
   "announcements.englishOnlyNote": "Acest text este disponibil doar în limba engleză.",
 
   "liturgical.glas": "Glas",
@@ -602,7 +612,7 @@ export const ro: Record<TranslationKey, string> = {
   "notifications.item3Time": "acum 3 zile",
 
   "calendar.eyebrow": "Calendar",
-  "calendar.saintOfTheDay": "Sfântul zilei →",
+  "calendar.saintOfTheDay": "Sfântul zilei",
   "calendar.toneAndGospel": "Glasul {tone} · Evanghelia Utreniei 2",
   "calendar.dateDetailTitle": "Detalii dată",
   "calendar.oldCalendar": "Calendar vechi",
@@ -634,7 +644,7 @@ export const ro: Record<TranslationKey, string> = {
 
   "prayers.title": "Rugăciuni",
   "prayers.quote": "„Doamne, învață-ne să ne rugăm.”",
-  "prayers.viewAll": "Vezi toate rugăciunile →",
+  "prayers.viewAll": "Vezi toate rugăciunile",
 
   "fasting.title": "Postul",
   "fasting.today": "Astăzi",

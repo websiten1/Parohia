@@ -25,45 +25,86 @@ const TIP_ZI_LABEL_KEY: Record<TipZi, TranslationKey> = {
 
 const LEGEND_ORDER: TipZi[] = ["duminica", "praznic", "post", "sfant", "obisnuita"];
 
-/** The disc/dot treatment for one calendar day, shared by the month grid cells and the legend swatches. */
-function DayMark({ tipZi, dayNum, isToday }: { tipZi: TipZi; dayNum?: number; isToday?: boolean }) {
-  const ring = isToday ? "shadow-[0_0_0_2px_var(--color-amber)] anim-ring-pulse" : "";
+/** Distinct numerals keep the legend from reading as five copies of the same cell. */
+const LEGEND_SAMPLE_DAY: Record<TipZi, number> = {
+  duminica: 7,
+  praznic: 15,
+  post: 12,
+  sfant: 23,
+  obisnuita: 18,
+};
 
-  if (tipZi === "duminica") {
-    return (
-      <span className={`flex h-[34px] w-[34px] items-center justify-center rounded-full bg-burgundy font-sans text-[14px] font-semibold text-white ${ring}`}>
-        {dayNum}
-      </span>
-    );
-  }
+/**
+ * How one day reads in the grid. Sunday is already obvious from the column it
+ * sits in, so it gets typographic weight rather than the loudest treatment —
+ * which frees the single filled disc to mean "selected" and nothing else.
+ * Day type is carried by a marker under the numeral whose *shape* differs as
+ * well as its color (filled / hollow / small), so the grid never depends on
+ * color alone to say what a day is.
+ */
+const NUMERAL_CLASS: Record<TipZi, string> = {
+  duminica: "font-semibold text-burgundy",
+  praznic: "font-semibold text-text",
+  post: "text-text",
+  sfant: "text-text",
+  obisnuita: "text-text",
+};
+
+function DayTypeMarker({ tipZi }: { tipZi: TipZi }) {
   if (tipZi === "praznic") {
-    return (
+    // Gilding: the one place amber appears in the grid, and it stays small.
+    return <span className="h-[4px] w-[4px] rounded-full bg-amber" aria-hidden="true" />;
+  }
+  if (tipZi === "post") {
+    return <span className="h-[4px] w-[4px] rounded-full border border-forest" aria-hidden="true" />;
+  }
+  if (tipZi === "sfant") {
+    return <span className="h-[3px] w-[3px] rounded-full bg-slate/70" aria-hidden="true" />;
+  }
+  return null;
+}
+
+/**
+ * Shared by the month grid cells and the legend swatches so both stay
+ * identical. Selection renders through the same structure rather than as a
+ * separate branch, so the numeral keeps its baseline instead of jumping when
+ * a day is picked.
+ */
+function DayMark({
+  tipZi,
+  dayNum,
+  isToday,
+  isSelected,
+}: {
+  tipZi: TipZi;
+  dayNum?: number;
+  isToday?: boolean;
+  isSelected?: boolean;
+}) {
+  return (
+    <span className="relative flex h-[34px] w-[34px] flex-col items-center justify-center">
+      {isSelected && (
+        <motion.span
+          layoutId="calendar-selected-day"
+          transition={SPRING}
+          className="absolute inset-0 rounded-full bg-burgundy"
+          aria-hidden="true"
+        />
+      )}
+      {isToday && !isSelected && (
+        <span className="pointer-events-none absolute inset-0 rounded-full border-[1.5px] border-amber" aria-hidden="true" />
+      )}
       <span
-        className={`flex h-[34px] w-[34px] items-center justify-center rounded-full bg-amber font-sans text-[14px] font-semibold text-white ${ring}`}
-        style={{ boxShadow: isToday ? undefined : "0 0 0 3px var(--color-pale-amber)" }}
+        className={`relative font-sans text-[15px] tabular-nums leading-none ${
+          isSelected ? "font-semibold text-white" : NUMERAL_CLASS[tipZi]
+        }`}
       >
         {dayNum}
       </span>
-    );
-  }
-  if (tipZi === "post") {
-    return (
-      <span className={`flex h-[34px] w-[34px] items-center justify-center rounded-full border-2 border-forest font-sans text-[14px] font-semibold text-forest ${ring}`}>
-        {dayNum}
+      {/* Reserved whether or not a marker renders, so every numeral shares one baseline. */}
+      <span className="relative mt-[4px] flex h-[4px] items-center justify-center">
+        {!isSelected && <DayTypeMarker tipZi={tipZi} />}
       </span>
-    );
-  }
-  if (tipZi === "sfant") {
-    return (
-      <span className={`flex h-[34px] w-[34px] flex-col items-center justify-center gap-[2px] rounded-full font-sans text-[14px] text-text ${ring}`}>
-        {dayNum}
-        <span className="h-[4px] w-[4px] rounded-full bg-slate" aria-hidden="true" />
-      </span>
-    );
-  }
-  return (
-    <span className={`flex h-[34px] w-[34px] items-center justify-center rounded-full font-sans text-[14px] text-text ${ring}`}>
-      {dayNum}
     </span>
   );
 }
@@ -183,17 +224,7 @@ export function CalendarClient() {
               className="anim-scale-fade-in press flex h-[42px] items-center justify-center"
               style={{ animationDelay: `${Math.min(i, 20) * 12}ms` }}
             >
-              {isSelected ? (
-                <motion.span
-                  layoutId="calendar-selected-day"
-                  transition={SPRING}
-                  className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-burgundy font-sans text-[14px] font-semibold text-white"
-                >
-                  {dayNum}
-                </motion.span>
-              ) : (
-                <DayMark tipZi={tipZi} dayNum={dayNum} isToday={isToday} />
-              )}
+              <DayMark tipZi={tipZi} dayNum={dayNum} isToday={isToday} isSelected={isSelected} />
             </button>
           );
         })}
@@ -222,7 +253,8 @@ export function CalendarClient() {
             <div className="mt-[16px] flex flex-col gap-[14px]">
               {LEGEND_ORDER.map((tipZi) => (
                 <div key={tipZi} className="flex items-center gap-[12px]">
-                  <DayMark tipZi={tipZi} />
+                  {/* A representative numeral, so the swatch is literally what the grid draws. */}
+                  <DayMark tipZi={tipZi} dayNum={LEGEND_SAMPLE_DAY[tipZi]} />
                   <span className="font-sans text-[13px] text-muted">{t(TIP_ZI_LABEL_KEY[tipZi])}</span>
                 </div>
               ))}

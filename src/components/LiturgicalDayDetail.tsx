@@ -7,23 +7,16 @@ interface Props {
   day: LiturgicalDay2026;
 }
 
-const MARKER_ACCENT = {
-  slate: "decoration-slate",
-  violet: "decoration-violet",
-  clay: "decoration-clay",
-  burgundy: "decoration-burgundy",
-  forest: "decoration-forest",
-} as const;
-
-function Marker({ label, value, accent }: { label: string; value: string; accent: keyof typeof MARKER_ACCENT }) {
+/**
+ * A label/value pair. The label is a field name, not a category kicker, and it
+ * carries no decorative rule — the colored underlines this used to draw were
+ * five arbitrary hues standing in for meaning the data never had.
+ */
+function Field({ label, value }: { label: string; value: string }) {
   return (
     <div className="min-w-0">
-      <p
-        className={`inline font-sans text-[10.5px] font-semibold uppercase tracking-[0.07em] text-muted underline decoration-2 underline-offset-[5px] ${MARKER_ACCENT[accent]}`}
-      >
-        {label}
-      </p>
-      <p className="mt-[5px] font-sans text-[13.5px] leading-[1.4] text-text">{value}</p>
+      <dt className="font-sans text-[11px] font-medium text-muted">{label}</dt>
+      <dd className="mt-[3px] font-sans text-[14px] leading-[1.4] text-text">{value}</dd>
     </div>
   );
 }
@@ -40,32 +33,36 @@ export function LiturgicalDayDetail({ day }: Props) {
     month: "long",
     day: "numeric",
   });
+  const dateLabel = language === "ro" ? formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1) : formattedDate;
 
   return (
     <div>
-      <p className="font-sans text-[12px] font-semibold uppercase tracking-[0.06em] text-muted">
-        {language === "ro" ? formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1) : formattedDate}
+      {/* The day itself leads; the date is a caption underneath it, not a kicker above it. */}
+      <h2 className="font-serif text-[20px] font-bold leading-[1.3] text-text">{commemorations}</h2>
+      <p className="mt-[7px] flex items-center gap-[8px] font-sans text-[13px] text-muted">
+        <span>{dateLabel}</span>
         {day.isMajorFeast && (
-          <span className="ml-[8px] rounded-pill bg-burgundy-10 px-[8px] py-[2px] text-burgundy">{t("liturgical.majorFeast")}</span>
+          <>
+            {/* Same gilded dot the month grid uses for a feast, so the two read as one language. */}
+            <span className="h-[4px] w-[4px] shrink-0 rounded-full bg-amber" aria-hidden="true" />
+            <span className="font-medium text-text">{t("liturgical.majorFeast")}</span>
+          </>
         )}
       </p>
-      <p className="mt-[6px] font-serif text-[19px] font-bold leading-[1.3] text-text">{commemorations}</p>
 
       {(day.tone != null || day.matinsGospel != null || sunday) && (
-        <div className="mt-[18px] flex flex-wrap gap-x-[28px] gap-y-[16px]">
-          {day.tone != null && <Marker label={t("liturgical.glas")} value={String(day.tone)} accent="slate" />}
-          {day.matinsGospel != null && (
-            <Marker label={t("liturgical.voskresna")} value={String(day.matinsGospel)} accent="violet" />
-          )}
-          {sunday?.epistle && <Marker label={t("liturgical.apostle")} value={sunday.epistle} accent="clay" />}
-          {sunday?.gospel && <Marker label={t("liturgical.gospel")} value={sunday.gospel} accent="burgundy" />}
-        </div>
+        <dl className="mt-[20px] flex flex-wrap gap-x-[32px] gap-y-[16px]">
+          {day.tone != null && <Field label={t("liturgical.glas")} value={String(day.tone)} />}
+          {day.matinsGospel != null && <Field label={t("liturgical.voskresna")} value={String(day.matinsGospel)} />}
+          {sunday?.epistle && <Field label={t("liturgical.apostle")} value={sunday.epistle} />}
+          {sunday?.gospel && <Field label={t("liturgical.gospel")} value={sunday.gospel} />}
+        </dl>
       )}
 
       {notes.length > 0 && (
-        <div className="mt-[16px]">
-          <Marker label={t("liturgical.fasting")} value={notes.join(" · ")} accent="forest" />
-        </div>
+        <dl className="mt-[16px]">
+          <Field label={t("liturgical.fasting")} value={notes.join(" · ")} />
+        </dl>
       )}
     </div>
   );

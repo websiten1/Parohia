@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ChevronRightIcon } from "@/components/icons";
 import { PhotoHero } from "@/components/PhotoHero";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { PRAYERS } from "@/lib/seedData";
@@ -30,13 +31,17 @@ export default function PrayersPage() {
                 <span className="block font-serif text-[17px] font-bold text-text">{title}</span>
                 {subtitle && <span className="mt-[2px] block font-sans text-[13px] text-muted">{subtitle}</span>}
               </span>
-              <span className="shrink-0 font-sans text-[15px] text-muted">›</span>
+              <ChevronRightIcon className="h-[15px] w-[15px] shrink-0 text-muted" />
             </Link>
           );
         })}
 
-        <Link href="/prayer/prayer-different-needs" className="press mt-[16px] block font-sans text-[14px] font-semibold text-navy">
+        <Link
+          href="/prayer/prayer-different-needs"
+          className="press mt-[16px] inline-flex items-center gap-[6px] font-sans text-[14px] font-semibold text-navy"
+        >
           {t("prayers.viewAll")}
+          <ChevronRightIcon className="h-[13px] w-[13px]" />
         </Link>
       </main>
     </div>

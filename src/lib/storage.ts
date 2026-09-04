@@ -228,6 +228,24 @@ export function readSelectedParishId(): string | null {
   }
 }
 
+const ONBOARDING_SKIPPED_KEY = "parohia:onboardingSkipped";
+
+/**
+ * Records that the visitor chose to go straight into the app instead of
+ * answering onboarding. Without this the entry route would send them back to
+ * the first question on every launch, which is exactly what choosing "skip"
+ * was meant to avoid. They can still pick a parish later from Today or Menu.
+ */
+export function markOnboardingSkipped(): void {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(ONBOARDING_SKIPPED_KEY, "true");
+}
+
+export function readOnboardingSkipped(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.localStorage.getItem(ONBOARDING_SKIPPED_KEY) === "true";
+}
+
 export type AccountRole = "parishioner" | "priest";
 
 /**
@@ -278,6 +296,8 @@ export function readEntryRoute(): string {
   const account = readAccount();
   if (account?.role === "priest") return account.parishId ? "/priest" : "/login/priest";
   if (readSelectedParishId()) return "/today";
+  // Anyone who skipped is taken at their word and never asked again.
+  if (readOnboardingSkipped()) return "/today";
   if (account?.state && account.city) return "/login/parish";
   if (account) return "/login/location";
   return "/login";

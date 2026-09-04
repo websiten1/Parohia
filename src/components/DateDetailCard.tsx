@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ChevronRightIcon } from "@/components/icons";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { dayTitle, weekdayOf } from "@/lib/seedData";
 import type { LiturgicalDay } from "@/lib/types";
@@ -24,9 +25,10 @@ export function DateDetailCard({ day }: { day: LiturgicalDay }) {
       {hasSaint && (
         <Link
           href={`/saint/${day.saints[0]}`}
-          className="press mt-[10px] inline-block font-sans text-[13px] font-semibold text-navy"
+          className="press mt-[10px] inline-flex items-center gap-[6px] font-sans text-[13px] font-semibold text-navy"
         >
           {t("calendar.saintOfTheDay")}
+          <ChevronRightIcon className="h-[13px] w-[13px]" />
         </Link>
       )}
     </div>
