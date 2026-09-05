@@ -38,12 +38,12 @@ export const viewport: Viewport = {
   viewportFit: "cover",
   width: "device-width",
   initialScale: 1,
-  /* Matches the top of the page wash, so the status-bar strip blends into the
-     page rather than sitting on it as a separate colour. */
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#d6e4f6" },
-    { media: "(prefers-color-scheme: dark)", color: "#232833" },
-  ],
+  /*
+   * No themeColor here on purpose. The strip has to change per route, and a
+   * tag rendered from this export is owned by React — ThemeSync removing or
+   * mutating it crashed navigation with `removeChild` of null. ThemeSync now
+   * creates and owns a single tag of its own instead.
+   */
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

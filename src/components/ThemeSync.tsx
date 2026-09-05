@@ -43,13 +43,16 @@ export function ThemeSync() {
       typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isDark = settings.appearance === "dark" || (settings.appearance === "system" && prefersDark);
 
-    // Drop the build-time pair; a single tag we own avoids Safari picking the
-    // media-matched one over ours.
-    document.querySelectorAll('meta[name="theme-color"][media]').forEach((m) => m.remove());
-    let tag = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]:not([media])');
+    /*
+     * Only ever touch a tag we created ourselves, identified by data-owner.
+     * Removing or mutating a meta tag rendered by Next means fighting React
+     * for a node it owns, which threw `removeChild` of null on navigation.
+     */
+    let tag = document.querySelector<HTMLMetaElement>('meta[name="theme-color"][data-owner="parohia"]');
     if (!tag) {
       tag = document.createElement("meta");
       tag.name = "theme-color";
+      tag.dataset.owner = "parohia";
       document.head.appendChild(tag);
     }
     tag.content = statusStripColor(pathname, isDark);
