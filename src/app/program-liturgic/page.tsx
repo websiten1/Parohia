@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import { CandleIcon } from "@/components/icons";
 import { EmptyState } from "@/components/Feedback";
 import { Reveal } from "@/components/Reveal";
-import { PageBody, PageContainer, SectionHeader, SoftCard, TintMarker } from "@/components/ui/Surfaces";
+import { PageBody, PageContainer, SectionHeader, SoftCard } from "@/components/ui/Surfaces";
 import { getParishById, getProgramForParish, WEEKDAY_LABEL_KEY } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
 import { FEAST_DAY_NOTICES } from "@/lib/scheduleData";
 import { useSelectedParishId } from "@/lib/storage";
-import { DOMAIN_TINT } from "@/lib/tints";
 import type { Parish, ProgramLiturgic } from "@/lib/types";
 
 const SERVICE_LABEL_KEY: Record<string, TranslationKey> = {
@@ -102,18 +101,16 @@ export default function ProgramLiturgicPage() {
                   : FEAST_DAY_NOTICES
                 ).map((notice, i) => (
                   <Reveal key={notice.id} delay={i * 90}>
-                    <div className="flex items-start gap-[14px]">
-                      <TintMarker tint={DOMAIN_TINT.feast}>
-                        <CandleIcon className="h-[18px] w-[18px]" />
-                      </TintMarker>
-                      <div className="min-w-0 flex-1 pt-[3px]">
-                        <p className="font-serif text-[18px] font-bold leading-[1.25] text-text">
-                          {language === "ro" ? notice.titleRo : notice.title}
-                        </p>
-                        <p className="mt-[6px] font-serif text-[15.5px] leading-[1.55] text-muted">
-                          {language === "ro" ? notice.noteRo : notice.note}
-                        </p>
-                      </div>
+                    {/* No badge beside these: the section heading already says
+                        what they are, and an identical marker on every row
+                        carries no information. */}
+                    <div className="min-w-0">
+                      <p className="font-serif text-[18px] font-bold leading-[1.25] text-text">
+                        {language === "ro" ? notice.titleRo : notice.title}
+                      </p>
+                      <p className="mt-[6px] font-serif text-[15.5px] leading-[1.55] text-muted">
+                        {language === "ro" ? notice.noteRo : notice.note}
+                      </p>
                     </div>
                   </Reveal>
                 ))}
