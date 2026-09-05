@@ -171,6 +171,20 @@
    * neutral the surfaces sit on. Anchored to the viewport, so a long page
    * does not stretch the wash into an invisible smear.
    * ======================================================================== */
+  /* ==========================================================================
+   * ICON BACKDROP
+   * A single faded icon sits behind every screen. Each section tints it with
+   * its own colour, so the per-page identity survives while the imagery stays
+   * common. `--backdrop-veil` is the legibility layer over it — raise it if
+   * text ever has to fight the image.
+   * ======================================================================== */
+  --backdrop-image: url("/textures/icon-backdrop.png");
+  --backdrop-veil: 0.82;
+  /* Channel triplets, not hex: rgb(var(--x) / alpha) is supported far
+     further back than relative-colour syntax. */
+  --backdrop-tint-a: 214 228 246;
+  --backdrop-tint-b: 242 239 233;
+  --backdrop-base: 234 228 222;
   --gradient-page: linear-gradient(180deg, #d6e4f6 0%, #e9f0f8 26%, #f6f2ee 62%, #eae4de 100%);
   --gradient-page-reading: linear-gradient(180deg, #f3ece1 0%, #fbf6ee 34%, #fdfaf5 70%, #f2ebe2 100%);
   --gradient-page-end: #eae4de;
@@ -281,6 +295,10 @@
   --gradient-page: linear-gradient(180deg, #232833 0%, #1c1d24 30%, #17161a 65%, #121114 100%);
   --gradient-page-reading: linear-gradient(180deg, #241f1b 0%, #1d1a18 40%, #1b1917 75%, #151312 100%);
   --gradient-page-end: #121114;
+  --backdrop-veil: 0.9;
+  --backdrop-tint-a: 35 40 51;
+  --backdrop-tint-b: 25 24 32;
+  --backdrop-base: 18 17 20;
   --gradient-page-reading-end: #151312;
   --gradient-surface: linear-gradient(170deg, #262329 0%, #1e1c21 100%);
   --gradient-primary-action: linear-gradient(180deg, #d05f7c 0%, #c4526d 55%, #ac4259 100%);
@@ -375,11 +393,38 @@
  */
 body {
   background-color: var(--gradient-page-end);
-  background-image: var(--gradient-page);
-  background-repeat: no-repeat;
-  background-size: 100% 100dvh;
   color: var(--color-text);
   overflow-x: hidden;
+}
+
+/*
+ * The backdrop is a fixed layer rather than a body background so the icon
+ * holds its position and proportions while content scrolls over it, without
+ * `background-attachment: fixed` — which repaints the whole thing every
+ * frame on iOS. A fixed child composites once instead.
+ *
+ * It sits behind everything (z-index below the app frame) and is inert.
+ * If the image is absent the veil and base colour still render, so the app
+ * degrades to a plain tinted ground rather than breaking.
+ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--gradient-page-end);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgb(var(--backdrop-tint-a) / var(--backdrop-veil)) 0%,
+      rgb(var(--backdrop-tint-b) / var(--backdrop-veil)) 55%,
+      rgb(var(--backdrop-base) / calc(var(--backdrop-veil) + 0.12)) 100%
+    ),
+    var(--backdrop-image);
+  background-size: 100% 100%, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
 }
 
 /* ==========================================================================
@@ -392,32 +437,32 @@ body {
  * paints, so nothing else has to change.
  * ======================================================================== */
 body:has(.wash-violet) {
-  --gradient-page: linear-gradient(180deg, #ddd3f2 0%, #ebe5f7 26%, #f6f2ee 64%, #eae4de 100%);
-  --gradient-page-end: #eae4de;
+  --backdrop-tint-a: 221 211 242;
+  --backdrop-tint-b: 240 236 246;
 }
 body:has(.wash-blue) {
-  --gradient-page: linear-gradient(180deg, #d0e2f7 0%, #e6eef8 26%, #f6f2ee 64%, #eae4de 100%);
-  --gradient-page-end: #eae4de;
+  --backdrop-tint-a: 208 226 247;
+  --backdrop-tint-b: 238 241 245;
 }
 body:has(.wash-cyan) {
-  --gradient-page: linear-gradient(180deg, #cfe8e6 0%, #e3f1ef 26%, #f6f3ee 64%, #eae4de 100%);
-  --gradient-page-end: #eae4de;
+  --backdrop-tint-a: 207 232 230;
+  --backdrop-tint-b: 237 242 240;
 }
 body:has(.wash-peach) {
-  --gradient-page: linear-gradient(180deg, #fbe2c6 0%, #fbeedc 26%, #f8f3ec 64%, #eae4de 100%);
-  --gradient-page-end: #eae4de;
+  --backdrop-tint-a: 251 226 198;
+  --backdrop-tint-b: 247 241 232;
 }
 body:has(.wash-green) {
-  --gradient-page: linear-gradient(180deg, #d7e9d2 0%, #e7f1e3 26%, #f6f3ee 64%, #eae4de 100%);
-  --gradient-page-end: #eae4de;
+  --backdrop-tint-a: 215 233 210;
+  --backdrop-tint-b: 238 242 234;
 }
 body:has(.wash-rose) {
-  --gradient-page: linear-gradient(180deg, #f7d9e1 0%, #f9e7ec 26%, #f8f2ee 64%, #eae4de 100%);
-  --gradient-page-end: #eae4de;
+  --backdrop-tint-a: 247 217 225;
+  --backdrop-tint-b: 247 238 240;
 }
 body:has(.wash-coral) {
-  --gradient-page: linear-gradient(180deg, #fbdcd0 0%, #fbe9e1 26%, #f8f3ee 64%, #eae4de 100%);
-  --gradient-page-end: #eae4de;
+  --backdrop-tint-a: 251 220 208;
+  --backdrop-tint-b: 248 239 234;
 }
 
 /* Dark keeps the same hue at the top, just far deeper. */
@@ -428,25 +473,32 @@ body:has(.wash-coral) {
 :root[data-theme="dark"] body:has(.wash-green),
 :root[data-theme="dark"] body:has(.wash-rose),
 :root[data-theme="dark"] body:has(.wash-coral) {
-  --gradient-page-end: #121114;
+  --backdrop-tint-a: 59 36 28;
+  --backdrop-tint-b: 28 23 21;
 }
 :root[data-theme="dark"] body:has(.wash-violet) {
-  --gradient-page: linear-gradient(180deg, #2b2540 0%, #201d2c 32%, #17161a 68%, #121114 100%);
+  --backdrop-tint-a: 43 37 64;
+  --backdrop-tint-b: 25 24 32;
 }
 :root[data-theme="dark"] body:has(.wash-blue) {
-  --gradient-page: linear-gradient(180deg, #222d3e 0%, #1c212b 32%, #17161a 68%, #121114 100%);
+  --backdrop-tint-a: 34 45 62;
+  --backdrop-tint-b: 23 25 32;
 }
 :root[data-theme="dark"] body:has(.wash-cyan) {
-  --gradient-page: linear-gradient(180deg, #1e3436 0%, #1a2528 32%, #17161a 68%, #121114 100%);
+  --backdrop-tint-a: 30 52 54;
+  --backdrop-tint-b: 22 25 28;
 }
 :root[data-theme="dark"] body:has(.wash-peach) {
-  --gradient-page: linear-gradient(180deg, #3a2c1c 32%, #241d17 60%, #17161a 82%, #121114 100%);
+  --backdrop-tint-a: 58 44 28;
+  --backdrop-tint-b: 29 26 23;
 }
 :root[data-theme="dark"] body:has(.wash-green) {
-  --gradient-page: linear-gradient(180deg, #24331f 0%, #1c2419 32%, #17161a 68%, #121114 100%);
+  --backdrop-tint-a: 36 51 31;
+  --backdrop-tint-b: 23 26 22;
 }
 :root[data-theme="dark"] body:has(.wash-rose) {
-  --gradient-page: linear-gradient(180deg, #3a2029 0%, #241a1e 32%, #17161a 68%, #121114 100%);
+  --backdrop-tint-a: 58 32 41;
+  --backdrop-tint-b: 26 22 24;
 }
 :root[data-theme="dark"] body:has(.wash-coral) {
   --gradient-page: linear-gradient(180deg, #3b241c 0%, #251b17 32%, #17161a 68%, #121114 100%);
