@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
 import { BottomTabBar } from "./BottomTabBar";
+import { ThemeSync } from "./ThemeSync";
 
 /**
  * Exact routes that show the persistent bottom tab bar — the same set that
@@ -37,6 +38,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <>
+      <ThemeSync />
       <motion.div
         key={pathname}
         className="flex flex-1 flex-col"

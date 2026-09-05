@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Bookmark, NoteEntry } from "./types";
 
 function readStorage<T>(key: string, fallback: T): T {
@@ -104,10 +104,18 @@ const DEFAULT_SETTINGS: SettingsState = {
 };
 
 export function useSettings() {
-  const [settings, setSettings, hydrated] = useLocalStorageState<SettingsState>("parohia:settings", DEFAULT_SETTINGS);
+  const [stored, setSettings, hydrated] = useLocalStorageState<SettingsState>("parohia:settings", DEFAULT_SETTINGS);
+  /**
+   * Merged over the defaults rather than used as-is. A stored object written
+   * by an older build is missing any setting added since, and reading one of
+   * those straight back returns `undefined` — which took down every page that
+   * called t() when `language` went missing. Merging makes a partial or stale
+   * record harmless.
+   */
+  const settings = useMemo(() => ({ ...DEFAULT_SETTINGS, ...stored }), [stored]);
   const update = useCallback(
     <K extends keyof SettingsState>(key: K, value: SettingsState[K]) => {
-      setSettings((prev) => ({ ...prev, [key]: value }));
+      setSettings((prev) => ({ ...DEFAULT_SETTINGS, ...prev, [key]: value }));
     },
     [setSettings]
   );

@@ -112,7 +112,7 @@ export function BottomTabBar() {
                   <motion.span
                     layoutId="nav-selection"
                     transition={NAV_SPRING}
-                    className="absolute inset-0 rounded-nav-item bg-background"
+                    className="absolute inset-0 rounded-nav-item bg-nav-selection"
                     aria-hidden="true"
                   />
                 )}
@@ -120,7 +120,7 @@ export function BottomTabBar() {
                   whileTap={reduceMotion ? undefined : { scale: 0.975 }}
                   transition={{ type: "spring", stiffness: 620, damping: 34 }}
                   className={`relative z-10 flex min-w-0 items-center justify-center gap-[9px] ${
-                    isActive ? "text-charcoal" : "text-white/55"
+                    isActive ? "text-nav-selection-ink" : "text-white/55"
                   }`}
                 >
                   <Icon className="h-[21px] w-[21px] shrink-0" active={isActive} />
