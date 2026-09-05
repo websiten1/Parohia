@@ -5,11 +5,17 @@ import { useState } from "react";
 import { AppHeader } from "@/components/AppHeader";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { DownloadButton } from "@/components/DownloadButton";
+import { PageContainer } from "@/components/ui/Surfaces";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { PRAYERS } from "@/lib/seedData";
 
-const FONT_SIZES = ["16px", "18px", "21px"];
+const FONT_SIZES = ["17px", "19px", "22px"];
 
+/**
+ * The quietest screen in the app. Chrome recedes so the sacred text carries
+ * the page: a warm reading ground, wide margins, generous leading, and no
+ * card wrapped around the prayer itself. (§16, §46)
+ */
 export default function PrayerDetailPage() {
   const { id } = useParams<{ id: string }>();
   const { t, language } = useTranslation();
@@ -23,46 +29,53 @@ export default function PrayerDetailPage() {
   const paragraphs = language === "ro" ? (prayer.textRo ?? prayer.text) : prayer.text;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer tone="reading">
       <AppHeader
-        title={title}
         right={
-          <div className="flex items-center gap-[2px]">
+          <>
             {prayer.downloadable && <DownloadButton entityType="prayer" entityId={prayer.id} title={title} />}
             <BookmarkButton entityType="prayer" entityId={prayer.id} title={title} subtitle={subtitle} />
-          </div>
+          </>
         }
       />
 
-      <div className="flex items-center justify-between px-outer pt-[10px]">
-        <span className="font-sans text-[12.5px] text-muted">
-          {prayer.estimatedMinutes} {t("common.min")}
-        </span>
-        <div className="flex items-center gap-[4px]">
-          {FONT_SIZES.map((_, i) => (
-            <button
+      <main className="flex-1 px-[26px] pb-[64px] pt-[8px]">
+        <h1 className="font-serif text-[30px] font-bold leading-[1.18] text-text">{title}</h1>
+        <div className="mt-[14px] flex items-center justify-between gap-[16px]">
+          <span className="font-sans text-[13.5px] text-muted">
+            {prayer.estimatedMinutes} {t("common.min")}
+          </span>
+          <div className="flex items-center gap-[6px]">
+            {FONT_SIZES.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setSizeIdx(i)}
+                aria-label={`Text size ${i + 1}`}
+                aria-pressed={sizeIdx === i}
+                className={`press flex h-[34px] w-[34px] items-center justify-center rounded-full font-sans font-semibold transition-colors duration-150 ${
+                  sizeIdx === i ? "bg-charcoal text-white" : "bg-surface-soft text-muted"
+                }`}
+                style={{ fontSize: 12 + i * 3 }}
+              >
+                A
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-[32px]">
+          {paragraphs.map((para, i) => (
+            <p
               key={i}
-              type="button"
-              onClick={() => setSizeIdx(i)}
-              aria-label={`Text size ${i + 1}`}
-              className={`press flex h-[28px] w-[28px] items-center justify-center rounded-full font-sans font-semibold ${
-                sizeIdx === i ? "bg-navy text-white" : "text-muted"
-              }`}
-              style={{ fontSize: 11 + i * 3 }}
+              className="mb-[22px] font-serif leading-[1.62] text-text last:mb-0"
+              style={{ fontSize: FONT_SIZES[sizeIdx] }}
             >
-              A
-            </button>
+              {para}
+            </p>
           ))}
         </div>
-      </div>
-
-      <main className="flex-1 px-outer py-[22px]">
-        {paragraphs.map((para, i) => (
-          <p key={i} className="mb-[16px] font-serif leading-[1.55] text-text" style={{ fontSize: FONT_SIZES[sizeIdx] }}>
-            {para}
-          </p>
-        ))}
       </main>
-    </div>
+    </PageContainer>
   );
 }

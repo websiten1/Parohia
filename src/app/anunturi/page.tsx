@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import type { Article } from "@/lib/articleData";
-import { listPriestAnnouncementsForParish } from "@/lib/data/parishes";
+import { useMemo, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { PageBody, PageContainer, SectionHeader } from "@/components/ui/Surfaces";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
-import { ARTICLE_CATEGORY_ACCENT, ARTICLES, type ArticleCategory } from "@/lib/articleData";
+import { ARTICLES, type Article, type ArticleCategory } from "@/lib/articleData";
+import { listPriestAnnouncementsForParish } from "@/lib/data/parishes";
 import { useSelectedParishId } from "@/lib/storage";
+import { CATEGORY_TINT, TINTS } from "@/lib/tints";
 
 const CATEGORY_LABEL_KEY: Record<ArticleCategory, TranslationKey> = {
   diocesan: "announcements.categoryDiocesan",
@@ -19,114 +21,103 @@ const CATEGORY_LABEL_KEY: Record<ArticleCategory, TranslationKey> = {
   world: "announcements.categoryWorld",
 };
 
-const ACCENT_TEXT: Record<string, string> = {
-  forest: "text-forest",
-  slate: "text-slate",
-  burgundy: "text-burgundy",
-  violet: "text-violet",
-  clay: "text-clay",
-  teal: "text-teal",
-  plum: "text-plum",
-};
-
-const ACCENT_BG: Record<string, string> = {
-  forest: "bg-forest",
-  slate: "bg-slate",
-  burgundy: "bg-burgundy",
-  violet: "bg-violet",
-  clay: "bg-clay",
-  teal: "bg-teal",
-  plum: "bg-plum",
-};
-
 export default function AnnouncementsPage() {
   const { t } = useTranslation();
-  const [selectedParishId] = useSelectedParishId();
   const [filter, setFilter] = useState<ArticleCategory | "all">("all");
-  const [parishAnnouncements, setParishAnnouncements] = useState<Article[]>([]);
+  const [selectedParishId, , parishHydrated] = useSelectedParishId();
+  const reduceMotion = useReducedMotion();
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setParishAnnouncements(selectedParishId ? listPriestAnnouncementsForParish(selectedParishId) : []);
-  }, [selectedParishId]);
+  // A priest's own announcements lead their parishioners' feed. Read only
+  // once storage has hydrated, so the server and first client render agree.
+  const items: Article[] = useMemo(() => {
+    if (!parishHydrated || !selectedParishId) return ARTICLES;
+    return [...listPriestAnnouncementsForParish(selectedParishId), ...ARTICLES];
+  }, [selectedParishId, parishHydrated]);
 
-  const all = [...parishAnnouncements, ...ARTICLES];
-  const categories = Array.from(new Set(all.map((a) => a.category)));
-  const filtered = filter === "all" ? all : all.filter((a) => a.category === filter);
+  const categories = Array.from(new Set(items.map((a) => a.category)));
+  const filtered = filter === "all" ? items : items.filter((a) => a.category === filter);
   const [featured, ...rest] = filtered;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
-      <header className="px-outer pt-[max(env(safe-area-inset-top),18px)] pb-[14px]">
-        <h1 className="font-serif text-[30px] font-bold text-text">{t("announcements.title")}</h1>
+    <PageContainer>
+      <header className="px-outer pt-[max(env(safe-area-inset-top),24px)]">
+        <h1 className="font-serif text-[32px] font-bold leading-[1.1] text-text">{t("announcements.title")}</h1>
       </header>
 
-      <div className="no-scrollbar flex gap-[8px] overflow-x-auto px-outer pb-[16px]">
-        <button
-          type="button"
-          onClick={() => setFilter("all")}
-          className={`press shrink-0 rounded-pill px-[14px] py-[7px] font-sans text-[12.5px] font-medium ${
-            filter === "all" ? "bg-navy text-white" : "bg-soft-surface text-text"
-          }`}
-        >
+      <div className="no-scrollbar mt-[20px] flex gap-[8px] overflow-x-auto px-outer pb-[6px]">
+        <FilterPill active={filter === "all"} onClick={() => setFilter("all")}>
           {t("announcements.filterAll")}
-        </button>
+        </FilterPill>
         {categories.map((cat) => (
-          <button
-            key={cat}
-            type="button"
-            onClick={() => setFilter(cat)}
-            className={`press shrink-0 rounded-pill px-[14px] py-[7px] font-sans text-[12.5px] font-medium ${
-              filter === cat ? `${ACCENT_BG[ARTICLE_CATEGORY_ACCENT[cat]]} text-white` : "bg-soft-surface text-text"
-            }`}
-          >
+          <FilterPill key={cat} active={filter === cat} onClick={() => setFilter(cat)}>
             {t(CATEGORY_LABEL_KEY[cat])}
-          </button>
+          </FilterPill>
         ))}
       </div>
 
-      <main className="flex-1 px-outer pb-tabbar">
+      <PageBody className="pt-[26px]">
+        {/* One story leads rather than every article becoming an identical tile. */}
         {featured && (
-          <Link key={featured.id} href={`/anunturi/${featured.id}`} className="press block">
-            <p className="font-serif text-[27px] font-bold leading-[1.15] text-text">{featured.title}</p>
-            <p className="mt-[10px] font-sans text-[14px] leading-[1.55] text-text/75">{featured.excerpt}</p>
-            {/* Category rides in the caption after the heading, never as a kicker above it. */}
-            <p className="mt-[10px] font-sans text-[12px] text-muted">
-              <span className={`font-semibold ${ACCENT_TEXT[ARTICLE_CATEGORY_ACCENT[featured.category]]}`}>
-                {t(CATEGORY_LABEL_KEY[featured.category])}
-              </span>
-              {featured.author ? ` · ${featured.author}` : ""}
-            </p>
+          <Link href={`/anunturi/${featured.id}`} className="block">
+            <motion.article
+              whileTap={reduceMotion ? undefined : { scale: 0.99 }}
+              transition={{ type: "spring", stiffness: 520, damping: 34 }}
+            >
+              <h2 className="font-serif text-[29px] font-bold leading-[1.12] text-text">{featured.title}</h2>
+              <p className="mt-[12px] font-sans text-[15.5px] leading-[1.5] text-text-secondary">{featured.excerpt}</p>
+              <p className="mt-[12px] font-sans text-[13.5px] text-muted">
+                <span style={{ color: TINTS[CATEGORY_TINT[featured.category]].ink }} className="font-semibold">
+                  {t(CATEGORY_LABEL_KEY[featured.category])}
+                </span>
+                {featured.author ? ` · ${featured.author}` : ""}
+              </p>
+            </motion.article>
           </Link>
         )}
 
         {rest.length > 0 && (
-          <div className="mt-[36px]">
-            <h2 className="border-t border-divider pt-[22px] font-serif text-[16px] font-bold text-text">
-              {t("announcements.latest")}
-            </h2>
-            <div className="mt-[6px]">
-              {rest.map((item) => {
-                const accent = ARTICLE_CATEGORY_ACCENT[item.category];
-                return (
-                  <Link
-                    key={item.id}
-                    href={`/anunturi/${item.id}`}
-                    className="press block border-b border-divider py-[16px] last:border-b-0"
+          <div className="mt-[44px]">
+            <SectionHeader>{t("announcements.latest")}</SectionHeader>
+            <div className="mt-[10px]">
+              {rest.map((item) => (
+                <Link key={item.id} href={`/anunturi/${item.id}`} className="block">
+                  <motion.article
+                    whileTap={reduceMotion ? undefined : { scale: 0.99 }}
+                    transition={{ type: "spring", stiffness: 520, damping: 34 }}
+                    className="py-[20px]"
                   >
-                    <p className="font-serif text-[17px] font-bold leading-[1.25] text-text">{item.title}</p>
-                    <p className="mt-[5px] font-sans text-[13px] leading-[1.5] text-text/70">{item.excerpt}</p>
-                    <p className="mt-[8px] font-sans text-[11.5px] text-muted">
-                      <span className={`font-semibold ${ACCENT_TEXT[accent]}`}>{t(CATEGORY_LABEL_KEY[item.category])}</span>
+                    <h3 className="font-serif text-[19px] font-bold leading-[1.25] text-text">{item.title}</h3>
+                    <p className="mt-[7px] font-sans text-[14.5px] leading-[1.45] text-muted">{item.excerpt}</p>
+                    <p className="mt-[10px] font-sans text-[13px] text-muted">
+                      <span style={{ color: TINTS[CATEGORY_TINT[item.category]].ink }} className="font-semibold">
+                        {t(CATEGORY_LABEL_KEY[item.category])}
+                      </span>
                       {item.author ? ` · ${item.author}` : ""}
                     </p>
-                  </Link>
-                );
-              })}
+                  </motion.article>
+                </Link>
+              ))}
             </div>
           </div>
         )}
-      </main>
-    </div>
+      </PageBody>
+    </PageContainer>
+  );
+}
+
+function FilterPill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
+  const reduceMotion = useReducedMotion();
+  return (
+    <motion.button
+      type="button"
+      onClick={onClick}
+      whileTap={reduceMotion ? undefined : { scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 520, damping: 34 }}
+      className={`min-h-[44px] shrink-0 rounded-pill px-[18px] font-sans text-[14.5px] font-medium transition-colors duration-200 ${
+        active ? "bg-charcoal text-white" : "bg-surface-soft text-text"
+      }`}
+    >
+      {children}
+    </motion.button>
   );
 }

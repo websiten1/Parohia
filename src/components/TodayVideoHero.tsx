@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { SealMark } from "@/components/SealMark";
+import { CircularActionButton } from "@/components/ui/Controls";
 import { BellIcon } from "@/components/icons";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 
@@ -41,11 +41,13 @@ export function TodayVideoHero({ greeting, dateLine }: Props) {
         preload="auto"
         aria-hidden="true"
       />
+      {/* Resolves into the page's own warm ground so the hero and the content
+          below read as one continuous surface, with no seam at the join. */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(7,26,51,0.28) 0%, rgba(7,26,51,0.36) 45%, rgba(7,26,51,0.68) 78%, #fafaf8 100%)",
+            "linear-gradient(to bottom, rgba(20,33,47,0.26) 0%, rgba(20,33,47,0.34) 45%, rgba(20,33,47,0.66) 78%, var(--color-background) 100%)",
         }}
         aria-hidden="true"
       />
@@ -58,14 +60,9 @@ export function TodayVideoHero({ greeting, dateLine }: Props) {
               {t("brand.name")}
             </p>
           </div>
-          <Link
-            href="/notifications"
-            aria-label={t("notifications.title")}
-            className="flex h-[40px] w-[40px] items-center justify-center text-white"
-            style={{ filter: "drop-shadow(0 1px 4px rgba(0,0,0,0.45))" }}
-          >
+          <CircularActionButton href="/notifications" label={t("notifications.title")} tone="onDark">
             <BellIcon className="h-[19px] w-[19px]" />
-          </Link>
+          </CircularActionButton>
         </header>
 
         <div className="flex flex-1 flex-col justify-end px-outer pb-[15vh]">

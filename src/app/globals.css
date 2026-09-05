@@ -8,58 +8,114 @@
      carries every other platform. */
   --font-sans: -apple-system, BlinkMacSystemFont, var(--font-inter), "Segoe UI", system-ui, sans-serif;
 
-  /* Color tokens — Parohia visual system, docs/01_visual_system.md */
-  --color-background: #fafaf8;
-  --color-surface: #ffffff;
-  --color-navy: #071a33;
-  --color-navy-2: #0a2444;
+  /* ==========================================================================
+   * BACKGROUNDS — warm and luminous, never sterile white. Pages in the same
+   * hierarchy share a treatment; reading surfaces run warmer, utility pages
+   * cleaner. (§02, §03, §43)
+   * ======================================================================== */
+  --color-background: #faf7f4;
+  --color-background-secondary: #f4efeb;
+  --color-background-reading: #fdfaf5;
+  --color-background-elevated: #fffdfb;
+
+  /* SURFACES */
+  --color-surface: #fffdfb;
+  --color-surface-soft: #f3efec;
+  --color-surface-active: #ebe5e0;
+  /* The navigation vessel: deep charcoal, never a heavy pure black. (§22) */
+  --color-charcoal: #1f1d1c;
+  --color-charcoal-soft: #2e2b29;
+
+  /* BRAND ANCHORS — kept from the product's identity. Burgundy sits inside
+   * the reference palette's terracotta family, so it carries primary action
+   * without fighting the new warmth. */
   --color-burgundy: #8f1735;
   --color-burgundy-pressed: #73122b;
+  --color-navy: #14212f;
+  --color-navy-2: #1c2c3d;
   --color-romanian-blue: #255c99;
-  --color-text: #111827;
-  --color-muted: #68707c;
-  --color-divider: #e6e8eb;
-  --color-soft-surface: #f1f4f7;
 
-  --color-navy-08: rgba(7, 26, 51, 0.08);
-  --color-navy-14: rgba(7, 26, 51, 0.14);
-  --color-burgundy-10: rgba(143, 23, 53, 0.1);
+  /* TEXT */
+  --color-text: #1c1a19;
+  --color-text-secondary: #57524e;
+  --color-muted: #86807b;
+  --color-divider: #ebe5e0;
+  --color-soft-surface: #f3efec;
 
-  /*
-   * Secondary editorial palette — small accent moments only (category
-   * labels, thin edge strokes, metadata markers, calendar day-type dots).
-   * Never a primary surface color; navy/white/burgundy remain the
-   * institutional foundation. Richer and more saturated than the original
-   * "icon-tempera" set on purpose — warm and inviting rather than muted.
-   */
-  --color-forest: #3f9668;
-  --color-violet: #8a5aa8;
-  --color-rose: #d9707f;
-  --color-slate: #3f8fc9;
-  --color-clay: #c97848;
-  --color-teal: #229e93;
-  --color-plum: #9c4a72;
-  --color-amber: #e6a233;
+  --color-navy-08: rgba(31, 29, 28, 0.06);
+  --color-navy-14: rgba(31, 29, 28, 0.12);
+  --color-burgundy-10: rgba(143, 23, 53, 0.09);
+
+  /* ==========================================================================
+   * TINT FAMILIES — the pastel card system. Each is a soft two-stop wash plus
+   * an ink dark enough to read on it. The category→tint mapping is global
+   * (see lib/tints.ts); a tint means the same thing on every screen. (§10)
+   * ======================================================================== */
+  --color-tint-coral: #fbe4dc;
+  --color-tint-coral-2: #f8d3c8;
+  --color-tint-coral-ink: #7d3423;
+
+  --color-tint-peach: #fdeada;
+  --color-tint-peach-2: #fbdcc0;
+  --color-tint-peach-ink: #7d4f1c;
+
+  --color-tint-blue: #dfeaf6;
+  --color-tint-blue-2: #cddef1;
+  --color-tint-blue-ink: #274762;
+
+  --color-tint-cyan: #d9ecec;
+  --color-tint-cyan-2: #c4e2e2;
+  --color-tint-cyan-ink: #1f4d4d;
+
+  --color-tint-green: #e0edde;
+  --color-tint-green-2: #cde3cb;
+  --color-tint-green-ink: #2d4a2b;
+
+  --color-tint-lavender: #e8e3f3;
+  --color-tint-lavender-2: #dad2ec;
+  --color-tint-lavender-ink: #423464;
+
+  --color-tint-rose: #f8e0e6;
+  --color-tint-rose-2: #f2cdd7;
+  --color-tint-rose-ink: #6f2b3d;
+
+  /* Legacy accent hues retained for data coding (calendar day marks,
+   * category labels) — never primary surfaces. */
+  --color-forest: #5b8a63;
+  --color-violet: #7c6ba0;
+  --color-rose: #c07f8c;
+  --color-slate: #5b83a8;
+  --color-clay: #b5764f;
+  --color-teal: #4f8785;
+  --color-plum: #8a5f74;
+  --color-amber: #d99b4a;
   --color-pale-sage: #cfead9;
   --color-pale-rose: #f8d9de;
   --color-pale-lavender: #ecdcf3;
   --color-pale-blue: #d3e6f7;
   --color-pale-amber: #fae3ba;
 
-  /* Radii — continuous-corner scale. Larger surfaces get generous, elegant
-     curvature; small controls round all the way to a pill or circle. Nested
-     elements should sit roughly one step below their container's radius. */
-  --radius-xs: 8px;
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 18px;
-  --radius-xl: 20px;
-  --radius-2xl: 28px;
-  --radius-3xl: 36px;
-  --radius-sheet: 24px;
+  /* ==========================================================================
+   * RADIUS — large soft geometry. An inner surface sits one step below the
+   * surface containing it. (§04)
+   * ======================================================================== */
+  --radius-xs: 10px;
+  --radius-sm: 14px;
+  --radius-md: 18px;
+  --radius-lg: 22px;
+  --radius-xl: 26px;
+  --radius-2xl: 30px;
+  --radius-3xl: 34px;
+  --radius-card: 28px;
+  --radius-feature: 32px;
+  --radius-compact: 22px;
+  --radius-search: 24px;
+  --radius-sheet: 36px;
+  --radius-nav: 33px;
+  --radius-nav-item: 26px;
   --radius-pill: 999px;
 
-  /* Spacing — 4pt base grid */
+  /* SPACING — 4pt scale (§05) */
   --spacing-4: 4px;
   --spacing-8: 8px;
   --spacing-12: 12px;
@@ -70,21 +126,56 @@
   --spacing-32: 32px;
   --spacing-40: 40px;
   --spacing-48: 48px;
-  --spacing-outer: 20px;
+  --spacing-64: 64px;
+  --spacing-outer: 22px;
   --spacing-tap-min: 44px;
-  --spacing-section: 32px;
+  --spacing-section: 40px;
   --spacing-gap: 16px;
   --spacing-gap-sm: 8px;
 }
 
 :root {
   color-scheme: light;
+
+  /* ==========================================================================
+   * ELEVATION — three levels, globally. Large, diffuse, low-opacity. Nothing
+   * should look like it hovers millimetres off the glass; most components
+   * separate by tone alone and carry no shadow at all. (§31)
+   * ======================================================================== */
+  --elevation-none: none;
+  --elevation-subtle: 0 1px 2px rgba(31, 29, 28, 0.03), 0 6px 16px -6px rgba(31, 29, 28, 0.05);
+  --elevation-floating: 0 2px 6px rgba(31, 29, 28, 0.04), 0 14px 34px -10px rgba(31, 29, 28, 0.1);
+  --elevation-temporary: 0 4px 12px rgba(31, 29, 28, 0.06), 0 24px 60px -16px rgba(31, 29, 28, 0.16);
+
+  /* ==========================================================================
+   * MOTION — one coherent family, not per-screen invention. (§30)
+   * ======================================================================== */
+  --motion-press: 100ms;
+  --motion-release: 220ms;
+  --motion-micro: 220ms;
+  --motion-standard: 300ms;
+  --motion-navigation: 380ms;
+  --motion-sheet: 440ms;
+  /* Smooth exponential deceleration — never elastic, never a boing. */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 body {
   background: var(--color-background);
   color: var(--color-text);
   overflow-x: hidden;
+}
+
+/* Elevation utilities so no page invents its own shadow. (§31) */
+.elev-subtle {
+  box-shadow: var(--elevation-subtle);
+}
+.elev-floating {
+  box-shadow: var(--elevation-floating);
+}
+.elev-temporary {
+  box-shadow: var(--elevation-temporary);
 }
 
 /*
@@ -103,13 +194,13 @@ body {
 }
 
 /*
- * BottomTabBar is `position: fixed`, so it no longer reserves space in
- * normal flow. Any scrollable page that renders it must pad its content by
- * this amount so the last row of content clears the bar instead of being
- * hidden behind it.
+ * The navigation is a floating capsule detached from the bottom edge, so it
+ * reserves no space in flow. Every scrollable page pads by its full height
+ * plus its gap above the safe area, so the last card can always clear it
+ * rather than dying underneath. (§22, §27)
  */
 .pb-tabbar {
-  padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(68px + 16px + 20px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Standard press feedback: near-imperceptible compression, instant onset. */

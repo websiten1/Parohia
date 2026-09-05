@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
 import { ChevronRightIcon } from "@/components/icons";
 import { ChevronRow } from "@/components/ChevronRow";
-import { SealMark } from "@/components/SealMark";
+import { PageBody, PageContainer, SectionHeader, TintedFeatureCard } from "@/components/ui/Surfaces";
 import { getParishById } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { useSelectedParishId } from "@/lib/storage";
+import { DOMAIN_TINT } from "@/lib/tints";
 import type { Parish } from "@/lib/types";
 
 export default function MenuPage() {
@@ -28,33 +28,30 @@ export default function MenuPage() {
   }, [selectedParishId]);
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
-      <div className="flex items-center gap-[14px] bg-navy-texture px-outer pb-[30px] pt-[max(env(safe-area-inset-top),24px)]">
-        <SealMark size={44} tone="light" />
-        <p className="font-sans text-[13px] font-semibold uppercase leading-[1.35] tracking-[0.02em] text-white">
-          {t("brand.name")}
-        </p>
-      </div>
+    <PageContainer>
+      <header className="px-outer pt-[max(env(safe-area-inset-top),24px)]">
+        <h1 className="font-serif text-[32px] font-bold leading-[1.1] text-text">{t("brand.name")}</h1>
+      </header>
 
-      <main className="-mt-[18px] flex-1 rounded-t-3xl bg-surface px-outer pt-[24px] pb-tabbar">
-        <Link href="/menu/parish">
-          <motion.div
-            whileTap={{ scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 500, damping: 32 }}
-            className="mb-[36px] flex items-center justify-between gap-[10px] border-b border-divider pb-[18px]"
-          >
-            <span className="min-w-0">
-              {parish ? (
-                <>
-                  <span className="block truncate font-serif text-[20px] font-bold text-text">{parish.name}</span>
-                  <span className="mt-[2px] block truncate font-serif text-[14px] italic text-burgundy">{parish.patronSaint}</span>
-                </>
-              ) : (
-                <span className="block font-sans text-[15px] font-medium text-text">{t("menu.changeParish")}</span>
-              )}
-            </span>
-            <ChevronRightIcon className="h-[16px] w-[16px] shrink-0 text-muted" />
-          </motion.div>
+      <PageBody className="pt-[24px]">
+        {/* The user's own parish is the one piece of identity on this screen,
+            so it carries the page's single tinted surface. */}
+        <Link href="/menu/parish" className="block">
+          <TintedFeatureCard tint={DOMAIN_TINT.parish}>
+            <div className="flex items-center gap-[14px]">
+              <span className="min-w-0 flex-1">
+                {parish ? (
+                  <>
+                    <span className="block font-serif text-[21px] font-bold leading-[1.2]">{parish.name}</span>
+                    <span className="mt-[5px] block font-serif text-[15px] italic opacity-80">{parish.patronSaint}</span>
+                  </>
+                ) : (
+                  <span className="block font-sans text-[16px] font-medium">{t("menu.changeParish")}</span>
+                )}
+              </span>
+              <ChevronRightIcon className="h-[17px] w-[17px] shrink-0 opacity-60" />
+            </div>
+          </TintedFeatureCard>
         </Link>
 
         <Section label={t("menu.sectionLibrary")}>
@@ -85,15 +82,16 @@ export default function MenuPage() {
           <ChevronRow href="/menu/appearance" title={t("menu.appearance")} />
           <ChevronRow href="/menu/settings" title={t("menu.settings")} divider={false} />
         </Section>
-      </main>
-    </div>
+      </PageBody>
+    </PageContainer>
   );
 }
 
+/** Rows are grouped by space and a heading, not boxed into separate containers. (§12, §18) */
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="mb-[36px] last:mb-0">
-      <p className="pb-[10px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{label}</p>
+    <div className="mt-[40px]">
+      <SectionHeader className="mb-[6px]">{label}</SectionHeader>
       {children}
     </div>
   );

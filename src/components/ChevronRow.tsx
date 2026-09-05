@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { ChevronRightIcon } from "./icons";
 
 interface ChevronRowProps {
@@ -13,24 +13,34 @@ interface ChevronRowProps {
   divider?: boolean;
 }
 
-/** Full-width tappable list row: optional leading icon, title/subtitle, trailing chevron. */
+/**
+ * A list row that lives directly on the page background rather than inside
+ * another card. Generous touch height, separated by space; the divider — when
+ * one is genuinely needed — insets past the leading element instead of
+ * stretching edge to edge. (§12)
+ */
 export function ChevronRow({ href, title, subtitle, icon, trailing, divider = true }: ChevronRowProps) {
+  const reduceMotion = useReducedMotion();
   return (
     <Link href={href} className="block">
       <motion.div
-        whileTap={{ backgroundColor: "rgba(7,26,51,0.05)" }}
-        transition={{ duration: 0.12 }}
-        className={`flex min-h-[44px] items-center gap-[14px] rounded-md px-[4px] py-[14px] ${divider ? "border-b border-divider/70" : ""}`}
+        whileTap={reduceMotion ? undefined : { scale: 0.99 }}
+        transition={{ type: "spring", stiffness: 520, damping: 34 }}
+        className="flex min-h-[64px] items-center gap-[14px] py-[14px]"
       >
         {icon && (
-          <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full bg-navy-08 text-navy">{icon}</span>
+          <span className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full bg-surface-soft text-text">
+            {icon}
+          </span>
         )}
-        <span className="min-w-0 flex-1">
-          <span className="block truncate font-sans text-[15px] font-medium text-text">{title}</span>
-          {subtitle && <span className="mt-[2px] block truncate font-sans text-[13px] text-muted">{subtitle}</span>}
+        <span className={`flex min-w-0 flex-1 items-center gap-[14px] ${divider ? "border-b border-divider/60 pb-[14px]" : ""}`}>
+          <span className="min-w-0 flex-1">
+            <span className="block truncate font-sans text-[16.5px] font-medium text-text">{title}</span>
+            {subtitle && <span className="mt-[3px] block truncate font-sans text-[14px] text-muted">{subtitle}</span>}
+          </span>
+          {trailing}
+          <ChevronRightIcon className="h-[16px] w-[16px] shrink-0 text-muted/60" />
         </span>
-        {trailing}
-        <ChevronRightIcon className="h-[16px] w-[16px] shrink-0 text-muted/70" />
       </motion.div>
     </Link>
   );

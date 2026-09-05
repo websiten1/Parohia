@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
 import {
@@ -50,50 +50,101 @@ function tabForPath(pathname: string): NavTab | null {
   return null;
 }
 
+/*
+ * Spec'd motion: response ~0.42s with almost no visible bounce. Motion's
+ * duration/bounce form expresses that directly — bounce 0.05 sits around a
+ * 0.87 damping fraction, inside the 0.82–0.90 the brief asks for.
+ */
+const NAV_SPRING = { type: "spring" as const, duration: 0.42, bounce: 0.05 };
+
+/** A subtle selection tick, fired as the capsule commits — not on every touch. */
+function selectionHaptic() {
+  if (typeof navigator !== "undefined" && "vibrate" in navigator) {
+    navigator.vibrate?.(8);
+  }
+}
+
 /**
- * A plain, solid bar — no blur, no floating pill. The one piece of real
- * motion is the focus bubble: it doesn't just fade in on the new tab, it
- * carries over from wherever it was (one shared `layoutId`) and settles with
- * a touch of overshoot, so arriving somewhere reads as a small physical
- * event rather than a color swap.
+ * A stable dark vessel containing a moving light selection object — not five
+ * buttons on a background, and not an ordinary tab bar with a label under
+ * every icon.
+ *
+ * The lit capsule is a single shared element (`layoutId`), so on a selection
+ * change it physically travels and reshapes toward the new destination while
+ * the outgoing label collapses its own width. Inactive destinations stay
+ * compact and unlabelled; only the selected one carries text, which is what
+ * makes the bar redistribute its internal space rather than sit in five
+ * permanently equal columns.
  */
 export function BottomTabBar() {
   const pathname = usePathname();
   const active = tabForPath(pathname);
   const { t } = useTranslation();
+  const reduceMotion = useReducedMotion();
 
   return (
-    <nav
-      className="fixed inset-x-0 bottom-0 z-30 mx-auto flex w-full max-w-[402px] items-stretch border-t border-divider bg-surface pb-[env(safe-area-inset-bottom,0px)]"
-      aria-label="Primary"
-    >
-      {TABS.map(({ id, href, labelKey, Icon }) => {
-        const isActive = id === active;
-        return (
-          <Link
-            key={id}
-            href={href}
-            aria-current={isActive ? "page" : undefined}
-            className="relative flex min-h-[56px] flex-1 flex-col items-center justify-center gap-[3px] py-[8px]"
-          >
-            {isActive && (
-              <motion.span
-                layoutId="tab-focus-bubble"
-                className="absolute h-[46px] w-[46px] rounded-2xl bg-burgundy/8"
-                transition={{ type: "spring", stiffness: 380, damping: 26 }}
-              />
-            )}
-            <motion.span
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring", stiffness: 500, damping: 30 }}
-              className={`relative z-10 flex flex-col items-center gap-[3px] ${isActive ? "text-burgundy" : "text-navy/50"}`}
+    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40 mx-auto w-full max-w-[402px]">
+      <nav
+        aria-label="Primary"
+        className="pointer-events-auto mx-[22px] mb-[calc(16px+env(safe-area-inset-bottom,0px))] flex h-[68px] items-center gap-[2px] rounded-nav bg-charcoal p-[7px] elev-floating"
+      >
+        {TABS.map(({ id, href, labelKey, Icon }) => {
+          const isActive = id === active;
+          return (
+            <motion.div
+              key={id}
+              layout={!reduceMotion}
+              transition={NAV_SPRING}
+              className={isActive ? "min-w-0 flex-1" : "shrink-0"}
             >
-              <Icon className="h-[21px] w-[21px]" active={isActive} />
-              <span className="font-sans text-[10px] font-medium">{t(labelKey)}</span>
-            </motion.span>
-          </Link>
-        );
-      })}
-    </nav>
+              <Link
+                href={href}
+                aria-current={isActive ? "page" : undefined}
+                aria-label={t(labelKey)}
+                onClick={() => {
+                  if (!isActive) selectionHaptic();
+                }}
+                className={`relative flex h-[54px] items-center justify-center rounded-nav-item ${
+                  isActive ? "w-full px-[15px]" : "w-[48px]"
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-selection"
+                    transition={NAV_SPRING}
+                    className="absolute inset-0 rounded-nav-item bg-background"
+                    aria-hidden="true"
+                  />
+                )}
+                <motion.span
+                  whileTap={reduceMotion ? undefined : { scale: 0.975 }}
+                  transition={{ type: "spring", stiffness: 620, damping: 34 }}
+                  className={`relative z-10 flex min-w-0 items-center justify-center gap-[9px] ${
+                    isActive ? "text-charcoal" : "text-white/55"
+                  }`}
+                >
+                  <Icon className="h-[21px] w-[21px] shrink-0" active={isActive} />
+                  <AnimatePresence initial={false}>
+                    {isActive && (
+                      <motion.span
+                        // Width, opacity and a short travel together — the label
+                        // grows out of the icon rather than blinking into place.
+                        initial={reduceMotion ? { opacity: 0 } : { opacity: 0, width: 0, x: -6 }}
+                        animate={reduceMotion ? { opacity: 1 } : { opacity: 1, width: "auto", x: 0 }}
+                        exit={reduceMotion ? { opacity: 0 } : { opacity: 0, width: 0, x: -6 }}
+                        transition={NAV_SPRING}
+                        className="max-w-[128px] overflow-hidden whitespace-nowrap font-sans text-[14.5px] font-semibold"
+                      >
+                        {t(labelKey)}
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </motion.span>
+              </Link>
+            </motion.div>
+          );
+        })}
+      </nav>
+    </div>
   );
 }
