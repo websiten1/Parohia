@@ -10,6 +10,7 @@ import { ShareButton } from "@/components/ShareButton";
 import { BackIcon } from "@/components/icons";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { formatMediumDate, SAINTS } from "@/lib/seedData";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function SaintDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -35,7 +36,7 @@ export default function SaintDetailPage() {
   const bodyText = tab === "life" ? fullLife : tab === "troparion" ? troparion : kontakion;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <div className="relative">
         <PhotoHero alt={primaryName} scrim="bottom" className="h-[300px] w-full" />
         <div className="absolute inset-x-0 top-[max(env(safe-area-inset-top),14px)] flex items-center justify-between px-outer">
@@ -57,7 +58,7 @@ export default function SaintDetailPage() {
       <main className="-mt-[24px] flex-1 rounded-t-sheet bg-surface px-outer pt-[24px] pb-[36px]">
         <div className="flex items-start justify-between gap-[10px]">
           <div>
-            <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
+            <p className="font-serif text-[22px] font-bold text-text">
               {formatMediumDate(saint.feastDate, language).toUpperCase()}
             </p>
             <h1 className="mt-[6px] font-serif text-[29px] font-bold leading-[1.15] text-text">{primaryName}</h1>
@@ -78,6 +79,6 @@ export default function SaintDetailPage() {
           ))}
         </div>
       </main>
-    </div>
+    </PageContainer>
   );
 }

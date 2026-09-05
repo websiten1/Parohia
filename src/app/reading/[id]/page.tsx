@@ -10,6 +10,7 @@ import { BackIcon, NoteIcon } from "@/components/icons";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { useNotes } from "@/lib/storage";
 import { READINGS } from "@/lib/seedData";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function ReadingPage() {
   const { id } = useParams<{ id: string }>();
@@ -31,7 +32,7 @@ export default function ReadingPage() {
   }
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <header className="flex items-center justify-between px-outer pt-[max(env(safe-area-inset-top),18px)]">
         <button
           type="button"
@@ -65,8 +66,8 @@ export default function ReadingPage() {
       </header>
 
       <main className="flex-1 px-outer pt-[16px] pb-[24px]">
-        <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("reader.title")}</p>
-        <p className="mt-[16px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
+        <p className="font-serif text-[22px] font-bold text-text">{t("reader.title")}</p>
+        <p className="mt-[16px] font-serif text-[22px] font-bold text-text">
           {reading.type === "epistle" ? t("readings.epistle") : t("readings.gospel")}
         </p>
         <h1 className="mt-[4px] font-serif text-[28px] font-bold leading-[1.15] text-text">
@@ -76,7 +77,7 @@ export default function ReadingPage() {
 
         <div className="mt-[20px]" style={{ fontSize: `${textScale}em` }}>
           {language === "ro" && (
-            <p className="mb-[14px] font-sans text-[12.5px] italic text-muted">{t("reader.englishOnlyNote")}</p>
+            <p className="mb-[14px] font-sans text-[13.5px] italic text-muted">{t("reader.englishOnlyNote")}</p>
           )}
           {reading.textEn.map((v) => (
             <p key={v.verse} className="mb-[14px] font-serif text-[16px] leading-[1.5] text-text">
@@ -98,7 +99,7 @@ export default function ReadingPage() {
                 onChange={(e) => setNoteText(e.target.value)}
                 placeholder={t("reader.notePlaceholder")}
                 rows={3}
-                className="w-full rounded-sm border border-divider bg-soft-surface px-[12px] py-[10px] font-sans text-[14px] text-text outline-none"
+                className="w-full rounded-sm border border-divider bg-soft-surface px-[12px] py-[10px] font-sans text-[15.5px] text-text outline-none"
               />
               <div className="mt-[8px] flex justify-end gap-[8px]">
                 <button
@@ -139,6 +140,6 @@ export default function ReadingPage() {
           audioUrl={reading.audioUrl}
         />
       </div>
-    </div>
+    </PageContainer>
   );
 }

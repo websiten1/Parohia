@@ -5,11 +5,12 @@ import { ChevronRightIcon } from "@/components/icons";
 import { PhotoHero } from "@/components/PhotoHero";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { PRAYERS } from "@/lib/seedData";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function PrayersPage() {
   const { t, language } = useTranslation();
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <PhotoHero alt="Church interior" scrim="full" className="h-[252px] w-full shrink-0">
         <div className="absolute inset-x-0 bottom-0 px-outer pb-[22px] pt-[max(env(safe-area-inset-top),40px)]">
           <h1 className="font-serif text-[32px] font-bold text-white">{t("prayers.title")}</h1>
@@ -38,12 +39,12 @@ export default function PrayersPage() {
 
         <Link
           href="/prayer/prayer-different-needs"
-          className="press mt-[16px] inline-flex items-center gap-[6px] font-sans text-[14px] font-semibold text-navy"
+          className="press mt-[16px] inline-flex items-center gap-[6px] font-sans text-[15.5px] font-semibold text-navy"
         >
           {t("prayers.viewAll")}
           <ChevronRightIcon className="h-[13px] w-[13px]" />
         </Link>
       </main>
-    </div>
+    </PageContainer>
   );
 }

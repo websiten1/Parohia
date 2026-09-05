@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronRightIcon } from "@/components/icons";
 import { PhotoHero } from "@/components/PhotoHero";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
+import { PageContainer } from "@/components/ui/Surfaces";
 import {
   CURRENT_FAST_EXPLANATION,
   CURRENT_FAST_EXPLANATION_RO,
@@ -22,24 +23,24 @@ export default function FastingPage() {
   const fastExplanation = language === "ro" ? CURRENT_FAST_EXPLANATION_RO : CURRENT_FAST_EXPLANATION;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <PhotoHero alt="Bread, olives and oil" scrim="bottom" className="h-[300px] w-full shrink-0">
         <h1 className="absolute bottom-[20px] left-[20px] font-serif text-[32px] font-bold text-white">{t("fasting.title")}</h1>
       </PhotoHero>
 
       <main className="-mt-[30px] flex-1 rounded-t-sheet bg-surface px-outer pt-[32px] pb-tabbar">
-        <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("fasting.today")}</p>
+        <p className="font-serif text-[22px] font-bold text-text">{t("fasting.today")}</p>
         <p className="mt-[6px] font-serif text-[26px] font-bold text-text">{fastLabel}</p>
-        <p className="mt-[4px] font-sans text-[13.5px] text-muted">{formatLongDate(REFERENCE_DATE, language)}</p>
-        <p className="mt-[10px] font-sans text-[14.5px] leading-[1.5] text-text">{fastExplanation}</p>
+        <p className="mt-[4px] font-sans text-[15px] text-muted">{formatLongDate(REFERENCE_DATE, language)}</p>
+        <p className="mt-[10px] font-sans text-[16px] leading-[1.5] text-text">{fastExplanation}</p>
 
         <div className="mt-[24px] border-t border-divider pt-[20px]">
-          <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("fasting.comingNext")}</p>
+          <p className="font-serif text-[22px] font-bold text-text">{t("fasting.comingNext")}</p>
           <Link href={`/fasting/${nextFast.id}`} className="press mt-[8px] block">
             <span className="block font-serif text-[22px] font-bold text-text">
               {language === "ro" ? (nextFast.titleRo ?? nextFast.title) : nextFast.title}
             </span>
-            <span className="mt-[3px] flex items-center gap-[6px] font-sans text-[14px] text-navy">
+            <span className="mt-[3px] flex items-center gap-[6px] font-sans text-[15.5px] text-navy">
               {formatMediumDate(nextFast.startDate, language)} – {formatMediumDate(nextFast.endDate, language)}
               <ChevronRightIcon className="h-[13px] w-[13px]" />
             </span>
@@ -57,6 +58,6 @@ export default function FastingPage() {
           ))}
         </div>
       </main>
-    </div>
+    </PageContainer>
   );
 }

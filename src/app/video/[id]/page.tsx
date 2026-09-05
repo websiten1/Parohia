@@ -9,6 +9,7 @@ import { ShareButton } from "@/components/ShareButton";
 import { PauseIcon, PlayIcon } from "@/components/icons";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { RESOURCE_ITEMS } from "@/lib/seedData";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function VideoPlayerPage() {
   const { id } = useParams<{ id: string }>();
@@ -22,7 +23,7 @@ export default function VideoPlayerPage() {
   const attribution = language === "ro" ? (video.attributionRo ?? video.attribution) : video.attribution;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader
         title={t("resource.video")}
         right={
@@ -33,7 +34,7 @@ export default function VideoPlayerPage() {
         }
       />
       <main className="flex-1 px-outer py-[16px]">
-        <PhotoHero alt={title} scrim="full" className="h-[210px] w-full rounded-md">
+        <PhotoHero alt={title} scrim="full" className="h-[210px] w-full rounded-compact">
           <button
             type="button"
             aria-label={playing ? "Pause" : "Play"}
@@ -52,6 +53,6 @@ export default function VideoPlayerPage() {
         </p>
         <p className="mt-[14px] font-sans text-[11.5px] text-muted">{attribution}</p>
       </main>
-    </div>
+    </PageContainer>
   );
 }

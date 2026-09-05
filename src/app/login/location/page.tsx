@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { BackIcon } from "@/components/icons";
 import { StepProgress } from "@/components/StepProgress";
+import { CircularActionButton, PrimaryAction, QuietAction } from "@/components/ui/Controls";
+import { PageContainer } from "@/components/ui/Surfaces";
 import { WheelPicker } from "@/components/WheelPicker";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { markOnboardingSkipped, useAccount } from "@/lib/storage";
@@ -43,16 +45,11 @@ export default function LocationPage() {
   }
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background px-outer pb-[36px] pt-[max(env(safe-area-inset-top),20px)]">
-      <div className="flex items-center gap-[14px]">
-        <button
-          type="button"
-          onClick={goBack}
-          aria-label={t("common.back")}
-          className="press -ml-[8px] flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full text-navy"
-        >
-          <BackIcon className="h-[20px] w-[20px]" />
-        </button>
+    <PageContainer className="px-outer pb-[40px] pt-[max(env(safe-area-inset-top),20px)]">
+      <div className="flex items-center gap-[16px]">
+        <CircularActionButton label={t("common.back")} onClick={goBack}>
+          <BackIcon className="h-[19px] w-[19px]" />
+        </CircularActionButton>
         <StepProgress total={STEPS.length} current={STEPS.indexOf(step)} />
       </div>
 
@@ -60,7 +57,7 @@ export default function LocationPage() {
         <AnimatePresence mode="wait">
           {step === "state" && (
             <motion.div key="state" initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -18 }} transition={STEP_TRANSITION}>
-              <h1 className="text-center font-serif text-[28px] font-bold leading-[1.2] text-text">{t("location.stateTitle")}</h1>
+              <h1 className="text-center font-serif text-[30px] font-bold leading-[1.15] text-text">{t("location.stateTitle")}</h1>
               <div className="mt-[26px]">
                 <WheelPicker options={[...US_STATES]} value={state} onChange={handleStateChange} aria-label={t("location.stateTitle")} />
               </div>
@@ -70,7 +67,7 @@ export default function LocationPage() {
 
           {step === "city" && (
             <motion.div key="city" initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -18 }} transition={STEP_TRANSITION}>
-              <h1 className="text-center font-serif text-[28px] font-bold leading-[1.2] text-text">{t("location.cityTitle")}</h1>
+              <h1 className="text-center font-serif text-[30px] font-bold leading-[1.15] text-text">{t("location.cityTitle")}</h1>
               <div className="mt-[26px]">
                 <WheelPicker options={CITIES_BY_STATE[state]} value={city} onChange={setCity} aria-label={t("location.cityTitle")} />
               </div>
@@ -79,26 +76,16 @@ export default function LocationPage() {
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </PageContainer>
   );
 }
 
 function StepActions({ onContinue, onSkip }: { onContinue: () => void; onSkip: () => void }) {
   const { t } = useTranslation();
   return (
-    <>
-      <motion.button
-        type="button"
-        onClick={onContinue}
-        whileTap={{ scale: 0.98 }}
-        transition={{ type: "spring", stiffness: 500, damping: 30 }}
-        className="mt-[30px] w-full rounded-pill bg-burgundy py-[16px] text-center font-sans text-[15px] font-semibold text-white"
-      >
-        {t("common.continue")}
-      </motion.button>
-      <button type="button" onClick={onSkip} className="press mt-[18px] w-full text-center font-sans text-[13.5px] text-muted">
-        {t("common.skipForNow")}
-      </button>
-    </>
+    <div className="mt-[30px] flex flex-col gap-[12px]">
+      <PrimaryAction onClick={onContinue}>{t("common.continue")}</PrimaryAction>
+      <QuietAction onClick={onSkip}>{t("common.skipForNow")}</QuietAction>
+    </div>
   );
 }

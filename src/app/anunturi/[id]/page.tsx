@@ -10,6 +10,7 @@ import { findPriestAnnouncementById } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
 import { ARTICLE_CATEGORY_ACCENT, getArticle, getRelatedArticles, type Article, type ArticleCategory } from "@/lib/articleData";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 const CATEGORY_LABEL_KEY: Record<ArticleCategory, TranslationKey> = {
   diocesan: "announcements.categoryDiocesan",
@@ -52,7 +53,7 @@ export default function AnnouncementPage() {
   const accent = ACCENT_TEXT[ARTICLE_CATEGORY_ACCENT[article.category]];
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader
         title={t("nav.announcements")}
         right={
@@ -70,13 +71,13 @@ export default function AnnouncementPage() {
         {article.subtitle && (
           <p className="mt-[8px] font-serif text-[15px] italic leading-[1.5] text-muted">{article.subtitle}</p>
         )}
-        <p className="mt-[10px] font-sans text-[12.5px] text-muted">
+        <p className="mt-[10px] font-sans text-[13.5px] text-muted">
           {article.author ?? article.publication}
           {article.date && ` · ${new Date(article.date).toLocaleDateString(language === "ro" ? "ro-RO" : "en-US", { year: "numeric", month: "long", day: "numeric" })}`}
         </p>
 
         {language === "ro" && (
-          <p className="mt-[14px] font-sans text-[12.5px] italic leading-[1.5] text-muted">{t("announcements.englishOnlyNote")}</p>
+          <p className="mt-[14px] font-sans text-[13.5px] italic leading-[1.5] text-muted">{t("announcements.englishOnlyNote")}</p>
         )}
 
         <div className="mt-[20px] flex flex-col gap-[20px]">
@@ -100,7 +101,7 @@ export default function AnnouncementPage() {
 
         {related.length > 0 && (
           <div className="mt-[36px] border-t border-divider pt-[20px]">
-            <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
+            <p className="font-serif text-[22px] font-bold text-text">
               {t("announcements.continueReading")}
             </p>
             <div className="mt-[14px] flex flex-col gap-[16px]">
@@ -116,6 +117,6 @@ export default function AnnouncementPage() {
           </div>
         )}
       </main>
-    </div>
+    </PageContainer>
   );
 }

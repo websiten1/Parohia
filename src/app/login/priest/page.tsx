@@ -10,6 +10,7 @@ import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { useAccount } from "@/lib/storage";
 import { CITIES_BY_STATE, US_STATES, type USState } from "@/lib/usLocationData";
 import type { Parish } from "@/lib/types";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 type Step =
   | "choice"
@@ -142,7 +143,7 @@ export default function PriestLoginPage() {
   }
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background px-outer pt-[max(env(safe-area-inset-top),24px)] pb-[32px]">
+    <PageContainer className="px-outer pt-[max(env(safe-area-inset-top),24px)] pb-[32px]">
       <button
         type="button"
         onClick={goBack}
@@ -173,7 +174,7 @@ export default function PriestLoginPage() {
                   setPath("new");
                   setStep("name");
                 }}
-                className="press mt-[18px] w-full text-center font-sans text-[13.5px] text-muted"
+                className="press mt-[18px] w-full text-center font-sans text-[15px] text-muted"
               >
                 {t("priestLogin.newCta")}
               </button>
@@ -194,7 +195,7 @@ export default function PriestLoginPage() {
                 placeholder={t("priestLogin.namePlaceholder")}
                 className="mt-[26px] w-full border-b border-divider bg-transparent pb-[10px] font-serif text-[20px] text-text outline-none focus:border-navy"
               />
-              {error && <p className="mt-[8px] font-sans text-[12.5px] text-red-600">{error}</p>}
+              {error && <p className="mt-[8px] font-sans text-[13.5px] text-red-600">{error}</p>}
               <button
                 type="button"
                 onClick={chooseNameContinue}
@@ -220,7 +221,7 @@ export default function PriestLoginPage() {
                 placeholder={t("priestLogin.emailPlaceholder")}
                 className="mt-[26px] w-full border-b border-divider bg-transparent pb-[10px] font-serif text-[20px] text-text outline-none focus:border-navy"
               />
-              {error && <p className="mt-[8px] font-sans text-[12.5px] text-red-600">{error}</p>}
+              {error && <p className="mt-[8px] font-sans text-[13.5px] text-red-600">{error}</p>}
               <button
                 type="button"
                 onClick={chooseEmailContinue}
@@ -241,12 +242,12 @@ export default function PriestLoginPage() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder={t("priestLogin.claimSearchPlaceholder")}
-                  className="w-full bg-transparent font-sans text-[14px] text-text outline-none placeholder:text-muted"
+                  className="w-full bg-transparent font-sans text-[15.5px] text-text outline-none placeholder:text-muted"
                 />
               </div>
               <div className="mt-[6px] flex-1 overflow-y-auto">
                 {filtered.length === 0 ? (
-                  <p className="mt-[20px] font-sans text-[13.5px] leading-[1.6] text-muted">{t("priestLogin.claimNoResults")}</p>
+                  <p className="mt-[20px] font-sans text-[15px] leading-[1.6] text-muted">{t("priestLogin.claimNoResults")}</p>
                 ) : (
                   filtered.slice(0, 30).map((p, i) => (
                     <button
@@ -259,7 +260,7 @@ export default function PriestLoginPage() {
                       className={`press flex w-full flex-col items-start py-[13px] text-left ${i !== 0 ? "border-t border-divider" : ""}`}
                     >
                       <span className="font-serif text-[16px] text-text">{p.name}</span>
-                      <span className="mt-[2px] font-sans text-[12.5px] text-muted">
+                      <span className="mt-[2px] font-sans text-[13.5px] text-muted">
                         {p.city}, {p.state}
                       </span>
                     </button>
@@ -277,7 +278,7 @@ export default function PriestLoginPage() {
               <p className="mt-[6px] font-sans text-[13px] text-muted">
                 {claimed.city}, {claimed.state}
               </p>
-              <p className="mt-[18px] max-w-[280px] font-sans text-[13.5px] leading-[1.55] text-muted">{t("priestLogin.claimConfirmTitle")}</p>
+              <p className="mt-[18px] max-w-[280px] font-sans text-[15px] leading-[1.55] text-muted">{t("priestLogin.claimConfirmTitle")}</p>
               <button
                 type="button"
                 onClick={() => finishClaim(claimed)}
@@ -375,7 +376,7 @@ export default function PriestLoginPage() {
           {step === "new-confirm" && (
             <motion.div key="new-confirm" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }} className="flex flex-col items-center text-center">
               <div className="h-[96px] w-[96px] overflow-hidden rounded-2xl bg-navy-texture" aria-hidden="true" />
-              <p className="mt-[20px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priestLogin.newConfirmTitle")}</p>
+              <p className="mt-[20px] font-serif text-[22px] font-bold text-text">{t("priestLogin.newConfirmTitle")}</p>
               <p className="mt-[8px] font-serif text-[22px] font-bold leading-[1.2] text-text">{parishName}</p>
               <p className="mt-[4px] font-serif text-[15px] italic text-burgundy">{patronSaint}</p>
               <p className="mt-[6px] font-sans text-[13px] text-muted">
@@ -394,6 +395,6 @@ export default function PriestLoginPage() {
           )}
         </AnimatePresence>
       </div>
-    </div>
+    </PageContainer>
   );
 }

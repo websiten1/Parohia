@@ -9,6 +9,7 @@ import { getParishById } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { useAccount } from "@/lib/storage";
 import type { Parish } from "@/lib/types";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 /**
  * Priest admin home. A priest account is bound to exactly one parish (see
@@ -33,7 +34,7 @@ export default function PriestDashboardPage() {
   if (!hydrated || !account || account.role !== "priest") return null;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <div className="flex items-center gap-[14px] bg-navy-texture px-outer pb-[30px] pt-[max(env(safe-area-inset-top),24px)]">
         <SealMark size={44} tone="light" />
         <span className="min-w-0">
@@ -43,12 +44,12 @@ export default function PriestDashboardPage() {
       </div>
 
       <main className="-mt-[18px] flex-1 rounded-t-3xl bg-surface px-outer pt-[28px] pb-tabbar">
-        <p className="pb-[10px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priest.sectionManage")}</p>
+        <p className="pb-[10px] font-serif text-[22px] font-bold text-text">{t("priest.sectionManage")}</p>
         <ChevronRow href="/priest/announcements" title={t("priest.announcementsTitle")} subtitle={t("priest.announcementsSubtitle")} icon={<MegaphoneIcon className="h-[16px] w-[16px]" />} />
         <ChevronRow href="/priest/schedule" title={t("priest.scheduleTitle")} subtitle={t("priest.scheduleSubtitle")} icon={<ClockIcon className="h-[16px] w-[16px]" />} divider={false} />
 
-        <p className="mt-[36px] font-sans text-[12.5px] leading-[1.6] text-muted">{t("priest.signedInAs", { name: account.name })}</p>
+        <p className="mt-[36px] font-sans text-[13.5px] leading-[1.6] text-muted">{t("priest.signedInAs", { name: account.name })}</p>
       </main>
-    </div>
+    </PageContainer>
   );
 }

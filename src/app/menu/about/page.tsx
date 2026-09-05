@@ -3,11 +3,12 @@
 import { AppHeader } from "@/components/AppHeader";
 import { SealMark } from "@/components/SealMark";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function AboutPage() {
   const { t } = useTranslation();
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader title={t("about.title")} />
       <main className="flex-1 px-outer py-[22px]">
         <div className="flex flex-col items-center text-center">
@@ -17,11 +18,11 @@ export default function AboutPage() {
 
         <p className="mt-[28px] font-sans text-[15px] leading-[1.55] text-text">{t("about.body")}</p>
 
-        <p className="mt-[24px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
+        <p className="mt-[24px] font-serif text-[22px] font-bold text-text">
           {t("about.missionLabel")}
         </p>
         <p className="mt-[8px] font-sans text-[15px] leading-[1.55] text-text">{t("about.mission")}</p>
       </main>
-    </div>
+    </PageContainer>
   );
 }

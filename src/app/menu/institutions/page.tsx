@@ -3,6 +3,7 @@
 import { AppHeader } from "@/components/AppHeader";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 const INSTITUTIONS: { nameKey: TranslationKey; descriptionKey: TranslationKey }[] = [
   { nameKey: "institutions.camp", descriptionKey: "institutions.campDesc" },
@@ -14,16 +15,16 @@ const INSTITUTIONS: { nameKey: TranslationKey; descriptionKey: TranslationKey }[
 export default function InstitutionsPage() {
   const { t } = useTranslation();
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader title={t("institutions.title")} />
       <main className="flex-1 px-outer py-[16px]">
         {INSTITUTIONS.map((inst, i) => (
           <div key={inst.nameKey} className={`py-[16px] ${i !== INSTITUTIONS.length - 1 ? "border-b border-divider" : ""}`}>
             <p className="font-serif text-[17px] font-bold text-text">{t(inst.nameKey)}</p>
-            <p className="mt-[4px] font-sans text-[13.5px] leading-[1.5] text-muted">{t(inst.descriptionKey)}</p>
+            <p className="mt-[4px] font-sans text-[15px] leading-[1.5] text-muted">{t(inst.descriptionKey)}</p>
           </div>
         ))}
       </main>
-    </div>
+    </PageContainer>
   );
 }

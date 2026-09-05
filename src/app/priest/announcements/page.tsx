@@ -8,6 +8,7 @@ import type { Article } from "@/lib/articleData";
 import { deletePriestAnnouncement, getParishById, listPriestAnnouncementsForParish, savePriestAnnouncement } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { useAccount } from "@/lib/storage";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 type View = { mode: "list" } | { mode: "form"; editing?: Article };
 
@@ -54,7 +55,7 @@ export default function PriestAnnouncementsPage() {
   }
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader title={t("priest.announcementsTitle")} backHref="/priest" />
 
       {view.mode === "form" ? (
@@ -71,21 +72,21 @@ export default function PriestAnnouncementsPage() {
           <button
             type="button"
             onClick={() => setView({ mode: "form" })}
-            className="press mb-[24px] flex w-full items-center justify-center gap-[8px] rounded-pill bg-burgundy py-[14px] font-sans text-[14.5px] font-semibold text-white"
+            className="press mb-[24px] flex w-full items-center justify-center gap-[8px] rounded-pill bg-burgundy py-[14px] font-sans text-[16px] font-semibold text-white"
           >
             <PlusIcon className="h-[16px] w-[16px]" />
             {t("priest.announcementsNew")}
           </button>
 
           {items.length === 0 ? (
-            <p className="mt-[8px] font-sans text-[13.5px] leading-[1.6] text-muted">{t("priest.announcementsEmpty")}</p>
+            <p className="mt-[8px] font-sans text-[15px] leading-[1.6] text-muted">{t("priest.announcementsEmpty")}</p>
           ) : (
             <div>
               {items.map((item, i) => (
                 <div key={item.id} className={`py-[16px] ${i !== items.length - 1 ? "border-b border-divider" : ""}`}>
                   {pendingDeleteId === item.id ? (
                     <div className="flex items-center justify-between gap-[12px]">
-                      <p className="font-sans text-[13.5px] text-text">{t("priest.announcementsDeleteConfirm")}</p>
+                      <p className="font-sans text-[15px] text-text">{t("priest.announcementsDeleteConfirm")}</p>
                       <div className="flex shrink-0 gap-[8px]">
                         <button type="button" onClick={() => setPendingDeleteId(null)} className="press font-sans text-[13px] font-medium text-muted">
                           {t("common.cancel")}
@@ -132,7 +133,7 @@ export default function PriestAnnouncementsPage() {
           )}
         </main>
       )}
-    </div>
+    </PageContainer>
   );
 }
 
@@ -178,7 +179,7 @@ function AnnouncementForm({
   return (
     <main className="flex-1 px-outer pt-[22px] pb-[40px]">
       <label className="block">
-        <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priest.fieldTitle")}</span>
+        <span className="font-serif text-[22px] font-bold text-text">{t("priest.fieldTitle")}</span>
         <input
           autoFocus
           value={title}
@@ -189,24 +190,24 @@ function AnnouncementForm({
       </label>
 
       <label className="mt-[24px] block">
-        <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priest.fieldExcerpt")}</span>
+        <span className="font-serif text-[22px] font-bold text-text">{t("priest.fieldExcerpt")}</span>
         <textarea
           value={excerpt}
           onChange={(e) => setExcerpt(e.target.value)}
           placeholder={t("priest.fieldExcerptPlaceholder")}
           rows={2}
-          className="mt-[8px] w-full resize-none border-b border-divider bg-transparent pb-[10px] font-sans text-[14.5px] leading-[1.5] text-text outline-none focus:border-navy"
+          className="mt-[8px] w-full resize-none border-b border-divider bg-transparent pb-[10px] font-sans text-[16px] leading-[1.5] text-text outline-none focus:border-navy"
         />
       </label>
 
       <label className="mt-[24px] block">
-        <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priest.fieldBody")}</span>
+        <span className="font-serif text-[22px] font-bold text-text">{t("priest.fieldBody")}</span>
         <textarea
           value={bodyText}
           onChange={(e) => setBodyText(e.target.value)}
           placeholder={t("priest.fieldBodyPlaceholder")}
           rows={8}
-          className="mt-[8px] w-full resize-none border-b border-divider bg-transparent pb-[10px] font-sans text-[14.5px] leading-[1.6] text-text outline-none focus:border-navy"
+          className="mt-[8px] w-full resize-none border-b border-divider bg-transparent pb-[10px] font-sans text-[16px] leading-[1.6] text-text outline-none focus:border-navy"
         />
       </label>
 

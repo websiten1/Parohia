@@ -11,6 +11,7 @@ import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
 import { useAccount } from "@/lib/storage";
 import type { ProgramLiturgic } from "@/lib/types";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 const QUICK_SERVICE_NAMES = ["Matins", "Divine Liturgy", "Vespers", "Paraclesis to the Theotokos"];
 const SERVICE_LABEL: Record<string, TranslationKey> = {
@@ -123,7 +124,7 @@ export default function PriestSchedulePage() {
 
   if (view === "confirm") {
     return (
-      <div className="flex min-h-dvh flex-col bg-background">
+      <PageContainer>
         <header className="flex h-[52px] shrink-0 items-center justify-between border-b border-divider bg-surface px-outer">
           <button
             type="button"
@@ -139,16 +140,16 @@ export default function PriestSchedulePage() {
         <main className="flex-1 px-outer pt-[20px] pb-[40px]">
           <p className="font-serif text-[17px] font-bold text-text">{parishName}</p>
 
-          <p className="mt-[28px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priestSchedule.weeklyTitle")}</p>
+          <p className="mt-[28px] font-serif text-[22px] font-bold text-text">{t("priestSchedule.weeklyTitle")}</p>
           {weekly.length === 0 ? (
-            <p className="mt-[8px] font-sans text-[13.5px] text-muted">{t("priestSchedule.confirmWeeklyEmpty")}</p>
+            <p className="mt-[8px] font-sans text-[15px] text-muted">{t("priestSchedule.confirmWeeklyEmpty")}</p>
           ) : (
             <div className="mt-[12px] flex flex-col gap-[18px]">
               {weekly.map((d) => (
                 <div key={d.zi}>
                   <p className="font-serif text-[16px] font-bold text-burgundy">{t("priestSchedule.everyDay", { day: t(WEEKDAY_LABEL_KEY[d.zi] ?? "schedule.sunday") })}</p>
                   {d.slujbe.map((s) => (
-                    <div key={s.nume} className="mt-[4px] flex items-baseline justify-between font-sans text-[14px] text-text">
+                    <div key={s.nume} className="mt-[4px] flex items-baseline justify-between font-sans text-[15.5px] text-text">
                       <span>{SERVICE_LABEL[s.nume] ? t(SERVICE_LABEL[s.nume]) : s.nume}</span>
                       <span className="font-medium text-navy">{s.ora}</span>
                     </div>
@@ -158,9 +159,9 @@ export default function PriestSchedulePage() {
             </div>
           )}
 
-          <p className="mt-[28px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priestSchedule.feastTitle")}</p>
+          <p className="mt-[28px] font-serif text-[22px] font-bold text-text">{t("priestSchedule.feastTitle")}</p>
           {feasts.length === 0 ? (
-            <p className="mt-[8px] font-sans text-[13.5px] text-muted">{t("priestSchedule.confirmFeastEmpty")}</p>
+            <p className="mt-[8px] font-sans text-[15px] text-muted">{t("priestSchedule.confirmFeastEmpty")}</p>
           ) : (
             <div className="mt-[12px] flex flex-col gap-[10px]">
               {feasts.map((f) => (
@@ -183,19 +184,19 @@ export default function PriestSchedulePage() {
             {t("priestSchedule.confirmBackCta")}
           </button>
         </main>
-      </div>
+      </PageContainer>
     );
   }
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader title={t("priest.scheduleTitle")} backHref="/priest" />
 
       <main className="flex-1 px-outer pt-[20px] pb-[120px]">
-        <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priestSchedule.weeklyTitle")}</p>
+        <p className="font-serif text-[22px] font-bold text-text">{t("priestSchedule.weeklyTitle")}</p>
 
         {weekly.length === 0 ? (
-          <p className="mt-[8px] font-sans text-[13.5px] text-muted">{t("priestSchedule.weeklyEmpty")}</p>
+          <p className="mt-[8px] font-sans text-[15px] text-muted">{t("priestSchedule.weeklyEmpty")}</p>
         ) : (
           <div className="mt-[10px] flex flex-col gap-[16px]">
             {weekly.map((d) => (
@@ -203,7 +204,7 @@ export default function PriestSchedulePage() {
                 <p className="font-serif text-[15px] font-bold text-burgundy">{t(WEEKDAY_LABEL_KEY[d.zi] ?? "schedule.sunday")}</p>
                 {d.slujbe.map((s) => (
                   <div key={s.nume} className="mt-[4px] flex items-center justify-between border-b border-divider/70 py-[8px]">
-                    <span className="font-sans text-[13.5px] text-text">
+                    <span className="font-sans text-[15px] text-text">
                       {SERVICE_LABEL[s.nume] ? t(SERVICE_LABEL[s.nume]) : s.nume} · <span className="font-medium text-navy">{s.ora}</span>
                     </span>
                     <button type="button" aria-label={t("priestSchedule.removeService")} onClick={() => removeService(d.zi, s.nume)} className="press text-muted">
@@ -216,7 +217,7 @@ export default function PriestSchedulePage() {
           </div>
         )}
 
-        <p className="mt-[24px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priestSchedule.suggestionsTitle")}</p>
+        <p className="mt-[24px] font-serif text-[22px] font-bold text-text">{t("priestSchedule.suggestionsTitle")}</p>
         <div className="mt-[10px] flex flex-col gap-[8px]">
           <button
             type="button"
@@ -248,14 +249,14 @@ export default function PriestSchedulePage() {
 
         {showAddService ? (
           <div className="mt-[20px]">
-            <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priestSchedule.dayLabel")}</p>
+            <p className="font-serif text-[22px] font-bold text-text">{t("priestSchedule.dayLabel")}</p>
             <div className="no-scrollbar mt-[8px] flex gap-[6px] overflow-x-auto">
               {WEEKDAY_RO.map((zi) => (
                 <button
                   key={zi}
                   type="button"
                   onClick={() => setDay(zi)}
-                  className={`press shrink-0 rounded-pill px-[14px] py-[7px] font-sans text-[12.5px] font-medium ${
+                  className={`press shrink-0 rounded-pill px-[14px] py-[7px] font-sans text-[13.5px] font-medium ${
                     day === zi ? "bg-burgundy text-white" : "bg-soft-surface text-text"
                   }`}
                 >
@@ -264,7 +265,7 @@ export default function PriestSchedulePage() {
               ))}
             </div>
 
-            <p className="mt-[18px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priestSchedule.serviceNameLabel")}</p>
+            <p className="mt-[18px] font-serif text-[22px] font-bold text-text">{t("priestSchedule.serviceNameLabel")}</p>
             <div className="mt-[8px] flex flex-wrap gap-[6px]">
               {QUICK_SERVICE_NAMES.map((name) => (
                 <button
@@ -286,7 +287,7 @@ export default function PriestSchedulePage() {
               className="mt-[10px] w-full border-b border-divider bg-transparent pb-[8px] font-serif text-[16px] text-text outline-none focus:border-navy"
             />
 
-            <p className="mt-[18px] text-center font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priestSchedule.timeLabel")}</p>
+            <p className="mt-[18px] text-center font-serif text-[22px] font-bold text-text">{t("priestSchedule.timeLabel")}</p>
             <div className="mt-[6px]">
               <TimeWheelPicker value={time} onChange={setTime} aria-label={t("priestSchedule.timeLabel")} />
             </div>
@@ -295,7 +296,7 @@ export default function PriestSchedulePage() {
               type="button"
               disabled={!serviceName.trim()}
               onClick={submitAddService}
-              className="press mt-[14px] w-full rounded-pill bg-burgundy py-[13px] text-center font-sans text-[14px] font-semibold text-white disabled:opacity-40"
+              className="press mt-[14px] w-full rounded-pill bg-burgundy py-[13px] text-center font-sans text-[15.5px] font-semibold text-white disabled:opacity-40"
             >
               {t("priestSchedule.addServiceCta")}
             </button>
@@ -304,24 +305,24 @@ export default function PriestSchedulePage() {
           <button
             type="button"
             onClick={() => setShowAddService(true)}
-            className="press mt-[16px] flex w-full items-center justify-center gap-[8px] rounded-pill border border-navy py-[12px] font-sans text-[13.5px] font-semibold text-navy"
+            className="press mt-[16px] flex w-full items-center justify-center gap-[8px] rounded-pill border border-navy py-[12px] font-sans text-[15px] font-semibold text-navy"
           >
             <PlusIcon className="h-[14px] w-[14px]" />
             {t("priestSchedule.addService")}
           </button>
         )}
 
-        <p className="mt-[40px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{t("priestSchedule.feastTitle")}</p>
+        <p className="mt-[40px] font-serif text-[22px] font-bold text-text">{t("priestSchedule.feastTitle")}</p>
 
         {feasts.length === 0 ? (
-          <p className="mt-[8px] font-sans text-[13.5px] text-muted">{t("priestSchedule.feastEmpty")}</p>
+          <p className="mt-[8px] font-sans text-[15px] text-muted">{t("priestSchedule.feastEmpty")}</p>
         ) : (
           <div className="mt-[10px] flex flex-col gap-[4px]">
             {feasts.map((f) => (
               <div key={f.titlu} className="flex items-center justify-between border-b border-divider/70 py-[10px]">
                 <span className="min-w-0 flex-1">
                   <span className="block font-serif text-[14.5px] font-bold text-text">{f.titlu}</span>
-                  <span className="block font-sans text-[12.5px] text-muted">{f.descriere}</span>
+                  <span className="block font-sans text-[13.5px] text-muted">{f.descriere}</span>
                 </span>
                 <button type="button" aria-label={t("priestSchedule.removeNotice")} onClick={() => removeFeast(f.titlu)} className="press shrink-0 text-muted">
                   <TrashIcon className="h-[15px] w-[15px]" />
@@ -362,13 +363,13 @@ export default function PriestSchedulePage() {
               value={feastDesc}
               onChange={(e) => setFeastDesc(e.target.value)}
               placeholder={t("priestSchedule.feastDescPlaceholder")}
-              className="mt-[14px] w-full border-b border-divider bg-transparent pb-[8px] font-sans text-[14px] text-text outline-none focus:border-navy"
+              className="mt-[14px] w-full border-b border-divider bg-transparent pb-[8px] font-sans text-[15.5px] text-text outline-none focus:border-navy"
             />
             <button
               type="button"
               disabled={!feastTitle.trim() || !feastDesc.trim()}
               onClick={submitAddFeast}
-              className="press mt-[14px] w-full rounded-pill bg-burgundy py-[13px] text-center font-sans text-[14px] font-semibold text-white disabled:opacity-40"
+              className="press mt-[14px] w-full rounded-pill bg-burgundy py-[13px] text-center font-sans text-[15.5px] font-semibold text-white disabled:opacity-40"
             >
               {t("priestSchedule.addFeastCta")}
             </button>
@@ -377,7 +378,7 @@ export default function PriestSchedulePage() {
           <button
             type="button"
             onClick={() => setShowAddFeast(true)}
-            className="press mt-[12px] flex w-full items-center justify-center gap-[8px] rounded-pill border border-navy py-[12px] font-sans text-[13.5px] font-semibold text-navy"
+            className="press mt-[12px] flex w-full items-center justify-center gap-[8px] rounded-pill border border-navy py-[12px] font-sans text-[15px] font-semibold text-navy"
           >
             <PlusIcon className="h-[14px] w-[14px]" />
             {t("priestSchedule.addFeastNotice")}
@@ -392,6 +393,6 @@ export default function PriestSchedulePage() {
           {t("priestSchedule.publishCta")}
         </button>
       </main>
-    </div>
+    </PageContainer>
   );
 }

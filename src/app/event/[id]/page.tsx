@@ -8,6 +8,7 @@ import { ShareButton } from "@/components/ShareButton";
 import { ClockIcon, DownloadIcon, MapPinIcon } from "@/components/icons";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { EVENTS } from "@/lib/seedData";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 function buildIcs(event: (typeof EVENTS)[number], title: string, description: string): string {
   const fmt = (d: string) => d.replace(/-/g, "");
@@ -44,7 +45,7 @@ export default function EventDetailPage() {
   const icsHref = `data:text/calendar;charset=utf-8,${encodeURIComponent(buildIcs(event, title, description))}`;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader
         title={t("eventDetail.title")}
         right={<BookmarkButton entityType="event" entityId={event.id} title={title} subtitle={event.location} />}
@@ -52,7 +53,7 @@ export default function EventDetailPage() {
 
       <main className="flex-1 pb-[24px]">
         <div className="px-outer pt-[8px]">
-          <PhotoHero alt={title} scrim="none" className="h-[190px] w-full rounded-md" />
+          <PhotoHero alt={title} scrim="none" className="h-[190px] w-full rounded-compact" />
         </div>
 
         <div className="px-outer pt-[18px]">
@@ -63,7 +64,7 @@ export default function EventDetailPage() {
 
           <div className="mt-[14px] flex items-start gap-[10px]">
             <MapPinIcon className="mt-[2px] h-[17px] w-[17px] shrink-0 text-navy" />
-            <p className="font-sans text-[14px] text-text">{event.location}</p>
+            <p className="font-sans text-[15.5px] text-text">{event.location}</p>
           </div>
 
           <p className="mt-[18px] font-sans text-[15px] leading-[1.55] text-text">{description}</p>
@@ -72,7 +73,7 @@ export default function EventDetailPage() {
             <a
               href={icsHref}
               download={`${event.id}.ics`}
-              className="press flex flex-1 items-center justify-center gap-[8px] rounded-pill bg-navy py-[13px] font-sans text-[14px] font-semibold text-white"
+              className="press flex flex-1 items-center justify-center gap-[8px] rounded-pill bg-navy py-[13px] font-sans text-[15.5px] font-semibold text-white"
             >
               <DownloadIcon className="h-[16px] w-[16px]" />
               {t("eventDetail.addToCalendar")}
@@ -95,12 +96,12 @@ export default function EventDetailPage() {
             </a>
           )}
 
-          <p className="mt-[24px] flex items-center gap-[8px] font-sans text-[12.5px] text-muted">
+          <p className="mt-[24px] flex items-center gap-[8px] font-sans text-[13.5px] text-muted">
             <ClockIcon className="h-[14px] w-[14px]" />
             {t("eventDetail.tapNote")}
           </p>
         </div>
       </main>
-    </div>
+    </PageContainer>
   );
 }

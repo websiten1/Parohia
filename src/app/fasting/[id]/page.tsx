@@ -5,6 +5,7 @@ import { AppHeader } from "@/components/AppHeader";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { FASTS, formatMediumDate } from "@/lib/seedData";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function FastDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -19,7 +20,7 @@ export default function FastDetailPage() {
     language === "ro" ? (fast.liturgicalContextRo ?? fast.liturgicalContext) : fast.liturgicalContext;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader title={title} right={<BookmarkButton entityType="reading" entityId={fast.id} title={title} />} />
 
       <main className="flex-1 px-outer py-[22px]">
@@ -28,18 +29,18 @@ export default function FastDetailPage() {
         </p>
         <p className="mt-[14px] font-serif text-[17px] leading-[1.5] text-text">{description}</p>
 
-        <p className="mt-[28px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
+        <p className="mt-[28px] font-serif text-[22px] font-bold text-text">
           {t("fastDetail.permittedFoods")}
         </p>
         <p className="mt-[8px] font-sans text-[15px] leading-[1.5] text-text">{permittedFoods}</p>
 
-        <p className="mt-[28px] font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
+        <p className="mt-[28px] font-serif text-[22px] font-bold text-text">
           {t("fastDetail.liturgicalContext")}
         </p>
         <p className="mt-[8px] font-sans text-[15px] leading-[1.5] text-text">{liturgicalContext}</p>
 
         <p className="mt-[28px] font-sans text-[12px] italic text-muted">{t("fastDetail.disclaimer")}</p>
       </main>
-    </div>
+    </PageContainer>
   );
 }

@@ -5,13 +5,14 @@ import { EmptyState } from "@/components/Feedback";
 import { CloseIcon, NoteIcon } from "@/components/icons";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { useNotes } from "@/lib/storage";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function NotesPage() {
   const { notes, removeNote, hydrated } = useNotes();
   const { t, language } = useTranslation();
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader title={t("notes.title")} />
       <main className="flex-1 px-outer py-[10px]">
         {!hydrated ? null : notes.length === 0 ? (
@@ -42,6 +43,6 @@ export default function NotesPage() {
           ))
         )}
       </main>
-    </div>
+    </PageContainer>
   );
 }

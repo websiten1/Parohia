@@ -7,6 +7,7 @@ import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n/translations";
 import { RESOURCE_ITEMS } from "@/lib/seedData";
 import type { ResourceCategoryId } from "@/lib/types";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 const LABEL_KEYS: Record<ResourceCategoryId, TranslationKey> = {
   "church-fathers": "resources.churchFathers",
@@ -22,7 +23,7 @@ export default function ResourceCategoryPage() {
   const items = RESOURCE_ITEMS.filter((r) => r.category === categoryId);
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader title={t(LABEL_KEYS[categoryId])} backHref="/resources" />
       <main className="flex-1 px-outer py-[16px]">
         {items.map((item, i) => (
@@ -40,6 +41,6 @@ export default function ResourceCategoryPage() {
           </Link>
         ))}
       </main>
-    </div>
+    </PageContainer>
   );
 }

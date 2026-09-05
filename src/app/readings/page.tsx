@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PhotoHero } from "@/components/PhotoHero";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { getLiturgicalDay, READINGS, REFERENCE_DATE } from "@/lib/seedData";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function ReadingsPage() {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ export default function ReadingsPage() {
   const gospel = READINGS.find((r) => r.id === day.gospel)!;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <PhotoHero alt="Open Scripture" scrim="full" className="h-[300px] w-full shrink-0">
         <div className="absolute inset-x-0 bottom-0 px-outer pb-[26px] pt-[max(env(safe-area-inset-top),40px)]">
           <p className="font-serif text-[16px] text-white/70">{t("readings.todaysSmall")}</p>
@@ -25,7 +26,7 @@ export default function ReadingsPage() {
         <div className="my-[20px] h-px bg-divider" />
         <ReadingRow eyebrow={t("readings.gospel")} reference={gospel.reference} readingId={gospel.id} />
       </main>
-    </div>
+    </PageContainer>
   );
 }
 
@@ -33,9 +34,9 @@ function ReadingRow({ eyebrow, reference, readingId }: { eyebrow: string; refere
   const { t } = useTranslation();
   return (
     <div>
-      <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{eyebrow}</p>
+      <p className="font-serif text-[22px] font-bold text-text">{eyebrow}</p>
       <p className="mt-[6px] font-serif text-[22px] font-bold leading-[1.2] text-text">{reference}</p>
-      <p className="mt-[8px] font-sans text-[14px] text-navy">
+      <p className="mt-[8px] font-sans text-[15.5px] text-navy">
         <Link href={`/reading/${readingId}`} className="press underline decoration-navy/25 underline-offset-4">
           {t("readings.read")}
         </Link>

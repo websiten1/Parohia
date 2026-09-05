@@ -5,6 +5,7 @@ import { EmptyState } from "@/components/Feedback";
 import { BookmarkIcon, CloseIcon } from "@/components/icons";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { useBookmarks } from "@/lib/storage";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 const ENTITY_HREF: Record<string, (id: string) => string> = {
   saint: (id) => `/saint/${id}`,
@@ -20,7 +21,7 @@ export default function BookmarksPage() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader title={t("bookmarks.title")} />
       <main className="flex-1 px-outer py-[10px]">
         {!hydrated ? null : bookmarks.length === 0 ? (
@@ -33,7 +34,7 @@ export default function BookmarksPage() {
             >
               <a href={ENTITY_HREF[b.entityType]?.(b.entityId) ?? "#"} className="min-w-0 flex-1">
                 <p className="truncate font-serif text-[16px] text-text">{b.title}</p>
-                {b.subtitle && <p className="mt-[2px] truncate font-sans text-[12.5px] text-muted">{b.subtitle}</p>}
+                {b.subtitle && <p className="mt-[2px] truncate font-sans text-[13.5px] text-muted">{b.subtitle}</p>}
               </a>
               <button
                 type="button"
@@ -47,6 +48,6 @@ export default function BookmarksPage() {
           ))
         )}
       </main>
-    </div>
+    </PageContainer>
   );
 }

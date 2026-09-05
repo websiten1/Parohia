@@ -6,6 +6,7 @@ import { BookmarkButton } from "@/components/BookmarkButton";
 import { ShareButton } from "@/components/ShareButton";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { RESOURCE_ITEMS } from "@/lib/seedData";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function ArticleReaderPage() {
   const { id } = useParams<{ id: string }>();
@@ -19,7 +20,7 @@ export default function ArticleReaderPage() {
   const attribution = language === "ro" ? (article.attributionRo ?? article.attribution) : article.attribution;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader
         title={t("resource.article")}
         right={
@@ -30,7 +31,7 @@ export default function ArticleReaderPage() {
         }
       />
       <main className="flex-1 px-outer py-[22px]">
-        <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{subtitle}</p>
+        <p className="font-serif text-[22px] font-bold text-text">{subtitle}</p>
         <h1 className="mt-[6px] font-serif text-[24px] font-bold leading-[1.25] text-text">{title}</h1>
         <div className="mt-[18px]">
           {(body ?? []).map((para, i) => (
@@ -41,6 +42,6 @@ export default function ArticleReaderPage() {
         </div>
         <p className="mt-[20px] font-sans text-[11.5px] text-muted">{attribution}</p>
       </main>
-    </div>
+    </PageContainer>
   );
 }

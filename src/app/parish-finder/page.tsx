@@ -1,11 +1,12 @@
 import { ParishFinderClient } from "./ParishFinderClient";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function ParishFinderPage() {
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <main className="flex-1">
         <ParishFinderClient />
       </main>
-    </div>
+    </PageContainer>
   );
 }

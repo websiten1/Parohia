@@ -3,19 +3,20 @@
 import { useRouter } from "next/navigation";
 import { ParishSelector } from "@/components/ParishSelector";
 import { useSelectedParishId } from "@/lib/storage";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function ChangeParishPage() {
   const router = useRouter();
   const [, setSelectedParishId] = useSelectedParishId();
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <ParishSelector
         onChoose={(id) => {
           setSelectedParishId(id);
           router.replace("/menu");
         }}
       />
-    </div>
+    </PageContainer>
   );
 }

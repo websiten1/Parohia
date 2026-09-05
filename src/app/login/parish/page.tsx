@@ -7,6 +7,7 @@ import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { DEMO_PARISH_TEMPLATES } from "@/lib/usLocationData";
 import { markOnboardingSkipped, useAccount, useSelectedParishId } from "@/lib/storage";
 import type { Parish } from "@/lib/types";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 /**
  * Three fixed demo parishes, framed by whatever city/state the visitor just
@@ -54,7 +55,7 @@ export default function ParishOnboardingPage() {
   }
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background px-outer pt-[max(env(safe-area-inset-top),24px)] pb-[32px]">
+    <PageContainer className="px-outer pt-[max(env(safe-area-inset-top),24px)] pb-[32px]">
       <h1 className="font-serif text-[26px] font-bold leading-[1.25] text-text">{t("parishOnboarding.title", { city, state })}</h1>
       <p className="mt-[6px] font-serif text-[15px] italic text-muted">{t("parishOnboarding.subtitle")}</p>
 
@@ -66,7 +67,7 @@ export default function ParishOnboardingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="aspect-[16/9] w-full rounded-md bg-navy-texture" aria-hidden="true" />
+            <div className="aspect-[16/9] w-full rounded-compact bg-navy-texture" aria-hidden="true" />
             <p className="mt-[12px] font-serif text-[19px] font-bold text-text">{template.name}</p>
             <p className="mt-[2px] font-serif text-[14px] italic text-burgundy">{template.patronSaint}</p>
             <p className="mt-[4px] font-sans text-[13px] text-muted">
@@ -75,7 +76,7 @@ export default function ParishOnboardingPage() {
             <button
               type="button"
               onClick={() => confirm(template.id)}
-              className="press mt-[14px] rounded-pill border border-navy px-[18px] py-[9px] font-sans text-[13.5px] font-semibold text-navy"
+              className="press mt-[14px] rounded-pill border border-navy px-[18px] py-[9px] font-sans text-[15px] font-semibold text-navy"
             >
               {t("parishOnboarding.cta")}
             </button>
@@ -91,10 +92,10 @@ export default function ParishOnboardingPage() {
           markOnboardingSkipped();
           router.replace("/today");
         }}
-        className="press mt-[22px] w-full text-center font-sans text-[13.5px] text-muted"
+        className="press mt-[22px] w-full text-center font-sans text-[15px] text-muted"
       >
         {t("common.skipForNow")}
       </button>
-    </div>
+    </PageContainer>
   );
 }

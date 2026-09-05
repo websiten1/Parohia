@@ -4,6 +4,7 @@ import { AppHeader } from "@/components/AppHeader";
 import { SegmentedChoice, SettingsRow, Switch } from "@/components/SettingsControls";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
 import { useSettings } from "@/lib/storage";
+import { PageContainer } from "@/components/ui/Surfaces";
 
 export default function AppearancePage() {
   const { settings, update, hydrated } = useSettings();
@@ -11,7 +12,7 @@ export default function AppearancePage() {
   if (!hydrated) return null;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <PageContainer>
       <AppHeader title={t("appearance.title")} />
       <main className="flex-1 px-outer py-[10px]">
         <SettingsRow label={t("appearance.theme")}>
@@ -26,7 +27,7 @@ export default function AppearancePage() {
           />
         </SettingsRow>
         {settings.appearance === "dark" && (
-          <p className="anim-fade-through pb-[14px] font-sans text-[12.5px] text-muted">{t("appearance.darkNote")}</p>
+          <p className="anim-fade-through pb-[14px] font-sans text-[13.5px] text-muted">{t("appearance.darkNote")}</p>
         )}
         <SettingsRow label={t("appearance.textSize")}>
           <SegmentedChoice
@@ -46,6 +47,6 @@ export default function AppearancePage() {
           <Switch checked={settings.reducedMotion} onChange={(v) => update("reducedMotion", v)} label={t("appearance.reduceMotion")} />
         </SettingsRow>
       </main>
-    </div>
+    </PageContainer>
   );
 }
