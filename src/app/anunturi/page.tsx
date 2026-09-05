@@ -39,7 +39,7 @@ export default function AnnouncementsPage() {
   const [featured, ...rest] = filtered;
 
   return (
-    <PageContainer>
+    <PageContainer wash="blue">
       <header className="px-outer pt-[max(env(safe-area-inset-top),24px)]">
         <h1 className="font-serif text-[32px] font-bold leading-[1.1] text-text">{t("announcements.title")}</h1>
       </header>

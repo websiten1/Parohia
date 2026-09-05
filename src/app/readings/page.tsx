@@ -13,7 +13,7 @@ export default function ReadingsPage() {
   const gospel = READINGS.find((r) => r.id === day.gospel)!;
 
   return (
-    <PageContainer>
+    <PageContainer wash="cyan">
       <PhotoHero alt="Open Scripture" scrim="full" className="h-[300px] w-full shrink-0">
         <div className="absolute inset-x-0 bottom-0 px-outer pb-[26px] pt-[max(env(safe-area-inset-top),40px)]">
           <p className="font-serif text-[16px] text-white/70">{t("readings.todaysSmall")}</p>

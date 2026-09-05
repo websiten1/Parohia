@@ -23,7 +23,7 @@ export default function ResourceCategoryPage() {
   const items = RESOURCE_ITEMS.filter((r) => r.category === categoryId);
 
   return (
-    <PageContainer>
+    <PageContainer wash="peach">
       <AppHeader title={t(LABEL_KEYS[categoryId])} backHref="/resources" />
       <main className="flex-1 px-outer py-[16px]">
         {items.map((item, i) => (

@@ -124,7 +124,7 @@ export default function PriestSchedulePage() {
 
   if (view === "confirm") {
     return (
-      <PageContainer>
+      <PageContainer wash="coral">
         <header className="flex h-[52px] shrink-0 items-center justify-between border-b border-divider bg-surface px-outer">
           <button
             type="button"

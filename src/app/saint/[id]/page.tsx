@@ -36,7 +36,7 @@ export default function SaintDetailPage() {
   const bodyText = tab === "life" ? fullLife : tab === "troparion" ? troparion : kontakion;
 
   return (
-    <PageContainer>
+    <PageContainer wash="rose">
       <div className="relative">
         <PhotoHero alt={primaryName} scrim="bottom" className="h-[300px] w-full" />
         <div className="absolute inset-x-0 top-[max(env(safe-area-inset-top),14px)] flex items-center justify-between px-outer">

@@ -28,7 +28,7 @@ export default function MenuPage() {
   }, [selectedParishId]);
 
   return (
-    <PageContainer>
+    <PageContainer wash="rose">
       <header className="px-outer pt-[max(env(safe-area-inset-top),24px)]">
         <h1 className="font-serif text-[32px] font-bold leading-[1.1] text-text">{t("brand.name")}</h1>
       </header>

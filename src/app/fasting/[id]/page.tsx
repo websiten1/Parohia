@@ -20,7 +20,7 @@ export default function FastDetailPage() {
     language === "ro" ? (fast.liturgicalContextRo ?? fast.liturgicalContext) : fast.liturgicalContext;
 
   return (
-    <PageContainer>
+    <PageContainer wash="green">
       <AppHeader title={title} right={<BookmarkButton entityType="reading" entityId={fast.id} title={title} />} />
 
       <main className="flex-1 px-outer py-[22px]">

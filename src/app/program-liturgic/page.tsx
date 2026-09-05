@@ -40,7 +40,7 @@ export default function ProgramLiturgicPage() {
   }, [selectedParishId]);
 
   return (
-    <PageContainer>
+    <PageContainer wash="cyan">
       <header className="px-outer pt-[max(env(safe-area-inset-top),24px)]">
         <h1 className="font-serif text-[32px] font-bold leading-[1.1] text-text">{t("schedule.title")}</h1>
         {parish && (

@@ -45,7 +45,7 @@ export default function LocationPage() {
   }
 
   return (
-    <PageContainer className="px-outer pb-[40px] pt-[max(env(safe-area-inset-top),20px)]">
+    <PageContainer wash="violet" className="px-outer pb-[40px] pt-[max(env(safe-area-inset-top),20px)]">
       <div className="flex items-center gap-[16px]">
         <CircularActionButton label={t("common.back")} onClick={goBack}>
           <BackIcon className="h-[19px] w-[19px]" />

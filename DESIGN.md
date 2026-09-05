@@ -80,6 +80,8 @@ components:
     backgroundColor: "{colors.surface-soft}"
     rounded: "{rounded.search}"
     height: "54px"
+  video-scrim:
+    background: "{gradients.scrim-video}"
   floating-navigation:
     backgroundColor: "{colors.charcoal}"
     rounded: "{rounded.nav}"
@@ -99,6 +101,18 @@ primitives (`components/ui/`). A new page should not need to re-invent
 margins, backgrounds, headers, buttons, cards, navigation, typography or
 motion — those already exist, and a page that consumes them belongs to the
 product by default.
+
+## Gradients
+
+Every page carries a soft vertical wash, painted on `body` so it stays
+anchored to the viewport (a transformed ancestor would break a fixed
+background). Each section owns the light at the top — Calendar violet, News
+blue, Schedule cyan, Menu rose, Prayers violet, Fasting green, Resources and
+Events peach, priest screens coral — and all of them settle into the same warm
+neutral, which is what keeps them one family rather than seven themes. A page
+opts in with `<PageContainer wash="…">`. Cards, primary and secondary actions,
+circular controls and the navigation vessel each carry their own soft
+gradient. `--scrim-video` is the legibility layer for type resting on video.
 
 ## Colors
 

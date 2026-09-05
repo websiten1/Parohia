@@ -55,7 +55,7 @@ export default function ParishOnboardingPage() {
   }
 
   return (
-    <PageContainer className="px-outer pt-[max(env(safe-area-inset-top),24px)] pb-[32px]">
+    <PageContainer wash="violet" className="px-outer pt-[max(env(safe-area-inset-top),24px)] pb-[32px]">
       <h1 className="font-serif text-[26px] font-bold leading-[1.25] text-text">{t("parishOnboarding.title", { city, state })}</h1>
       <p className="mt-[6px] font-serif text-[15px] italic text-muted">{t("parishOnboarding.subtitle")}</p>
 

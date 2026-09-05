@@ -143,7 +143,7 @@ export default function PriestLoginPage() {
   }
 
   return (
-    <PageContainer className="px-outer pt-[max(env(safe-area-inset-top),24px)] pb-[32px]">
+    <PageContainer wash="coral" className="px-outer pt-[max(env(safe-area-inset-top),24px)] pb-[32px]">
       <button
         type="button"
         onClick={goBack}

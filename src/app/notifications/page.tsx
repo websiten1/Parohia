@@ -33,7 +33,7 @@ const NOTIFICATIONS: { id: number; titleKey: TranslationKey; bodyKey: Translatio
 export default function NotificationsPage() {
   const { t } = useTranslation();
   return (
-    <PageContainer>
+    <PageContainer wash="blue">
       <AppHeader title={t("notifications.title")} backHref="/today" />
       <main className="flex-1 px-outer py-[10px]">
         {NOTIFICATIONS.map((n, i) => (

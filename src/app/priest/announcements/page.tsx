@@ -55,7 +55,7 @@ export default function PriestAnnouncementsPage() {
   }
 
   return (
-    <PageContainer>
+    <PageContainer wash="coral">
       <AppHeader title={t("priest.announcementsTitle")} backHref="/priest" />
 
       {view.mode === "form" ? (

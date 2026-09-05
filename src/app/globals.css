@@ -180,6 +180,15 @@
   --gradient-primary-action: linear-gradient(180deg, #a3214a 0%, #8f1735 55%, #7d1430 100%);
   --gradient-secondary-action: linear-gradient(180deg, #f7f3ef 0%, #ece5de 100%);
   --gradient-vessel: linear-gradient(180deg, #2a2724 0%, #1a1817 100%);
+  /* Legibility scrim for text resting on video — a functional layer, not a
+     palette colour: clear where the scene should read, deep where type sits. */
+  --scrim-video: linear-gradient(
+    to bottom,
+    rgba(16, 20, 28, 0.42) 0%,
+    rgba(16, 20, 28, 0.18) 28%,
+    rgba(16, 20, 28, 0.55) 68%,
+    rgba(12, 14, 20, 0.88) 100%
+  );
 
   --motion-press: 100ms;
   --motion-release: 220ms;
@@ -370,6 +379,76 @@ body {
   background-attachment: fixed;
   color: var(--color-text);
   overflow-x: hidden;
+}
+
+/* ==========================================================================
+ * PER-PAGE WASHES
+ *
+ * Each section of the app gets its own light at the top of the gradient,
+ * settling into the same warm neutral so the pages stay one family rather
+ * than seven unrelated themes. A page opts in by rendering the matching
+ * class; body picks it up with :has() and re-points the gradient it already
+ * paints, so nothing else has to change.
+ * ======================================================================== */
+body:has(.wash-violet) {
+  --gradient-page: linear-gradient(180deg, #ddd3f2 0%, #ebe5f7 26%, #f6f2ee 64%, #eae4de 100%);
+  --gradient-page-end: #eae4de;
+}
+body:has(.wash-blue) {
+  --gradient-page: linear-gradient(180deg, #d0e2f7 0%, #e6eef8 26%, #f6f2ee 64%, #eae4de 100%);
+  --gradient-page-end: #eae4de;
+}
+body:has(.wash-cyan) {
+  --gradient-page: linear-gradient(180deg, #cfe8e6 0%, #e3f1ef 26%, #f6f3ee 64%, #eae4de 100%);
+  --gradient-page-end: #eae4de;
+}
+body:has(.wash-peach) {
+  --gradient-page: linear-gradient(180deg, #fbe2c6 0%, #fbeedc 26%, #f8f3ec 64%, #eae4de 100%);
+  --gradient-page-end: #eae4de;
+}
+body:has(.wash-green) {
+  --gradient-page: linear-gradient(180deg, #d7e9d2 0%, #e7f1e3 26%, #f6f3ee 64%, #eae4de 100%);
+  --gradient-page-end: #eae4de;
+}
+body:has(.wash-rose) {
+  --gradient-page: linear-gradient(180deg, #f7d9e1 0%, #f9e7ec 26%, #f8f2ee 64%, #eae4de 100%);
+  --gradient-page-end: #eae4de;
+}
+body:has(.wash-coral) {
+  --gradient-page: linear-gradient(180deg, #fbdcd0 0%, #fbe9e1 26%, #f8f3ee 64%, #eae4de 100%);
+  --gradient-page-end: #eae4de;
+}
+
+/* Dark keeps the same hue at the top, just far deeper. */
+:root[data-theme="dark"] body:has(.wash-violet),
+:root[data-theme="dark"] body:has(.wash-blue),
+:root[data-theme="dark"] body:has(.wash-cyan),
+:root[data-theme="dark"] body:has(.wash-peach),
+:root[data-theme="dark"] body:has(.wash-green),
+:root[data-theme="dark"] body:has(.wash-rose),
+:root[data-theme="dark"] body:has(.wash-coral) {
+  --gradient-page-end: #121114;
+}
+:root[data-theme="dark"] body:has(.wash-violet) {
+  --gradient-page: linear-gradient(180deg, #2b2540 0%, #201d2c 32%, #17161a 68%, #121114 100%);
+}
+:root[data-theme="dark"] body:has(.wash-blue) {
+  --gradient-page: linear-gradient(180deg, #222d3e 0%, #1c212b 32%, #17161a 68%, #121114 100%);
+}
+:root[data-theme="dark"] body:has(.wash-cyan) {
+  --gradient-page: linear-gradient(180deg, #1e3436 0%, #1a2528 32%, #17161a 68%, #121114 100%);
+}
+:root[data-theme="dark"] body:has(.wash-peach) {
+  --gradient-page: linear-gradient(180deg, #3a2c1c 32%, #241d17 60%, #17161a 82%, #121114 100%);
+}
+:root[data-theme="dark"] body:has(.wash-green) {
+  --gradient-page: linear-gradient(180deg, #24331f 0%, #1c2419 32%, #17161a 68%, #121114 100%);
+}
+:root[data-theme="dark"] body:has(.wash-rose) {
+  --gradient-page: linear-gradient(180deg, #3a2029 0%, #241a1e 32%, #17161a 68%, #121114 100%);
+}
+:root[data-theme="dark"] body:has(.wash-coral) {
+  --gradient-page: linear-gradient(180deg, #3b241c 0%, #251b17 32%, #17161a 68%, #121114 100%);
 }
 
 /* Reading screens run warmer; same wash, different temperature. */

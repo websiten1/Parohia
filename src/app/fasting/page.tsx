@@ -23,7 +23,7 @@ export default function FastingPage() {
   const fastExplanation = language === "ro" ? CURRENT_FAST_EXPLANATION_RO : CURRENT_FAST_EXPLANATION;
 
   return (
-    <PageContainer>
+    <PageContainer wash="green">
       <PhotoHero alt="Bread, olives and oil" scrim="bottom" className="h-[300px] w-full shrink-0">
         <h1 className="absolute bottom-[20px] left-[20px] font-serif text-[32px] font-bold text-white">{t("fasting.title")}</h1>
       </PhotoHero>

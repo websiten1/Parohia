@@ -34,7 +34,7 @@ export default function PriestDashboardPage() {
   if (!hydrated || !account || account.role !== "priest") return null;
 
   return (
-    <PageContainer>
+    <PageContainer wash="coral">
       <div className="flex items-center gap-[14px] bg-navy-texture px-outer pb-[30px] pt-[max(env(safe-area-inset-top),24px)]">
         <SealMark size={44} tone="light" />
         <span className="min-w-0">

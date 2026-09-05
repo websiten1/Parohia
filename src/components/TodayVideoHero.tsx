@@ -8,29 +8,31 @@ import { useTranslation } from "@/lib/i18n/LanguageProvider";
 
 interface Props {
   greeting: string;
-  dateLine: string;
+  /** What today is in the Church's life — the one thing this screen alone carries. */
+  commemorations: string;
+  meta?: string;
 }
 
 /**
- * The video is the atmosphere for the whole first impression of Today, not
- * a component inserted into a card — a tall, near-full-screen scene with
- * only a greeting and the date resting on it. Everything else (saints,
- * services, announcements) lives below, in the room this restraint leaves
- * for it. A slow scale drift stands in for parallax here — true
- * viewport-fixed video isn't safe under the app's page-transition transform
- * without breaking `position: fixed` for its whole subtree, so the video
- * still scrolls, just slowly and only after a very tall hold.
+ * Today is the video. The whole screen is the scene, and everything the page
+ * says rests on it: a greeting, the word "Today", and the day's commemoration.
+ * Nothing else — services live on the Schedule, the next feast on the
+ * Calendar, announcements on News — so this screen repeats none of them.
+ *
+ * A slow scale drift stands in for parallax: true viewport-fixed video is not
+ * safe under AppShell's page-transition transform, which would break
+ * `position: fixed` for the whole subtree.
  */
-export function TodayVideoHero({ greeting, dateLine }: Props) {
+export function TodayVideoHero({ greeting, commemorations, meta }: Props) {
   const { t } = useTranslation();
   const reduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [0, 700], [1, reduceMotion ? 1 : 1.06]);
+  const scale = useTransform(scrollY, [0, 600], [1, reduceMotion ? 1 : 1.05]);
 
   return (
-    <div className="relative h-[92vh] max-h-[820px] min-h-[600px] w-full overflow-hidden bg-navy">
+    <div className="relative h-[100dvh] w-full overflow-hidden bg-navy">
       <motion.video
-        className="anim-flicker-subtle absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover"
         style={{ scale }}
         src="/video/today-hero.mp4"
         poster="/video/today-hero-poster.jpg"
@@ -41,22 +43,19 @@ export function TodayVideoHero({ greeting, dateLine }: Props) {
         preload="auto"
         aria-hidden="true"
       />
-      {/* Resolves into the page's own warm ground so the hero and the content
-          below read as one continuous surface, with no seam at the join. */}
+      {/* Deep enough at the foot to hold the text, clear at the top so the
+          scene is actually visible. */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(20,33,47,0.26) 0%, rgba(20,33,47,0.34) 45%, rgba(20,33,47,0.66) 78%, var(--color-background) 100%)",
-        }}
+        style={{ background: "var(--scrim-video)" }}
         aria-hidden="true"
       />
 
       <div className="relative z-10 flex h-full flex-col">
         <header className="flex items-center justify-between px-outer pt-[max(env(safe-area-inset-top),18px)]">
           <div className="flex items-center gap-[10px]">
-            <SealMark size={28} tone="light" />
-            <p className="font-sans text-[10.5px] font-semibold uppercase leading-[1.3] tracking-[0.03em] text-white">
+            <SealMark size={30} tone="light" />
+            <p className="font-sans text-[11px] font-semibold uppercase leading-[1.3] tracking-[0.04em] text-white/90">
               {t("brand.name")}
             </p>
           </div>
@@ -65,14 +64,28 @@ export function TodayVideoHero({ greeting, dateLine }: Props) {
           </CircularActionButton>
         </header>
 
-        <div className="flex flex-1 flex-col justify-end px-outer pb-[15vh]">
-          <p className="anim-rise-fade-in font-serif text-[19px] italic leading-[1.4] text-white/90">{greeting}</p>
-          <p
-            className="anim-rise-fade-in mt-[10px] font-serif text-[30px] font-bold leading-[1.15] text-white"
-            style={{ animationDelay: "90ms" }}
+        <div className="flex flex-1 flex-col justify-end px-outer pb-[calc(96px+env(safe-area-inset-bottom,0px))]">
+          <p className="anim-rise-fade-in font-serif text-[19px] italic leading-[1.4] text-white/75">{greeting}</p>
+          <h1
+            className="anim-rise-fade-in mt-[6px] font-serif text-[64px] font-bold leading-[0.95] tracking-[-0.02em] text-white"
+            style={{ animationDelay: "80ms" }}
           >
-            {dateLine}
+            {t("today.todayLabel")}
+          </h1>
+          <p
+            className="anim-rise-fade-in mt-[22px] max-w-[330px] font-serif text-[21px] font-bold leading-[1.3] text-white"
+            style={{ animationDelay: "160ms" }}
+          >
+            {commemorations}
           </p>
+          {meta && (
+            <p
+              className="anim-rise-fade-in mt-[10px] font-sans text-[14px] leading-[1.5] text-white/70"
+              style={{ animationDelay: "240ms" }}
+            >
+              {meta}
+            </p>
+          )}
         </div>
       </div>
     </div>

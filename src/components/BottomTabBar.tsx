@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
+import { NAV_TINT } from "@/lib/navColors";
+import { TINTS } from "@/lib/tints";
 import type { TranslationKey } from "@/lib/i18n/translations";
 import {
   NavCalendarIcon,
@@ -113,15 +115,17 @@ export function BottomTabBar() {
                   <motion.span
                     layoutId="nav-selection"
                     transition={NAV_SPRING}
-                    className="absolute inset-0 rounded-nav-item bg-nav-selection"
+                    style={{ background: TINTS[NAV_TINT[id]].surface }}
+                    className="absolute inset-0 rounded-nav-item"
                     aria-hidden="true"
                   />
                 )}
                 <motion.span
                   whileTap={reduceMotion ? undefined : { scale: 0.975 }}
                   transition={{ type: "spring", stiffness: 620, damping: 34 }}
+                  style={{ color: isActive ? TINTS[NAV_TINT[id]].ink : undefined }}
                   className={`relative z-10 flex min-w-0 items-center justify-center gap-[9px] ${
-                    isActive ? "text-nav-selection-ink" : "text-white/55"
+                    isActive ? "" : "text-white/50"
                   }`}
                 >
                   <Icon className="h-[21px] w-[21px] shrink-0" active={isActive} />

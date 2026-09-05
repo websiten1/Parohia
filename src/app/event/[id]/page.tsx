@@ -45,7 +45,7 @@ export default function EventDetailPage() {
   const icsHref = `data:text/calendar;charset=utf-8,${encodeURIComponent(buildIcs(event, title, description))}`;
 
   return (
-    <PageContainer>
+    <PageContainer wash="peach">
       <AppHeader
         title={t("eventDetail.title")}
         right={<BookmarkButton entityType="event" entityId={event.id} title={title} subtitle={event.location} />}

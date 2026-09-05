@@ -53,7 +53,7 @@ export default function AnnouncementPage() {
   const accent = ACCENT_TEXT[ARTICLE_CATEGORY_ACCENT[article.category]];
 
   return (
-    <PageContainer>
+    <PageContainer wash="blue">
       <AppHeader
         title={t("nav.announcements")}
         right={

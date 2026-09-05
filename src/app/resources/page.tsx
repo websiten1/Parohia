@@ -17,7 +17,7 @@ const MODULES: { href: string; titleKey: TranslationKey; actionKey: TranslationK
 export default function ResourcesPage() {
   const { t } = useTranslation();
   return (
-    <PageContainer>
+    <PageContainer wash="peach">
       <header className="px-outer pt-[max(env(safe-area-inset-top),18px)] pb-[16px]">
         <h1 className="font-serif text-[30px] font-bold text-text">{t("resources.title")}</h1>
       </header>

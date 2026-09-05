@@ -9,6 +9,14 @@ import { TINTS, type TintName } from "@/lib/tints";
 
 type BackgroundTone = "primary" | "secondary" | "reading" | "elevated";
 
+/**
+ * Which light sits at the top of the page's gradient. Each section of the app
+ * owns one, so a screen is recognisable by its colour before you read it —
+ * while every wash settles into the same warm neutral, keeping them one
+ * family instead of seven themes.
+ */
+export type PageWash = "violet" | "blue" | "cyan" | "peach" | "green" | "rose" | "coral" | "default";
+
 /*
  * Pages are transparent: the app-wide gradient wash is painted on `body` and
  * shows through. `reading` only tags itself so body can switch to the warmer
@@ -29,13 +37,21 @@ const BACKGROUND: Record<BackgroundTone, string> = {
 export function PageContainer({
   children,
   tone = "primary",
+  wash = "default",
   className,
 }: {
   children: React.ReactNode;
   tone?: BackgroundTone;
+  wash?: PageWash;
   className?: string;
 }) {
-  return <div className={`flex min-h-dvh flex-col ${BACKGROUND[tone]} ${className ?? ""}`}>{children}</div>;
+  return (
+    <div
+      className={`flex min-h-dvh flex-col ${wash === "default" ? "" : `wash-${wash}`} ${BACKGROUND[tone]} ${className ?? ""}`}
+    >
+      {children}
+    </div>
+  );
 }
 
 /** Standard horizontal page margin with the floating navigation's clearance. */

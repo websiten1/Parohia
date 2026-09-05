@@ -31,7 +31,7 @@ export default function LoginPage() {
   });
 
   return (
-    <PageContainer className="px-outer pb-[48px] pt-[max(env(safe-area-inset-top),32px)]">
+    <PageContainer wash="violet" className="px-outer pb-[48px] pt-[max(env(safe-area-inset-top),32px)]">
       <div className="flex flex-1 flex-col items-center justify-center text-center">
         <motion.div {...rise(0)}>
           <SealMark size={72} />
