@@ -165,6 +165,22 @@
   /* ==========================================================================
    * MOTION — one coherent family, not per-screen invention. (§30)
    * ======================================================================== */
+  /* ==========================================================================
+   * GRADIENTS
+   * Soft vertical washes: a cool light at the top settling into the warm
+   * neutral the surfaces sit on. Anchored to the viewport, so a long page
+   * does not stretch the wash into an invisible smear.
+   * ======================================================================== */
+  --gradient-page: linear-gradient(180deg, #d6e4f6 0%, #e9f0f8 26%, #f6f2ee 62%, #eae4de 100%);
+  --gradient-page-reading: linear-gradient(180deg, #f3ece1 0%, #fbf6ee 34%, #fdfaf5 70%, #f2ebe2 100%);
+  --gradient-page-end: #eae4de;
+  --gradient-page-reading-end: #f2ebe2;
+
+  --gradient-surface: linear-gradient(170deg, #fffefc 0%, #fbf7f3 100%);
+  --gradient-primary-action: linear-gradient(180deg, #a3214a 0%, #8f1735 55%, #7d1430 100%);
+  --gradient-secondary-action: linear-gradient(180deg, #f7f3ef 0%, #ece5de 100%);
+  --gradient-vessel: linear-gradient(180deg, #2a2724 0%, #1a1817 100%);
+
   --motion-press: 100ms;
   --motion-release: 220ms;
   --motion-micro: 220ms;
@@ -253,6 +269,15 @@
   --color-forest: #7aa683;
   --color-slate: #7ba0c4;
 
+  --gradient-page: linear-gradient(180deg, #232833 0%, #1c1d24 30%, #17161a 65%, #121114 100%);
+  --gradient-page-reading: linear-gradient(180deg, #241f1b 0%, #1d1a18 40%, #1b1917 75%, #151312 100%);
+  --gradient-page-end: #121114;
+  --gradient-page-reading-end: #151312;
+  --gradient-surface: linear-gradient(170deg, #262329 0%, #1e1c21 100%);
+  --gradient-primary-action: linear-gradient(180deg, #d05f7c 0%, #c4526d 55%, #ac4259 100%);
+  --gradient-secondary-action: linear-gradient(180deg, #302d35 0%, #26232a 100%);
+  --gradient-vessel: linear-gradient(180deg, #3a3640 0%, #2a2830 100%);
+
   /* Shadows do less work on a dark ground; separation comes from tone. */
   --elevation-subtle: 0 1px 2px rgba(0, 0, 0, 0.28);
   --elevation-floating: 0 2px 8px rgba(0, 0, 0, 0.34), 0 16px 38px -12px rgba(0, 0, 0, 0.5);
@@ -315,16 +340,42 @@
     --color-forest: #7aa683;
     --color-slate: #7ba0c4;
 
+    --gradient-page: linear-gradient(180deg, #232833 0%, #1c1d24 30%, #17161a 65%, #121114 100%);
+    --gradient-page-reading: linear-gradient(180deg, #241f1b 0%, #1d1a18 40%, #1b1917 75%, #151312 100%);
+    --gradient-page-end: #121114;
+    --gradient-page-reading-end: #151312;
+    --gradient-surface: linear-gradient(170deg, #262329 0%, #1e1c21 100%);
+    --gradient-primary-action: linear-gradient(180deg, #d05f7c 0%, #c4526d 55%, #ac4259 100%);
+    --gradient-secondary-action: linear-gradient(180deg, #302d35 0%, #26232a 100%);
+    --gradient-vessel: linear-gradient(180deg, #3a3640 0%, #2a2830 100%);
+
     --elevation-subtle: 0 1px 2px rgba(0, 0, 0, 0.28);
     --elevation-floating: 0 2px 8px rgba(0, 0, 0, 0.34), 0 16px 38px -12px rgba(0, 0, 0, 0.5);
     --elevation-temporary: 0 4px 14px rgba(0, 0, 0, 0.4), 0 28px 64px -18px rgba(0, 0, 0, 0.62);
   }
 }
 
+/*
+ * The app-wide wash lives here rather than on a page wrapper: AppShell puts a
+ * transform on the page during route transitions, and a transformed ancestor
+ * breaks `background-attachment: fixed` for everything inside it. On body it
+ * stays anchored to the viewport, and the matching background-color carries
+ * the tone past the first screen on long pages.
+ */
 body {
-  background: var(--color-background);
+  background-color: var(--gradient-page-end);
+  background-image: var(--gradient-page);
+  background-repeat: no-repeat;
+  background-size: 100% 100dvh;
+  background-attachment: fixed;
   color: var(--color-text);
   overflow-x: hidden;
+}
+
+/* Reading screens run warmer; same wash, different temperature. */
+body:has(.page-reading) {
+  background-color: var(--gradient-page-reading-end);
+  background-image: var(--gradient-page-reading);
 }
 
 /* Elevation utilities so no page invents its own shadow. (§31) */
@@ -347,7 +398,7 @@ body {
   width: 100%;
   max-width: 402px;
   margin: 0 auto;
-  background: var(--color-background);
+  background: transparent;
   min-height: 100dvh;
   position: relative;
   overflow-x: hidden;

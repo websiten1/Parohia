@@ -13,7 +13,7 @@ export default function DateDetailPage() {
   if (!day) return notFound();
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <div className="flex min-h-dvh flex-col">
       <AppHeader title={t("calendar.dateDetailTitle")} backHref="/calendar" />
       <main className="flex-1 px-outer py-[20px]">
         <p className="font-sans text-[12px] text-muted">

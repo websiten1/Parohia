@@ -17,7 +17,7 @@ export default function ParishProfilePage() {
   const directionsUrl = `https://maps.google.com/?q=${encodeURIComponent(`${parish.address}, ${parish.city}, ${parish.state}`)}`;
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <div className="flex min-h-dvh flex-col">
       <div className="relative">
         <PhotoHero alt={parish.name} scrim="bottom" className="h-[322px] w-full" />
         <div className="absolute inset-x-0 top-[max(env(safe-area-inset-top),14px)] flex items-center justify-between px-outer">

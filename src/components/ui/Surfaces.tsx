@@ -9,10 +9,15 @@ import { TINTS, type TintName } from "@/lib/tints";
 
 type BackgroundTone = "primary" | "secondary" | "reading" | "elevated";
 
+/*
+ * Pages are transparent: the app-wide gradient wash is painted on `body` and
+ * shows through. `reading` only tags itself so body can switch to the warmer
+ * wash; it paints nothing of its own.
+ */
 const BACKGROUND: Record<BackgroundTone, string> = {
-  primary: "bg-background",
-  secondary: "bg-background-secondary",
-  reading: "bg-background-reading",
+  primary: "bg-transparent",
+  secondary: "bg-transparent",
+  reading: "page-reading bg-transparent",
   elevated: "bg-background-elevated",
 };
 
@@ -58,7 +63,8 @@ export function SoftCard({
 }) {
   return (
     <div
-      className={`rounded-card bg-surface p-[22px] ${elevated ? "elev-subtle" : ""} ${className ?? ""}`}
+      className={`rounded-card p-[22px] ${elevated ? "elev-subtle" : ""} ${className ?? ""}`}
+      style={{ background: "var(--gradient-surface)" }}
     >
       {children}
     </div>

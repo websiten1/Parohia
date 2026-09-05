@@ -29,12 +29,13 @@ export function CircularActionButton({
 }) {
   const reduceMotion = useReducedMotion();
   const surface =
-    tone === "onDark" ? "bg-white/15 text-white" : "bg-surface text-text elev-subtle";
+    tone === "onDark" ? "bg-white/15 text-white" : "text-text elev-subtle";
 
   const inner = (
     <motion.span
       whileTap={reduceMotion ? undefined : { scale: 0.96 }}
       transition={{ type: "spring", stiffness: 520, damping: 32 }}
+      style={tone === "onDark" ? undefined : { background: "var(--gradient-surface)" }}
       className={`flex h-[44px] w-[44px] items-center justify-center rounded-full ${surface}`}
     >
       {children}
@@ -136,6 +137,7 @@ export function PrimaryAction({
       aria-busy={loading || undefined}
       whileTap={disabled || loading || reduceMotion ? undefined : { scale: 0.98 }}
       transition={{ type: "spring", stiffness: 520, damping: 32 }}
+      style={disabled || loading ? undefined : { backgroundImage: "var(--gradient-primary-action)" }}
       className={`min-h-[54px] w-full rounded-pill bg-burgundy px-[24px] text-center font-sans text-[16px] font-semibold text-white transition-colors duration-150 disabled:bg-burgundy/45 ${
         className ?? ""
       }`}
@@ -162,7 +164,8 @@ export function SecondaryAction({
       onClick={onClick}
       whileTap={reduceMotion ? undefined : { scale: 0.98 }}
       transition={{ type: "spring", stiffness: 520, damping: 32 }}
-      className={`min-h-[50px] w-full rounded-pill bg-surface-soft px-[24px] text-center font-sans text-[15.5px] font-medium text-text ${
+      style={{ backgroundImage: "var(--gradient-secondary-action)" }}
+      className={`min-h-[50px] w-full rounded-pill px-[24px] text-center font-sans text-[15.5px] font-medium text-text ${
         className ?? ""
       }`}
     >

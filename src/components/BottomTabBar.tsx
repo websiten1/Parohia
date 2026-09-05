@@ -86,6 +86,7 @@ export function BottomTabBar() {
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40 mx-auto w-full max-w-[402px]">
       <nav
         aria-label="Primary"
+        style={{ backgroundImage: "var(--gradient-vessel)" }}
         className="pointer-events-auto mx-[22px] mb-[calc(16px+env(safe-area-inset-bottom,0px))] flex h-[68px] items-center gap-[2px] rounded-nav bg-charcoal p-[7px] elev-floating"
       >
         {TABS.map(({ id, href, labelKey, Icon }) => {
