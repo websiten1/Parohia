@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { SealMark } from "@/components/SealMark";
 import { CircularActionButton } from "@/components/ui/Controls";
 import { BellIcon } from "@/components/icons";
@@ -19,15 +18,13 @@ interface Props {
  * Nothing else — services live on the Schedule, the next feast on the
  * Calendar, announcements on News — so this screen repeats none of them.
  *
- * A slow scale drift stands in for parallax: true viewport-fixed video is not
- * safe under AppShell's page-transition transform, which would break
- * `position: fixed` for the whole subtree.
+ * The video is deliberately static: it filled the screen and never scrolled,
+ * so a scroll-driven scale on a playing full-screen video was cost with
+ * nothing to show for it. Entrance motion is CSS keyframes on the text, which
+ * already respect prefers-reduced-motion.
  */
 export function TodayVideoHero({ greeting, commemorations, meta }: Props) {
   const { t } = useTranslation();
-  const reduceMotion = useReducedMotion();
-  const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [0, 600], [1, reduceMotion ? 1 : 1.05]);
 
   return (
     /* The scene fills the LARGE viewport (chrome retracted), so the video
@@ -35,9 +32,8 @@ export function TodayVideoHero({ greeting, commemorations, meta }: Props) {
        stopping at a visible band. The content inside is laid out against the
        DYNAMIC viewport so the text never hides behind that chrome. */
     <div className="relative h-[100lvh] min-h-[100dvh] w-full overflow-hidden bg-navy">
-      <motion.video
+      <video
         className="absolute inset-0 h-full w-full object-cover"
-        style={{ scale }}
         src="/video/today-hero.mp4"
         poster="/video/today-hero-poster.jpg"
         autoPlay

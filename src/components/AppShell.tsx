@@ -42,9 +42,11 @@ export function AppShell({ children }: { children: ReactNode }) {
       <motion.div
         key={pathname}
         className="flex flex-1 flex-col"
-        initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 10, scale: 0.99 }}
-        animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
-        transition={{ type: "spring", stiffness: 300, damping: 32 }}
+        /* Opacity and a short travel only — scaling the page repainted
+           everything inside it, video included, on every navigation. */
+        initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", duration: 0.32, bounce: 0 }}
       >
         {children}
       </motion.div>

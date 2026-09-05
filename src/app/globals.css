@@ -365,18 +365,19 @@
 }
 
 /*
- * The app-wide wash lives here rather than on a page wrapper: AppShell puts a
- * transform on the page during route transitions, and a transformed ancestor
- * breaks `background-attachment: fixed` for everything inside it. On body it
- * stays anchored to the viewport, and the matching background-color carries
- * the tone past the first screen on long pages.
+ * The app-wide wash.
+ *
+ * Deliberately NOT `background-attachment: fixed`: on iOS Safari that forces
+ * the entire background to repaint on every scroll frame, which was making
+ * the whole app feel heavy. The gradient is sized to one viewport and the
+ * matching background-color carries the tone down the rest of a long page, so
+ * it costs nothing to scroll.
  */
 body {
   background-color: var(--gradient-page-end);
   background-image: var(--gradient-page);
   background-repeat: no-repeat;
   background-size: 100% 100dvh;
-  background-attachment: fixed;
   color: var(--color-text);
   overflow-x: hidden;
 }

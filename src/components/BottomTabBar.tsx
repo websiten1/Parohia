@@ -57,7 +57,7 @@ function tabForPath(pathname: string): NavTab | null {
  * duration/bounce form expresses that directly — bounce 0.05 sits around a
  * 0.87 damping fraction, inside the 0.82–0.90 the brief asks for.
  */
-const NAV_SPRING = { type: "spring" as const, duration: 0.42, bounce: 0.05 };
+const NAV_SPRING = { type: "spring" as const, duration: 0.38, bounce: 0.04 };
 
 /** A subtle selection tick, fired as the capsule commits — not on every touch. */
 function selectionHaptic() {
@@ -132,11 +132,16 @@ export function BottomTabBar() {
                   <AnimatePresence initial={false}>
                     {isActive && (
                       <motion.span
-                        // Width, opacity and a short travel together — the label
-                        // grows out of the icon rather than blinking into place.
-                        initial={reduceMotion ? { opacity: 0 } : { opacity: 0, width: 0, x: -6 }}
-                        animate={reduceMotion ? { opacity: 1 } : { opacity: 1, width: "auto", x: 0 }}
-                        exit={reduceMotion ? { opacity: 0 } : { opacity: 0, width: 0, x: -6 }}
+                        /*
+                         * Opacity and a short travel only. Animating width here
+                         * drove a layout pass every frame for all five items,
+                         * which is what made the bar feel heavy; the capsule's
+                         * resize is already handled by the parent's `layout`,
+                         * which Motion performs with transforms.
+                         */
+                        initial={reduceMotion ? { opacity: 0 } : { opacity: 0, x: -6 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={reduceMotion ? { opacity: 0 } : { opacity: 0, x: -4 }}
                         transition={NAV_SPRING}
                         className="max-w-[128px] overflow-hidden whitespace-nowrap font-sans text-[14.5px] font-semibold"
                       >
