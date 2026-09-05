@@ -30,7 +30,11 @@ export function TodayVideoHero({ greeting, commemorations, meta }: Props) {
   const scale = useTransform(scrollY, [0, 600], [1, reduceMotion ? 1 : 1.05]);
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-navy">
+    /* The scene fills the LARGE viewport (chrome retracted), so the video
+       bleeds behind the browser bar and under the status bar rather than
+       stopping at a visible band. The content inside is laid out against the
+       DYNAMIC viewport so the text never hides behind that chrome. */
+    <div className="relative h-[100lvh] min-h-[100dvh] w-full overflow-hidden bg-navy">
       <motion.video
         className="absolute inset-0 h-full w-full object-cover"
         style={{ scale }}
@@ -51,7 +55,7 @@ export function TodayVideoHero({ greeting, commemorations, meta }: Props) {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex h-full flex-col">
+      <div className="relative z-10 flex h-[100dvh] flex-col">
         <header className="flex items-center justify-between px-outer pt-[max(env(safe-area-inset-top),18px)]">
           <div className="flex items-center gap-[10px]">
             <SealMark size={30} tone="light" />
