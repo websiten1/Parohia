@@ -53,7 +53,11 @@
   /* TEXT */
   --color-text: #1c1a19;
   --color-text-secondary: #57524e;
-  --color-muted: #86807b;
+  /* Darkened for the icon backdrop: the previous #86807b measured 2.30:1
+     against the artwork behind it, well under the 4.5 body minimum, and this
+     app's core audience skews older and low-vision. Measured 4.71:1 at the
+     current veil. */
+  --color-muted: #5a544f;
   --color-divider: #ebe5e0;
   --color-soft-surface: #f3efec;
 
@@ -178,8 +182,8 @@
    * common. `--backdrop-veil` is the legibility layer over it — raise it if
    * text ever has to fight the image.
    * ======================================================================== */
-  --backdrop-image: url("/textures/icon-backdrop.png");
-  --backdrop-veil: 0.82;
+  --backdrop-image: url("/textures/icon-backdrop.jpg");
+  --backdrop-veil: 0.6;
   /* Channel triplets, not hex: rgb(var(--x) / alpha) is supported far
      further back than relative-colour syntax. */
   --backdrop-tint-a: 214 228 246;
@@ -295,7 +299,7 @@
   --gradient-page: linear-gradient(180deg, #232833 0%, #1c1d24 30%, #17161a 65%, #121114 100%);
   --gradient-page-reading: linear-gradient(180deg, #241f1b 0%, #1d1a18 40%, #1b1917 75%, #151312 100%);
   --gradient-page-end: #121114;
-  --backdrop-veil: 0.9;
+  --backdrop-veil: 0.88;
   --backdrop-tint-a: 35 40 51;
   --backdrop-tint-b: 25 24 32;
   --backdrop-base: 18 17 20;
