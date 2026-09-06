@@ -12,7 +12,7 @@ export function AssetIcon({
   color,
   className,
 }: {
-  name: "home" | "calendar" | "messages" | "settings" | "youth" | "liturgy" | "study" | "dining";
+  name: "home" | "calendar" | "messages" | "settings" | "youth" | "liturgy" | "study" | "dining" | "orthodox";
   size: string;
   color: string;
   className?: string;

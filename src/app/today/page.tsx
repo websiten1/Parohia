@@ -269,13 +269,8 @@ export default function HomePage() {
             overflow: "hidden",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/home/orthodox-symbol.jpg"
-            alt=""
-            aria-hidden="true"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
+          {/* White Orthodox symbol, 46-50 reference px, centred (§6). */}
+          <AssetIcon name="orthodox" size={u(48)} color="#FFFFFF" />
         </button>
       </div>
 
