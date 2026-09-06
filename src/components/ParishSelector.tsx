@@ -17,7 +17,7 @@ const SPRING = { type: "spring" as const, stiffness: 420, damping: 34 };
 function ParishThumb({ parish }: { parish: Parish }) {
   return (
     <div
-      className="h-[56px] w-[56px] shrink-0 overflow-hidden rounded-lg border border-amber/40 bg-navy-texture"
+      className="h-[56px] w-[56px] shrink-0 overflow-hidden rounded-lg border border-divider bg-navy-texture"
       role="img"
       aria-label={parish.name}
     >
@@ -35,7 +35,7 @@ function FilterPill({ active, onClick, children }: { active: boolean; onClick: (
       type="button"
       onClick={onClick}
       className={`press relative shrink-0 rounded-pill px-[14px] py-[7px] font-sans text-[12.5px] font-medium ${
-        active ? "text-white" : "text-muted"
+        active ? "text-text" : "text-muted"
       }`}
     >
       {active && (
@@ -98,7 +98,7 @@ export function ParishSelector({ onChoose }: ParishSelectorProps) {
         </motion.button>
 
         <div className="mt-[40px] flex flex-1 flex-col items-center text-center">
-          <div className="h-[120px] w-[120px] overflow-hidden rounded-2xl border border-amber/50 bg-navy-texture">
+          <div className="h-[120px] w-[120px] overflow-hidden rounded-2xl border border-divider bg-navy-texture">
             {pending.photo && (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={pending.photo} alt={pending.name} className="h-full w-full object-cover" />
@@ -121,7 +121,7 @@ export function ParishSelector({ onChoose }: ParishSelectorProps) {
           onClick={() => onChoose(pending.id)}
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 500, damping: 30 }}
-          className="w-full rounded-pill bg-burgundy py-[16px] text-center font-sans text-[15px] font-semibold text-white"
+          className="w-full rounded-pill bg-burgundy py-[16px] text-center font-sans text-[15px] font-semibold text-text"
         >
           {t("parishSelector.confirmCta")}
         </motion.button>

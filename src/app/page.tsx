@@ -32,7 +32,7 @@ export default function SplashPage() {
   return (
     <div className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden bg-navy-texture px-outer">
       <motion.div
-        className="flex flex-col items-center text-center text-white"
+        className="flex flex-col items-center text-center text-text"
         initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.88, filter: "blur(6px)" }}
         animate={
           phase === "enter"
@@ -47,7 +47,7 @@ export default function SplashPage() {
           phase === "enter" ? { duration: 0.5, ease: [0.22, 1, 0.36, 1] } : { duration: 0.3, ease: [0.4, 0, 1, 1] }
         }
       >
-        <SealMark size={84} tone="light" />
+        <SealMark size={84}  />
         <motion.p
           className="mt-[20px] font-serif text-[24px] font-bold uppercase leading-[1.15]"
           initial={{ opacity: 0, y: 8 }}

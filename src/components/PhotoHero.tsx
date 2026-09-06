@@ -9,8 +9,8 @@ interface PhotoHeroProps {
 
 const SCRIM: Record<NonNullable<PhotoHeroProps["scrim"]>, string> = {
   none: "",
-  bottom: "bg-gradient-to-t from-navy/80 via-navy/15 to-transparent",
-  full: "bg-navy/55",
+  bottom: "",
+  full: "",
 };
 
 /**

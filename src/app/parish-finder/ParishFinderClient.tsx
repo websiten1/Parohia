@@ -29,8 +29,8 @@ export function ParishFinderClient() {
   return (
     <>
       <div className="bg-navy-texture px-outer pb-[36px] pt-[max(env(safe-area-inset-top),24px)]">
-        <p className="font-serif text-[15px] text-white/70">{t("parishFinder.findYour")}</p>
-        <h1 className="mt-[2px] font-serif text-[32px] font-bold leading-[1.05] text-white">{t("parishFinder.parish")}</h1>
+        <p className="font-serif text-[15px] text-muted">{t("parishFinder.findYour")}</p>
+        <h1 className="mt-[2px] font-serif text-[32px] font-bold leading-[1.05] text-text">{t("parishFinder.parish")}</h1>
       </div>
 
       <div className="-mt-[24px] px-outer pb-[16px]">
@@ -77,7 +77,7 @@ export function ParishFinderClient() {
           <LocationCrosshairIcon className="h-[19px] w-[19px]" />
         </button>
         {locating && (
-          <div className="absolute inset-x-0 bottom-0 bg-navy/90 px-outer py-[8px] text-center font-sans text-[11.5px] text-white">
+          <div className="absolute inset-x-0 bottom-0 bg-navy/90 px-outer py-[8px] text-center font-sans text-[11.5px] text-text">
             {t("parishFinder.locationNote")}
           </div>
         )}

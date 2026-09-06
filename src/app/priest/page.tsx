@@ -36,10 +36,10 @@ export default function PriestDashboardPage() {
   return (
     <PageContainer wash="coral">
       <div className="flex items-center gap-[14px] bg-navy-texture px-outer pb-[30px] pt-[max(env(safe-area-inset-top),24px)]">
-        <SealMark size={44} tone="light" />
+        <SealMark size={44}  />
         <span className="min-w-0">
-          <span className="block font-serif text-[19px] font-bold leading-[1.2] text-white">{parish?.name ?? "…"}</span>
-          {parish && <span className="mt-[2px] block font-serif text-[13px] italic text-white/70">{parish.patronSaint}</span>}
+          <span className="block font-serif text-[19px] font-bold leading-[1.2] text-text">{parish?.name ?? "…"}</span>
+          {parish && <span className="mt-[2px] block font-serif text-[13px] italic text-muted">{parish.patronSaint}</span>}
         </span>
       </div>
 

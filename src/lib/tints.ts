@@ -20,37 +20,37 @@ interface TintSpec {
 
 export const TINTS: Record<TintName, TintSpec> = {
   coral: {
-    surface: "linear-gradient(145deg, var(--color-tint-coral) 0%, var(--color-tint-coral-2) 100%)",
+    surface: "var(--color-tint-coral)",
     ink: "var(--color-tint-coral-ink)",
     marker: "rgba(125, 52, 35, 0.1)",
   },
   peach: {
-    surface: "linear-gradient(145deg, var(--color-tint-peach) 0%, var(--color-tint-peach-2) 100%)",
+    surface: "var(--color-tint-peach)",
     ink: "var(--color-tint-peach-ink)",
     marker: "rgba(125, 79, 28, 0.1)",
   },
   blue: {
-    surface: "linear-gradient(145deg, var(--color-tint-blue) 0%, var(--color-tint-blue-2) 100%)",
+    surface: "var(--color-tint-blue)",
     ink: "var(--color-tint-blue-ink)",
     marker: "rgba(39, 71, 98, 0.1)",
   },
   cyan: {
-    surface: "linear-gradient(145deg, var(--color-tint-cyan) 0%, var(--color-tint-cyan-2) 100%)",
+    surface: "var(--color-tint-cyan)",
     ink: "var(--color-tint-cyan-ink)",
     marker: "rgba(31, 77, 77, 0.1)",
   },
   green: {
-    surface: "linear-gradient(145deg, var(--color-tint-green) 0%, var(--color-tint-green-2) 100%)",
+    surface: "var(--color-tint-green)",
     ink: "var(--color-tint-green-ink)",
     marker: "rgba(45, 74, 43, 0.1)",
   },
   lavender: {
-    surface: "linear-gradient(145deg, var(--color-tint-lavender) 0%, var(--color-tint-lavender-2) 100%)",
+    surface: "var(--color-tint-lavender)",
     ink: "var(--color-tint-lavender-ink)",
     marker: "rgba(66, 52, 100, 0.1)",
   },
   rose: {
-    surface: "linear-gradient(145deg, var(--color-tint-rose) 0%, var(--color-tint-rose-2) 100%)",
+    surface: "var(--color-tint-rose)",
     ink: "var(--color-tint-rose-ink)",
     marker: "rgba(111, 43, 61, 0.1)",
   },
