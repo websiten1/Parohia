@@ -13,7 +13,8 @@ import { ThemeSync } from "./ThemeSync";
  * (e.g. /menu/about, /reading/[id]) stay bar-free, matching prior behavior.
  */
 const BAR_ROUTES = new Set([
-  "/today",
+  // "/today" deliberately absent: the home screen renders the grouped pill and
+  // separate settings bubble defined by its own specification.
   "/calendar",
   "/readings",
   "/resources",
