@@ -14,8 +14,8 @@ import { AssetIcon } from "./AssetIcon";
  * group 40,1574,591x139 r70 · settings 665,1576,129x129 · icon centres at
  * x 139 / 337 / 530.
  */
-const SURFACE = "#FBF9F7";
-const SHADOW = "0 12px 32px rgba(80,65,50,0.06)";
+const SURFACE = "#FDFCFB";
+const SHADOW = "0 12px 34px rgba(80,65,50,0.12)";
 const u = (n: number) => `calc(${n} * var(--u))`;
 
 const ITEMS = [

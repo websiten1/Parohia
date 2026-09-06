@@ -26,15 +26,15 @@
    * hierarchy share a treatment; reading surfaces run warmer, utility pages
    * cleaner. (§02, §03, §43)
    * ======================================================================== */
-  --color-background: #F9F6F4;
-  --color-background-secondary: #F4F1EF;
-  --color-background-reading: #FBF9F7;
+  --color-background: #FFFFFF;
+  --color-background-secondary: #FFFFFF;
+  --color-background-reading: #FFFFFF;
   --color-background-elevated: #FBF9F7;
 
   /* SURFACES */
-  --color-surface: #FBF9F7;
-  --color-surface-soft: #F2EEEB;
-  --color-surface-active: #E8E3DF;
+  --color-surface: #FDFCFB;
+  --color-surface-soft: #F6F4F2;
+  --color-surface-active: #EFECEA;
   /* The navigation vessel: deep charcoal, never a heavy pure black. (§22) */
   --color-charcoal: #4D4D4D;
   --color-charcoal-soft: #2e2b29;
@@ -61,7 +61,7 @@
      app's core audience skews older and low-vision. Measured 4.71:1 at the
      current veil. */
   --color-muted: #7A7A7A;
-  --color-divider: #EAE6E2;
+  --color-divider: #EDEAE7;
   --color-soft-surface: #f3efec;
 
   --color-navy-08: rgba(31, 29, 28, 0.06);
@@ -168,8 +168,8 @@
    * separate by tone alone and carry no shadow at all. (§31)
    * ======================================================================== */
   --elevation-none: none;
-  --elevation-subtle: 0 12px 32px rgba(80, 65, 50, 0.06);
-  --elevation-floating: 0 12px 32px rgba(80, 65, 50, 0.06);
+  --elevation-subtle: 0 10px 30px rgba(80, 65, 50, 0.10);
+  --elevation-floating: 0 12px 34px rgba(80, 65, 50, 0.12);
   --elevation-temporary: 0 4px 12px rgba(31, 29, 28, 0.06), 0 24px 60px -16px rgba(31, 29, 28, 0.16);
 
   /* ==========================================================================

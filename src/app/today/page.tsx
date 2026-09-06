@@ -21,8 +21,8 @@ const REF_H = 1850;
 const u = (n: number) => `calc(${n} * var(--u))`;
 
 const COLORS = {
-  bg: "#F9F6F4",
-  surface: "#FBF9F7",
+  bg: "#FFFFFF",
+  surface: "#FDFCFB",
   textPrimary: "#1F1F20",
   textSecondary: "#8B8B8B",
   iconMuted: "#8E8E8E",
@@ -35,7 +35,7 @@ const COLORS = {
   dining: "#BED1B4",
 };
 
-const SURFACE_SHADOW = "0 12px 32px rgba(80,65,50,0.06)";
+const SURFACE_SHADOW = "0 10px 30px rgba(80,65,50,0.10)";
 const FONT =
   '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif';
 
@@ -80,7 +80,7 @@ export default function HomePage() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(90deg, rgba(249,246,244,0.96) 0%, rgba(249,246,244,0.62) 35%, rgba(249,246,244,0.08) 70%, rgba(249,246,244,0.00) 100%)",
+              "linear-gradient(90deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.62) 35%, rgba(255,255,255,0.08) 70%, rgba(255,255,255,0.00) 100%)",
           }}
         />
         {/*
@@ -97,7 +97,7 @@ export default function HomePage() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(180deg, rgba(249,246,244,0.94) 0%, rgba(249,246,244,0.82) 12%, rgba(249,246,244,0.30) 24%, rgba(249,246,244,0.00) 34%)",
+              "linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.82) 12%, rgba(255,255,255,0.30) 24%, rgba(255,255,255,0.00) 34%)",
           }}
         />
         {/* Bottom fade into the page background — no hard boundary line */}
@@ -107,7 +107,7 @@ export default function HomePage() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(180deg, rgba(249,246,244,0) 72%, rgba(249,246,244,0.95) 100%)",
+              "linear-gradient(180deg, rgba(255,255,255,0) 72%, rgba(255,255,255,0.95) 100%)",
           }}
         />
       </div>
