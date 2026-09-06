@@ -30,6 +30,12 @@ export function HomeNav({ absolute = false }: { absolute?: boolean }) {
   return (
     <div
       style={{
+        /*
+         * `absolute` places it in the home grid's own slot (1574). Everywhere
+         * else it floats above the bottom edge. Either way it is on screen
+         * without scrolling, because --u fits the whole design to the
+         * viewport.
+         */
         position: absolute ? "absolute" : "fixed",
         left: "50%",
         transform: "translateX(-50%)",

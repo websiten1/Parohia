@@ -159,8 +159,13 @@
 :root {
   color-scheme: light;
 
-  /* One reference pixel of the 850-wide design grid. */
-  --u: calc(min(100vw, 402px) / 850);
+  /*
+   * One reference pixel. Constrained by width AND height so the whole
+   * 850x1850 design fits the screen: it is a single composed screen, and a
+   * floating navigation over a taller-than-viewport page would always cover
+   * something.
+   */
+  --u: min(calc(min(100vw, 402px) / 850), calc(100dvh / 1850));
 
   /* ==========================================================================
    * ELEVATION — three levels, globally. Large, diffuse, low-opacity. Nothing

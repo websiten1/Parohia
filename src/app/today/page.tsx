@@ -53,9 +53,9 @@ export default function HomePage() {
     <div
       style={
         {
-          "--u": `calc(min(100vw, 402px) / ${REF_W})`,
-          width: "100%",
+          width: u(REF_W),
           height: u(REF_H),
+          margin: "0 auto",
           position: "relative",
           overflow: "hidden",
           background: COLORS.bg,
@@ -125,6 +125,7 @@ export default function HomePage() {
           lineHeight: u(35),
           letterSpacing: u(0.2),
           textTransform: "uppercase",
+          whiteSpace: "nowrap",
           color: "#111111",
         }}
       >

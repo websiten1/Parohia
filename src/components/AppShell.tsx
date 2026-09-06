@@ -13,7 +13,7 @@ import { ThemeSync } from "./ThemeSync";
  * (e.g. /menu/about, /reading/[id]) stay bar-free, matching prior behavior.
  */
 const BAR_ROUTES = new Set([
-  // "/today" places the same navigation itself, inside its own reference grid.
+  // "/today" renders the navigation itself, inside its own reference grid.
   "/calendar",
   "/readings",
   "/resources",
