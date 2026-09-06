@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
 import type { ReactNode } from "react";
-import { BottomTabBar } from "./BottomTabBar";
+import { HomeNav } from "./home/HomeNav";
 import { ThemeSync } from "./ThemeSync";
 
 /**
@@ -13,8 +13,7 @@ import { ThemeSync } from "./ThemeSync";
  * (e.g. /menu/about, /reading/[id]) stay bar-free, matching prior behavior.
  */
 const BAR_ROUTES = new Set([
-  // "/today" deliberately absent: the home screen renders the grouped pill and
-  // separate settings bubble defined by its own specification.
+  // "/today" places the same navigation itself, inside its own reference grid.
   "/calendar",
   "/readings",
   "/resources",
@@ -51,7 +50,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       >
         {children}
       </motion.div>
-      {BAR_ROUTES.has(pathname) && <BottomTabBar />}
+      {BAR_ROUTES.has(pathname) && <HomeNav />}
     </>
   );
 }

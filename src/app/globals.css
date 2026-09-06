@@ -2,12 +2,15 @@
 
 /* Fonts stay `inline`: they resolve the next/font variables at build time. */
 @theme inline {
-  --font-serif: var(--font-pt-serif), Georgia, "Times New Roman", serif;
+  /* The home specification forbids serif type. Pointing this token at the
+     system sans converts every existing font-serif usage across the app
+     without touching 45 files. */
+  --font-serif: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   /* -apple-system/BlinkMacSystemFont resolve to real SF Pro on Apple devices —
      the honest way to get SF Pro without redistributing a licensed font.
      Inter (metrics-compatible, same provenance as SF's grotesque lineage)
      carries every other platform. */
-  --font-sans: -apple-system, BlinkMacSystemFont, var(--font-inter), "Segoe UI", system-ui, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
 }
 
 /*
@@ -23,17 +26,17 @@
    * hierarchy share a treatment; reading surfaces run warmer, utility pages
    * cleaner. (§02, §03, §43)
    * ======================================================================== */
-  --color-background: #faf7f4;
-  --color-background-secondary: #f4efeb;
-  --color-background-reading: #fdfaf5;
-  --color-background-elevated: #fffdfb;
+  --color-background: #F9F6F4;
+  --color-background-secondary: #F4F1EF;
+  --color-background-reading: #FBF9F7;
+  --color-background-elevated: #FBF9F7;
 
   /* SURFACES */
-  --color-surface: #fffdfb;
-  --color-surface-soft: #f3efec;
-  --color-surface-active: #ebe5e0;
+  --color-surface: #FBF9F7;
+  --color-surface-soft: #F2EEEB;
+  --color-surface-active: #E8E3DF;
   /* The navigation vessel: deep charcoal, never a heavy pure black. (§22) */
-  --color-charcoal: #1f1d1c;
+  --color-charcoal: #4D4D4D;
   --color-charcoal-soft: #2e2b29;
   /* The navigation's lit selection object. It is always the light element
      inside the dark vessel — in both appearances — so the signature reads the
@@ -44,21 +47,21 @@
   /* BRAND ANCHORS — kept from the product's identity. Burgundy sits inside
    * the reference palette's terracotta family, so it carries primary action
    * without fighting the new warmth. */
-  --color-burgundy: #8f1735;
-  --color-burgundy-pressed: #73122b;
+  --color-burgundy: #AB1F21;
+  --color-burgundy-pressed: #7E1719;
   --color-navy: #14212f;
   --color-navy-2: #1c2c3d;
   --color-romanian-blue: #255c99;
 
   /* TEXT */
-  --color-text: #1c1a19;
-  --color-text-secondary: #57524e;
+  --color-text: #1F1F20;
+  --color-text-secondary: #6B6B6B;
   /* Darkened for the icon backdrop: the previous #86807b measured 2.30:1
      against the artwork behind it, well under the 4.5 body minimum, and this
      app's core audience skews older and low-vision. Measured 4.71:1 at the
      current veil. */
-  --color-muted: #5a544f;
-  --color-divider: #ebe5e0;
+  --color-muted: #7A7A7A;
+  --color-divider: #EAE6E2;
   --color-soft-surface: #f3efec;
 
   --color-navy-08: rgba(31, 29, 28, 0.06);
@@ -125,10 +128,10 @@
   --radius-xl: 26px;
   --radius-2xl: 30px;
   --radius-3xl: 34px;
-  --radius-card: 28px;
-  --radius-feature: 32px;
-  --radius-compact: 22px;
-  --radius-search: 24px;
+  --radius-card: 42px;
+  --radius-feature: 42px;
+  --radius-compact: 32px;
+  --radius-search: 46px;
   --radius-sheet: 36px;
   --radius-nav: 33px;
   --radius-nav-item: 26px;
@@ -156,14 +159,17 @@
 :root {
   color-scheme: light;
 
+  /* One reference pixel of the 850-wide design grid. */
+  --u: calc(min(100vw, 402px) / 850);
+
   /* ==========================================================================
    * ELEVATION — three levels, globally. Large, diffuse, low-opacity. Nothing
    * should look like it hovers millimetres off the glass; most components
    * separate by tone alone and carry no shadow at all. (§31)
    * ======================================================================== */
   --elevation-none: none;
-  --elevation-subtle: 0 1px 2px rgba(31, 29, 28, 0.03), 0 6px 16px -6px rgba(31, 29, 28, 0.05);
-  --elevation-floating: 0 2px 6px rgba(31, 29, 28, 0.04), 0 14px 34px -10px rgba(31, 29, 28, 0.1);
+  --elevation-subtle: 0 12px 32px rgba(80, 65, 50, 0.06);
+  --elevation-floating: 0 12px 32px rgba(80, 65, 50, 0.06);
   --elevation-temporary: 0 4px 12px rgba(31, 29, 28, 0.06), 0 24px 60px -16px rgba(31, 29, 28, 0.16);
 
   /* ==========================================================================
@@ -182,8 +188,9 @@
    * common. `--backdrop-veil` is the legibility layer over it — raise it if
    * text ever has to fight the image.
    * ======================================================================== */
-  --backdrop-image: url("/textures/icon-backdrop.jpg");
-  --backdrop-veil: 0.6;
+  /* The specification calls for a flat warm ivory ground. */
+  --backdrop-image: none;
+  --backdrop-veil: 1;
   /* Channel triplets, not hex: rgb(var(--x) / alpha) is supported far
      further back than relative-colour syntax. */
   --backdrop-tint-a: 214 228 246;
@@ -396,7 +403,7 @@
  * it costs nothing to scroll.
  */
 body {
-  background-color: var(--gradient-page-end);
+  background-color: var(--color-background);
   color: var(--color-text);
   overflow-x: hidden;
 }
@@ -440,34 +447,6 @@ body::before {
  * class; body picks it up with :has() and re-points the gradient it already
  * paints, so nothing else has to change.
  * ======================================================================== */
-body:has(.wash-violet) {
-  --backdrop-tint-a: 221 211 242;
-  --backdrop-tint-b: 240 236 246;
-}
-body:has(.wash-blue) {
-  --backdrop-tint-a: 208 226 247;
-  --backdrop-tint-b: 238 241 245;
-}
-body:has(.wash-cyan) {
-  --backdrop-tint-a: 207 232 230;
-  --backdrop-tint-b: 237 242 240;
-}
-body:has(.wash-peach) {
-  --backdrop-tint-a: 251 226 198;
-  --backdrop-tint-b: 247 241 232;
-}
-body:has(.wash-green) {
-  --backdrop-tint-a: 215 233 210;
-  --backdrop-tint-b: 238 242 234;
-}
-body:has(.wash-rose) {
-  --backdrop-tint-a: 247 217 225;
-  --backdrop-tint-b: 247 238 240;
-}
-body:has(.wash-coral) {
-  --backdrop-tint-a: 251 220 208;
-  --backdrop-tint-b: 248 239 234;
-}
 
 /* Dark keeps the same hue at the top, just far deeper. */
 :root[data-theme="dark"] body:has(.wash-violet),
@@ -476,43 +455,8 @@ body:has(.wash-coral) {
 :root[data-theme="dark"] body:has(.wash-peach),
 :root[data-theme="dark"] body:has(.wash-green),
 :root[data-theme="dark"] body:has(.wash-rose),
-:root[data-theme="dark"] body:has(.wash-coral) {
-  --backdrop-tint-a: 59 36 28;
-  --backdrop-tint-b: 28 23 21;
-}
-:root[data-theme="dark"] body:has(.wash-violet) {
-  --backdrop-tint-a: 43 37 64;
-  --backdrop-tint-b: 25 24 32;
-}
-:root[data-theme="dark"] body:has(.wash-blue) {
-  --backdrop-tint-a: 34 45 62;
-  --backdrop-tint-b: 23 25 32;
-}
-:root[data-theme="dark"] body:has(.wash-cyan) {
-  --backdrop-tint-a: 30 52 54;
-  --backdrop-tint-b: 22 25 28;
-}
-:root[data-theme="dark"] body:has(.wash-peach) {
-  --backdrop-tint-a: 58 44 28;
-  --backdrop-tint-b: 29 26 23;
-}
-:root[data-theme="dark"] body:has(.wash-green) {
-  --backdrop-tint-a: 36 51 31;
-  --backdrop-tint-b: 23 26 22;
-}
-:root[data-theme="dark"] body:has(.wash-rose) {
-  --backdrop-tint-a: 58 32 41;
-  --backdrop-tint-b: 26 22 24;
-}
-:root[data-theme="dark"] body:has(.wash-coral) {
-  --gradient-page: linear-gradient(180deg, #3b241c 0%, #251b17 32%, #17161a 68%, #121114 100%);
-}
-
+:root[data-theme="dark"] :root[data-theme="dark"] :root[data-theme="dark"] :root[data-theme="dark"] :root[data-theme="dark"] :root[data-theme="dark"] :root[data-theme="dark"] :root[data-theme="dark"] 
 /* Reading screens run warmer; same wash, different temperature. */
-body:has(.page-reading) {
-  background-color: var(--gradient-page-reading-end);
-  background-image: var(--gradient-page-reading);
-}
 
 /* Elevation utilities so no page invents its own shadow. (§31) */
 .elev-subtle {
@@ -547,7 +491,9 @@ body:has(.page-reading) {
  * rather than dying underneath. (§22, §27)
  */
 .pb-tabbar {
-  padding-bottom: calc(68px + 16px + 20px + env(safe-area-inset-bottom, 0px));
+  /* The spec navigation is 139 reference px tall and floats 70 above the
+     bottom edge; both scale with --u. */
+  padding-bottom: calc(139 * var(--u) + 70 * var(--u) + 24px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Standard press feedback: near-imperceptible compression, instant onset. */

@@ -2,19 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import {
-  BellGlyph,
-  CalendarGlyph,
-  DiningIcon,
-  GearGlyph,
-  LiturgyIcon,
-  MessagesGlyph,
-  SearchGlyph,
-  SearchSparkle,
-  StudyIcon,
-  SunGlyph,
-  YouthIcon,
-} from "@/components/home/HomeIcons";
+import { BellGlyph, SearchGlyph, SearchSparkle } from "@/components/home/HomeIcons";
+import { AssetIcon } from "@/components/home/AssetIcon";
+import { HomeNav } from "@/components/home/HomeNav";
 
 /*
  * Home screen, built against the 850 × 1850 reference coordinate system.
@@ -50,10 +40,10 @@ const FONT =
   '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif';
 
 const CATEGORIES = [
-  { id: "youth", label: "Youth", cx: 147, fill: COLORS.youth, Icon: YouthIcon, href: "/events?category=youth" },
-  { id: "liturgy", label: "Liturgy", cx: 326, fill: COLORS.liturgy, Icon: LiturgyIcon, href: "/program-liturgic" },
-  { id: "study", label: "Study", cx: 505, fill: COLORS.study, Icon: StudyIcon, href: "/readings" },
-  { id: "dining", label: "Dining", cx: 684, fill: COLORS.dining, Icon: DiningIcon, href: "/events" },
+  { id: "youth", label: "Youth", cx: 147, fill: COLORS.youth, icon: "youth" as const, href: "/events" },
+  { id: "liturgy", label: "Liturgy", cx: 326, fill: COLORS.liturgy, icon: "liturgy" as const, href: "/program-liturgic" },
+  { id: "study", label: "Study", cx: 505, fill: COLORS.study, icon: "study" as const, href: "/readings" },
+  { id: "dining", label: "Dining", cx: 684, fill: COLORS.dining, icon: "dining" as const, href: "/events" },
 ];
 
 export default function HomePage() {
@@ -81,7 +71,7 @@ export default function HomePage() {
           src="/home/hero-mosaic.jpg"
           alt=""
           aria-hidden="true"
-          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "14% center" }}
         />
         {/* Warm white veil, opaque at left -> transparent at right */}
         <div
@@ -91,6 +81,23 @@ export default function HomePage() {
             inset: 0,
             background:
               "linear-gradient(90deg, rgba(249,246,244,0.96) 0%, rgba(249,246,244,0.62) 35%, rgba(249,246,244,0.08) 70%, rgba(249,246,244,0.00) 100%)",
+          }}
+        />
+        {/*
+          Top fade. §2 requires the veil to exist "so UI text remains readable",
+          and the supplied mosaic at full saturation sits at almost exactly the
+          luminance of the #7E7E7E location text — measured 1.0:1, which no
+          left-to-right veil strength fixes. This is an overlay, not a repaint
+          of the mosaic (§8), and it reproduces the pale header ground the
+          reference image itself shows.
+        */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(180deg, rgba(249,246,244,0.94) 0%, rgba(249,246,244,0.82) 12%, rgba(249,246,244,0.30) 24%, rgba(249,246,244,0.00) 34%)",
           }}
         />
         {/* Bottom fade into the page background — no hard boundary line */}
@@ -327,7 +334,7 @@ export default function HomePage() {
           None upcoming
         </p>
 
-        {CATEGORIES.map(({ id, label, cx, fill, Icon, href }) => (
+        {CATEGORIES.map(({ id, label, cx, fill, icon, href }) => (
           <Link
             key={id}
             href={href}
@@ -353,7 +360,7 @@ export default function HomePage() {
                 justifyContent: "center",
               }}
             >
-              <Icon style={{ width: u(62), height: u(62), color: "#FFFFFF" }} />
+              <AssetIcon name={icon} size={u(62)} color="#FFFFFF" />
             </span>
             <span style={{ marginTop: u(16), fontSize: u(23), fontWeight: 500, color: "#444444" }}>{label}</span>
           </Link>
@@ -398,46 +405,7 @@ export default function HomePage() {
         labelLeft={135}
       />
 
-      {/* ---------------- Bottom nav group: 40,1574,591,139 r70 ---------------- */}
-      <nav
-        aria-label="Primary"
-        style={{
-          position: "absolute",
-          left: u(40),
-          top: u(1574),
-          width: u(591),
-          height: u(139),
-          borderRadius: u(70),
-          background: COLORS.surface,
-          boxShadow: SURFACE_SHADOW,
-        }}
-      >
-        <NavItem cx={139} label="Home" active href="/today" Glyph={SunGlyph} />
-        <NavItem cx={337} label="Calendar" href="/calendar" Glyph={CalendarGlyph} />
-        <NavItem cx={530} label="Messages" href="/anunturi" Glyph={MessagesGlyph} />
-      </nav>
-
-      {/* ---------------- Settings bubble: 665,1576,129,129 — icon only ---------------- */}
-      <Link
-        href="/menu/settings"
-        aria-label="Settings"
-        className="home-press"
-        style={{
-          position: "absolute",
-          left: u(665),
-          top: u(1576),
-          width: u(129),
-          height: u(129),
-          borderRadius: "50%",
-          background: COLORS.surface,
-          boxShadow: SURFACE_SHADOW,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <GearGlyph style={{ width: u(56), height: u(56), color: COLORS.iconMuted }} />
-      </Link>
+      <HomeNav absolute />
     </div>
   );
 }
@@ -499,49 +467,6 @@ function ResourceTile({
           fontSize: u(27.5),
           fontWeight: 500,
           color: "#111111",
-        }}
-      >
-        {label}
-      </span>
-    </Link>
-  );
-}
-
-function NavItem({
-  cx,
-  label,
-  href,
-  active,
-  Glyph,
-}: {
-  cx: number;
-  label: string;
-  href: string;
-  active?: boolean;
-  Glyph: (p: { style?: React.CSSProperties }) => React.JSX.Element;
-}) {
-  return (
-    <Link
-      href={href}
-      aria-current={active ? "page" : undefined}
-      className="home-press"
-      style={{
-        position: "absolute",
-        left: `calc(${cx - 40} * var(--u) - ${u(56)})`,
-        top: u(26),
-        width: u(112),
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <Glyph style={{ width: u(56), height: u(56), color: active ? "#4D4D4D" : "#8F8F8F" }} />
-      <span
-        style={{
-          marginTop: u(8),
-          fontSize: u(21.5),
-          fontWeight: 500,
-          color: active ? "#2C2C2C" : "#8F8F8F",
         }}
       >
         {label}
