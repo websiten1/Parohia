@@ -165,7 +165,7 @@
    * floating navigation over a taller-than-viewport page would always cover
    * something.
    */
-  --u: min(calc(min(100vw, 402px) / 850), calc(100dvh / 1850));
+  --u: calc(min(100vw, 402px) / 850);
 
   /* ==========================================================================
    * ELEVATION — three levels, globally. Large, diffuse, low-opacity. Nothing

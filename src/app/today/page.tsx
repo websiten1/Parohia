@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { BellGlyph, SearchGlyph, SearchSparkle } from "@/components/home/HomeIcons";
 import { AssetIcon } from "@/components/home/AssetIcon";
-import { HomeNav } from "@/components/home/HomeNav";
 
 /*
  * Home screen, built against the 850 × 1850 reference coordinate system.
@@ -14,7 +13,6 @@ import { HomeNav } from "@/components/home/HomeNav";
  * reference number multiplied by it, which is exactly the scaling rule the
  * spec sets out (S = targetWidth / 850). Nothing here is eyeballed.
  */
-const REF_W = 850;
 const REF_H = 1850;
 
 /** reference px -> CSS length */
@@ -53,9 +51,8 @@ export default function HomePage() {
     <div
       style={
         {
-          width: u(REF_W),
+          width: "100%",
           height: u(REF_H),
-          margin: "0 auto",
           position: "relative",
           overflow: "hidden",
           background: COLORS.bg,
@@ -401,7 +398,6 @@ export default function HomePage() {
         labelLeft={135}
       />
 
-      <HomeNav absolute />
     </div>
   );
 }

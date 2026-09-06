@@ -24,24 +24,21 @@ const ITEMS = [
   { id: "messages", label: "Messages", href: "/anunturi", cx: 530, icon: "messages" as const, match: (p: string) => p.startsWith("/anunturi") || p.startsWith("/event") },
 ];
 
-export function HomeNav({ absolute = false }: { absolute?: boolean }) {
+export function HomeNav() {
   const pathname = usePathname();
 
   return (
     <div
       style={{
         /*
-         * `absolute` places it in the home grid's own slot (1574). Everywhere
-         * else it floats above the bottom edge. Either way it is on screen
-         * without scrolling, because --u fits the whole design to the
-         * viewport.
+         * Always pinned to the bottom of the screen, on every page and at
+         * every scroll position. It is a quick menu; it does not travel with
+         * the content.
          */
-        position: absolute ? "absolute" : "fixed",
+        position: "fixed",
         left: "50%",
         transform: "translateX(-50%)",
-        [absolute ? "top" : "bottom"]: absolute
-          ? u(1574)
-          : `calc(env(safe-area-inset-bottom, 0px) + ${u(70)})`,
+        bottom: `calc(env(safe-area-inset-bottom, 0px) + ${u(70)})`,
         width: u(850),
         height: u(139),
         pointerEvents: "none",
