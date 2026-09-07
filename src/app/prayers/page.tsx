@@ -2,49 +2,40 @@
 
 import Link from "next/link";
 import { ChevronRightIcon } from "@/components/icons";
-import { PhotoHero } from "@/components/PhotoHero";
-import { useTranslation } from "@/lib/i18n/LanguageProvider";
-import { PRAYERS } from "@/lib/seedData";
-import { PageContainer } from "@/components/ui/Surfaces";
+import { PageBody, PageContainer } from "@/components/ui/Surfaces";
+import { SECTIONS } from "@/lib/prayers";
 
+/** The prayer book's contents. Each entry opens its own page. */
 export default function PrayersPage() {
-  const { t, language } = useTranslation();
   return (
-    <PageContainer wash="violet">
-      <PhotoHero alt="Church interior" scrim="full" className="h-[252px] w-full shrink-0">
-        <div className="absolute inset-x-0 bottom-0 px-outer pb-[22px] pt-[max(env(safe-area-inset-top),40px)]">
-          <h1 className="font-serif text-[32px] font-bold text-white">{t("prayers.title")}</h1>
-          <p className="mt-[6px] font-serif text-[15px] italic text-white/70">{t("prayers.quote")}</p>
-        </div>
-      </PhotoHero>
+    <PageContainer>
+      <header className="px-outer pt-[max(env(safe-area-inset-top),24px)]">
+        <h1 className="font-serif text-[32px] font-bold leading-[1.1] text-text">Rugăciuni</h1>
+      </header>
 
-      <main className="-mt-[24px] flex-1 rounded-t-sheet bg-surface px-outer pt-[24px] pb-tabbar">
-        {PRAYERS.map((p, i) => {
-          const title = language === "ro" ? p.titleRo : p.titleEn;
-          const subtitle = language === "ro" ? (p.subtitleRo ?? p.subtitle) : p.subtitle;
-          return (
-            <Link
-              key={p.id}
-              href={`/prayer/${p.id}`}
-              className={`press flex items-center justify-between gap-[10px] py-[15px] ${i !== PRAYERS.length - 1 ? "border-b border-divider" : ""}`}
-            >
-              <span>
-                <span className="block font-serif text-[17px] font-bold text-text">{title}</span>
-                {subtitle && <span className="mt-[2px] block font-sans text-[13px] text-muted">{subtitle}</span>}
+      <PageBody className="pt-[20px]">
+        {SECTIONS.map((s) => (
+          <Link key={s.id} href={`/prayers/${s.id}`} className="home-press block">
+            <div className="flex min-h-[64px] items-center gap-[14px] py-[16px]">
+              <span className="min-w-0 flex-1">
+                <span className="block font-sans text-[16.5px] font-medium leading-[1.35] text-text">{s.title}</span>
+                {s.pending ? (
+                  <span className="mt-[3px] block font-sans text-[13.5px] text-muted">Text în așteptare</span>
+                ) : s.kind === "sequence" ? (
+                  <span className="mt-[3px] block font-sans text-[13.5px] text-muted">
+                    {s.steps.length} rugăciuni
+                  </span>
+                ) : s.kind === "list" ? (
+                  <span className="mt-[3px] block font-sans text-[13.5px] text-muted">
+                    {s.steps.length} rugăciuni
+                  </span>
+                ) : null}
               </span>
-              <ChevronRightIcon className="h-[15px] w-[15px] shrink-0 text-muted" />
-            </Link>
-          );
-        })}
-
-        <Link
-          href="/prayer/prayer-different-needs"
-          className="press mt-[16px] inline-flex items-center gap-[6px] font-sans text-[15.5px] font-semibold text-navy"
-        >
-          {t("prayers.viewAll")}
-          <ChevronRightIcon className="h-[13px] w-[13px]" />
-        </Link>
-      </main>
+              <ChevronRightIcon className="h-[16px] w-[16px] shrink-0 text-muted/60" />
+            </div>
+          </Link>
+        ))}
+      </PageBody>
     </PageContainer>
   );
 }
