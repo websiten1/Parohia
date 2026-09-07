@@ -3,13 +3,7 @@ import type { PrayerStep } from "./types";
 export const SPOVEDANIE_INTRO =
   "Fiecare creştin trebuie să-şi mărturisească păcatele ori de câte ori simte nevoia (o dată la câteva săptămâni sau cel puţin în cele 4 posturi). Când cineva se mărturiseşte pentru prima dată sau când trece la un alt duhovnic, trebuie să facă o mărturisire generală (din copilărie), urmând ca după aceea să mărturisească doar păcatele pe care le-a făcut de la ultima mărturisire. Problemele care nu ţin de spovedanie trebuie discutate cu preotul aparte, nu în cadrul tainei mărturisirii.";
 
-/**
- * Rânduială înainte de spovedanie.
- *
- * The supplied text ends mid-sentence inside the confession guide, at
- * "…n-am iertat pe cei care mi-au făcut rău, am blestemat". Nothing has been
- * written past that point; the remainder is awaited rather than guessed.
- */
+/** Rânduială înainte de spovedanie. */
 export const SPOVEDANIE: PrayerStep[] = [
   {
     id: "psalmul-6",
@@ -32,6 +26,32 @@ export const SPOVEDANIE: PrayerStep[] = [
     title: "Scurtă învăţătură despre Spovedanie",
     paragraphs: [
       "Înainte de mărturisirea păcatelor, creştinul va scrie pe o foaie păcatele făcute, pentru a nu lăsa ceva nemărturisit, iar lista de mai jos este menită să-i ajute chiar şi pe cei care se mărturisesc mai des. În cazul în care cineva are de adăugat ceva, acest lucru trebuie făcut neapărat, având mai jos doar un îndrumar general, care nu poate fi valabil pentru toţi creştinii. Cei care nu înţeleg ce înseamnă un anumit păcat sau cât de grav este acesta, să-l întrebe pe preotul duhovnic. Primul şi ultimul aliniat din această mărturisire se vor citi de către fiecare, pentru că ele constituie o introducere şi un sfârşit general valabil pentru toţi.",
+    ],
+  },
+  {
+    id: "ghid-marturisire",
+    title: "Ghid de mărturisire a păcatelor",
+    paragraphs: [
+      "Mă mărturisesc eu, mult păcătosul/păcătoasa (numele de botez), Domnului nostru Iisus Hristos în prezenţa sfinţiei tale, cinstite părinte, de toate păcatele mele pe care le-am făcut de la ultima mărturisire (sau din copilărie) şi până acum: cu fapta, cu cuvântul, cu gândul, din ştiinţă şi din neştiinţă, cu voie sau fără de voie, din noapte şi din zi…",
+      "Am greşit: având puţină credinţă şi încredere în Dumnezeu; căzând în ispite şi în nevoi nu m-am supus voii Domnului, ci am cârtit şi am hulit; n-am îngăduială şi răbdare când nu se face ceva după voia mea; m-am lenevit a învăţa legea şi poruncile Domnului; nu m-am pocăit cu părere de rău de păcatele făcute şi cu hotărâre de a nu mai greşi, m-am ruşinat şi am ascuns păcatele la mărturisire (se menţionează care anume); m-am împărtăşit cu sfintele Taine cu nevrednicie; m-am ruşinat a mărturisi că sunt creştin, m-am lenevit a face fapte bune.",
+      "Am greşit: cu mândria, cu fudulia, cu slavă deşartă, cu iubirea de sine, cu îndreptăţirea de sine şi învinuirea altora, cu îmbuibarea pântecelui, cu beţia, cu mâncarea pe ascuns, înainte şi după vreme, cu somn mult, cu iubirea de plăceri, m-am purtat fără de ruşine; am fumat tutun şi am servit pe alţii, mi-am făcut tatuaje. Am pomenit numele Domnului în deşert, am înjurat, nebuneşte am râs şi am făcut glume pe seama altora, am judecat, am osândit pe nedrept, am clevetit, am minţit; am mințit și am bătut pe cineva la mânie sau din plăcere.",
+      "Am greşit: cu necinstirea sfintelor sărbători, n-am frecventat Sfânta Biserică în duminici şi sărbători; în timpul slujbei am greşit cu neatenţia, cu vorbirea şi umblarea prin biserică, cu înfățișare smintitoare; m-am lenevit a face rugăciunile creştinului de seară şi dimineaţă, a citi Sfânta Scriptură şi alte cărţi de suflet folositoare; n-am împlinit canonul rânduit mie de duhovnic, m-am lenevit a face metanii; am făcut semnul Sfintei Cruci cu neglijenţă; am încălcat sfintele posturi (cele 4 posturi + zilele de miercuri şi vineri); am pierdut timpul în zadar în faţa televizorului şi a calculatorului.",
+      "Am greşit: cu necinstirea părinţilor, nu i-am ascultat, le-am vorbit urât şi am ridicat mâna la ei, n-am avut grijă de bătrânețele lor, n-am stimat pe cei vârstnici; nu mi-am educat copiii în frica Domnului, m-am purtat cu ei aspru sau i-am lăsat în voia lor, n-am avut grijă de viaţa lor duhovnicească, i-am îndemnat la păcat, i-am deprins să fure, să mintă ş.a.",
+      "Am greşit: cu mânia, cu învrăjbirea, cu invidia, cu ura faţă de aproapele, cu neiertarea, cu neiubirea aproapelui, cu răzbunarea, cu împietrirea inimii; am omorât pe cineva cu voie sau fără voie, am fost părtaş la omor; am putut salva pe cineva, dar m-am temut să-l ajut; am fost pricina morţii cuiva; am chinuit şi am ucis animale.",
+      "Bărbaţii: m-am spurcat, având scurgere în somn; am oprit zămislirea pruncilor; am impus sau am fost de acord ca soţia (sau partenera) să facă avort; am lovit soţia, am împins-o să facă lucruri urâte; am violat pe cineva.",
+      "Femeile: am oprit zămislirea pruncilor; mi-am omorât copilul în pântece, făcând avort; am sfătuit pe alţii să facă acest păcat sau am căzut de acord; am pierdut copilul în timpul sarcinii (se precizează motivul); din neglijenţă/neştiinţă m-am împărtăşit în perioada de necurăţie lunară; am căutat să ispitesc bărbaţii prin folosirea machiajului şi/sau prin purtarea hainelor indecente.",
+      "Am greşit: primind gânduri spurcate de desfrânare şi nu m-am împotrivit lor, m-am îndulcit în ele; m-am spurcat cu amintiri de păcate şi închipuiri spurcate, am privit filme şi imagini pornografice; m-am spurcat cu aprinderea trupească spre desfrânare; am făcut malahie (masturbare); am curvit sau preacurvit (după caz, trebuie specificat dacă nu cumva relaţiile au avut loc cu rude sau cu persoane de acelaşi sex); m-am căsătorit fără să mă cunun la Biserică; am avut relaţii împotriva firii (diferite perversiuni sexuale); nu m-am înfrânat de la relaţii conjugale în zilele de post, în perioada de sarcină şi de alăptare a pruncului; am iubit şi am căutat plăcerea trupească, m-am desfrânat cu mirosul, cu privirea, cu atingerile şi pipăitul.",
+      "Am greşit: cu viclenia, cu făţărnicia, cu minciunile, cu batjocura, cu zgârcenia, cu agonisirea de bogăţii, n-am făcut milostenie la săraci, n-am ajutat pe cei nevoiaşi, am urât şi am alungat pe cerşetori; am furat şi am luat fără voie lucruri străine, am făcut afaceri murdare, am dat şi am primit mită, am nedreptăţit, am făcut mărturie nedreaptă asupra aproapelui; am spus la alţii păcate de sminteală, am spus vorbe murdare, de ruşine, am jurat de Dumnezeu şi Biserică, am râs de păcatele şi neputinţele aproapelui, am smintit pe cei mai mici, am căutat cinste, m-am mărit cu cuvântul, m-am lăudat, m-am pus pe mine pildă altora.",
+      "Am greşit: poftind frumuseţe străină şi cu dânsa mi-am rănit inima; am avut zavistie, văzând bogăţia şi bunurile materiale sau spirituale ale aproapelui, am făcut vrăji şi farmece, am despărţit familii, mi-am bătut joc de lucruri sfinte, am crezut în zodii (horoscop); am fost la descântători, vrăjitori şi ghicitori; am plătit slujbe sau m-am rugat pentru a face rău cuiva, n-am iertat pe cei care mi-au făcut rău, am blestemat pe ei şi pe copiii lor, am blestemat pe copiii mei, am jurat pe sănătatea lor; am necinstit mormintele răposaţilor; am băut sânge de animale, am mâncat animale moarte; am tăgăduit existenţa lui Dumnezeu, am fost ateu şi am propagat ateismul; m-am înşelat cu ereziile cele spurcate, am fost sectar şi am fost „botezat” la sectari, am depărtat şi pe alţii de la dreapta credinţă, m-am înşelat cu visurile şi cu diferite superstiţii, am ascultat muzică satanistă.",
+      "Am greşit: cu vederea, cu auzul, cu văzul şi cu toate simţirile mele, dar de toate acestea pe care le-am mărturisit sau din uitare nu le-am mărturisit, mă căiesc, îmi pare rău şi mă simt vinovat în faţa Domnului şi voiesc ca de acum înainte, cu ajutorul lui Dumnezeu, să nu mai greşesc, iar tu cinstite părinte, iartă-mă, dezleagă-mă şi roagă-te pentru mine păcătosul/păcătoasa.",
+    ],
+  },
+  {
+    id: "dupa-marturisire",
+    title: "După mărturisire",
+    paragraphs: [
+      "După ce creştinul şi-a mărturisit păcatele, duhovnicul îi stabileşte, după caz, un canon prin care-i dă o rânduială de rugăciune, post, lectură duhovnicească etc. Creştinul este dator să îndeplinească cu stricteţe, dar şi cu evlavie şi râvnă acest canon, exact aşa cum a fost stabilit. Canonul poate presupune, în cazul unor păcate mai grave, oprirea de la împărtăşirea cu Sfintele Taine pentru un anumit timp (epitimie). Cel oprit de la Împărtăşanie pentru mai mult timp trebuie să frecventeze Biserica şi chiar să se mărturisească cât mai des, pentru a-şi vindeca mai uşor boala sufletească pricinuită de păcat.",
+      "Cel care a primit binecuvântarea de a se împărtăşi se pregăteşte trupeşte şi duhovniceşte, aşa cum a fost sfătuit de duhovnicul său. În anumite situaţii, sub supravegherea şi cu binecuvântarea duhovnicului, creştinul se poate împărtăşi de mai multe ori la rând cu aceeaşi Spovedanie.",
     ],
   },
 ];

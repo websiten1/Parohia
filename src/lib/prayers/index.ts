@@ -3,6 +3,8 @@ import { DIMINEATA } from "./dimineata";
 import { TREBUINTE, TREBUINTE_INTRO } from "./trebuinte";
 import { MESE, SEARA } from "./mese-seara";
 import { SPOVEDANIE, SPOVEDANIE_INTRO } from "./spovedanie";
+import { PAVECERNITA, PAVECERNITA_INTRO } from "./pavecernita";
+import { CANON_POCAINTA, CANON_POCAINTA_INTRO } from "./canon-pocainta";
 
 export * from "./types";
 
@@ -32,13 +34,19 @@ export const SECTIONS: PrayerSection[] = [
     intro: SPOVEDANIE_INTRO,
     steps: SPOVEDANIE,
   },
-  { id: "pavecernita", title: "Pavecerniţa Mică", kind: "page", steps: [], pending: true },
+  {
+    id: "pavecernita",
+    title: "Pavecerniţa Mică",
+    kind: "page",
+    intro: PAVECERNITA_INTRO,
+    steps: PAVECERNITA,
+  },
   {
     id: "canon-pocainta",
     title: "Canon de pocăinţă către Domnul nostru Iisus Hristos",
     kind: "page",
-    steps: [],
-    pending: true,
+    intro: CANON_POCAINTA_INTRO,
+    steps: CANON_POCAINTA,
   },
   { id: "paraclis", title: "Paraclisul Maicii lui Dumnezeu", kind: "page", steps: [], pending: true },
   { id: "canon-inger", title: "Canonul către Îngerul păzitor", kind: "page", steps: [], pending: true },
