@@ -5,6 +5,9 @@ import { MESE, SEARA } from "./mese-seara";
 import { SPOVEDANIE, SPOVEDANIE_INTRO } from "./spovedanie";
 import { PAVECERNITA, PAVECERNITA_INTRO } from "./pavecernita";
 import { CANON_POCAINTA, CANON_POCAINTA_INTRO } from "./canon-pocainta";
+import { PARACLIS, PARACLIS_INTRO } from "./paraclis";
+import { CANON_INGER } from "./canon-inger";
+import { IMPARTASIRE, IMPARTASIRE_INTRO } from "./impartasire";
 
 export * from "./types";
 
@@ -48,9 +51,21 @@ export const SECTIONS: PrayerSection[] = [
     intro: CANON_POCAINTA_INTRO,
     steps: CANON_POCAINTA,
   },
-  { id: "paraclis", title: "Paraclisul Maicii lui Dumnezeu", kind: "page", steps: [], pending: true },
-  { id: "canon-inger", title: "Canonul către Îngerul păzitor", kind: "page", steps: [], pending: true },
-  { id: "impartasire", title: "Rânduiala sfintei împărtăşiri", kind: "page", steps: [], pending: true },
+  {
+    id: "paraclis",
+    title: "Paraclisul Maicii lui Dumnezeu",
+    kind: "page",
+    intro: PARACLIS_INTRO,
+    steps: PARACLIS,
+  },
+  { id: "canon-inger", title: "Canonul către Îngerul păzitor", kind: "page", steps: CANON_INGER },
+  {
+    id: "impartasire",
+    title: "Rânduiala sfintei împărtăşiri",
+    kind: "page",
+    intro: IMPARTASIRE_INTRO,
+    steps: IMPARTASIRE,
+  },
   {
     id: "multumire",
     title: "Rugăciunile de mulţumire după dumnezeiasca împărtăşire",
