@@ -374,6 +374,22 @@ model Event {
   @@index([parishId, startsAt])
 }
 
+/// When members may see totals. Staff always see them, whatever this says.
+/// There is no STAFF_ONLY value on purpose: a Poll whose `visibility` is
+/// PRIVATE already means that, and two switches for one outcome is how
+/// contradictory states get created.
+enum PollResultsVisibility {
+  /// Unlocked for a member once they have cast their own vote. Keeps early
+  /// results from anchoring later voters, while still giving participants
+  /// the outcome.
+  AFTER_VOTE
+  /// Nobody but staff sees totals until `closesAt` passes. For contentious
+  /// votes, such as a parish council election.
+  AFTER_CLOSE
+  /// Live totals for anyone who can see the poll.
+  ALWAYS
+}
+
 model Poll {
   id       String @id @default(cuid())
   parishId String
@@ -387,7 +403,8 @@ model Poll {
 
   /// When false the API rejects a second vote on the same poll. The database
   /// can only guarantee "not the same option twice"; see PollVote.
-  allowMultiple Boolean   @default(false)
+  allowMultiple     Boolean               @default(false)
+  resultsVisibility PollResultsVisibility @default(AFTER_VOTE)
   closesAt      DateTime?
   publishedAt   DateTime?
 
@@ -496,10 +513,16 @@ model FormSubmission {
   answers Json
 
   submittedAt DateTime @default(now())
+  /// Members may correct their own answers until the form closes, so a
+  /// submission is not immutable and carries its own modification time.
+  updatedAt   DateTime @updatedAt
 
   form Form @relation(fields: [formId], references: [id], onDelete: Cascade)
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  /// One submission per member per form. Enforced by the database rather than
+  /// by the handler, so a double-tapped submit button cannot create two rows.
+  @@unique([formId, userId])
   @@index([formId])
   @@index([userId])
 }

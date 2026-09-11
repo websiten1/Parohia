@@ -158,11 +158,43 @@ GET    /api/me/memberships
 
 GET/POST      /api/parishes/:id/announcements
 GET/PATCH/DELETE /api/announcements/:id
+GET/POST      /api/parishes/:id/articles
+GET/PATCH/DELETE /api/articles/:id
+GET/POST      /api/parishes/:id/events        ?past=true for the archive
+GET/PATCH/DELETE /api/events/:id
+GET/POST      /api/parishes/:id/polls
+GET/PATCH/DELETE /api/polls/:id
+POST/DELETE   /api/polls/:id/vote             cast, change or retract
+GET           /api/polls/:id/results          gated by resultsVisibility
 GET/POST      /api/parishes/:id/schedule
 GET/PATCH/DELETE /api/schedule/:id
 GET/POST      /api/parishes/:id/forms
-GET/DELETE    /api/forms/:id
+GET/PATCH/DELETE /api/forms/:id
+GET/POST      /api/forms/:id/submissions      GET is staff only
+GET/DELETE    /api/forms/:id/submissions/me   the caller's own response
 ```
+
+### Content types share one shape
+
+Announcement, Article, Event, Poll and Form differ in their fields and almost
+nothing else, so `src/lib/content.ts` holds the part that repeats: resolving the
+caller's standing at a parish, building the audience filter, re-checking the
+audience on a direct fetch by id, and mapping `publish` onto `publishedAt`.
+
+It deliberately does **not** wrap Prisma. A generic repository over the model
+delegates would force `any` through every call and throw away the per-model
+select shapes, so each route keeps its own fully typed query.
+
+Three rules are enforced rather than assumed:
+
+- **Poll options are not editable.** Rewording an option after people have voted
+  would silently change what they agreed to, and deleting one would discard
+  their votes. A poll that is wrong gets replaced.
+- **Form fields are not editable.** Answers are keyed by field id, so renaming or
+  removing a question would orphan or redefine stored answers.
+- **A vote is one transaction that clears then re-inserts**, which makes the call
+  idempotent. A retried request replaces a vote rather than duplicating it, and
+  a single-choice poll cannot end up holding two rows for one person.
 
 ### How authorisation works
 
@@ -201,10 +233,14 @@ and the error wrapper are exercised too. It uses `next start` rather than
 `next dev` because Next 16 refuses to run a second dev server for the same
 directory, which would block anyone with one already open.
 
-The suite builds two parishes with two priests and then has priest A attempt
-every read and every write against parish B, across announcements, members,
-forms, schedule, clergy, the parish record, the join code, and the membership
-approval endpoints. It asserts three separate things:
+Three suites run sequentially, since each boots its own server on one port:
+`tenant-isolation`, `poll-visibility`, and `form-submissions`.
+
+The isolation suite builds two parishes with two priests and then has priest A
+attempt **54 cross-parish operations** against parish B, across announcements,
+articles, events, polls and votes, forms and submissions, members, schedule,
+clergy, the parish record, the join code, and the membership approval
+endpoints. It asserts three separate things:
 
 - every cross-parish call returns 403,
 - no refusal body contains any of parish B's content, and

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "next build && node --import tsx --test tests/*.test.ts",
+    "test": "next build && node --import tsx --test --test-concurrency=1 tests/*.test.ts",
     "db:migrate": "prisma migrate dev",
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio"

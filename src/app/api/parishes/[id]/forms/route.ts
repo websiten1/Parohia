@@ -1,20 +1,18 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { readJson, route } from "@/lib/api/errors";
-import { requireAuth } from "@/lib/auth/session";
-import { requireParishRole, STAFF } from "@/lib/auth/guards";
-import { audienceFilter } from "@/lib/visibility";
+import { STAFF } from "@/lib/auth/guards";
+import { audienceFields, audienceWhere, parishScope, publishFields } from "@/lib/content";
 import { createFormSchema } from "@/lib/validation/schemas";
 
 type Ctx = { params: Promise<{ id: string }> };
 
 export const GET = route(async (req: Request, { params }: Ctx) => {
   const { id } = await params;
-  const { user } = await requireAuth(req);
-  const membership = await requireParishRole(user.id, id);
+  const scope = await parishScope(req, id);
 
   const forms = await prisma.form.findMany({
-    where: { parishId: id, ...audienceFilter(membership.role, user.dateOfBirth) },
+    where: { parishId: id, ...audienceWhere(scope) },
     orderBy: { createdAt: "desc" },
     select: {
       id: true, title: true, description: true, visibility: true,
@@ -30,17 +28,21 @@ export const GET = route(async (req: Request, { params }: Ctx) => {
 /** Baptism registrations, parish trips, and anything else the priest needs. */
 export const POST = route(async (req: Request, { params }: Ctx) => {
   const { id } = await params;
-  const { user } = await requireAuth(req);
-  await requireParishRole(user.id, id, STAFF);
+  const scope = await parishScope(req, id, STAFF);
 
-  const { publish, fields, ...input } = createFormSchema.parse(await readJson(req));
+  const parsed = createFormSchema.parse(await readJson(req));
+  const { publish, fields, title, description, opensAt, closesAt, ...audience } = parsed;
 
   const form = await prisma.form.create({
     data: {
-      ...input,
+      title,
+      description: description ?? null,
+      opensAt: opensAt ?? null,
+      closesAt: closesAt ?? null,
+      ...audienceFields(audience),
+      ...publishFields(publish),
       parishId: id,
-      authorId: user.id,
-      publishedAt: publish ? new Date() : null,
+      authorId: scope.user.id,
       fields: {
         create: fields.map((f, index) => ({
           label: f.label,

@@ -43,3 +43,24 @@ export async function generateParishSlug(name: string): Promise<string> {
   }
   throw new Error("Could not allocate a unique parish slug.");
 }
+
+/**
+ * Article slugs are unique per parish, not globally, so two parishes may both
+ * publish "programul-de-craciun". `exceptId` lets an edit keep its own slug.
+ */
+export async function generateArticleSlug(
+  parishId: string,
+  source: string,
+  exceptId?: string,
+): Promise<string> {
+  const base = slugify(source);
+  for (let n = 1; n < 200; n += 1) {
+    const candidate = n === 1 ? base : `${base}-${n}`;
+    const taken = await prisma.article.findUnique({
+      where: { parishId_slug: { parishId, slug: candidate } },
+      select: { id: true },
+    });
+    if (!taken || taken.id === exceptId) return candidate;
+  }
+  throw new Error("Could not allocate a unique article slug.");
+}
