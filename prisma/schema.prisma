@@ -1,0 +1,617 @@
+// Parohia Mea — data model.
+//
+// Two rules shape everything below:
+//
+//  1. Parish authority is a property of a relationship, never of a person.
+//     `User.platformRole` only distinguishes ROEA staff from everyone else.
+//     Whether someone may edit a parish is answered by their Membership row
+//     for that parish, so a priest serving two parishes needs no special case
+//     and a demoted admin loses access on their very next request.
+//
+//  2. Nothing here assumes how money will move. Fundraiser and Donation are
+//     modelled so progress can be tracked, but no provider is wired up and
+//     the commercial arrangement is still open. See PaymentProvider.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ---------------------------------------------------------------------------
+// Identity
+// ---------------------------------------------------------------------------
+
+enum Language {
+  RO
+  EN
+}
+
+/// Platform-wide authority only. Everything parish-scoped lives on Membership.
+enum PlatformRole {
+  USER
+  SUPERADMIN
+}
+
+model User {
+  id           String  @id @default(cuid())
+  /// Always stored lowercased and trimmed; uniqueness is case-sensitive in
+  /// Postgres, so normalising on write is what actually prevents duplicates.
+  email        String  @unique
+  passwordHash String
+
+  firstName String
+  lastName  String
+  /// Required at registration, and registration rejects anyone under 13.
+  /// Being non-null is what lets BY_AGE visibility resolve every member
+  /// deterministically instead of silently hiding posts from some of them.
+  dateOfBirth DateTime @db.Date
+  phone       String?
+
+  preferredLanguage Language     @default(RO)
+  platformRole      PlatformRole @default(USER)
+
+  /// Null until the emailed code is confirmed. Login refuses to issue a
+  /// session while this is null (hard gate).
+  emailVerifiedAt DateTime?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  memberships        Membership[]
+  sessions           Session[]
+  verificationTokens VerificationToken[]
+
+  approvedMemberships Membership[]              @relation("MembershipApprover")
+  announcements       Announcement[]
+  articles            Article[]
+  events              Event[]
+  polls               Poll[]
+  pollVotes           PollVote[]
+  forms               Form[]
+  formSubmissions     FormSubmission[]
+  scheduleEntries     LiturgicalScheduleEntry[]
+  fundraisers         Fundraiser[]
+  donations           Donation[]
+
+  @@index([deletedAt])
+}
+
+/// An opaque bearer token, stored only as a SHA-256 digest so a database leak
+/// yields no usable sessions. The token itself is 32 random bytes and never
+/// persisted. Web clients carry it in an httpOnly cookie, native clients in an
+/// Authorization header; both resolve through this one table.
+model Session {
+  id        String @id @default(cuid())
+  userId    String
+  tokenHash String @unique
+
+  expiresAt  DateTime
+  lastUsedAt DateTime  @default(now())
+  revokedAt  DateTime?
+
+  userAgent String?
+  ip        String?
+
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+enum TokenPurpose {
+  EMAIL_VERIFICATION
+  PASSWORD_RESET
+}
+
+/// Short-lived numeric codes. Hashed like sessions, and `attempts` is what
+/// stops someone brute-forcing a six-digit code.
+model VerificationToken {
+  id       String       @id @default(cuid())
+  userId   String
+  purpose  TokenPurpose
+  codeHash String
+
+  expiresAt  DateTime
+  consumedAt DateTime?
+  attempts   Int       @default(0)
+
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, purpose])
+  @@index([expiresAt])
+}
+
+// ---------------------------------------------------------------------------
+// Parish
+// ---------------------------------------------------------------------------
+
+model Parish {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  patronSaint String?
+  /// e.g. "ROEA", or a European metropolis for non-US parishes.
+  jurisdiction String?
+
+  phone        String?
+  contactEmail String?
+  website      String?
+
+  addressLine1 String?
+  addressLine2 String?
+  city         String
+  state        String?
+  postalCode   String?
+  country      String
+  latitude     Float?
+  longitude    Float?
+  googleMapsUrl String?
+
+  logoUrl        String?
+  themePrimary   String?
+  themeSecondary String?
+  shortHistory   String?
+
+  // Display-only giving handles. Zelle and Venmo have no platform API, so
+  // these are shown to parishioners and never charged against. Real, trackable
+  // giving goes through Stripe Connect in M3; see Donation.
+  donationUrlPaypal String?
+  zelleHandle       String?
+  venmoHandle       String?
+  // TODO(M3): set when the parish completes Stripe Connect onboarding.
+  stripeAccountId   String?
+
+  /// The code a parishioner types to request membership. Rotatable by the
+  /// priest, which is the remedy when a code leaks.
+  joinCode          String   @unique
+  joinCodeRotatedAt DateTime @default(now())
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  memberships     Membership[]
+  photos          ParishPhoto[]
+  clergy          ClergyMember[]
+  announcements   Announcement[]
+  articles        Article[]
+  events          Event[]
+  polls           Poll[]
+  forms           Form[]
+  scheduleEntries LiturgicalScheduleEntry[]
+  fundraisers     Fundraiser[]
+  donations       Donation[]
+
+  @@index([city, country])
+  @@index([deletedAt])
+}
+
+model ParishPhoto {
+  id        String  @id @default(cuid())
+  parishId  String
+  url       String
+  caption   String?
+  sortOrder Int     @default(0)
+
+  createdAt DateTime @default(now())
+
+  parish Parish @relation(fields: [parishId], references: [id], onDelete: Cascade)
+
+  @@index([parishId, sortOrder])
+}
+
+/// Display-only clergy, for a second priest, deacon or cantor who has no app
+/// account. Purely decorative: no login, no permissions, never consulted by
+/// any authorisation check. The parish page renders these alongside the real
+/// clergy derived from PRIEST and ADMIN memberships. Optional to populate.
+model ClergyMember {
+  id        String  @id @default(cuid())
+  parishId  String
+  name      String
+  /// Free text rather than an enum: "Diacon", "Cantor", "Preot slujitor".
+  title     String
+  photoUrl  String?
+  sortOrder Int     @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parish Parish @relation(fields: [parishId], references: [id], onDelete: Cascade)
+
+  @@index([parishId, sortOrder])
+}
+
+// ---------------------------------------------------------------------------
+// Membership
+// ---------------------------------------------------------------------------
+
+enum MembershipRole {
+  PRIEST
+  ADMIN
+  MEMBER
+}
+
+enum MembershipStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum JoinMethod {
+  /// Typed the parish join code and is awaiting approval.
+  CODE
+  /// Created the parish, and so was its first priest.
+  FOUNDER
+  /// Raised to delegate admin by the priest.
+  PROMOTED
+}
+
+/// Exactly one row per (user, parish). Promotion to delegate admin mutates
+/// `role` in place rather than adding a row, so "what may this person do here"
+/// is always a single lookup with no precedence rules to get wrong.
+model Membership {
+  id       String           @id @default(cuid())
+  userId   String
+  parishId String
+  role     MembershipRole   @default(MEMBER)
+  status   MembershipStatus @default(PENDING)
+  joinedVia JoinMethod      @default(CODE)
+
+  approvedById String?
+  approvedAt   DateTime?
+  rejectedAt   DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  parish     Parish  @relation(fields: [parishId], references: [id], onDelete: Cascade)
+  approvedBy User?   @relation("MembershipApprover", fields: [approvedById], references: [id], onDelete: SetNull)
+
+  @@unique([userId, parishId])
+  @@index([parishId, status])
+  @@index([userId, status])
+}
+
+// ---------------------------------------------------------------------------
+// Content
+// ---------------------------------------------------------------------------
+
+/// ALL       — every verified member of the parish.
+/// BY_AGE    — verified members whose age falls within [minAge, maxAge].
+///             Resolvable for everyone, since dateOfBirth is required.
+/// PRIVATE   — parish staff only, meaning PRIEST and ADMIN memberships.
+enum Visibility {
+  ALL
+  BY_AGE
+  PRIVATE
+}
+
+model Announcement {
+  id       String @id @default(cuid())
+  parishId String
+  authorId String
+
+  title String
+  body  String @db.Text
+
+  visibility Visibility @default(ALL)
+  minAge     Int?
+  maxAge     Int?
+
+  /// Null means draft. Only staff can read drafts.
+  publishedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parish Parish @relation(fields: [parishId], references: [id], onDelete: Cascade)
+  author User   @relation(fields: [authorId], references: [id])
+
+  @@index([parishId, publishedAt])
+}
+
+model Article {
+  id       String @id @default(cuid())
+  parishId String
+  authorId String
+
+  title         String
+  slug          String
+  excerpt       String?
+  body          String  @db.Text
+  coverImageUrl String?
+
+  visibility Visibility @default(ALL)
+  minAge     Int?
+  maxAge     Int?
+
+  publishedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parish Parish @relation(fields: [parishId], references: [id], onDelete: Cascade)
+  author User   @relation(fields: [authorId], references: [id])
+
+  @@unique([parishId, slug])
+  @@index([parishId, publishedAt])
+}
+
+model Event {
+  id       String @id @default(cuid())
+  parishId String
+  authorId String
+
+  title           String
+  description     String    @db.Text
+  startsAt        DateTime
+  endsAt          DateTime?
+  location        String?
+  coverImageUrl   String?
+  registrationUrl String?
+
+  visibility Visibility @default(ALL)
+  minAge     Int?
+  maxAge     Int?
+
+  publishedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parish Parish @relation(fields: [parishId], references: [id], onDelete: Cascade)
+  author User   @relation(fields: [authorId], references: [id])
+
+  @@index([parishId, startsAt])
+}
+
+model Poll {
+  id       String @id @default(cuid())
+  parishId String
+  authorId String
+
+  question String
+
+  visibility Visibility @default(ALL)
+  minAge     Int?
+  maxAge     Int?
+
+  /// When false the API rejects a second vote on the same poll. The database
+  /// can only guarantee "not the same option twice"; see PollVote.
+  allowMultiple Boolean   @default(false)
+  closesAt      DateTime?
+  publishedAt   DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parish  Parish       @relation(fields: [parishId], references: [id], onDelete: Cascade)
+  author  User         @relation(fields: [authorId], references: [id])
+  options PollOption[]
+
+  @@index([parishId, publishedAt])
+}
+
+model PollOption {
+  id        String @id @default(cuid())
+  pollId    String
+  label     String
+  sortOrder Int    @default(0)
+
+  poll  Poll       @relation(fields: [pollId], references: [id], onDelete: Cascade)
+  votes PollVote[]
+
+  @@index([pollId, sortOrder])
+}
+
+/// `pollId` is denormalised so one person cannot vote for the same option
+/// twice, and so counting a user's votes within a poll is a single indexed
+/// query. Single-choice enforcement lives in the API, since the constraint
+/// that would express it in SQL would also forbid legitimate multi-select.
+model PollVote {
+  id           String @id @default(cuid())
+  pollId       String
+  pollOptionId String
+  userId       String
+
+  createdAt DateTime @default(now())
+
+  option PollOption @relation(fields: [pollOptionId], references: [id], onDelete: Cascade)
+  user   User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([pollOptionId, userId])
+  @@index([pollId, userId])
+}
+
+enum FormFieldType {
+  TEXT
+  TEXTAREA
+  NUMBER
+  DATE
+  EMAIL
+  PHONE
+  SELECT
+  RADIO
+  CHECKBOX
+}
+
+model Form {
+  id       String @id @default(cuid())
+  parishId String
+  authorId String
+
+  title       String
+  description String? @db.Text
+
+  visibility Visibility @default(ALL)
+  minAge     Int?
+  maxAge     Int?
+
+  opensAt     DateTime?
+  closesAt    DateTime?
+  publishedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parish      Parish           @relation(fields: [parishId], references: [id], onDelete: Cascade)
+  author      User             @relation(fields: [authorId], references: [id])
+  fields      FormField[]
+  submissions FormSubmission[]
+
+  @@index([parishId, publishedAt])
+}
+
+model FormField {
+  id     String        @id @default(cuid())
+  formId String
+  label  String
+  type   FormFieldType @default(TEXT)
+  /// Choices for SELECT, RADIO and CHECKBOX; empty for the free-text types.
+  options  String[]
+  required Boolean  @default(false)
+  sortOrder Int     @default(0)
+
+  form Form @relation(fields: [formId], references: [id], onDelete: Cascade)
+
+  @@index([formId, sortOrder])
+}
+
+/// Answers are a JSON object keyed by FormField.id. Chosen over a row per
+/// answer because a submission is always read whole. The cost is that
+/// querying across submissions by field value needs SQL on the JSON column.
+model FormSubmission {
+  id      String @id @default(cuid())
+  formId  String
+  userId  String
+  answers Json
+
+  submittedAt DateTime @default(now())
+
+  form Form @relation(fields: [formId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([formId])
+  @@index([userId])
+}
+
+enum ScheduleSource {
+  MANUAL
+  /// Proposed from the liturgical calendar. M1 only ever writes MANUAL.
+  CALENDAR_SUGGESTED
+}
+
+model LiturgicalScheduleEntry {
+  id       String @id @default(cuid())
+  parishId String
+
+  /// Absolute instant of the service, stored in UTC.
+  startsAt    DateTime
+  /// "Sfânta Liturghie", "Acatist", "Canonul cel Mare", and so on.
+  serviceName String
+  note        String?
+
+  source      ScheduleSource @default(MANUAL)
+  createdById String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parish    Parish @relation(fields: [parishId], references: [id], onDelete: Cascade)
+  createdBy User   @relation(fields: [createdById], references: [id])
+
+  @@index([parishId, startsAt])
+}
+
+// ---------------------------------------------------------------------------
+// Giving — models only. No provider is integrated in M1 or M2.
+// ---------------------------------------------------------------------------
+
+enum FundraiserStatus {
+  DRAFT
+  ACTIVE
+  CLOSED
+}
+
+enum DonationStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+}
+
+/// NONE is the only value M1 and M2 ever write, and it means the gift was
+/// recorded out of band rather than charged. STRIPE arrives in M3 via Stripe
+/// Connect, so each parish is paid directly. Zelle, Venmo and PayPal are
+/// deliberately absent: they are display-only handles on Parish because they
+/// expose no platform API that could confirm a payment.
+enum PaymentProvider {
+  NONE
+  STRIPE
+}
+
+model Fundraiser {
+  id       String @id @default(cuid())
+  parishId String
+  authorId String
+
+  title       String
+  description String @db.Text
+  /// Minor units, so cents for USD. Integers only; never a float.
+  goalAmount  Int
+  currency    String @default("USD")
+
+  status   FundraiserStatus @default(DRAFT)
+  startsAt DateTime?
+  endsAt   DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parish    Parish     @relation(fields: [parishId], references: [id], onDelete: Cascade)
+  author    User       @relation(fields: [authorId], references: [id])
+  donations Donation[]
+
+  @@index([parishId, status])
+}
+
+model Donation {
+  id           String  @id @default(cuid())
+  parishId     String
+  fundraiserId String?
+  /// Null for a gift from someone without an account.
+  userId       String?
+
+  amount   Int
+  currency String @default("USD")
+
+  status   DonationStatus  @default(PENDING)
+  provider PaymentProvider @default(NONE)
+  /// TODO(M3): Stripe PaymentIntent id. Unique so a replayed webhook cannot
+  /// record the same gift twice.
+  providerRef String?      @unique
+
+  donorName  String?
+  donorEmail String?
+  message    String?
+  anonymous  Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parish     Parish      @relation(fields: [parishId], references: [id], onDelete: Cascade)
+  fundraiser Fundraiser? @relation(fields: [fundraiserId], references: [id], onDelete: SetNull)
+  user       User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([parishId, status])
+  @@index([fundraiserId])
+}
