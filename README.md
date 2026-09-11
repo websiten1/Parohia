@@ -34,29 +34,37 @@ The Neon database also holds an unrelated application in `public`, including its
 own `User` table. Everything here therefore lives in a dedicated **`parohia`**
 schema.
 
-**The connection string is the source of truth.** Both URLs carry
-`schema=parohia`, in every environment including Vercel Preview and Production:
+**The schema is chosen in code, not by the environment.** `src/lib/db.ts`
+always selects `parohia` and passes it to the driver adapter.
 
-```
-postgresql://USER:PASSWORD@ep-….neon.tech/neondb?sslmode=require&schema=parohia
-```
+That is deliberate rather than lazy. The Neon integration owns `DATABASE_URL` on
+Vercel and it cannot be edited by hand, so requiring the environment to carry
+`&schema=parohia` would mean the deployed app could never satisfy its own
+precondition, and it would break again on every Neon resync. Owning `parohia` is
+a fact about this application, so the application supplies it and nothing
+external can drop it.
 
-Use `&` rather than `?` when appending, because the Neon URLs already carry
-`sslmode` and, on the pooled one, `channel_binding`.
+The environment may not *contradict* it. A URL pinning any other schema is
+fatal at startup, because it means someone is aiming this app at data it does
+not own:
 
-Two things read that value, and `prisma.config.ts` is the backup rather than the
-authority:
+| `?schema=` in `DATABASE_URL` | Result                                  |
+| ---------------------------- | --------------------------------------- |
+| absent                       | uses `parohia` (the production case)     |
+| `parohia`                    | uses `parohia`                           |
+| anything else                | **refuses to start**, with the reason    |
 
-- `src/lib/db.ts` parses `?schema=` and passes it to the driver adapter. **This
-  parsing is load-bearing.** The adapter takes the schema only from its
-  constructor options and ignores the query parameter, so without this step a
-  pinned URL would have no runtime effect at all. Verified by connecting with
-  the parameter but no option, which reads `public`.
-- `prisma.config.ts` pins the same value for migrations, and only fills it in
-  when the environment has not already done so.
+The driver adapter reads the schema only from its constructor options and
+ignores the query parameter entirely, which is why setting it in the URL alone
+would have had no runtime effect. Verified by connecting with the parameter but
+no option, which reads `public`.
 
-Both refuse to run if the URL names a schema other than `parohia`, rather than
-silently reading another application's tables.
+`prisma.config.ts` pins the same schema for migrations independently, and
+refuses to migrate if the URL names a different one.
+
+Running against a second schema, for a staging tenant say, would need a
+deliberate change here. That is the intended trade: there is no configuration
+path to the wrong schema.
 
 Nothing in this project reads or writes `public`.
 

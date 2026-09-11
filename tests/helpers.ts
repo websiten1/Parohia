@@ -1,4 +1,5 @@
 import { spawn, type ChildProcess } from "node:child_process";
+import { createConnection } from "node:net";
 import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -28,11 +29,34 @@ const outbox = join(mkdtempSync(join(tmpdir(), "parohia-mail-")), "outbox.log");
  * run a second dev server for the same directory, so a developer with one
  * already open could not run the suite.
  */
+/** Resolves true when something is already listening on the test port. */
+function portInUse(port: number): Promise<boolean> {
+  return new Promise((resolve) => {
+    const socket = createConnection({ port, host: "127.0.0.1" })
+      .on("connect", () => { socket.destroy(); resolve(true); })
+      .on("error", () => resolve(false));
+  });
+}
+
 export async function startServer(): Promise<void> {
   writeFileSync(outbox, "");
+
+  // A previous run's server can outlive its test process for a moment. Binding
+  // while it lingers fails with EADDRINUSE and every test is cancelled with a
+  // misleading error, so wait for the port rather than racing it.
+  const free = Date.now() + 20_000;
+  while (await portInUse(3111)) {
+    if (Date.now() > free) {
+      throw new Error("port 3111 is still in use; another test server is running");
+    }
+    await new Promise((r) => setTimeout(r, 500));
+  }
   const child = spawn("npx", ["next", "start", "--port", "3111", "--hostname", "127.0.0.1"], {
     env: { ...process.env, MAIL_OUTBOX: outbox },
     stdio: ["ignore", "pipe", "pipe"],
+    // Its own process group, so stopServer can signal the whole tree. Killing
+    // the npx wrapper alone leaves the real next-server holding the port.
+    detached: true,
   });
   server = child;
   child.stdout?.on("data", (d) => { log += String(d); });
@@ -50,8 +74,21 @@ export async function startServer(): Promise<void> {
 }
 
 export async function stopServer(): Promise<void> {
-  server?.kill("SIGTERM");
+  const child = server;
   server = null;
+  if (!child?.pid) return;
+
+  // Negative pid signals the whole group, reaching the next-server grandchild.
+  try { process.kill(-child.pid, "SIGTERM"); } catch { /* already gone */ }
+
+  const deadline = Date.now() + 10_000;
+  while (await portInUse(3111)) {
+    if (Date.now() > deadline) {
+      try { process.kill(-child.pid, "SIGKILL"); } catch { /* already gone */ }
+      break;
+    }
+    await new Promise((r) => setTimeout(r, 250));
+  }
 }
 
 /** Reads the newest code for an address out of the dev mailer's outbox. */

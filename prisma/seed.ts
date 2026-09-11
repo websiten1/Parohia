@@ -1,14 +1,14 @@
-import { JoinMethod, MembershipRole, MembershipStatus, PrismaClient, Visibility } from "@prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
+import { JoinMethod, MembershipRole, MembershipStatus, Visibility } from "@prisma/client";
 import { hash } from "@node-rs/argon2";
+// Deliberately the shared client rather than a hand-built one, so the seed is
+// covered by the same schema guard as the app and can never write into the
+// neighbouring application's tables. Safe to import before the env is loaded
+// below, because the client is constructed lazily on first use.
+import { prisma } from "../src/lib/db";
 
 for (const f of [".env.development.local", ".env.local", ".env"]) {
   try { process.loadEnvFile(f); } catch { /* optional */ }
 }
-
-const prisma = new PrismaClient({
-  adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL! }, { schema: "parohia" }),
-});
 
 const PASSWORD = "parohia-dev-2026";
 const hashPassword = (p: string) => hash(p, { memoryCost: 19456, timeCost: 2, parallelism: 1 });

@@ -33,17 +33,28 @@ function createClient(): PrismaClient {
     throw new Error("DATABASE_URL is not set. Run `npx vercel env pull .env.development.local`.");
   }
 
-  const schema = schemaFromUrl(connectionString) ?? DEFAULT_DB_SCHEMA;
-
-  // A URL that names a different schema is almost certainly a misconfigured
-  // environment pointing at another tenant's data. Fail loudly rather than
-  // quietly reading or writing the wrong tables.
-  if (schema !== DEFAULT_DB_SCHEMA) {
+  /**
+   * The schema is decided here, in code, not by the environment.
+   *
+   * The Neon integration owns DATABASE_URL on Vercel and it cannot be edited by
+   * hand, so requiring the environment to carry `&schema=` would mean the
+   * deployed app could never satisfy its own precondition. It would also break
+   * again on every Neon resync. Owning `parohia` is a fact about this
+   * application, so the application supplies it and nothing external can drop it.
+   *
+   * The environment may still *contradict* it, and that is fatal: a URL pinned
+   * at some other schema means someone is pointing this app at data it does not
+   * own, which is exactly the mistake worth crashing over. An absent parameter
+   * is normal and expected in production.
+   */
+  const pinned = schemaFromUrl(connectionString);
+  if (pinned && pinned !== DEFAULT_DB_SCHEMA) {
     throw new Error(
-      `DATABASE_URL names schema "${schema}", but this application owns "${DEFAULT_DB_SCHEMA}". ` +
+      `DATABASE_URL pins schema "${pinned}", but this application owns "${DEFAULT_DB_SCHEMA}". ` +
         `Refusing to connect: \`public\` on this database belongs to a different application.`,
     );
   }
+  const schema = DEFAULT_DB_SCHEMA;
 
   return new PrismaClient({
     adapter: new PrismaPg({ connectionString }, { schema }),
