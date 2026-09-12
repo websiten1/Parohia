@@ -296,6 +296,38 @@ export function readAccount(): Account | null {
 }
 
 /**
+ * Signs the current person out.
+ *
+ * Two halves, because the app is mid-migration. The API call ends the real
+ * session and clears its httpOnly cookie, which the browser cannot do itself;
+ * it is idempotent and succeeds even when no session exists, so it is safe to
+ * call from screens that still keep their state locally. The local clear then
+ * removes the prototype's own record of who was signed in.
+ *
+ * Device preferences such as appearance and language are deliberately left
+ * alone: they belong to the device, not to the person, and wiping them would
+ * make a shared parish tablet reset its text size every time someone signs out.
+ */
+export async function signOut(): Promise<void> {
+  try {
+    await fetch("/api/auth/logout", { method: "POST", credentials: "include" });
+  } catch {
+    // Offline or unreachable. The local clear below still has to happen, or
+    // the person stays signed in on this device with no way out.
+  }
+
+  if (typeof window !== "undefined") {
+    window.localStorage.removeItem(ACCOUNT_KEY);
+    // Cleared too, so the next person on a shared device is not dropped
+    // straight into the previous one's parish.
+    window.localStorage.removeItem(SELECTED_PARISH_KEY);
+    window.localStorage.removeItem(ONBOARDING_SKIPPED_KEY);
+    notify(ACCOUNT_KEY);
+    notify(SELECTED_PARISH_KEY);
+  }
+}
+
+/**
  * Where the splash screen should send a visitor: straight into the app if
  * they already picked a parish, back into onboarding at the right step if
  * they have an account but stopped partway, or to the very start otherwise.

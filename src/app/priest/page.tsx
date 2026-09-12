@@ -7,9 +7,10 @@ import { SealMark } from "@/components/SealMark";
 import { ClockIcon, MegaphoneIcon } from "@/components/icons";
 import { getParishById } from "@/lib/data/parishes";
 import { useTranslation } from "@/lib/i18n/LanguageProvider";
-import { useAccount } from "@/lib/storage";
+import { signOut, useAccount } from "@/lib/storage";
 import type { Parish } from "@/lib/types";
 import { PageContainer } from "@/components/ui/Surfaces";
+import { SecondaryAction } from "@/components/ui/Controls";
 
 /**
  * Priest admin home. A priest account is bound to exactly one parish (see
@@ -21,6 +22,10 @@ export default function PriestDashboardPage() {
   const { t } = useTranslation();
   const [account, , hydrated] = useAccount();
   const [parish, setParish] = useState<Parish | undefined>(undefined);
+  // Two steps on purpose: signing out of a parish is not something to do by
+  // brushing a button, and a priest on a phone in a vestry will.
+  const [confirming, setConfirming] = useState(false);
+  const [leaving, setLeaving] = useState(false);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -48,7 +53,35 @@ export default function PriestDashboardPage() {
         <ChevronRow href="/priest/announcements" title={t("priest.announcementsTitle")} subtitle={t("priest.announcementsSubtitle")} icon={<MegaphoneIcon className="h-[16px] w-[16px]" />} />
         <ChevronRow href="/priest/schedule" title={t("priest.scheduleTitle")} subtitle={t("priest.scheduleSubtitle")} icon={<ClockIcon className="h-[16px] w-[16px]" />} divider={false} />
 
-        <p className="mt-[36px] font-sans text-[13.5px] leading-[1.6] text-muted">{t("priest.signedInAs", { name: account.name })}</p>
+        <div className="mt-[36px] flex flex-col gap-[14px]">
+          <p className="font-sans text-[13.5px] leading-[1.6] text-muted">
+            {t("priest.signedInAs", { name: account.name })}
+          </p>
+
+          {confirming ? (
+            <div className="flex flex-col gap-[10px]">
+              <p className="font-sans text-[15px] leading-[1.5] text-text">{t("priest.signOutConfirm")}</p>
+              <div className="flex gap-[10px]">
+                <SecondaryAction onClick={() => setConfirming(false)}>{t("common.cancel")}</SecondaryAction>
+                <SecondaryAction
+                  onClick={async () => {
+                    // Guarded so a double tap cannot fire two sign-outs, and
+                    // router.replace rather than push so Back cannot return to
+                    // a parish this person is no longer signed in to.
+                    if (leaving) return;
+                    setLeaving(true);
+                    await signOut();
+                    router.replace("/login/priest");
+                  }}
+                >
+                  {leaving ? t("priest.signingOut") : t("priest.signOut")}
+                </SecondaryAction>
+              </div>
+            </div>
+          ) : (
+            <SecondaryAction onClick={() => setConfirming(true)}>{t("priest.signOut")}</SecondaryAction>
+          )}
+        </div>
       </main>
     </PageContainer>
   );
