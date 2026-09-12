@@ -4,6 +4,7 @@ import { ApiError, readJson, route, unauthorized } from "@/lib/api/errors";
 import { verifyPassword, hashPassword } from "@/lib/auth/password";
 import { createSession, setSessionCookie } from "@/lib/auth/session";
 import { loginSchema } from "@/lib/validation/schemas";
+import { callerKey, consume, RULES } from "@/lib/rate-limit";
 
 /**
  * A hash of a throwaway value, computed once, so that a login for an unknown
@@ -14,6 +15,11 @@ const decoyHash = hashPassword("no-such-account-timing-decoy");
 
 export const POST = route(async (req: Request) => {
   const { email, password } = loginSchema.parse(await readJson(req));
+
+  // Both axes, because either alone is evadable: one address from many
+  // addresses, or many addresses from one host.
+  await consume(RULES.login, email);
+  await consume(RULES.loginIp, callerKey(req));
 
   const user = await prisma.user.findUnique({ where: { email } });
 

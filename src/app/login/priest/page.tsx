@@ -1,5 +1,7 @@
 "use client";
 
+import { JURISDICTION_CODE } from "@/lib/jurisdiction.client";
+
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
@@ -126,7 +128,7 @@ export default function PriestLoginPage() {
       city,
       state,
       country: "SUA",
-      jurisdiction: "ROEA",
+      jurisdiction: JURISDICTION_CODE,
       address: address.trim(),
       latitude: 0,
       longitude: 0,

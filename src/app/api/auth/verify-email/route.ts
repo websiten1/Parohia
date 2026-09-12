@@ -5,10 +5,17 @@ import { badRequest, readJson, route, tooManyRequests } from "@/lib/api/errors";
 import { createSession, setSessionCookie } from "@/lib/auth/session";
 import { hashToken, safeEqualHex, VERIFICATION_MAX_ATTEMPTS } from "@/lib/auth/tokens";
 import { verifyEmailSchema } from "@/lib/validation/schemas";
+import { callerKey, consume, RULES } from "@/lib/rate-limit";
 
 /** Confirms the code and signs the person in, so there is no second step. */
 export const POST = route(async (req: Request) => {
   const { email, code } = verifyEmailSchema.parse(await readJson(req));
+
+  // VerificationToken.attempts bounds guessing within one code; this bounds it
+  // across codes, which a resend would otherwise reset.
+  await consume(RULES.verify, email);
+  await consume(RULES.verifyIp, callerKey(req));
+
   const invalid = badRequest("invalid_code", "That code is not valid or has expired.");
 
   const user = await prisma.user.findUnique({ where: { email } });

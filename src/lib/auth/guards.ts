@@ -1,4 +1,4 @@
-import { MembershipRole, MembershipStatus, type Membership } from "@prisma/client";
+import { MembershipRole, MembershipStatus, PlatformRole, type Membership, type User } from "@prisma/client";
 import { prisma } from "@/lib/db";
 import { forbidden, notFound } from "@/lib/api/errors";
 
@@ -9,6 +9,20 @@ export const ANY_MEMBER: MembershipRole[] = [
   MembershipRole.ADMIN,
   MembershipRole.MEMBER,
 ];
+
+/**
+ * Platform-level authority, which is a different axis from parish authority.
+ *
+ * Being a PRIEST means total control of one parish and says nothing about the
+ * platform; being a SUPERADMIN means diocese-wide operations such as
+ * pre-creating parishes. Neither implies the other, so this never consults
+ * memberships and requireParishRole never consults platformRole.
+ */
+export function requirePlatformRole(user: User, allowed: PlatformRole[] = [PlatformRole.SUPERADMIN]): void {
+  if (!allowed.includes(user.platformRole)) {
+    throw forbidden("That action is restricted to platform administrators.");
+  }
+}
 
 /**
  * The single choke point for tenant isolation.

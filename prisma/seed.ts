@@ -5,6 +5,7 @@ import { hash } from "@node-rs/argon2";
 // neighbouring application's tables. Safe to import before the env is loaded
 // below, because the client is constructed lazily on first use.
 import { prisma } from "../src/lib/db";
+import { jurisdiction } from "../src/lib/jurisdiction";
 
 for (const f of [".env.development.local", ".env.local", ".env"]) {
   try { process.loadEnvFile(f); } catch { /* optional */ }
@@ -24,10 +25,10 @@ async function main() {
       name: "Parohia Sfântul Gheorghe",
       slug: "sfantul-gheorghe-southfield",
       patronSaint: "Sfântul Mare Mucenic Gheorghe",
-      jurisdiction: "ROEA",
+      jurisdiction: jurisdiction().code,
       city: "Southfield",
       state: "Michigan",
-      country: "Statele Unite",
+      country: jurisdiction().defaultCountry,
       addressLine1: "18405 W Nine Mile Rd",
       postalCode: "48075",
       contactEmail: "contact@sfantulgheorghe.example",

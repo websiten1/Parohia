@@ -3,7 +3,7 @@
 // Two rules shape everything below:
 //
 //  1. Parish authority is a property of a relationship, never of a person.
-//     `User.platformRole` only distinguishes ROEA staff from everyone else.
+//     `User.platformRole` only distinguishes diocese staff from everyone else.
 //     Whether someone may edit a parish is answered by their Membership row
 //     for that parish, so a priest serving two parishes needs no special case
 //     and a demoted admin loses access on their very next request.
@@ -64,6 +64,8 @@ model User {
   memberships        Membership[]
   sessions           Session[]
   verificationTokens VerificationToken[]
+  claimedParishes    Parish[]            @relation("ParishClaimant")
+  auditEvents        AuditEvent[]
 
   approvedMemberships Membership[]              @relation("MembershipApprover")
   announcements       Announcement[]
@@ -138,7 +140,8 @@ model Parish {
   name        String
   slug        String  @unique
   patronSaint String?
-  /// e.g. "ROEA", or a European metropolis for non-US parishes.
+  /// The jurisdiction this parish belongs to, as a short code. Defaults come
+  /// from src/lib/jurisdiction.ts rather than being hardcoded anywhere.
   jurisdiction String?
 
   phone        String?
@@ -170,17 +173,55 @@ model Parish {
   stripeAccountId   String?
 
   /// The code a parishioner types to request membership. Rotatable by the
-  /// priest, which is the remedy when a code leaks.
+  /// priest, which is the remedy when a code leaks. Stored in plain text
+  /// deliberately: staff read it back to share it, and it only ever grants a
+  /// PENDING membership that a priest must then approve.
   joinCode          String   @unique
   joinCodeRotatedAt DateTime @default(now())
+
+  // --- Pre-provisioning and claim -----------------------------------------
+  //
+  // Parishes are pre-created from the diocese's official directory and then
+  // claimed by their priest, rather than each priest building one from
+  // nothing. The claim code is a different kind of secret from the join code
+  // above: it confers ownership, so it is high-entropy, single-use, stored
+  // only as a digest, and additionally bound to the address the directory
+  // holds for that parish.
+
+  /// Stable identifier from the diocese's directory. Makes a re-import
+  /// idempotent: it updates unclaimed parishes rather than duplicating them.
+  directoryRef      String?   @unique
+
+  /// SHA-256 of the claim code, never the code itself. Unique so a claim is a
+  /// single indexed lookup rather than a scan. Null once claimed or rotated,
+  /// which is what makes the code single-use.
+  claimCodeHash     String?   @unique
+  claimCodeIssuedAt DateTime?
+
+  /// The priest's address as the directory holds it. A claim succeeds only
+  /// for a verified account at this address, so a leaked code alone is not
+  /// enough to take a parish.
+  claimEmail        String?
+
+  /// Null means unclaimed: invisible to everyone but a platform admin, and
+  /// not joinable, since there would be no priest to approve anyone.
+  claimedAt         DateTime?
+  claimedById       String?
+
+  /// Set when the priest confirms the pre-filled details are correct. Drives
+  /// the "check these details" prompt rather than guessing from blank fields.
+  detailsReviewedAt DateTime?
 
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   deletedAt DateTime?
 
+  claimedBy       User?          @relation("ParishClaimant", fields: [claimedById], references: [id], onDelete: SetNull)
+
   memberships     Membership[]
   photos          ParishPhoto[]
   clergy          ClergyMember[]
+  auditEvents     AuditEvent[]
   announcements   Announcement[]
   articles        Article[]
   events          Event[]
@@ -192,12 +233,16 @@ model Parish {
 
   @@index([city, country])
   @@index([deletedAt])
+  @@index([claimedAt])
 }
 
 model ParishPhoto {
   id        String  @id @default(cuid())
   parishId  String
   url       String
+  /// The Blob pathname, which is what deletion needs; the URL alone is not
+  /// enough to remove the stored object.
+  blobPathname String?
   caption   String?
   sortOrder Int     @default(0)
 
@@ -252,6 +297,8 @@ enum JoinMethod {
   FOUNDER
   /// Raised to delegate admin by the priest.
   PROMOTED
+  /// Took ownership of a pre-created parish with a claim code.
+  CLAIM
 }
 
 /// Exactly one row per (user, parish). Promotion to delegate admin mutates
@@ -553,6 +600,64 @@ model LiturgicalScheduleEntry {
   createdBy User   @relation(fields: [createdById], references: [id])
 
   @@index([parishId, startsAt])
+}
+
+// ---------------------------------------------------------------------------
+// Operations
+// ---------------------------------------------------------------------------
+
+/**
+ * An append-only record of consequential actions.
+ *
+ * `action` is a string rather than an enum so that adding an audited action
+ * does not require a migration; the writable set is a union type in
+ * src/lib/audit.ts, so a typo still fails to compile.
+ *
+ * Nothing here is ever updated or deleted by application code. Both the actor
+ * and the parish are nullable and set null on delete, so removing either
+ * leaves the record standing rather than taking the history with it.
+ */
+model AuditEvent {
+  id String @id @default(cuid())
+
+  /// Null for platform-level actions that belong to no single parish.
+  parishId String?
+  /// Null for system actions, and after the actor is deleted.
+  actorId  String?
+
+  action     String
+  targetType String
+  targetId   String?
+  /// Free-form context: what changed, and from what to what.
+  metadata   Json?
+  ip         String?
+
+  createdAt DateTime @default(now())
+
+  parish Parish? @relation(fields: [parishId], references: [id], onDelete: SetNull)
+  actor  User?   @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([parishId, createdAt])
+  @@index([actorId, createdAt])
+  @@index([action, createdAt])
+}
+
+/**
+ * Fixed-window rate limiting, in Postgres rather than a separate store.
+ *
+ * At parish scale the write volume is trivial and it adds no vendor, no cost
+ * and no second failure mode. The window start is part of the key, so expiry
+ * is a delete of old rows rather than a TTL.
+ */
+model RateLimit {
+  id          String   @id @default(cuid())
+  /// Scope and subject, e.g. "login:someone@example.com" or "claim:198.51.100.7".
+  key         String
+  windowStart DateTime
+  count       Int      @default(1)
+
+  @@unique([key, windowStart])
+  @@index([windowStart])
 }
 
 // ---------------------------------------------------------------------------

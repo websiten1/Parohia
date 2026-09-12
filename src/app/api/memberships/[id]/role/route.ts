@@ -4,6 +4,7 @@ import { prisma } from "@/lib/db";
 import { badRequest, conflict, readJson, route } from "@/lib/api/errors";
 import { requireAuth } from "@/lib/auth/session";
 import { PRIEST_ONLY, requireOwnedResource } from "@/lib/auth/guards";
+import { recordAudit } from "@/lib/audit";
 import { setRoleSchema } from "@/lib/validation/schemas";
 
 /**
@@ -32,10 +33,25 @@ export const POST = route(async (req: Request, { params }: { params: Promise<{ i
     throw conflict("not_verified", "Approve this person before giving them a role.");
   }
 
-  const membership = await prisma.membership.update({
-    where: { id },
-    data: { role, joinedVia: resource.joinedVia },
-    select: { id: true, role: true, status: true },
+  const membership = await prisma.$transaction(async (tx) => {
+    const updated = await tx.membership.update({
+      where: { id },
+      data: { role, joinedVia: resource.joinedVia },
+      select: { id: true, role: true, status: true },
+    });
+    await recordAudit(
+      {
+        action: "membership.role_changed",
+        parishId: resource.parishId,
+        actorId: user.id,
+        targetType: "Membership",
+        targetId: id,
+        metadata: { subjectUserId: resource.userId, from: resource.role, to: role },
+        req,
+      },
+      tx,
+    );
+    return updated;
   });
 
   return NextResponse.json({ membership });

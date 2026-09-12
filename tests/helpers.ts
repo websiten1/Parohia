@@ -91,9 +91,12 @@ export async function stopServer(): Promise<void> {
   }
 }
 
-/** Reads the newest code for an address out of the dev mailer's outbox. */
-export async function waitForCode(email: string): Promise<string> {
-  const pattern = new RegExp(`verification code for ${email.replace(/[.+]/g, "\\$&")}: (\\d{6})`, "gi");
+/** Reads the newest code of a given kind out of the dev mailer's outbox. */
+export async function waitForCode(
+  email: string,
+  kind: "verification" | "password reset" = "verification",
+): Promise<string> {
+  const pattern = new RegExp(`${kind} code for ${email.replace(/[.+]/g, "\\$&")}: (\\d{6})`, "gi");
   const deadline = Date.now() + 20_000;
   while (Date.now() < deadline) {
     const matches = [...readFileSync(outbox, "utf8").matchAll(pattern)];
@@ -146,6 +149,62 @@ export async function api<T = any>( // eslint-disable-line @typescript-eslint/no
   let body: unknown = null;
   try { body = text ? JSON.parse(text) : null; } catch { body = text; }
   return { status: res.status, body: body as T };
+}
+
+/**
+ * Promotes an account to platform administrator, the same way the console
+ * script does. There is deliberately no endpoint for this, so a test that
+ * needs one reaches the database directly.
+ */
+export async function grantSuperadmin(email: string): Promise<void> {
+  const { prisma } = await import("../src/lib/db");
+  await prisma.user.update({ where: { email }, data: { platformRole: "SUPERADMIN" } });
+}
+
+/**
+ * Creates a parish owned by the given user, as a fixture rather than through
+ * the API.
+ *
+ * Parish creation is a platform-admin operation now, and under diocese
+ * distribution a real priest never creates one: they claim a pre-created
+ * parish. Making every test priest a SUPERADMIN to satisfy the endpoint would
+ * give them powers no real priest has, which would quietly weaken every
+ * isolation assertion built on them. The endpoint's own authorisation is
+ * covered separately in admin-boundary.test.ts.
+ */
+export async function makeParish(opts: {
+  ownerId: string;
+  name: string;
+  city?: string;
+  country?: string;
+}): Promise<{ id: string; joinCode: string }> {
+  const { prisma } = await import("../src/lib/db");
+  const suffix = Math.random().toString(36).slice(2, 8).toUpperCase();
+  const joinCode = `T${suffix}${Math.random().toString(36).slice(2, 3).toUpperCase()}`;
+
+  const parish = await prisma.parish.create({
+    data: {
+      name: opts.name,
+      slug: `${opts.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${suffix.toLowerCase()}`,
+      city: opts.city ?? "Detroit",
+      country: opts.country ?? "Statele Unite",
+      joinCode,
+      // Owned from the first moment, which is what the join flow requires.
+      claimedAt: new Date(),
+      claimedById: opts.ownerId,
+      memberships: {
+        create: {
+          userId: opts.ownerId,
+          role: "PRIEST",
+          status: "VERIFIED",
+          joinedVia: "FOUNDER",
+          approvedAt: new Date(),
+        },
+      },
+    },
+    select: { id: true, joinCode: true },
+  });
+  return parish;
 }
 
 /** Registers, verifies and returns a usable bearer token. */

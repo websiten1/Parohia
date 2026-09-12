@@ -10,7 +10,8 @@
     "test": "next build && node --import tsx --test --test-concurrency=1 tests/*.test.ts",
     "db:migrate": "prisma migrate dev",
     "db:seed": "prisma db seed",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "grant-superadmin": "tsx scripts/grant-superadmin.ts"
   },
   "dependencies": {
     "@node-rs/argon2": "2.2.1",

@@ -108,6 +108,25 @@ One token, two envelopes, resolved by a single code path in
 | Web            | `httpOnly; Secure; SameSite=Lax` cookie    |
 | iOS / Android  | `Authorization: Bearer <token>`            |
 
+### Rate limits
+
+Per-account limits are tight and per-address limits are deliberately loose.
+An address is a poor identifier for a person: a parish hall behind one router,
+a mobile carrier's NAT, or one family all look like a single address, so a tight
+per-address limit locks out real parishioners while barely inconveniencing an
+attacker who can rotate hosts. The precise control is per account; the address
+limit is a coarse backstop against one host hammering many accounts.
+
+Counters live in Postgres, in a fixed window. A fixed window can admit up to
+twice the limit across a boundary, which is acceptable here: these limits blunt
+enumeration and credential stuffing rather than metering a paid API, and the
+alternative costs another vendor and another failure mode.
+
+Endpoints that must not reveal whether an address exists, such as resend and
+password-reset requests, are limited *quietly*: an over-limit request returns
+the same `200` as every other one and simply does no work, because a `429`
+would itself be the signal.
+
 ### The hard email gate
 
 No session is issued until the emailed code is confirmed. Login returns
@@ -120,9 +139,51 @@ necessarily unauthenticated. It always returns `200` with an identical body and
 throttles to one code per minute per account, so it cannot be used to discover
 which addresses exist or to aim mail at someone else's inbox.
 
-Verification codes are not emailed yet. `src/lib/mail/mailer.ts` logs them to
-the server console, behind a `Mailer` interface so M2 can swap in a provider
-without touching a call site.
+Completing a password reset also marks the address verified, on the grounds
+that receiving the code proves control of the inbox exactly as registration
+verification does. Without that, an account that registered and lost its first
+code would be stranded behind the gate forever. A reset also revokes every
+other session, since a reset is often prompted by a suspected compromise.
+
+Verification and reset codes are not emailed yet. `src/lib/mail/mailer.ts`
+writes them to the console and, when `MAIL_OUTBOX` is set, to a file, behind a
+`Mailer` interface so a provider swaps in without touching a call site.
+
+### Who can create a parish
+
+`POST /api/parishes` is restricted to platform administrators. Under diocese
+distribution every parish is pre-created from the official directory and then
+claimed by its priest, so a priest self-creating one would be a second,
+unvetted route to becoming a priest-owner.
+
+Platform authority and parish authority are separate axes and neither implies
+the other: `requirePlatformRole` never consults memberships, and
+`requireParishRole` never consults `platformRole`. A SUPERADMIN therefore has no
+read access to a parish they are not a member of.
+
+There is deliberately no endpoint that grants platform administrator. The first
+one is made at a console:
+
+```bash
+npx tsx scripts/grant-superadmin.ts someone@example.com
+npx tsx scripts/grant-superadmin.ts someone@example.com --revoke
+```
+
+### Jurisdiction
+
+ROEA is the first customer, not the only possible one. Nothing names it
+literally: `src/lib/jurisdiction.ts` reads the deployment's identity from the
+environment with ROEA as the default, so a second jurisdiction is a set of
+variables and a translations file rather than a search and replace.
+
+| Variable | Default |
+| --- | --- |
+| `JURISDICTION_CODE` | `ROEA` |
+| `JURISDICTION_NAME` | Episcopia Ortodoxă Română din America |
+| `JURISDICTION_BRAND` | Parohia |
+| `JURISDICTION_HIERARCH_NAME` / `_TITLE` | generic |
+| `JURISDICTION_DEFAULT_COUNTRY` | Statele Unite |
+| `NEXT_PUBLIC_JURISDICTION_CODE` | `ROEA` (client components) |
 
 ## API
 
@@ -141,8 +202,11 @@ POST   /api/auth/login                 403 email_not_verified when ungated
 POST   /api/auth/logout                idempotent
 GET    /api/auth/me                    caller plus their memberships
 POST   /api/auth/password              change; revokes all other sessions
+POST   /api/auth/password/reset/request   unauthenticated, throttled, always 200
+POST   /api/auth/password/reset/confirm   sets the password, verifies, signs in
+GET    /api/jurisdiction               unauthenticated; whose diocese this is
 
-POST   /api/parishes                   creates parish + founding priest, atomically
+POST   /api/parishes                   SUPERADMIN only; parish + priest, atomically
 GET    /api/parishes/:id               members read; join code is staff-only
 PATCH  /api/parishes/:id               staff
 POST   /api/parishes/:id/join-code/rotate      priest only
@@ -172,6 +236,8 @@ GET/POST      /api/parishes/:id/forms
 GET/PATCH/DELETE /api/forms/:id
 GET/POST      /api/forms/:id/submissions      GET is staff only
 GET/DELETE    /api/forms/:id/submissions/me   the caller's own response
+GET           /api/parishes/:id/feed          everything, interleaved by date
+GET           /api/parishes/:id/audit         staff; the parish's own history
 ```
 
 ### Content types share one shape

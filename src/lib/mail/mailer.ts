@@ -9,11 +9,19 @@ import { appendFileSync } from "node:fs";
  */
 export interface Mailer {
   sendVerificationCode(to: string, code: string): Promise<void>;
+  sendPasswordResetCode(to: string, code: string): Promise<void>;
 }
 
 class DevMailer implements Mailer {
   async sendVerificationCode(to: string, code: string): Promise<void> {
-    const line = `[mail] verification code for ${to}: ${code}`;
+    await this.write(`[mail] verification code for ${to}: ${code}`);
+  }
+
+  async sendPasswordResetCode(to: string, code: string): Promise<void> {
+    await this.write(`[mail] password reset code for ${to}: ${code}`);
+  }
+
+  private async write(line: string): Promise<void> {
 
     // Deliberately loud: this is the only way to finish signing up in M1.
     console.info(line);

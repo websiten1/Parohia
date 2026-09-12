@@ -1,6 +1,6 @@
 import { after, before, describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { api, cleanup, makeUser, startServer, stopServer } from "./helpers";
+import { api, cleanup, makeParish, makeUser, startServer, stopServer } from "./helpers";
 
 /**
  * The three results-visibility branches and the single-choice rule.
@@ -29,18 +29,14 @@ before(async () => {
   const priest = await makeUser("pollpriest");
   priestToken = priest.token;
 
-  const parish = await api("POST", "/api/parishes", {
-    token: priestToken,
-    body: { name: "Parohia Sondaj", city: "Cleveland", country: "Statele Unite" },
-  });
-  assert.equal(parish.status, 201);
-  parishId = parish.body.parish.id;
+  const parish = await makeParish({ ownerId: priest.id, name: "Parohia Sondaj", city: "Cleveland" });
+  parishId = parish.id;
 
   const member = await makeUser("pollmember");
   memberToken = member.token;
   const joined = await api("POST", "/api/memberships/join", {
     token: memberToken,
-    body: { code: parish.body.parish.joinCode },
+    body: { code: parish.joinCode },
   });
   await api("POST", `/api/memberships/${joined.body.membership.id}/approve`, { token: priestToken });
 });

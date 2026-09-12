@@ -1,6 +1,6 @@
 import { after, before, describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { api, cleanup, makeUser, startServer, stopServer } from "./helpers";
+import { api, cleanup, makeParish, makeUser, startServer, stopServer } from "./helpers";
 
 /**
  * One submission per member, editable until the form closes, validated against
@@ -41,17 +41,14 @@ before(async () => {
   const priest = await makeUser("formpriest");
   priestToken = priest.token;
 
-  const parish = await api("POST", "/api/parishes", {
-    token: priestToken,
-    body: { name: "Parohia Formulare", city: "Chicago", country: "Statele Unite" },
-  });
-  parishId = parish.body.parish.id;
+  const parish = await makeParish({ ownerId: priest.id, name: "Parohia Formulare", city: "Chicago" });
+  parishId = parish.id;
 
   const member = await makeUser("formmember");
   memberToken = member.token;
   const joined = await api("POST", "/api/memberships/join", {
     token: memberToken,
-    body: { code: parish.body.parish.joinCode },
+    body: { code: parish.joinCode },
   });
   await api("POST", `/api/memberships/${joined.body.membership.id}/approve`, { token: priestToken });
 });

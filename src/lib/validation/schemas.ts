@@ -44,6 +44,14 @@ export const registerSchema = z.object({
 export const loginSchema = z.object({ email, password: z.string().min(1, "Enter your password.") });
 export const verifyEmailSchema = z.object({ email, code: z.string().trim().regex(/^\d{6}$/, "Enter the 6-digit code.") });
 export const resendSchema = z.object({ email });
+export const resetRequestSchema = z.object({ email });
+
+export const resetConfirmSchema = z.object({
+  email,
+  code: z.string().trim().regex(/^\d{6}$/, "Enter the 6-digit code."),
+  newPassword: password,
+});
+
 export const changePasswordSchema = z.object({
   currentPassword: z.string().min(1, "Enter your current password."),
   newPassword: password,

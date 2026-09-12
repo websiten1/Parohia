@@ -4,6 +4,7 @@ import { prisma } from "@/lib/db";
 import { conflict, route } from "@/lib/api/errors";
 import { requireAuth } from "@/lib/auth/session";
 import { requireOwnedResource, STAFF } from "@/lib/auth/guards";
+import { recordAudit } from "@/lib/audit";
 
 export const POST = route(async (req: Request, { params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
@@ -21,15 +22,32 @@ export const POST = route(async (req: Request, { params }: { params: Promise<{ i
     throw conflict("already_verified", "That person is already a member.");
   }
 
-  const membership = await prisma.membership.update({
-    where: { id },
-    data: {
-      status: MembershipStatus.VERIFIED,
-      approvedById: user.id,
-      approvedAt: new Date(),
-      rejectedAt: null,
-    },
-    select: { id: true, status: true, role: true, approvedAt: true },
+  // The change and its record commit together, so an approval can never
+  // succeed unrecorded.
+  const membership = await prisma.$transaction(async (tx) => {
+    const updated = await tx.membership.update({
+      where: { id },
+      data: {
+        status: MembershipStatus.VERIFIED,
+        approvedById: user.id,
+        approvedAt: new Date(),
+        rejectedAt: null,
+      },
+      select: { id: true, status: true, role: true, approvedAt: true },
+    });
+    await recordAudit(
+      {
+        action: "membership.approved",
+        parishId: resource.parishId,
+        actorId: user.id,
+        targetType: "Membership",
+        targetId: id,
+        metadata: { subjectUserId: resource.userId, previousStatus: resource.status },
+        req,
+      },
+      tx,
+    );
+    return updated;
   });
 
   return NextResponse.json({ membership });

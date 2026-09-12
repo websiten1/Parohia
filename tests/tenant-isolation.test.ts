@@ -1,6 +1,6 @@
 import { after, before, describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { api, cleanup, makeUser, startServer, stopServer } from "./helpers";
+import { api, cleanup, makeParish, makeUser, startServer, stopServer } from "./helpers";
 
 /**
  * Proves that parish membership, not authentication, is what grants access.
@@ -37,13 +37,9 @@ let memberOfAToken: string;
 async function buildParish(label: string): Promise<Fixture> {
   const user = await makeUser(label);
 
-  const parish = await api("POST", "/api/parishes", {
-    token: user.token,
-    body: { name: `Parohia ${label}`, city: "Detroit", country: "Statele Unite" },
-  });
-  assert.equal(parish.status, 201, `create parish ${label}: ${JSON.stringify(parish.body)}`);
-  const parishId = parish.body.parish.id;
-  const joinCode = parish.body.parish.joinCode;
+  const parish = await makeParish({ ownerId: user.id, name: `Parohia ${label}` });
+  const parishId = parish.id;
+  const joinCode = parish.joinCode;
 
   const ann = await api("POST", `/api/parishes/${parishId}/announcements`, {
     token: user.token,
@@ -133,6 +129,7 @@ before(async () => {
     token: member.token,
     body: { code: parishA.body.parish.joinCode },
   });
+  assert.equal(joined.status, 201, `member join: ${JSON.stringify(joined.body)}`);
   await api("POST", `/api/memberships/${joined.body.membership.id}/approve`, { token: A.token });
   memberOfAToken = member.token;
 });

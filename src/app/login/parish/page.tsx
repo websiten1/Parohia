@@ -1,5 +1,7 @@
 "use client";
 
+import { JURISDICTION_CODE } from "@/lib/jurisdiction.client";
+
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 import { saveDemoParish } from "@/lib/data/parishes";
@@ -35,7 +37,7 @@ export default function ParishOnboardingPage() {
       city,
       state,
       country: "SUA",
-      jurisdiction: "ROEA",
+      jurisdiction: JURISDICTION_CODE,
       address: "123 Church St",
       latitude: 0,
       longitude: 0,
